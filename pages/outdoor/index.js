@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from 'next/head';
+import Image from 'next/image';
 import NavbarOutdoor from '/components/page-layout/NavbarOutdoor';
 
-function OutdoorPage() {
+function Page() {
   return (
     <div>
       <Head>
         <title>Clearpath | Outdoor</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
         <NavbarOutdoor />
@@ -24,4 +24,4 @@ function OutdoorPage() {
   );
 }
 
-export default OutdoorPage;
+export default Page;
