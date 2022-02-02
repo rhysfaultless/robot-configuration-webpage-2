@@ -5,9 +5,9 @@ import Image from 'next/image'
 class Footer extends Component {
   render() {
     return (
-      <footer class="dark:bg-stone-700">
+      <footer className="dark:bg-stone-700">
         <br></br>
-        <div class="container flex flex-wrap items-center justify-center mx-auto md:text-sm md:font-small text-white space-x-12">
+        <div className="container flex flex-wrap items-center justify-center mx-auto md:text-sm md:font-small text-white space-x-12">
           <div>
             <Link href='https://clearpathrobotics.com/'>
               <a>

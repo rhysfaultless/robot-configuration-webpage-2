@@ -12,7 +12,7 @@ function Page() {
       <div>
         <NavbarEmpty />
       </div>
-      <div class="grid place-items-center">
+      <div className="grid place-items-center">
         <Image 
           src="/images/CPR_Family_Portrait.jpg" 
           alt="Clearpath Robotics hexagon logo"

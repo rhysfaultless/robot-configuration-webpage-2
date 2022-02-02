@@ -5,8 +5,8 @@ import Image from "next/image";
 class Navbar extends Component {
   render() {
     return (
-      <nav class="bg-white border-gray-200 px-2 sm:px-4 py-1.5 dark:bg-stone-700">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-1.5 dark:bg-stone-700">
+        <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
             <a>
               <Image
@@ -20,13 +20,13 @@ class Navbar extends Component {
           <button
             data-collapse-toggle="mobile-menu"
             type="button"
-            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="mobile-menu-2"
             aria-expanded="false"
           >
-            <span class="sr-only">Open main menu</span>
+            <span className="sr-only">Open main menu</span>
             <svg
-              class="w-6 h-6"
+              className="w-6 h-6"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@ class Navbar extends Component {
               ></path>
             </svg>
             <svg
-              class="hidden w-6 h-6"
+              className="hidden w-6 h-6"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -50,8 +50,8 @@ class Navbar extends Component {
               ></path>
             </svg>
           </button>
-          <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
+            <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
               <li>
                 <Link href="/outdoor">
                   <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:text-yellow-400">
