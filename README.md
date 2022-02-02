@@ -2,7 +2,27 @@
 Deployed site: <a>https://robot-configuration-webpage-2.vercel.app/</a> <br />
 Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</a> <br />
 
-## Adding a new attachment process
+## running on a local machine
+1. clone this repository
+2. in a terminal, navigate to the repository on your local machine, and then run:
+  1. `npm install next react react-dom`
+  2. `npm run dev`
+
+## deploying on Vercel
+This proccess is rather simple. The Production Deployment on Vercel uses the code on this Github repositories `main` branch. 
+Vercel uses the information in this repositorie's `package.json` to build the site properly.
+You can test code by:
+1. creating a new bracnh on Github
+2. make changes as necessary, and then locally build the project using `npm run build` to find errors
+3. assuming the local build went well, push the changes to Github
+4. Then, no the Vercel deashboard, you should see a Preview Deplyment being built.
+5. This Preview Deployment will have a Visit option in its hamburger menu so you can confirm that the site looks correct
+6. There shouldnt be any errors since you tested with a local build. Any errors could be related to issues with the `package.json'
+7. Once you are happy that the Preview Deployment looks good; merge the development branch into the main branch.
+8. Vercel will build again, and the Production Deployment should show the changes.
+
+
+## adding a new attachment process
 1. Using Solidworks: 
   1. Create a SLDPRT of the attachment with the origin centred at (0, 0, 0,) .
     The ground plane is to be the X-Y plane.
