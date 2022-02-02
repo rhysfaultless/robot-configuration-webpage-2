@@ -8,8 +8,8 @@ function Error404Page() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>404 error | Page not found</h1>
-        <h1>These aren't the droids you're looking for</h1>
+        <h1>{"404 error | Page not found"}</h1>
+        <h1>{"These aren't the droids you're looking for"}</h1>
       </main>
     </div>
   );
