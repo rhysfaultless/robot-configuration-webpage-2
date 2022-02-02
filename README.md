@@ -1,6 +1,6 @@
 # robot-configuration-webpage-2
-Deployed site: <a>https://robot-configuration-webpage-2.vercel.app/</a>
-Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</a>
+Deployed site: <a>https://robot-configuration-webpage-2.vercel.app/</a> <br />
+Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</a> <br />
 
 ## Adding a new attachment process
 1. Using Solidworks: 
