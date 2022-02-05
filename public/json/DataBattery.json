@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Lead Acid",
+    "value": "A",
+    "price": 0,
+    "lead-time": "0"
+  },
+  {
+    "label": "Lithium",
+    "value": "B",
+    "price": 1000,
+    "lead-time": "3"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "label": "No",
+    "value": "A",
+    "bool": false
+  },
+  {
+    "label": "Yes",
+    "value": "B",
+    "bool": true
+  }
+]

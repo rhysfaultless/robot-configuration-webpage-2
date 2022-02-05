@@ -6,7 +6,10 @@ Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</
 1. clone this repository
 2. in a terminal, navigate to the repository on your local machine, and then run:
   1. `npm install next react react-dom`
-  2. `npm run dev`
+  2. `npm i --save react-select`
+  3. `npm install three @react-three/fiber`
+  4. `npm install @react-three/drei`
+  5. `npm run dev`
 
 ## deploying on Vercel
 This proccess is rather simple. The Production Deployment on Vercel uses the code on this Github repositories `main` branch. 
