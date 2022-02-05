@@ -18,11 +18,7 @@ import ModelRobotChassisBase from "/components/three-models/ModelRobotChassisBas
 import ModelRobotChassisPanels from "/components/three-models/ModelRobotChassisPanelsDingoOmni";
 import ModelRobotChassisWheels from "/components/three-models/ModelRobotChassisWheelsDingoOmni";
 // custom component imports - three.js - attachments and sensors
-import ModelAttachmentHokuyo from "/components/three-models/ModelAttachmentHokuyo";
-import ModelAttachmentMicrostrain15 from "/components/three-models/ModelAttachmentMicrostrain15";
-import ModelAttachmentPlate50 from "/components/three-models/ModelAttachmentPlate50";
-import ModelAttachmentPlate100 from "/components/three-models/ModelAttachmentPlate100";
-import ModelAttachmentVelodyne from "/components/three-models/ModelAttachmentVelodyne";
+import ModelAttachments from "/components/three-models/ModelAttachmentsDingoOmni.js";
 
 // json data imports - robot specific
 import selectYesNoData from "/public/json/DataYesNo";
@@ -30,15 +26,11 @@ import selectColourData from "/public/json/DataColour";
 import selectComputerData from "/public/json/DataComputer";
 import selectBatteryData from "/public/json/DataBattery";
 import selectAttachmentData from "/public/json/DataAttachment";
-//testing
 import attachmentPositionData from "/public/json/AttachmentPositionDingoOmni";
-import attachmentPositionHeights from "/public/json/AttachmentPositionHeights";
+import attachmentPositionHeights from "/public/json/AttachmentPositionBracketHeights";
 
 // configuration constants - robot specific
 const RobotPlatform = "Dingo-O";
-
-// colours
-const colourRobotChassisBase = "rgb(80, 80, 80)";
 
 function Page() {
   // define states
@@ -51,97 +43,10 @@ function Page() {
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(selectAttachmentData[0]);
   const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(selectAttachmentData[0]);
 
-  // setup for attachment one
-  const attachmentOneModels = [
-    <></>,
-    <ModelAttachmentVelodyne key="velodyneZero" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[0]}/>, 
-    <group key="null">
-      <ModelAttachmentPlate50 key="null" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[1]}/>,
-    </group>,
-    <group key="null">
-      <ModelAttachmentPlate100 key="null" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[2]}/>,
-    </group>,
-    <ModelAttachmentHokuyo key="null" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[0]} />,
-    <ModelAttachmentMicrostrain15 key="null" dataOne={attachmentPositionData[0]} dataTwo={attachmentPositionHeights[0]} />
-  ];
-  function AttachmentOneRender() {
+  function AttachmentRenderer(props) {
     for (let i = 0; i < selectAttachmentData.length; i++) {
-      if (selectAttachmentData[i] == attachmentOneSelectionState) {
-        return attachmentOneModels[i];
-      }
-    }
-    return null;
-  }
-
-  // setup for attachment two
-  const attachmentTwoModels = [
-    <></>,
-    <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[0]}/>, 
-    <group key="null">
-      <ModelAttachmentPlate50 key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[1]}/>,
-    </group>,
-    <group key="null">
-      <ModelAttachmentPlate100 key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[2]}/>,
-    </group>,
-    <ModelAttachmentHokuyo key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[0]} />,
-    <ModelAttachmentMicrostrain15 key="null" dataOne={attachmentPositionData[1]} dataTwo={attachmentPositionHeights[0]} />
-  ];
-  function AttachmentTwoRender() {
-    for (let i = 0; i < selectAttachmentData.length; i++) {
-      if (selectAttachmentData[i] == attachmentTwoSelectionState) {
-        return attachmentTwoModels[i];
-      }
-    }
-    return null;
-  }
-
-  // setup for attachment Three
-  const attachmentThreeModels = [
-    <></>,
-    <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[0]}/>, 
-    <group key="null">
-      <ModelAttachmentPlate50 key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[1]}/>,
-    </group>,
-    <group key="null">
-      <ModelAttachmentPlate100 key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[2]}/>,
-    </group>,
-    <ModelAttachmentHokuyo key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[0]} />,
-    <ModelAttachmentMicrostrain15 key="null" dataOne={attachmentPositionData[2]} dataTwo={attachmentPositionHeights[0]} />
-  ];
-  function AttachmentThreeRender() {
-    for (let i = 0; i < selectAttachmentData.length; i++) {
-      if (selectAttachmentData[i] == attachmentThreeSelectionState) {
-        return attachmentThreeModels[i];
-      }
-    }
-    return null;
-  }
-
-  // setup for attachment Four
-  const attachmentFourModels = [
-    <></>,
-    <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[0]}/>, 
-    <group key="null">
-      <ModelAttachmentPlate50 key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[1]}/>,
-    </group>,
-    <group key="null">
-      <ModelAttachmentPlate100 key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[0]} />
-      <ModelAttachmentVelodyne key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[2]}/>,
-    </group>,
-    <ModelAttachmentHokuyo key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[0]} />,
-    <ModelAttachmentMicrostrain15 key="null" dataOne={attachmentPositionData[3]} dataTwo={attachmentPositionHeights[0]} />
-  ];
-  function AttachmentFourRender() {
-    for (let i = 0; i < selectAttachmentData.length; i++) {
-      if (selectAttachmentData[i] == attachmentFourSelectionState) {
-        return attachmentFourModels[i];
+      if (selectAttachmentData[i] == props.attachmentSelectionState) {
+        return <ModelAttachments modelAttachmentId={i} modelAttachmentPosition={props.attachmentPosition} />;
       }
     }
     return null;
@@ -251,10 +156,10 @@ function Page() {
               <ModelRobotChassisBase />
               <ModelRobotChassisPanels modelColour={colourSeletionState.rgb} />
               <ModelRobotChassisWheels />
-              <AttachmentOneRender />
-              <AttachmentTwoRender />
-              <AttachmentThreeRender />
-              <AttachmentFourRender />
+              <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />
+              <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
+              <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
+              <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
               {bananaSeletionState && <ModelBanana dataOne={attachmentPositionData[4]} dataTwo={attachmentPositionHeights[0]} />}
             </Suspense>
           </Canvas>

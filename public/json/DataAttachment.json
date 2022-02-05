@@ -4,53 +4,41 @@
     "value": "A",
     "category": "null",
     "price": 0,
-    "lead-time": 0,
-    "model-component-location": "",
-    "robot-positions": { "attachment0": true, "attachment1": true }
+    "lead-time": 0
   },
   {
     "label": "Velodyne, Low",
     "value": "B",
     "category": "lidar",
     "price": 5000,
-    "lead-time": 3,
-    "model-component-location": "/components/three-models/ModelAttachmentVelodyne",
-    "robot-positions": { "attachment0": true, "attachment1": true }
+    "lead-time": 3
   },
   {
     "label": "Velodyne, Mid",
     "value": "C",
     "category": "lidar",
     "price": 5000,
-    "lead-time": 3,
-    "model-component-location": "/components/three-models/ModelAttachmentVelodyne",
-    "robot-positions": { "attachment0": true, "attachment1": true }
+    "lead-time": 3
   },
   {
     "label": "Velodyne, High",
     "value": "D",
     "category": "lidar",
     "price": 5000,
-    "lead-time": 3,
-    "model-component-location": "/components/three-models/ModelAttachmentVelodyne",
-    "robot-positions": { "attachment0": true, "attachment1": true }
+    "lead-time": 3
   },
   {
     "label": "Hokuyo",
     "value": "E",
     "category": "lidar",
     "price": 3000,
-    "lead-time": 3,
-    "model-component-location": "/components/three-models/ModelAttachmentVelodyne",
-    "robot-positions": { "attachment0": true, "attachment1": true }
+    "lead-time": 3
   },
   {
     "label": "Microstain",
     "value": "F",
     "category": "ahrs",
     "price": 3000,
-    "lead-time": 3,
-    "model-component-location": "/components/three-models/ModelAttachmentMicrostrain15",
-    "robot-positions": { "attachment0": true, "attachment1": true }
+    "lead-time": 3
   }
 ]
