@@ -1,42 +1,42 @@
 [
   {
     "label": "None",
-    "value": "A",
+    "value": "none",
     "category": "null",
     "price": 0,
     "lead-time": 0
   },
   {
     "label": "Velodyne, Low",
-    "value": "B",
+    "value": "velodyne_low",
     "category": "lidar",
     "price": 5000,
     "lead-time": 3
   },
   {
     "label": "Velodyne, Mid",
-    "value": "C",
+    "value": "velodyne_mid",
     "category": "lidar",
     "price": 5000,
     "lead-time": 3
   },
   {
     "label": "Velodyne, High",
-    "value": "D",
+    "value": "velodyne_high",
     "category": "lidar",
     "price": 5000,
     "lead-time": 3
   },
   {
     "label": "Hokuyo",
-    "value": "E",
+    "value": "hokuyo",
     "category": "lidar",
     "price": 3000,
     "lead-time": 3
   },
   {
     "label": "Microstain",
-    "value": "F",
+    "value": "microstrain",
     "category": "ahrs",
     "price": 3000,
     "lead-time": 3

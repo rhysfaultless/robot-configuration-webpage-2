@@ -27,7 +27,7 @@ import selectComputerData from "/public/json/DataComputer";
 import selectBatteryData from "/public/json/DataBattery";
 import selectAttachmentData from "/public/json/DataAttachment";
 import attachmentPositionData from "/public/json/AttachmentPositionDingoOmni";
-import attachmentPositionHeights from "/public/json/AttachmentPositionBracketHeights";
+import attachmentPositionHeights from "/public/json/AttachmentPositionHeights";
 
 // configuration constants - robot specific
 const RobotPlatform = "Dingo-O";
@@ -46,7 +46,7 @@ function Page() {
   function AttachmentRenderer(props) {
     for (let i = 0; i < selectAttachmentData.length; i++) {
       if (selectAttachmentData[i] == props.attachmentSelectionState) {
-        return <ModelAttachments modelAttachmentId={i} modelAttachmentPosition={props.attachmentPosition} />;
+        return <ModelAttachments modelAttachmentId={i} modelAttachmentPosition={props.attachmentPosition} userSelectedData={props.attachmentSelectionState} />;
       }
     }
     return null;
