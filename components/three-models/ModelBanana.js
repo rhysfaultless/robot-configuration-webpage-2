@@ -10,8 +10,8 @@ export default function Model(props) {
   let modelPosition = [];
   let modelRotation = [];
   for (let i = 0; i < 3; i++) {
-    modelPosition[i] = props.dataOne.xyz[i] + props.dataTwo.xyz[i]; 
-    modelRotation[i] = props.dataOne.uvw[i] + props.dataTwo.uvw[i];
+    modelPosition[i] = props.dataOne.xyz[i]; 
+    modelRotation[i] = props.dataOne.uvw[i];
   }
   const { nodes, materials } = useGLTF("/models/banana.glb");
   return (

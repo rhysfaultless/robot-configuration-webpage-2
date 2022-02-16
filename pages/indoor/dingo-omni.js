@@ -5,6 +5,11 @@ import Head from "next/head";
 import { React, Suspense, useState } from "react";
 import Select from "react-select";
 
+// Price, Lead-time, and Quoting imports
+//import { Price } from "/components/price-lead-quote/Price";
+import PriceText from "/components/price-lead-quote/PriceText";
+import LeadtimeText from "/components/price-lead-quote/LeadtimeText";
+
 // Three.js library imports
 import { Canvas } from "@react-three/fiber";
 
@@ -17,35 +22,36 @@ import ModelBanana from "/components/three-models/ModelBanana";
 import ModelRobotChassisBase from "/components/three-models/ModelRobotChassisBaseDingoOmni";
 import ModelRobotChassisPanels from "/components/three-models/ModelRobotChassisPanelsDingoOmni";
 import ModelRobotChassisWheels from "/components/three-models/ModelRobotChassisWheelsDingoOmni";
+
 // custom component imports - three.js - attachments and sensors
 import ModelAttachments from "/components/three-models/ModelAttachmentsDingoOmni.js";
 
 // json data imports - robot specific
+import dataFile from "/public/json/DataDingoOmni";
 import selectYesNoData from "/public/json/DataYesNo";
-import selectColourData from "/public/json/DataColour";
 import selectComputerData from "/public/json/DataComputer";
-import selectBatteryData from "/public/json/DataBattery";
-import selectAttachmentData from "/public/json/DataAttachment";
-import attachmentPositionData from "/public/json/AttachmentPositionDingoOmni";
-import attachmentPositionHeights from "/public/json/AttachmentPositionHeights";
-
-// configuration constants - robot specific
-const RobotPlatform = "Dingo-O";
+const webpageTabTitle = dataFile.webpage.tabTitle;
+const robotPlatformData = dataFile.robotPlatform;
+const colourData = dataFile.panelColours;
+const batteryData = dataFile.batteryItems;
+const attachmentData = dataFile.attachmentItems;
+const bananaPositionData = dataFile.bananaPosition;
 
 function Page() {
   // define states
   const [bananaSeletionState, changeBananaSelectionState] = useState(selectYesNoData[0].bool);
-  const [colourSeletionState, changeColourSelectionState] = useState(selectColourData[0]);
+  const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
   const [computerSelectionState, changeComputerSelectionState] = useState(selectComputerData[0]);
-  const [batterySelectionState, changeBatterySelectionState] = useState(selectBatteryData[0]);
-  const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(selectAttachmentData[0]);
-  const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(selectAttachmentData[0]);
-  const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(selectAttachmentData[0]);
-  const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(selectAttachmentData[0]);
+  const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
+  const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
+  const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
+  const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
+  const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(attachmentData[0]);
+  const priceLeadStatesArray = [robotPlatformData, colourSelectionState, computerSelectionState, batterySelectionState, attachmentOneSelectionState, attachmentTwoSelectionState, attachmentThreeSelectionState, attachmentFourSelectionState];
 
   function AttachmentRenderer(props) {
-    for (let i = 0; i < selectAttachmentData.length; i++) {
-      if (selectAttachmentData[i] == props.attachmentSelectionState) {
+    for (let i = 0; i < attachmentData.length; i++) {
+      if (attachmentData[i] == props.attachmentSelectionState) {
         return <ModelAttachments modelAttachmentId={i} modelAttachmentPosition={props.attachmentPosition} userSelectedData={props.attachmentSelectionState} />;
       }
     }
@@ -55,21 +61,21 @@ function Page() {
   return (
     <div>
       <Head>
-        <title>Clearpath | {RobotPlatform}</title>
+        <title>{webpageTabTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="md:flex flex-col md:flex-row md:min-h-screen w-full bg-gray-100 text-black">
         <aside className="flex flex-col w-1/3  dark:bg-stone-300">
           <div className="sidebar-content px-4 py-6">
             <ul className="flex flex-col w-full text-black">
-              <li className="inline-block max-w-s px-1 py-2 text-center">
+              <li className="inline-block max-w-s px-1 py-4 text-center">
                 <span className="uppercase">Configure</span>
               </li>
 
               <li className="inline-block max-w-s px-1 py-1">
                 <p className="float-left w-1/3">Colour</p>
                 <div className="float-right w-2/3">
-                  <Select options={selectColourData} defaultValue={selectColourData[0]} onChange={(event) => changeColourSelectionState(event)} />
+                  <Select options={colourData} defaultValue={colourData[0]} onChange={(event) => changeColourSelectionState(event)} />
                 </div>
               </li>
 
@@ -83,7 +89,7 @@ function Page() {
               <li className="inline-block max-w-s px-1 py-1">
                 <p className="float-left w-1/3">Battery</p>
                 <div className="float-right w-2/3">
-                  <Select options={selectBatteryData} defaultValue={selectBatteryData[0]} onChange={(event) => changeBatterySelectionState(event)} />
+                  <Select options={batteryData} defaultValue={batteryData[0]} onChange={(event) => changeBatterySelectionState(event)} />
                 </div>
               </li>
 
@@ -91,8 +97,8 @@ function Page() {
                 <p className="float-left w-1/3">Attachment 1</p>
                 <div className="float-right w-2/3">
                   <Select
-                    options={selectAttachmentData}
-                    defaultValue={selectAttachmentData[0]}
+                    options={attachmentData}
+                    defaultValue={attachmentData[0]}
                     onChange={(event) => changeAttachmentOneSelectionState(event)}
                   />
                 </div>
@@ -102,8 +108,8 @@ function Page() {
                 <p className="float-left w-1/3">Attachment 2</p>
                 <div className="float-right w-2/3">
                   <Select
-                    options={selectAttachmentData}
-                    defaultValue={selectAttachmentData[0]}
+                    options={attachmentData}
+                    defaultValue={attachmentData[0]}
                     onChange={(event) => changeAttachmentTwoSelectionState(event)}
                   />
                 </div>
@@ -113,8 +119,8 @@ function Page() {
                 <p className="float-left w-1/3">Attachment 3</p>
                 <div className="float-right w-2/3">
                   <Select
-                    options={selectAttachmentData}
-                    defaultValue={selectAttachmentData[0]}
+                    options={attachmentData}
+                    defaultValue={attachmentData[0]}
                     onChange={(event) => changeAttachmentThreeSelectionState(event)}
                   />
                 </div>
@@ -124,8 +130,8 @@ function Page() {
                 <p className="float-left w-1/3">Attachment 4</p>
                 <div className="float-right w-2/3">
                   <Select
-                    options={selectAttachmentData}
-                    defaultValue={selectAttachmentData[0]}
+                    options={attachmentData}
+                    defaultValue={attachmentData[0]}
                     onChange={(event) => changeAttachmentFourSelectionState(event)}
                   />
                 </div>
@@ -138,8 +144,11 @@ function Page() {
                 </div>
               </li>
 
-              <li className="inline-block max-w-s px-1 py-2 text-center">
-                <span className="uppercase">Download Quote</span>
+              <li className="inline-block max-w-s px-1 py-8 text-left">
+                <span>
+                  <div className="float-left w-1/2"><PriceText statesArray={priceLeadStatesArray}/></div>
+                  <div className="float-right w-1/2"><LeadtimeText statesArray={priceLeadStatesArray}/></div>
+                </span>
               </li>
             </ul>
           </div>
@@ -154,13 +163,13 @@ function Page() {
             {/* Three.js model goes here */}
             <Suspense fallback={null}>
               <ModelRobotChassisBase />
-              <ModelRobotChassisPanels modelColour={colourSeletionState.rgb} />
+              <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
               <ModelRobotChassisWheels />
               <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />
               <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
               <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
               <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
-              {bananaSeletionState && <ModelBanana dataOne={attachmentPositionData[4]} dataTwo={attachmentPositionHeights[0]} />}
+              {bananaSeletionState && <ModelBanana dataOne={bananaPositionData} />}
             </Suspense>
           </Canvas>
         </main>

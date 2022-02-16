@@ -1,0 +1,162 @@
+{
+  "webpage": {
+    "tabTitle": "Clearpath | Dingo-O"
+  },
+
+  "robotPlatform": {
+    "price": 10000,
+    "leadTime": 3
+  },
+
+  "panelColours": [
+    {
+      "label": "Yellow",
+      "value": "A",
+      "price": 0,
+      "leadTime": 0,
+      "hex": "0xffa700",
+      "rgb": "rgb(255, 167, 0)"
+    },
+    {
+      "label": "Black",
+      "value": "B",
+      "price": 300,
+      "leadTime": 7,
+      "hex": "0x303030",
+      "rgb": "rgb(48, 48, 48)"
+    },
+    {
+      "label": "White",
+      "value": "C",
+      "price": 300,
+      "leadTime": 7,
+      "hex": "0xd6d6d6",
+      "rgb": "rgb(214, 214, 214)"
+    },
+    {
+      "label": "Red",
+      "value": "D",
+      "price": 300,
+      "leadTime": 7,
+      "hex": "0xc92f24",
+      "rgb": "rgb(201, 47, 36)"
+    },
+    {
+      "label": "Orange",
+      "value": "E",
+      "price": 300,
+      "leadTime": 7,
+      "hex": "0xff6700",
+      "rgb": "rgb(255, 103, 0)"
+    },
+    {
+      "label": "Blue",
+      "value": "F",
+      "price": 300,
+      "leadTime": 7,
+      "hex": "0x536882",
+      "rgb": "rgb(83, 104, 130)"
+    },
+    {
+      "label": "Green",
+      "value": "G",
+      "price": 300,
+      "leadTime": 7,
+      "hex": "0x3b4216",
+      "rgb": "rgb(59,66, 22)"
+    }
+  ],
+
+  "batteryItems": [
+    {
+      "label": "Lead Acid",
+      "value": "A",
+      "price": 0,
+      "leadTime": 0
+    },
+    {
+      "label": "Lithium",
+      "value": "B",
+      "price": 1000,
+      "leadTime": 3
+    }
+  ],
+
+  "bananaPosition": {
+    "name": "bananaPosition",
+    "xyz": [100, 0, 305],
+    "uvw": [0, 0.97, 0]
+  },
+
+  "attachmentPositions": [
+    {
+      "id": 1,
+      "name": "attachmentPositionOne",
+      "xyz": [240, 69, 0],
+      "uvw": [0, 0, 0]
+    },
+    {
+      "id": 2,
+      "name": "attachmentPositionTwo",
+      "xyz": [80, 69, 0],
+      "uvw": [0, 0, 0]
+    },
+    {
+      "id": 3,
+      "name": "attachmentPositionThree",
+      "xyz": [-80, 69, 0],
+      "uvw": [0, 3.14159, 0]
+    },
+    {
+      "id": 4,
+      "name": "attachmentPositionFour",
+      "xyz": [-240, 69, 0],
+      "uvw": [0, 3.14159, 0]
+    }
+  ],
+
+  "attachmentItems": [
+    {
+      "label": "None",
+      "value": "none",
+      "category": "null",
+      "price": 0,
+      "leadTime": 0
+    },
+    {
+      "label": "Velodyne, Low",
+      "value": "velodyne_low",
+      "category": "lidar",
+      "price": 5000,
+      "leadTime": 3
+    },
+    {
+      "label": "Velodyne, Mid",
+      "value": "velodyne_mid",
+      "category": "lidar",
+      "price": 5000,
+      "leadTime": 3
+    },
+    {
+      "label": "Velodyne, High",
+      "value": "velodyne_high",
+      "category": "lidar",
+      "price": 5000,
+      "leadTime": 3
+    },
+    {
+      "label": "Hokuyo",
+      "value": "hokuyo",
+      "category": "lidar",
+      "price": 3000,
+      "leadTime": 3
+    },
+    {
+      "label": "Microstain",
+      "value": "microstrain",
+      "category": "ahrs",
+      "price": 3000,
+      "leadTime": 3
+    }
+  ]
+}
