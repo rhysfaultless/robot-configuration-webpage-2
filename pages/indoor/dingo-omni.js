@@ -5,6 +5,11 @@ import Head from "next/head";
 import { React, Suspense, useState } from "react";
 import Select from "react-select";
 
+// Price, Lead-time, and Quoting imports
+//import { Price } from "/components/price-lead-quote/Price";
+import PriceText from "/components/price-lead-quote/PriceText";
+import LeadtimeText from "/components/price-lead-quote/LeadtimeText";
+
 // Three.js library imports
 import { Canvas } from "@react-three/fiber";
 
@@ -42,6 +47,7 @@ function Page() {
   const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
   const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(attachmentData[0]);
+  const priceLeadStatesArray = [robotPlatformData, colourSelectionState, computerSelectionState, batterySelectionState, attachmentOneSelectionState, attachmentTwoSelectionState, attachmentThreeSelectionState, attachmentFourSelectionState];
 
   function AttachmentRenderer(props) {
     for (let i = 0; i < attachmentData.length; i++) {
@@ -50,44 +56,6 @@ function Page() {
       }
     }
     return null;
-  }
-
-  function Price() {
-    let priceValue = 
-      robotPlatformData.price
-      + colourSelectionState.price
-      + computerSelectionState.price
-      + batterySelectionState.price
-      + attachmentOneSelectionState.price 
-      + attachmentTwoSelectionState.price 
-      + attachmentThreeSelectionState.price 
-      + attachmentFourSelectionState.price;
-    return priceValue;
-  }
-
-  function PriceText() {
-    let returnedString = "PRICE: $" + Price().toString();
-    return <p> {returnedString} </p>
-  }
-
-  function LeadTime() {
-    let leadTimeValue =
-      Math.max( 
-        robotPlatformData.leadTime,
-        colourSelectionState.leadTime,
-        computerSelectionState.leadTime,
-        batterySelectionState.leadTime,
-        attachmentOneSelectionState.leadTime,
-        attachmentTwoSelectionState.leadTime,
-        attachmentThreeSelectionState.leadTime,
-        attachmentFourSelectionState.leadTime
-      );
-    return leadTimeValue;
-  }
-
-  function LeadTimeText() {
-    let returnedString = "LEAD TIME: " + LeadTime().toString() + " WEEKS";
-    return <p> {returnedString} </p>
   }
 
   return (
@@ -178,8 +146,8 @@ function Page() {
 
               <li className="inline-block max-w-s px-1 py-8 text-left">
                 <span>
-                  <div className="float-left w-1/2"><PriceText /></div>
-                  <div className="float-right w-1/2"><LeadTimeText /></div>
+                  <div className="float-left w-1/2"><PriceText statesArray={priceLeadStatesArray}/></div>
+                  <div className="float-right w-1/2"><LeadtimeText statesArray={priceLeadStatesArray}/></div>
                 </span>
               </li>
             </ul>

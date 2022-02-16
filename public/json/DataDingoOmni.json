@@ -13,7 +13,7 @@
       "label": "Yellow",
       "value": "A",
       "price": 0,
-      "leadTime": "0",
+      "leadTime": 0,
       "hex": "0xffa700",
       "rgb": "rgb(255, 167, 0)"
     },
@@ -21,7 +21,7 @@
       "label": "Black",
       "value": "B",
       "price": 300,
-      "leadTime": "7",
+      "leadTime": 7,
       "hex": "0x303030",
       "rgb": "rgb(48, 48, 48)"
     },
@@ -29,7 +29,7 @@
       "label": "White",
       "value": "C",
       "price": 300,
-      "leadTime": "7",
+      "leadTime": 7,
       "hex": "0xd6d6d6",
       "rgb": "rgb(214, 214, 214)"
     },
@@ -37,7 +37,7 @@
       "label": "Red",
       "value": "D",
       "price": 300,
-      "leadTime": "7",
+      "leadTime": 7,
       "hex": "0xc92f24",
       "rgb": "rgb(201, 47, 36)"
     },
@@ -45,7 +45,7 @@
       "label": "Orange",
       "value": "E",
       "price": 300,
-      "leadTime": "7",
+      "leadTime": 7,
       "hex": "0xff6700",
       "rgb": "rgb(255, 103, 0)"
     },
@@ -53,7 +53,7 @@
       "label": "Blue",
       "value": "F",
       "price": 300,
-      "leadTime": "7",
+      "leadTime": 7,
       "hex": "0x536882",
       "rgb": "rgb(83, 104, 130)"
     },
@@ -61,7 +61,7 @@
       "label": "Green",
       "value": "G",
       "price": 300,
-      "leadTime": "7",
+      "leadTime": 7,
       "hex": "0x3b4216",
       "rgb": "rgb(59,66, 22)"
     }
@@ -72,13 +72,13 @@
       "label": "Lead Acid",
       "value": "A",
       "price": 0,
-      "leadTime": "0"
+      "leadTime": 0
     },
     {
       "label": "Lithium",
       "value": "B",
       "price": 1000,
-      "leadTime": "3"
+      "leadTime": 3
     }
   ],
 
