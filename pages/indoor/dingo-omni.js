@@ -6,7 +6,6 @@ import { React, Suspense, useState } from "react";
 import Select from "react-select";
 
 // Price, Lead-time, and Quoting imports
-//import { Price } from "/components/price-lead-quote/Price";
 import PriceText from "/components/price-lead-quote/PriceText";
 import LeadtimeText from "/components/price-lead-quote/LeadtimeText";
 
