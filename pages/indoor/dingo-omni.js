@@ -28,7 +28,7 @@ import ModelAttachments from "/components/three-models/ModelAttachmentsDingoOmni
 // json data imports - robot specific
 import dataFile from "/public/json/DataDingoOmni";
 import selectYesNoData from "/public/json/DataYesNo";
-import selectComputerData from "/public/json/DataComputer";
+import computerData from "/public/json/DataComputer";
 const webpageTabTitle = dataFile.webpage.tabTitle;
 const robotPlatformData = dataFile.robotPlatform;
 const colourData = dataFile.panelColours;
@@ -38,15 +38,26 @@ const bananaPositionData = dataFile.bananaPosition;
 
 function Page() {
   // define states
-  const [bananaSeletionState, changeBananaSelectionState] = useState(selectYesNoData[0].bool);
+  const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
+  const [towerSelectionState, changeTowerSelectionState] = useState(selectYesNoData[0]);
   const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
-  const [computerSelectionState, changeComputerSelectionState] = useState(selectComputerData[0]);
+  const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
   const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
   const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
   const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
   const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(attachmentData[0]);
-  const priceLeadStatesArray = [robotPlatformData, colourSelectionState, computerSelectionState, batterySelectionState, attachmentOneSelectionState, attachmentTwoSelectionState, attachmentThreeSelectionState, attachmentFourSelectionState];
+  const [attachmentFiveSelectionState, changeAttachmentFiveSelectionState] = useState(attachmentData[0]);
+  const priceLeadStatesArray = [
+    robotPlatformData,
+    colourSelectionState,
+    computerSelectionState,
+    batterySelectionState,
+    attachmentOneSelectionState,
+    attachmentTwoSelectionState,
+    attachmentThreeSelectionState,
+    attachmentFourSelectionState,
+  ];
 
   function AttachmentRenderer(props) {
     for (let i = 0; i < attachmentData.length; i++) {
@@ -55,6 +66,22 @@ function Page() {
       }
     }
     return null;
+  }
+
+  function SelectFormatted(props) {
+    return (
+      <li className="inline-block max-w-s px-1 py-1">
+        <p className="float-left w-1/3">{props.displayName}</p>
+        <div className="float-right w-2/3">
+          <Select
+            options={props.options}
+            value={props.currentState}
+            defaultValue={props.options[props.defaultValue]}
+            onChange={(event) => props.changeStateFunction(event)}
+          />
+        </div>
+      </li>
+    );
   }
 
   return (
@@ -71,82 +98,106 @@ function Page() {
                 <span className="uppercase">Configure</span>
               </li>
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Colour</p>
-                <div className="float-right w-2/3">
-                  <Select options={colourData} defaultValue={colourData[0]} onChange={(event) => changeColourSelectionState(event)} />
-                </div>
-              </li>
+              {/*  Select, Colour  */}
+              <SelectFormatted
+                displayName={"Colour"}
+                options={colourData}
+                defaultValue={0}
+                currentState={colourSelectionState}
+                changeStateFunction={changeColourSelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Computer</p>
-                <div className="float-right w-2/3">
-                  <Select options={selectComputerData} defaultValue={selectComputerData[0]} onChange={(event) => changeComputerSelectionState(event)} />
-                </div>
-              </li>
+              {/*  Select, Computer  */}
+              <SelectFormatted
+                displayName={"Computer"}
+                options={computerData}
+                defaultValue={0}
+                currentState={computerSelectionState}
+                changeStateFunction={changeComputerSelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Battery</p>
-                <div className="float-right w-2/3">
-                  <Select options={batteryData} defaultValue={batteryData[0]} onChange={(event) => changeBatterySelectionState(event)} />
-                </div>
-              </li>
+              {/*  Select, Battery  */}
+              <SelectFormatted
+                displayName={"Battery"}
+                options={batteryData}
+                defaultValue={0}
+                currentState={batterySelectionState}
+                changeStateFunction={changeBatterySelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Attachment 1</p>
-                <div className="float-right w-2/3">
-                  <Select
-                    options={attachmentData}
-                    defaultValue={attachmentData[0]}
-                    onChange={(event) => changeAttachmentOneSelectionState(event)}
-                  />
-                </div>
-              </li>
+              {/*  Select, Attachment 1  */}
+              <SelectFormatted
+                displayName={"Attachment 1"}
+                options={attachmentData}
+                defaultValue={0}
+                currentState={attachmentOneSelectionState}
+                changeStateFunction={changeAttachmentOneSelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Attachment 2</p>
-                <div className="float-right w-2/3">
-                  <Select
-                    options={attachmentData}
-                    defaultValue={attachmentData[0]}
-                    onChange={(event) => changeAttachmentTwoSelectionState(event)}
-                  />
-                </div>
-              </li>
+              {/*  Select, Attachment 2  */}
+              <SelectFormatted
+                displayName={"Attachment 2"}
+                options={attachmentData}
+                defaultValue={0}
+                currentState={attachmentTwoSelectionState}
+                changeStateFunction={changeAttachmentTwoSelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Attachment 3</p>
-                <div className="float-right w-2/3">
-                  <Select
-                    options={attachmentData}
-                    defaultValue={attachmentData[0]}
-                    onChange={(event) => changeAttachmentThreeSelectionState(event)}
-                  />
-                </div>
-              </li>
+              {/*  Select, Attachment 3  */}
+              <SelectFormatted
+                displayName={"Attachment 3"}
+                options={attachmentData}
+                defaultValue={0}
+                currentState={attachmentThreeSelectionState}
+                changeStateFunction={changeAttachmentThreeSelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Attachment 4</p>
-                <div className="float-right w-2/3">
-                  <Select
-                    options={attachmentData}
-                    defaultValue={attachmentData[0]}
-                    onChange={(event) => changeAttachmentFourSelectionState(event)}
-                  />
-                </div>
-              </li>
+              {/*  Select, Attachment 4  */}
+              <SelectFormatted
+                displayName={"Attachment 4"}
+                options={attachmentData}
+                defaultValue={0}
+                currentState={attachmentFourSelectionState}
+                changeStateFunction={changeAttachmentFourSelectionState}
+              />
 
-              <li className="inline-block max-w-s px-1 py-1">
-                <p className="float-left w-1/3">Banana For Scale</p>
-                <div className="float-right w-2/3">
-                  <Select options={selectYesNoData} defaultValue={selectYesNoData[0]} onChange={(event) => changeBananaSelectionState(event.bool)} />
-                </div>
-              </li>
+              {/*  Select, Banana For Scale  */}
+              <SelectFormatted
+                displayName={"Banana For Scale"}
+                options={selectYesNoData}
+                defaultValue={0}
+                currentState={bananaSelectionState}
+                changeStateFunction={changeBananaSelectionState}
+              />
+
+              {/*  Select, Tower  */}
+              <SelectFormatted
+                displayName={"Add Sensor Tower"}
+                options={selectYesNoData}
+                defaultValue={0}
+                currentState={towerSelectionState}
+                changeStateFunction={changeTowerSelectionState}
+              />
+
+              {/*  Select, Attachment 5  */}
+              {towerSelectionState.bool && (
+                <SelectFormatted
+                  displayName={"Attachment 5"}
+                  options={attachmentData}
+                  defaultValue={0}
+                  currentState={attachmentFiveSelectionState}
+                  changeStateFunction={changeAttachmentFiveSelectionState}
+                />
+              )}
 
               <li className="inline-block max-w-s px-1 py-8 text-left">
                 <span>
-                  <div className="float-left w-1/2"><PriceText statesArray={priceLeadStatesArray}/></div>
-                  <div className="float-right w-1/2"><LeadtimeText statesArray={priceLeadStatesArray}/></div>
+                  <div className="float-left w-1/2">
+                    <PriceText statesArray={priceLeadStatesArray} />
+                  </div>
+                  <div className="float-right w-1/2">
+                    <LeadtimeText statesArray={priceLeadStatesArray} />
+                  </div>
                 </span>
               </li>
             </ul>
@@ -168,7 +219,7 @@ function Page() {
               <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
               <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
               <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
-              {bananaSeletionState && <ModelBanana dataOne={bananaPositionData} />}
+              {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
             </Suspense>
           </Canvas>
         </main>
