@@ -21,6 +21,7 @@ import ModelBanana from "/components/three-models/ModelBanana";
 import ModelRobotChassisBase from "/components/three-models/ModelRobotChassisBaseDingoOmni";
 import ModelRobotChassisPanels from "/components/three-models/ModelRobotChassisPanelsDingoOmni";
 import ModelRobotChassisWheels from "/components/three-models/ModelRobotChassisWheelsDingoOmni";
+import ModelRobotChassisTower from "/components/three-models/ModelRobotChassisTowerDingoOmni";
 
 // custom component imports - three.js - attachments and sensors
 import ModelAttachments from "/components/three-models/ModelAttachmentsDingoOmni.js";
@@ -33,13 +34,14 @@ const webpageTabTitle = dataFile.webpage.tabTitle;
 const robotPlatformData = dataFile.robotPlatform;
 const colourData = dataFile.panelColours;
 const batteryData = dataFile.batteryItems;
+const towerData = dataFile.tower;
 const attachmentData = dataFile.attachmentItems;
 const bananaPositionData = dataFile.bananaPosition;
 
 function Page() {
   // define states
   const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
-  const [towerSelectionState, changeTowerSelectionState] = useState(selectYesNoData[0]);
+  const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
   const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
   const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
   const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
@@ -48,6 +50,9 @@ function Page() {
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
   const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(attachmentData[0]);
   const [attachmentFiveSelectionState, changeAttachmentFiveSelectionState] = useState(attachmentData[0]);
+  const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
+  const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
+  const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
   const priceLeadStatesArray = [
     robotPlatformData,
     colourSelectionState,
@@ -57,6 +62,12 @@ function Page() {
     attachmentTwoSelectionState,
     attachmentThreeSelectionState,
     attachmentFourSelectionState,
+    attachmentFiveSelectionState,
+    attachmentSixSelectionState,
+    attachmentSevenSelectionState,
+    attachmentEightSelectionState,
+    towerSelectionState
+
   ];
 
   function AttachmentRenderer(props) {
@@ -161,19 +172,10 @@ function Page() {
                 changeStateFunction={changeAttachmentFourSelectionState}
               />
 
-              {/*  Select, Banana For Scale  */}
-              <SelectFormatted
-                displayName={"Banana For Scale"}
-                options={selectYesNoData}
-                defaultValue={0}
-                currentState={bananaSelectionState}
-                changeStateFunction={changeBananaSelectionState}
-              />
-
               {/*  Select, Tower  */}
               <SelectFormatted
-                displayName={"Add Sensor Tower"}
-                options={selectYesNoData}
+                displayName={"Attachment Tower"}
+                options={towerData}
                 defaultValue={0}
                 currentState={towerSelectionState}
                 changeStateFunction={changeTowerSelectionState}
@@ -189,6 +191,48 @@ function Page() {
                   changeStateFunction={changeAttachmentFiveSelectionState}
                 />
               )}
+
+              {/*  Select, Attachment 6  */}
+              {towerSelectionState.bool && (
+                <SelectFormatted
+                  displayName={"Attachment 6"}
+                  options={attachmentData}
+                  defaultValue={0}
+                  currentState={attachmentSixSelectionState}
+                  changeStateFunction={changeAttachmentSixSelectionState}
+                />
+              )}
+
+              {/*  Select, Attachment 7  */}
+              {towerSelectionState.bool && (
+                <SelectFormatted
+                  displayName={"Attachment 7"}
+                  options={attachmentData}
+                  defaultValue={0}
+                  currentState={attachmentSevenSelectionState}
+                  changeStateFunction={changeAttachmentSevenSelectionState}
+                />
+              )}
+
+              {/*  Select, Attachment 8  */}
+              {towerSelectionState.bool && (
+                <SelectFormatted
+                  displayName={"Attachment 8"}
+                  options={attachmentData}
+                  defaultValue={0}
+                  currentState={attachmentEightSelectionState}
+                  changeStateFunction={changeAttachmentEightSelectionState}
+                />
+              )}
+
+              {/*  Select, Banana For Scale  */}
+              <SelectFormatted
+                displayName={"Banana For Scale"}
+                options={selectYesNoData}
+                defaultValue={0}
+                currentState={bananaSelectionState}
+                changeStateFunction={changeBananaSelectionState}
+              />
 
               <li className="inline-block max-w-s px-1 py-8 text-left">
                 <span>
@@ -210,15 +254,25 @@ function Page() {
             <ConfiguredOrbitControls />
             <ConfiguredCamera />
 
-            {/* Three.js model goes here */}
+            {/*  Three.js models  */}
             <Suspense fallback={null}>
               <ModelRobotChassisBase />
               <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
               <ModelRobotChassisWheels />
+
+              {/*  Attachments  */}
               <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />
               <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
               <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
               <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
+
+              {/*  Tower Attachments  */}
+              {towerSelectionState.bool && <ModelRobotChassisTower />}
+              {towerSelectionState.bool && <AttachmentRenderer attachmentSelectionState={attachmentFiveSelectionState} attachmentPosition={4} />}
+              {towerSelectionState.bool && <AttachmentRenderer attachmentSelectionState={attachmentSixSelectionState} attachmentPosition={5} />}
+              {towerSelectionState.bool && <AttachmentRenderer attachmentSelectionState={attachmentSevenSelectionState} attachmentPosition={6} />}
+              {towerSelectionState.bool && <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />}
+
               {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
             </Suspense>
           </Canvas>

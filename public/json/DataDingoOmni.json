@@ -112,7 +112,32 @@
       "name": "attachmentPositionFour",
       "xyz": [-240, 69, 0],
       "uvw": [0, 3.14159, 0]
+    },
+    {
+      "id": 5,
+      "name": "attachmentPositionOne",
+      "xyz": [240, 269, 0],
+      "uvw": [0, 0, 0]
+    },
+    {
+      "id": 6,
+      "name": "attachmentPositionTwo",
+      "xyz": [80, 269, 0],
+      "uvw": [0, 0, 0]
+    },
+    {
+      "id": 7,
+      "name": "attachmentPositionThree",
+      "xyz": [-80, 269, 0],
+      "uvw": [0, 3.14159, 0]
+    },
+    {
+      "id": 8,
+      "name": "attachmentPositionFour",
+      "xyz": [-240, 269, 0],
+      "uvw": [0, 3.14159, 0]
     }
+    
   ],
 
   "attachmentItems": [
@@ -157,6 +182,23 @@
       "category": "ahrs",
       "price": 3000,
       "leadTime": 3
+    }
+  ],
+
+  "tower": [
+    {
+      "label": "No",
+      "value": "A",
+      "price": 0,
+      "leadTime": 0,
+      "bool": false
+    },
+    {
+      "label": "Yes",
+      "value": "B",
+      "price": 300,
+      "leadTime": 0,
+      "bool": true
     }
   ]
 }
