@@ -12,19 +12,19 @@
     "leadTime": 3
   },
   {
-    "label": "mini ITX, Intel i7, Nvidea 1050",
+    "label": "mini ITX, Intel i7, Nvidia 1050",
     "value": "C",
     "price": 3000,
     "leadTime": 3
   },
   {
-    "label": "Nvidea Jetson Nano",
+    "label": "Nvidia Jetson Nano",
     "value": "D",
     "price": 1000,
     "leadTime": 3
   },
   {
-    "label": "Nvidea Jetson AGX",
+    "label": "Nvidia Jetson AGX",
     "value": "E",
     "price": 2500,
     "leadTime": 3
