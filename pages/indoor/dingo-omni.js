@@ -29,9 +29,15 @@ import ModelAttachments from "/components/three-models/ModelAttachmentsDingoOmni
 // json data imports - robot specific
 import dataFile from "/public/json/DataDingoOmni";
 import selectYesNoData from "/public/json/DataYesNo";
-import computerData from "/public/json/DataComputer";
+import computerDataFile from "/public/json/DataComputer";
+const computerData = computerDataFile.computers;
+const computerProcessorData = computerDataFile.processors;
+const computerRamData = computerDataFile.ram;
+const computerStorageData = computerDataFile.storage;
+const computerGpuData = computerDataFile.gpu;
 const webpageTabTitle = dataFile.webpage.tabTitle;
 const robotPlatformData = dataFile.robotPlatform;
+const attachmentPositionData = dataFile.attachmentPositions;
 const colourData = dataFile.panelColours;
 const batteryData = dataFile.batteryItems;
 const towerData = dataFile.tower;
@@ -41,10 +47,18 @@ const bananaPositionData = dataFile.bananaPosition;
 function Page() {
   // define states
   const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
-  const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
+  //
   const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
-  const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
+  const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
   const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
+  //
+  const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
+  const [computerProcessorSelectionState, changeComputerProcessorSelectionState] = useState(computerProcessorData[1]);
+  const [computerRamSelectionState, changeComputerRamSelectionState] = useState(computerRamData[0]);
+  const [computerStorageSelectionState, changeComputerStorageSelectionState] = useState(computerStorageData[0]);
+  const [computerGpuSelectionState, changeComputerGpuSelectionState] = useState(computerGpuData[0]);
+  const computerComponentStates = [computerProcessorSelectionState, computerRamSelectionState, computerStorageSelectionState, computerGpuSelectionState];
+  //
   const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
   const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
@@ -53,22 +67,31 @@ function Page() {
   const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
   const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
   const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
-  const priceLeadStatesArray = [
-    robotPlatformData,
-    colourSelectionState,
-    computerSelectionState,
-    batterySelectionState,
-    attachmentOneSelectionState,
-    attachmentTwoSelectionState,
-    attachmentThreeSelectionState,
-    attachmentFourSelectionState,
-    attachmentFiveSelectionState,
-    attachmentSixSelectionState,
-    attachmentSevenSelectionState,
-    attachmentEightSelectionState,
-    towerSelectionState
-
+  const attachmentPositionsAndStates = [
+    [attachmentPositionData[0], attachmentOneSelectionState],
+    [attachmentPositionData[1], attachmentTwoSelectionState],
+    [attachmentPositionData[2], attachmentThreeSelectionState],
+    [attachmentPositionData[3], attachmentFourSelectionState],
+    [attachmentPositionData[4], attachmentFiveSelectionState],
+    [attachmentPositionData[5], attachmentSixSelectionState],
+    [attachmentPositionData[6], attachmentSevenSelectionState],
+    [attachmentPositionData[7], attachmentEightSelectionState],
   ];
+
+  function makePriceLeadStatesArray() {
+    let priceLeadStatesArray = [robotPlatformData, colourSelectionState, batterySelectionState, computerSelectionState, towerSelectionState];
+    for (let i = 0; i < attachmentPositionsAndStates.length; i++) {
+      if (!attachmentPositionsAndStates[i][0].onTowerBool || towerSelectionState.bool) {
+        priceLeadStatesArray.push(attachmentPositionsAndStates[i][1]);
+      }
+    }
+    for (let i = 0; i < computerComponentStates.length; i++) {
+      if (computerSelectionState.configurableComputerBool) {
+        priceLeadStatesArray.push(computerComponentStates[i]);
+      }
+    }
+    return priceLeadStatesArray;
+  }
 
   function AttachmentRenderer(props) {
     for (let i = 0; i < attachmentData.length; i++) {
@@ -118,6 +141,17 @@ function Page() {
                 changeStateFunction={changeColourSelectionState}
               />
 
+              {/*  Select, Battery  */}
+              <SelectFormatted
+                displayName={"Battery"}
+                options={batteryData}
+                defaultValue={0}
+                currentState={batterySelectionState}
+                changeStateFunction={changeBatterySelectionState}
+              />
+
+              <br />
+
               {/*  Select, Computer  */}
               <SelectFormatted
                 displayName={"Computer"}
@@ -127,13 +161,59 @@ function Page() {
                 changeStateFunction={changeComputerSelectionState}
               />
 
-              {/*  Select, Battery  */}
+              {/*  Select, Computer, Processor  */}
+              {computerSelectionState.configurableComputerBool && (
+                <SelectFormatted
+                  displayName={"CPU"}
+                  options={computerProcessorData}
+                  defaultValue={1}
+                  currentState={computerProcessorSelectionState}
+                  changeStateFunction={changeComputerProcessorSelectionState}
+                />
+              )}
+
+              {/*  Select, Computer, RAM  */}
+              {computerSelectionState.configurableComputerBool && (
+                <SelectFormatted
+                  displayName={"RAM"}
+                  options={computerRamData}
+                  defaultValue={0}
+                  currentState={computerRamSelectionState}
+                  changeStateFunction={changeComputerRamSelectionState}
+                />
+              )}
+
+              {/*  Select, Computer, Storage  */}
+              {computerSelectionState.configurableComputerBool && (
+                <SelectFormatted
+                  displayName={"Storage"}
+                  options={computerStorageData}
+                  defaultValue={1}
+                  currentState={computerStorageSelectionState}
+                  changeStateFunction={changeComputerStorageSelectionState}
+                />
+              )}
+
+              {/*  Select, Computer, GPU  */}
+              {computerSelectionState.configurableComputerBool && (
+                <SelectFormatted
+                  displayName={"GPU"}
+                  options={computerGpuData}
+                  defaultValue={0}
+                  currentState={computerGpuSelectionState}
+                  changeStateFunction={changeComputerGpuSelectionState}
+                />
+              )}
+
+              <br />
+
+              {/*  Select, Tower  */}
               <SelectFormatted
-                displayName={"Battery"}
-                options={batteryData}
+                displayName={"Attachment Tower"}
+                options={towerData}
                 defaultValue={0}
-                currentState={batterySelectionState}
-                changeStateFunction={changeBatterySelectionState}
+                currentState={towerSelectionState}
+                changeStateFunction={changeTowerSelectionState}
               />
 
               {/*  Select, Attachment 1  */}
@@ -170,15 +250,6 @@ function Page() {
                 defaultValue={0}
                 currentState={attachmentFourSelectionState}
                 changeStateFunction={changeAttachmentFourSelectionState}
-              />
-
-              {/*  Select, Tower  */}
-              <SelectFormatted
-                displayName={"Attachment Tower"}
-                options={towerData}
-                defaultValue={0}
-                currentState={towerSelectionState}
-                changeStateFunction={changeTowerSelectionState}
               />
 
               {/*  Select, Attachment 5  */}
@@ -225,6 +296,8 @@ function Page() {
                 />
               )}
 
+              <br />
+
               {/*  Select, Banana For Scale  */}
               <SelectFormatted
                 displayName={"Banana For Scale"}
@@ -237,10 +310,10 @@ function Page() {
               <li className="inline-block max-w-s px-1 py-8 text-left">
                 <span>
                   <div className="float-left w-1/2">
-                    <PriceText statesArray={priceLeadStatesArray} />
+                    <PriceText statesArray={makePriceLeadStatesArray()} />
                   </div>
                   <div className="float-right w-1/2">
-                    <LeadtimeText statesArray={priceLeadStatesArray} />
+                    <LeadtimeText statesArray={makePriceLeadStatesArray()} />
                   </div>
                 </span>
               </li>

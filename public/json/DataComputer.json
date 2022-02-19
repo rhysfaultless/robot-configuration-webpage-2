@@ -1,32 +1,130 @@
-[
-  {
-    "label": "mini ITX, Intel i5",
-    "value": "A",
-    "price": 1000,
-    "leadTime": 3
-  },
-  {
-    "label": "mini ITX, Intel i7",
-    "value": "B",
-    "price": 1200,
-    "leadTime": 3
-  },
-  {
-    "label": "mini ITX, Intel i7, Nvidia 1050",
-    "value": "C",
-    "price": 3000,
-    "leadTime": 3
-  },
-  {
-    "label": "Nvidia Jetson Nano",
-    "value": "D",
-    "price": 1000,
-    "leadTime": 3
-  },
-  {
-    "label": "Nvidia Jetson AGX",
-    "value": "E",
-    "price": 2500,
-    "leadTime": 3
-  }
-]
+{
+  "computers": [
+    {
+      "label": "mini ITX, Intel i5",
+      "value": "A",
+      "price": 300,
+      "leadTime": 0,
+      "configurableComputerBool": true
+    },
+    {
+      "label": "Raspberry Pi, 4 GB RAM",
+      "value": "B",
+      "price": 300,
+      "leadTime": 3,
+      "configurableComputerBool": false
+    },
+    {
+      "label": "Nvidia Jetson Nano, 4 GB RAM",
+      "value": "C",
+      "price": 600,
+      "leadTime": 3,
+      "configurableComputerBool": false
+    },
+    {
+      "label": "Nvidia Jetson AGX",
+      "value": "D",
+      "price": 1500,
+      "leadTime": 3,
+      "configurableComputerBool": false
+    }
+  ],
+  "processors": [
+    {
+      "label": "intel i3",
+      "value": "A",
+      "price": 300,
+      "leadTime": 4
+    },
+    {
+      "label": "intel i5",
+      "value": "B",
+      "price": 350,
+      "leadTime": 0
+    },
+    {
+      "label": "intel i7",
+      "value": "A",
+      "price": 400,
+      "leadTime": 0
+    },
+    {
+      "label": "intel i9",
+      "value": "A",
+      "price": 500,
+      "leadTime": 4
+    }
+  ],
+  "ram": [
+    {
+      "label": "8 GB",
+      "value": "A",
+      "price": 100,
+      "leadTime": 0
+    },
+    {
+      "label": "16 GB",
+      "value": "A",
+      "price": 200,
+      "leadTime": 0
+    },
+    {
+      "label": "32 GB",
+      "value": "A",
+      "price": 400,
+      "leadTime": 4
+    },
+    {
+      "label": "64 GB",
+      "value": "A",
+      "price": 700,
+      "leadTime": 4
+    }
+  ],
+  "storage": [
+    {
+      "label": "250 GB, NVMe",
+      "value": "A",
+      "price": 140,
+      "leadTime": 0
+    },
+    {
+      "label": "500 GB, NVMe",
+      "value": "A",
+      "price": 220,
+      "leadTime": 1
+    },
+    {
+      "label": "1 TB, NVMe",
+      "value": "A",
+      "price": 310,
+      "leadTime": 1
+    },
+    {
+      "label": "2 TB, NVMe",
+      "value": "A",
+      "price": 675,
+      "leadTime": 1
+    }
+  ],
+  "gpu": [
+    {
+      "label": "None",
+      "value": "A",
+      "price": 0,
+      "leadTime": 0
+    },
+    {
+      "label": "Nvidia GTX 1050 Ti",
+      "value": "B",
+      "price": 640,
+      "leadTime": 0
+    },
+    {
+      "label": "Nvidia GTX 3060",
+      "value": "C",
+      "price": 2000,
+      "leadTime": 2
+    }
+  ]
+}
