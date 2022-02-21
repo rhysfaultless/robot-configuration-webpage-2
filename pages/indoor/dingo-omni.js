@@ -119,13 +119,13 @@ function Page() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Head>
         <title>{webpageTabTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="md:flex flex-col md:flex-row md:min-h-screen w-full bg-gray-100 text-black">
-        <aside className="flex flex-col w-1/3  dark:bg-stone-300">
+      <div className="md:flex text-black container relative">
+        <aside className="w-1/3 dark:bg-stone-300 left-0">
           <div className="sidebar-content px-4 py-6">
             <ul className="flex flex-col w-full text-black">
               <li className="inline-block max-w-s px-1 py-4 text-center">
@@ -320,7 +320,7 @@ function Page() {
             </ul>
           </div>
         </aside>
-        <main className="flex flex-col w-2/3">
+        <main className="w-2/3 fixed h-screen right-0">
           <Canvas>
             <ambientLight intensity={0.7} />
             <spotLight position={[1000, 300, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />

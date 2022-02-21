@@ -5,7 +5,7 @@ import Image from "next/image";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-1.5 dark:bg-stone-700">
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-1.5 dark:bg-stone-700 sticky top-0 z-50">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
             <a>
