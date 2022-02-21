@@ -112,6 +112,16 @@ function Page() {
             value={props.currentState}
             defaultValue={props.options[props.defaultValue]}
             onChange={(event) => props.changeStateFunction(event)}
+            theme={(theme) => ({
+              ...theme,
+              borderRadius: 0,
+              colors: {
+                ...theme.colors,
+                primary: "#f0c700",
+                primary25: "#d4d4d4",
+                primary50: "#aaaaaa"
+              },
+            })}
           />
         </div>
       </li>
