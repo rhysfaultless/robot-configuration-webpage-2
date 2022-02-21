@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 class NavbarEmpty extends Component {
   render() {
     return (
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-0.5 dark:bg-stone-300">
+      <nav className="dark:bg-stone-300 py-1">
         <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <ul className="justify-end flex space-x-8 px-10">
             <li>
-              <p className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white items-center justify-center hover:text-stone-700'>
+              <p className="px-3 text-white hover:text-stone-700">
                  <br></br>
               </p>
             </li>
