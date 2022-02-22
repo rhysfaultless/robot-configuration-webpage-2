@@ -5,8 +5,8 @@ import Image from "next/image";
 class Footer extends Component {
   render() {
     return (
-      <footer className="dark:bg-stone-700 fixed inset-x-0 bottom-0">
-        <div className="py-2.5 flex flex-wrap items-center justify-center mx-auto md:text-sm md:font-small text-white space-x-12">
+      <footer className="h-8 dark:bg-stone-700 fixed inset-x-0 bottom-0">
+        <div className="flex py-1.5 flex-wrap items-center justify-center mx-auto md:text-sm md:font-small text-white space-x-12">
           {/*
             <div>
               <Link href='https://clearpathrobotics.com/'>
@@ -25,15 +25,15 @@ class Footer extends Component {
           <div>
             | &nbsp;
             <Link href="https://clearpathrobotics.com/privacy">
-              <a> Privacy </a>
+              <a className="hover:text-yellow-400"> Privacy </a>
             </Link>
             &nbsp; | &nbsp;
             <Link href="https://clearpathrobotics.com/terms-of-service">
-              <a> Terms of Service </a>
+              <a className="hover:text-yellow-400"> Terms of Service </a>
             </Link>
             &nbsp; | &nbsp;
             <Link href="https://clearpathrobotics.com/accessibility">
-              <a> Accessibility </a>
+              <a className="hover:text-yellow-400"> Accessibility </a>
             </Link>
             &nbsp; |
           </div>

@@ -119,7 +119,7 @@ function Page() {
                 ...theme.colors,
                 primary: "#f0c700",
                 primary25: "#d4d4d4",
-                primary50: "#aaaaaa"
+                primary50: "#aaaaaa",
               },
             })}
           />
@@ -317,6 +317,7 @@ function Page() {
                 changeStateFunction={changeBananaSelectionState}
               />
 
+              {/*
               <li className="inline-block max-w-s px-1 py-8 text-left">
                 <span>
                   <div className="float-left w-1/2">
@@ -327,7 +328,13 @@ function Page() {
                   </div>
                 </span>
               </li>
+              */}
             </ul>
+            <br /> {/*  TODO: remove  */}
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         </aside>
         <main className="w-2/3 fixed h-screen right-0">
@@ -361,6 +368,16 @@ function Page() {
           </Canvas>
         </main>
       </div>
+      <footer className="py-1.5 bottom-0 h-16 fixed flex w-full dark:bg-stone-700 text-white justify-center">
+        <span className="flex">
+          <div className="px-5">
+            <PriceText statesArray={makePriceLeadStatesArray()} />
+          </div>
+          <div className="px-5">
+            <LeadtimeText statesArray={makePriceLeadStatesArray()} />
+          </div>
+        </span>
+      </footer>
     </div>
   );
 }
