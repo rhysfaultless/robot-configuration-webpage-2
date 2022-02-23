@@ -93,26 +93,59 @@
       "id": 1,
       "name": "attachmentPositionOne",
       "xyz": [240, 69, 0],
-      "uvw": [0, 0, 0]
+      "uvw": [0, 0, 0],
+      "onTowerBool": false
     },
     {
       "id": 2,
       "name": "attachmentPositionTwo",
       "xyz": [80, 69, 0],
-      "uvw": [0, 0, 0]
+      "uvw": [0, 0, 0],
+      "onTowerBool": false
     },
     {
       "id": 3,
       "name": "attachmentPositionThree",
       "xyz": [-80, 69, 0],
-      "uvw": [0, 3.14159, 0]
+      "uvw": [0, 3.14159, 0],
+      "onTowerBool": false
     },
     {
       "id": 4,
       "name": "attachmentPositionFour",
       "xyz": [-240, 69, 0],
-      "uvw": [0, 3.14159, 0]
+      "uvw": [0, 3.14159, 0],
+      "onTowerBool": false
+    },
+    {
+      "id": 5,
+      "name": "attachmentPositionOne",
+      "xyz": [240, 269, 0],
+      "uvw": [0, 0, 0],
+      "onTowerBool": true
+    },
+    {
+      "id": 6,
+      "name": "attachmentPositionTwo",
+      "xyz": [80, 269, 0],
+      "uvw": [0, 0, 0],
+      "onTowerBool": true
+    },
+    {
+      "id": 7,
+      "name": "attachmentPositionThree",
+      "xyz": [-80, 269, 0],
+      "uvw": [0, 3.14159, 0],
+      "onTowerBool": true
+    },
+    {
+      "id": 8,
+      "name": "attachmentPositionFour",
+      "xyz": [-240, 269, 0],
+      "uvw": [0, 3.14159, 0],
+      "onTowerBool": true
     }
+    
   ],
 
   "attachmentItems": [
@@ -157,6 +190,23 @@
       "category": "ahrs",
       "price": 3000,
       "leadTime": 3
+    }
+  ],
+
+  "tower": [
+    {
+      "label": "No",
+      "value": "A",
+      "price": 0,
+      "leadTime": 0,
+      "bool": false
+    },
+    {
+      "label": "Yes",
+      "value": "B",
+      "price": 300,
+      "leadTime": 0,
+      "bool": true
     }
   ]
 }

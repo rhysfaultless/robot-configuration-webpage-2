@@ -4,9 +4,11 @@ import Footer from "./Footer";
 export default function Layout({ children }) {
   return (
     <>
-      <Navbar/>
-      {children}
-      <Footer />
+      <div className="w-full h-full">
+        <Navbar />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 }
