@@ -114,7 +114,7 @@ function Page() {
             onChange={(event) => props.changeStateFunction(event)}
             theme={(theme) => ({
               ...theme,
-              borderRadius: 0,
+              borderRadius: 5,
               colors: {
                 ...theme.colors,
                 primary: "#f0c700",
@@ -316,21 +316,8 @@ function Page() {
                 currentState={bananaSelectionState}
                 changeStateFunction={changeBananaSelectionState}
               />
-
-              {/*
-              <li className="inline-block max-w-s px-1 py-8 text-left">
-                <span>
-                  <div className="float-left w-1/2">
-                    <PriceText statesArray={makePriceLeadStatesArray()} />
-                  </div>
-                  <div className="float-right w-1/2">
-                    <LeadtimeText statesArray={makePriceLeadStatesArray()} />
-                  </div>
-                </span>
-              </li>
-              */}
             </ul>
-            <br /> {/*  TODO: remove  */}
+            <br /> {/*  leaving blank space at the bottom  */}
             <br />
             <br />
             <br />
