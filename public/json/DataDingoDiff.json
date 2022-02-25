@@ -1,10 +1,10 @@
 {
   "webpage": {
-    "tabTitle": "Clearpath | Dingo-O"
+    "tabTitle": "Clearpath | Dingo-D"
   },
 
   "robotPlatform": {
-    "label": "Dingo Omnidirectional",
+    "label": "Dingo Differential",
     "price": 10000,
     "leadTime": 3
   },
@@ -211,14 +211,13 @@
   ],
 
   "pdfText": {
+    "pdfName": "Clearpath-Dingo-Diff",
+
     "robotPlatform": {
-      "label": "Dingo Omnidirectional",
-      "labelPdf": "Dingo-O",
-      "itemNumber": "022609",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Robot Platform - Dingo Omnidirectional",
-        "Specifications: An omnidirectional drive mobile robot, Dingo ",
+      "label": "Dingo Differential",
+      "_comment": ["                                                                  end of line|"],
+      "text": [
+        "Specifications: A differential drive mobile robot, Dingo ",
         "includes user power breakouts for 5 V, 12 V, and unregulated 12 V ",
         "battery voltage. Dingo has a maximum speed of 1.6 m/s with a ",
         "payload of 20 kg. The base platform mass includes a computer and a ",
@@ -229,11 +228,11 @@
       ]
     },
 
-    "panelColours": {
-      "Yellow": {
+    "panelColours": [
+      {
         "label": "Yellow",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - Yellow",
           "Specifications: The Dingo's side panels will be coated yellow.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -245,10 +244,10 @@
           " "
         ]
       },
-      "Black": {
+      {
         "label": "Black",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - Black",
           "Specifications: The Dingo's side panels will be coated black.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -260,10 +259,10 @@
           " "
         ]
       },
-      "White": {
+      {
         "label": "White",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - White",
           "Specifications: The Dingo's side panels will be coated white.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -275,10 +274,10 @@
           " "
         ]
       },
-      "Red": {
+      {
         "label": "Red",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - Red",
           "Specifications: The Dingo's side panels will be coated red.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -290,10 +289,10 @@
           " "
         ]
       },
-      "Orange": {
+      {
         "label": "Orange",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - Orange",
           "Specifications: The Dingo's side panels will be coated orange.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -305,10 +304,10 @@
           " "
         ]
       },
-      "Blue": {
+      {
         "label": "Blue",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - Navy Blue",
           "Specifications: The Dingo's side panels will be coated navy blue.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -320,10 +319,10 @@
           " "
         ]
       },
-      "Green": {
+      {
         "label": "Green",
-        "_comment": ["                                                         end of line|"],
-        "description": [
+        "_comment": ["                                                                  end of line|"],
+        "text": [
           "Colour, side panels - Olive Drab",
           "Specifications: The Dingo's side panels will be coated olive drab.",
           "Note: The default colour is yellow. Optional colours are available",
@@ -335,39 +334,19 @@
           " "
         ]
       }
-    },
+    ],
 
-    "batteryItems": {
-      "Lead Acid": {
+    "batteryItems": [
+      {
         "label": "Lead Acid",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Battery - Sealed Lead Acid", 
-          "Specifications: ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
+        "_comment": ["                                                                  end of line|"],
+        "text": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
       },
-      "Lithium": {
+      {
         "label": "Lithium",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Battery - Lithium", 
-          "Specifications: ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
+        "_comment": ["                                                                  end of line|"],
+        "text": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
       }
-    }
+    ]
   }
 }

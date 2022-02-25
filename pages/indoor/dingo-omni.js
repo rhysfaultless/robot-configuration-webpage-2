@@ -37,12 +37,16 @@ const computerStorageData = computerDataFile.storage;
 const computerGpuData = computerDataFile.gpu;
 const webpageTabTitle = dataFile.webpage.tabTitle;
 const robotPlatformData = dataFile.robotPlatform;
+const robotPlatformData_label = robotPlatformData.label;
 const attachmentPositionData = dataFile.attachmentPositions;
 const colourData = dataFile.panelColours;
 const batteryData = dataFile.batteryItems;
 const towerData = dataFile.tower;
 const attachmentData = dataFile.attachmentItems;
 const bananaPositionData = dataFile.bananaPosition;
+
+// pdf import - for generating a quote
+import ButtonGeneratePdfQuote from "/components/price-lead-quote/ButtonQuote";
 
 function Page() {
   // define states
@@ -362,6 +366,18 @@ function Page() {
           </div>
           <div className="px-5">
             <LeadtimeText statesArray={makePriceLeadStatesArray()} />
+          </div>
+          <div className="px-5">
+            <ButtonGeneratePdfQuote 
+              robotPlatform={robotPlatformData_label} 
+              colourState={colourSelectionState} 
+              batteryState={batterySelectionState} 
+              computerState={computerSelectionState} 
+              processorState={computerProcessorSelectionState}
+              ramState={computerRamSelectionState}
+              storageState={computerStorageSelectionState}
+              gpuState={computerGpuSelectionState}
+            />
           </div>
         </span>
       </footer>
