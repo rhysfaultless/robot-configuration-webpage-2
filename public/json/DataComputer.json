@@ -3,6 +3,7 @@
     {
       "label": "mini ITX",
       "value": "A",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 0,
       "configurableComputerBool": true,
@@ -22,6 +23,7 @@
     {
       "label": "Raspberry Pi, 4 GB RAM",
       "value": "B",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 3,
       "configurableComputerBool": false,
@@ -41,6 +43,7 @@
     {
       "label": "Nvidia Jetson Nano, 4 GB RAM",
       "value": "C",
+      "itemNumber": "042000",
       "price": 600,
       "leadTime": 3,
       "configurableComputerBool": false,
@@ -60,6 +63,7 @@
     {
       "label": "Nvidia Jetson AGX",
       "value": "D",
+      "itemNumber": "042000",
       "price": 1500,
       "leadTime": 3,
       "configurableComputerBool": false,
@@ -81,6 +85,7 @@
     {
       "label": "intel i3",
       "value": "A",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 4,
       "_comment": ["                                                         end of line|"],
@@ -99,6 +104,7 @@
     {
       "label": "intel i5",
       "value": "B",
+      "itemNumber": "042000",
       "price": 350,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -116,7 +122,8 @@
     },
     {
       "label": "intel i7",
-      "value": "A",
+      "value": "C",
+      "itemNumber": "042000",
       "price": 400,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -134,7 +141,8 @@
     },
     {
       "label": "intel i9",
-      "value": "A",
+      "value": "D",
+      "itemNumber": "042000",
       "price": 500,
       "leadTime": 4,
       "_comment": ["                                                         end of line|"],
@@ -155,6 +163,7 @@
     {
       "label": "8 GB",
       "value": "A",
+      "itemNumber": "042000",
       "price": 100,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -162,7 +171,8 @@
     },
     {
       "label": "16 GB",
-      "value": "A",
+      "value": "B",
+      "itemNumber": "042000",
       "price": 200,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -170,7 +180,8 @@
     },
     {
       "label": "32 GB",
-      "value": "A",
+      "value": "C",
+      "itemNumber": "042000",
       "price": 400,
       "leadTime": 4,
       "_comment": ["                                                         end of line|"],
@@ -178,7 +189,8 @@
     },
     {
       "label": "64 GB",
-      "value": "A",
+      "value": "D",
+      "itemNumber": "042000",
       "price": 700,
       "leadTime": 4,
       "_comment": ["                                                         end of line|"],
@@ -189,6 +201,7 @@
     {
       "label": "250 GB, NVMe",
       "value": "A",
+      "itemNumber": "042000",
       "price": 140,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -206,7 +219,8 @@
     },
     {
       "label": "500 GB, NVMe",
-      "value": "A",
+      "value": "B",
+      "itemNumber": "042000",
       "price": 220,
       "leadTime": 1,
       "_comment": ["                                                         end of line|"],
@@ -224,7 +238,8 @@
     },
     {
       "label": "1 TB, NVMe",
-      "value": "A",
+      "value": "C",
+      "itemNumber": "042000",
       "price": 310,
       "leadTime": 1,
       "_comment": ["                                                         end of line|"],
@@ -242,7 +257,8 @@
     },
     {
       "label": "2 TB, NVMe",
-      "value": "A",
+      "value": "D",
+      "itemNumber": "042000",
       "price": 675,
       "leadTime": 1,
       "_comment": ["                                                         end of line|"],
@@ -271,6 +287,7 @@
     {
       "label": "Nvidia GTX 1050 Ti",
       "value": "B",
+      "itemNumber": "042000",
       "price": 640,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -289,6 +306,7 @@
     {
       "label": "Nvidia GTX 3060",
       "value": "C",
+      "itemNumber": "042000",
       "price": 2000,
       "leadTime": 2,
       "_comment": ["                                                         end of line|"],

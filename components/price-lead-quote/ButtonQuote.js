@@ -161,10 +161,10 @@ function ButtonQuote(props) {
 
         doc.text(21, 103, "2"); // line ID
         {
-          doc.text(27, 103, "042000"); // item number
-          doc.text(141, 103, "1"); // quantity
           for (let i = 0; i < DataFile.panelColours.length; i++) {
             if (DataFile.panelColours[i].label == props.colourState.label) {
+              doc.text(27, 103, DataFile.panelColours[i].itemNumber); // item number
+              doc.text(141, 103, "1"); // quantity
               doc.text(149, 103, "$" + String(DataFile.panelColours[i].price)); // price, per
               doc.text(174, 103, "$" + String(DataFile.panelColours[i].price)); // price, extended
               doc.text(40, 103, DataFile.panelColours[i].description[0]); // description 0
@@ -247,10 +247,10 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "6"); // line ID
         {
-          doc.text(27, 63, "042000"); // item number
-          doc.text(141, 63, "1"); // quantity
           for (let i = 0; i < DataComputer.computers.length; i++) {
             if (DataComputer.computers[i].label == props.computerState.label) {
+              doc.text(27, 63, DataComputer.computers[i].itemNumber); // item number
+              doc.text(141, 63, "1"); // quantity
               doc.text(149, 63, "$" + String(DataComputer.computers[i].price)); // price, per
               doc.text(174, 63, "$" + String(DataComputer.computers[i].price)); // price, extended
               doc.text(40, 63, DataComputer.computers[i].description[0]); // description 0
@@ -269,10 +269,10 @@ function ButtonQuote(props) {
         doc.text(21, 103, "7"); // line ID
         {
           if (props.computerState.configurableComputerBool) {
-            doc.text(27, 103, "042000"); // item number
-            doc.text(141, 103, "1"); // quantity
             for (let i = 0; i < DataComputer.processors.length; i++) {
               if (DataComputer.processors[i].label == props.processorState.label) {
+                doc.text(27, 103, DataComputer.processors[i].itemNumber); // item number
+                doc.text(141, 103, "1"); // quantity
                 doc.text(149, 103, "$" + String(DataComputer.processors[i].price)); // price, per
                 doc.text(174, 103, "$" + String(DataComputer.processors[i].price)); // price, extended
                 doc.text(40, 103, DataComputer.processors[i].description[0]); // description 0
@@ -294,10 +294,10 @@ function ButtonQuote(props) {
         doc.text(21, 143, "8"); // line ID
         {
           if (props.computerState.configurableComputerBool) {
-            doc.text(27, 143, "042000"); // item number
-            doc.text(141, 143, "1"); // quantity
             for (let i = 0; i < DataComputer.ram.length; i++) {
               if (DataComputer.ram[i].label == props.ramState.label) {
+                doc.text(27, 143, DataComputer.ram[i].itemNumber); // item number
+                doc.text(141, 143, "1"); // quantity
                 doc.text(149, 143, "$" + String(DataComputer.ram[i].price)); // price, per
                 doc.text(174, 143, "$" + String(DataComputer.ram[i].price)); // price, extended
                 doc.text(40, 143, DataComputer.ram[i].description[0]); // description 0
@@ -319,10 +319,10 @@ function ButtonQuote(props) {
         doc.text(21, 183, "9"); // line ID
         {
           if (props.computerState.configurableComputerBool) {
-            doc.text(27, 183, "042000"); // item number
-            doc.text(141, 183, "1"); // quantity
             for (let i = 0; i < DataComputer.storage.length; i++) {
               if (DataComputer.storage[i].label == props.storageState.label) {
+                doc.text(27, 183, DataComputer.storage[i].itemNumber); // item number
+                doc.text(141, 183, "1"); // quantity
                 doc.text(149, 183, "$" + String(DataComputer.storage[i].price)); // price, per
                 doc.text(174, 183, "$" + String(DataComputer.storage[i].price)); // price, extended
                 doc.text(40, 183, DataComputer.storage[i].description[0]); // description 0
@@ -344,10 +344,10 @@ function ButtonQuote(props) {
         doc.text(21, 223, "10"); // line ID
         {
           if (props.computerState.configurableComputerBool) {
-            doc.text(27, 223, "042000"); // item number
-            doc.text(141, 223, "1"); // quantity
             for (let i = 0; i < DataComputer.gpu.length; i++) {
               if (DataComputer.gpu[i].label == props.gpuState.label) {
+                doc.text(27, 223, DataComputer.gpu[i].itemNumber); // item number
+                doc.text(141, 223, "1"); // quantity
                 doc.text(149, 223, "$" + String(DataComputer.gpu[i].price)); // price, per
                 doc.text(174, 223, "$" + String(DataComputer.gpu[i].price)); // price, extended
                 doc.text(40, 223, DataComputer.gpu[i].description[0]); // description 0

@@ -27,6 +27,7 @@
     {
       "label": "Yellow",
       "value": "A",
+      "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
       "hex": "0xffa700",
@@ -47,6 +48,7 @@
     {
       "label": "Black",
       "value": "B",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
       "hex": "0x303030",
@@ -67,6 +69,7 @@
     {
       "label": "White",
       "value": "C",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
       "hex": "0xd6d6d6",
@@ -87,6 +90,7 @@
     {
       "label": "Red",
       "value": "D",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
       "hex": "0xc92f24",
@@ -107,6 +111,7 @@
     {
       "label": "Orange",
       "value": "E",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
       "hex": "0xff6700",
@@ -127,6 +132,7 @@
     {
       "label": "Blue",
       "value": "F",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
       "hex": "0x536882",
@@ -147,6 +153,7 @@
     {
       "label": "Green",
       "value": "G",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
       "hex": "0x3b4216",
@@ -173,7 +180,17 @@
       "price": 0,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
-      "description": ["Battery - Sealed Lead Acid", "Specifications: ", " ", " ", " ", " ", " ", " ", " "]
+      "description": [
+        "Battery - Sealed Lead Acid", 
+        "Specifications: Includes:", 
+        "  - 1X Dingo PCBA for attaching 1X sealed-lead-acid battery to a Dingo.", 
+        "  - 1X sealed-lead-acid battery at 12V with 18Ah of capacity.", 
+        "  - 1X charger for a sealed-lead-acid battery.", 
+        " ", 
+        "Note: this line requires the purchase of a Dingo robot.", 
+        " ", 
+        " "
+      ]
     },
     {
       "label": "Lithium",
@@ -181,15 +198,18 @@
       "price": 1000,
       "leadTime": 3,
       "_comment": ["                                                         end of line|"],
-      "description": ["Battery - Lithium", "Specifications: ", " ", " ", " ", " ", " ", " ", " "]
+      "description": [
+        "Battery - Lithium", "Specifications: Includes:", 
+        "  - 1X Dingo PCBA for attaching 6X lithium batteries to Dingo.", 
+        "  - 6X lithium batteries at 14.4V with 6.8Ah of capacity (40.8Ah total).", 
+        "  - 1X charger for lithium batteries. This can charge 4X batteries at a time.", 
+        " ", 
+        " ", 
+        " ", 
+        " "
+      ]
     }
   ],
-
-  "bananaPosition": {
-    "name": "bananaPosition",
-    "xyz": [100, 0, 305],
-    "uvw": [0, 0.97, 0]
-  },
 
   "attachmentPositions": [
     {
@@ -475,5 +495,11 @@
         " "
       ]
     }
-  ]
+  ],
+
+  "bananaPosition": {
+    "name": "bananaPosition",
+    "xyz": [100, 0, 305],
+    "uvw": [0, 0.97, 0]
+  }
 }
