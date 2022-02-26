@@ -672,7 +672,7 @@ function ButtonQuote(props) {
         // total price
         doc.setFontSize(12);
         doc.text(149, 190, "Total");
-        doc.text(174, 190, "$" + Price(props.statesArray).toString());
+        doc.text(174, 190, "$" + Price(props.statesArray).toString() + " USD");
 
         // horizontal lines above and below the total price
         doc.line(20, 185, 200, 185);
