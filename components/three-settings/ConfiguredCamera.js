@@ -5,7 +5,7 @@ function ConfiguredCamera() {
     <PerspectiveCamera
       makeDefault
       fov={65}
-      position={[600, 0, 600]}
+      position={[600, -200, 600]}
     />
   );
 }

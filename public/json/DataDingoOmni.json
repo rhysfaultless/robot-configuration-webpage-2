@@ -532,9 +532,10 @@
       "value": "none",
       "itemNumber": " ",
       "price": 0,
+      "leadTime": 0,
       "priceHardware": 0,
       "priceSoftware": 0,
-      "leadTime": 0,
+      "bool": false,
       "attachmentPosition": {
         "one": {
           "bool": true
@@ -588,9 +589,10 @@
       "value": "indoor_nav",
       "itemNumber": "042000",
       "price": 8500,
+      "leadTime": 5,
       "priceHardware": 8500,
       "priceSoftware": 0,
-      "leadTime": 5,
+      "bool": true,
       "attachmentPosition": {
         "one": {
           "bool": false,
