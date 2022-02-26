@@ -377,6 +377,7 @@ function Page() {
               ramState={computerRamSelectionState}
               storageState={computerStorageSelectionState}
               gpuState={computerGpuSelectionState}
+              statesArray={makePriceLeadStatesArray()}
             />
           </div>
         </span>

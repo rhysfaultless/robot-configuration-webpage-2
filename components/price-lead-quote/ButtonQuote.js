@@ -1,5 +1,7 @@
 //import GeneratePdfQuote from "/components/price-lead-quote/GeneratePdfQuote";
 import { jsPDF, HTMLOptionImage } from "jspdf";
+import { Price } from "/components/price-lead-quote/Price";
+import { Leadtime } from "/components/price-lead-quote/Leadtime";
 
 // JSON imports
 import DataComputer from "/public/json/DataComputer.json";
@@ -670,7 +672,7 @@ function ButtonQuote(props) {
         // total price
         doc.setFontSize(12);
         doc.text(149, 190, "Total");
-        doc.text(174, 190, "$");
+        doc.text(174, 190, "$" + Price(props.statesArray).toString());
 
         // horizontal lines above and below the total price
         doc.line(20, 185, 200, 185);
@@ -683,7 +685,7 @@ function ButtonQuote(props) {
         doc.text(
           21,
           208,
-          "3) Estimated time to ship " + "TODO LEADTIME" + " weeks after receipt of order (ARO), and receipt of acceptable End Use Certificate, if required."
+          "3) Estimated time to ship " +  Leadtime(props.statesArray).toString() + " weeks after receipt of order (ARO), and receipt of acceptable End Use Certificate, if required."
         );
         doc.text(24.5, 212, "Subject to 3rd party component availability and length of work queue at time of receipt of P.O.");
         doc.text(
