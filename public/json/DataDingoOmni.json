@@ -301,14 +301,151 @@
       "value": "A",
       "price": 0,
       "leadTime": 0,
-      "bool": false
+      "bool": false,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": false
+        },
+        "six": {
+          "bool": false
+        },
+        "seven": {
+          "bool": false
+        },
+        "eight": {
+          "bool": false
+        }
+      }
     },
     {
       "label": "Yes",
       "value": "B",
       "price": 300,
       "leadTime": 0,
-      "bool": true
+      "bool": true,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": true
+        },
+        "six": {
+          "bool": true
+        },
+        "seven": {
+          "bool": true
+        },
+        "eight": {
+          "bool": true
+        }
+      }
+    }
+  ],
+
+  "kits": [
+    {
+      "label": "None",
+      "value": "none",
+      "price": 0,
+      "leadTime": 0,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": true
+        },
+        "six": {
+          "bool": true
+        },
+        "seven": {
+          "bool": true
+        },
+        "eight": {
+          "bool": true
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "descriptionHardware": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "],
+      "descriptionSoftware": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "]
+    },
+    {
+      "label": "IndoorNav",
+      "value": "indoor_nav",
+      "price": 10000,
+      "leadTime": 3,
+      "attachmentPosition": {
+        "one": {
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 4,
+          "position": 0
+        },
+        "two": {
+          "bool": true,
+          "position": 1
+        },
+        "three": {
+          "bool": true,
+          "position": 2
+        },
+        "four": {
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 4,
+          "position": 3
+        },
+        "five": {
+          "bool": true,
+          "position": 4
+        },
+        "six": {
+          "bool": true,
+          "position": 5
+        },
+        "seven": {
+          "bool": true,
+          "position": 6
+        },
+        "eight": {
+          "bool": true,
+          "position": 7
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "descriptionHardware": ["Kit, Hardware - IndoorNav", "Specifications: ", " ", " ", " ", " ", " ", " ", " "],
+      "descriptionSoftware": ["Kit, Software - IndoorNav", "Specifications: ", " ", " ", " ", " ", " ", " ", " "]
     }
   ]
 }
