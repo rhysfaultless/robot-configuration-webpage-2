@@ -245,6 +245,24 @@
         },
         "eight": {
           "bool": false
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
         }
       },
       "_comment": ["                                                         end of line|"],
@@ -291,6 +309,24 @@
         },
         "eight": {
           "bool": true
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
         }
       },
       "_comment": ["                                                         end of line|"],
@@ -523,6 +559,24 @@
         },
         "eight": {
           "bool": true
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
         }
       },
       "_comment": ["                                                         end of line|"],
@@ -575,6 +629,24 @@
         "eight": {
           "bool": true,
           "position": 7
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
         }
       },
       "_comment": ["                                                         end of line|"],
