@@ -178,7 +178,6 @@ function ButtonQuote(props) {
               doc.text(40, 135, DataFile.panelColours[i].description[8]); // description 8
             }
           }
-
         }
 
         doc.text(21, 143, "3"); // line ID
@@ -377,38 +376,44 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "11"); // line ID
         {
-          doc.text(27, 63, " "); // item number
-          doc.text(141, 63, ""); // quantity
-          doc.text(149, 63, " "); // price, per
-          doc.text(174, 63, " "); // price, extended
-
-          doc.text(40, 63, " "); // description 0
-          doc.text(40, 67, " "); // description 1
-          doc.text(40, 71, " "); // description 2
-          doc.text(40, 75, " "); // description 3
-          doc.text(40, 79, " "); // description 4
-          doc.text(40, 83, " "); // description 5
-          doc.text(40, 87, " "); // description 6
-          doc.text(40, 91, " "); // description 7
-          doc.text(40, 95, " "); // description 8
+          for (let i = 0; i < DataFile.kits.length; i++) {
+            if (DataFile.kits[i].label == props.kitState.label) {
+              doc.text(27, 63, DataFile.kits[i].itemNumber); // item number
+              doc.text(141, 63, "1"); // quantity
+              doc.text(149, 63, "$" + String(DataFile.kits[i].priceHardware)); // price, per
+              doc.text(174, 63, "$" + String(DataFile.kits[i].priceHardware)); // price, extended
+              doc.text(40, 63, DataFile.kits[i].descriptionHardware[0]); // description 0
+              doc.text(40, 67, DataFile.kits[i].descriptionHardware[1]); // description 1
+              doc.text(40, 71, DataFile.kits[i].descriptionHardware[2]); // description 2
+              doc.text(40, 75, DataFile.kits[i].descriptionHardware[3]); // description 3
+              doc.text(40, 79, DataFile.kits[i].descriptionHardware[4]); // description 4
+              doc.text(40, 83, DataFile.kits[i].descriptionHardware[5]); // description 5
+              doc.text(40, 87, DataFile.kits[i].descriptionHardware[6]); // description 6
+              doc.text(40, 91, DataFile.kits[i].descriptionHardware[7]); // description 7
+              doc.text(40, 95, DataFile.kits[i].descriptionHardware[8]); // description 8
+            }
+          }
         }
 
         doc.text(21, 103, "12"); // line ID
         {
-          doc.text(27, 103, " "); // item number
-          doc.text(141, 103, " "); // quantity
-          doc.text(149, 103, " "); // price, per
-          doc.text(174, 103, " "); // price, extended
-
-          doc.text(40, 103, " "); // description 0
-          doc.text(40, 107, " "); // description 1
-          doc.text(40, 111, " "); // description 2
-          doc.text(40, 115, " "); // description 3
-          doc.text(40, 119, " "); // description 4
-          doc.text(40, 123, " "); // description 5
-          doc.text(40, 127, " "); // description 6
-          doc.text(40, 131, " "); // description 7
-          doc.text(40, 135, " "); // description 8
+          for (let i = 0; i < DataFile.kits.length; i++) {
+            if (DataFile.kits[i].label == props.kitState.label) {
+              doc.text(27, 103, DataFile.kits[i].itemNumber); // item number
+              doc.text(141, 103, "1"); // quantity
+              doc.text(149, 103, "$" + String(DataFile.kits[i].priceSoftware)); // price, per
+              doc.text(174, 103, "$" + String(DataFile.kits[i].priceSoftware)); // price, extended
+              doc.text(40, 103, DataFile.kits[i].descriptionSoftware[0]); // description 0
+              doc.text(40, 107, DataFile.kits[i].descriptionSoftware[1]); // description 1
+              doc.text(40, 111, DataFile.kits[i].descriptionSoftware[2]); // description 2
+              doc.text(40, 115, DataFile.kits[i].descriptionSoftware[3]); // description 3
+              doc.text(40, 119, DataFile.kits[i].descriptionSoftware[4]); // description 4
+              doc.text(40, 123, DataFile.kits[i].descriptionSoftware[5]); // description 5
+              doc.text(40, 127, DataFile.kits[i].descriptionSoftware[6]); // description 6
+              doc.text(40, 131, DataFile.kits[i].descriptionSoftware[7]); // description 7
+              doc.text(40, 135, DataFile.kits[i].descriptionSoftware[8]); // description 8
+            }
+          }
         }
 
         doc.text(21, 143, "13"); // line ID
@@ -418,7 +423,7 @@ function ButtonQuote(props) {
           doc.text(149, 143, " "); // price, per
           doc.text(174, 143, " "); // price, extended
 
-          doc.text(40, 143, " "); // description 0
+          doc.text(40, 143, "Empty line item"); // description 0
           doc.text(40, 147, " "); // description 1
           doc.text(40, 151, " "); // description 2
           doc.text(40, 155, " "); // description 3
@@ -436,7 +441,7 @@ function ButtonQuote(props) {
           doc.text(149, 183, " "); // price, per
           doc.text(174, 183, " "); // price, extended
 
-          doc.text(40, 183, " "); // description 0
+          doc.text(40, 183, "Empty line item"); // description 0
           doc.text(40, 187, " "); // description 1
           doc.text(40, 191, " "); // description 2
           doc.text(40, 195, " "); // description 3
@@ -454,7 +459,7 @@ function ButtonQuote(props) {
           doc.text(149, 223, " "); // price, per
           doc.text(174, 223, " "); // price, extended
 
-          doc.text(40, 223, " "); // description 0
+          doc.text(40, 223, "Empty line item"); // description 0
           doc.text(40, 227, " "); // description 1
           doc.text(40, 231, " "); // description 2
           doc.text(40, 235, " "); // description 3
@@ -480,7 +485,7 @@ function ButtonQuote(props) {
           doc.text(149, 63, " "); // price, per
           doc.text(174, 63, " "); // price, extended
 
-          doc.text(40, 63, " "); // description 0
+          doc.text(40, 63, "Attachments - Tower Bracket"); // description 0
           doc.text(40, 67, " "); // description 1
           doc.text(40, 71, " "); // description 2
           doc.text(40, 75, " "); // description 3
@@ -498,7 +503,7 @@ function ButtonQuote(props) {
           doc.text(149, 103, " "); // price, per
           doc.text(174, 103, " "); // price, extended
 
-          doc.text(40, 103, " "); // description 0
+          doc.text(40, 103, "Attachments - Position 1"); // description 0
           doc.text(40, 107, " "); // description 1
           doc.text(40, 111, " "); // description 2
           doc.text(40, 115, " "); // description 3
@@ -516,7 +521,7 @@ function ButtonQuote(props) {
           doc.text(149, 143, " "); // price, per
           doc.text(174, 143, " "); // price, extended
 
-          doc.text(40, 143, " "); // description 0
+          doc.text(40, 143, "Attachments - Position 2"); // description 0
           doc.text(40, 147, " "); // description 1
           doc.text(40, 151, " "); // description 2
           doc.text(40, 155, " "); // description 3
@@ -534,7 +539,7 @@ function ButtonQuote(props) {
           doc.text(149, 183, " "); // price, per
           doc.text(174, 183, " "); // price, extended
 
-          doc.text(40, 183, " "); // description 0
+          doc.text(40, 183, "Attachments - Position 3"); // description 0
           doc.text(40, 187, " "); // description 1
           doc.text(40, 191, " "); // description 2
           doc.text(40, 195, " "); // description 3
@@ -552,7 +557,7 @@ function ButtonQuote(props) {
           doc.text(149, 223, " "); // price, per
           doc.text(174, 223, " "); // price, extended
 
-          doc.text(40, 223, " "); // description 0
+          doc.text(40, 223, "Attachments - Position 4"); // description 0
           doc.text(40, 227, " "); // description 1
           doc.text(40, 231, " "); // description 2
           doc.text(40, 235, " "); // description 3
@@ -578,7 +583,7 @@ function ButtonQuote(props) {
           doc.text(149, 63, " "); // price, per
           doc.text(174, 63, " "); // price, extended
 
-          doc.text(40, 63, " "); // description 0
+          doc.text(40, 63, "Attachments - Position 5"); // description 0
           doc.text(40, 67, " "); // description 1
           doc.text(40, 71, " "); // description 2
           doc.text(40, 75, " "); // description 3
@@ -596,7 +601,7 @@ function ButtonQuote(props) {
           doc.text(149, 103, " "); // price, per
           doc.text(174, 103, " "); // price, extended
 
-          doc.text(40, 103, " "); // description 0
+          doc.text(40, 103, "Attachments - Position 6"); // description 0
           doc.text(40, 107, " "); // description 1
           doc.text(40, 111, " "); // description 2
           doc.text(40, 115, " "); // description 3
@@ -614,7 +619,7 @@ function ButtonQuote(props) {
           doc.text(149, 143, " "); // price, per
           doc.text(174, 143, " "); // price, extended
 
-          doc.text(40, 143, " "); // description 0
+          doc.text(40, 143, "Attachments - Position 7"); // description 0
           doc.text(40, 147, " "); // description 1
           doc.text(40, 151, " "); // description 2
           doc.text(40, 155, " "); // description 3
@@ -632,7 +637,7 @@ function ButtonQuote(props) {
           doc.text(149, 183, " "); // price, per
           doc.text(174, 183, " "); // price, extended
 
-          doc.text(40, 183, " "); // description 0
+          doc.text(40, 183, "Attachments - Position 8"); // description 0
           doc.text(40, 187, " "); // description 1
           doc.text(40, 191, " "); // description 2
           doc.text(40, 195, " "); // description 3
@@ -650,7 +655,7 @@ function ButtonQuote(props) {
           doc.text(149, 223, " "); // price, per
           doc.text(174, 223, " "); // price, extended
 
-          doc.text(40, 223, " "); // description 0
+          doc.text(40, 223, "Attachments - Position 9"); // description 0
           doc.text(40, 227, " "); // description 1
           doc.text(40, 231, " "); // description 2
           doc.text(40, 235, " "); // description 3
@@ -676,7 +681,7 @@ function ButtonQuote(props) {
           doc.text(149, 63, " "); // price, per
           doc.text(174, 63, " "); // price, extended
 
-          doc.text(40, 63, " "); // description 0
+          doc.text(40, 63, "Attachments - Position 10"); // description 0
           doc.text(40, 67, " "); // description 1
           doc.text(40, 71, " "); // description 2
           doc.text(40, 75, " "); // description 3
@@ -694,7 +699,7 @@ function ButtonQuote(props) {
           doc.text(149, 103, " "); // price, per
           doc.text(174, 103, " "); // price, extended
 
-          doc.text(40, 103, " "); // description 0
+          doc.text(40, 103, "Attachments - Position 11"); // description 0
           doc.text(40, 107, " "); // description 1
           doc.text(40, 111, " "); // description 2
           doc.text(40, 115, " "); // description 3
@@ -712,7 +717,7 @@ function ButtonQuote(props) {
           doc.text(149, 143, " "); // price, per
           doc.text(174, 143, " "); // price, extended
 
-          doc.text(40, 143, " "); // description 0
+          doc.text(40, 143, "Attachments - Position 12"); // description 0
           doc.text(40, 147, " "); // description 1
           doc.text(40, 151, " "); // description 2
           doc.text(40, 155, " "); // description 3
@@ -730,7 +735,7 @@ function ButtonQuote(props) {
           doc.text(149, 183, " "); // price, per
           doc.text(174, 183, " "); // price, extended
 
-          doc.text(40, 183, " "); // description 0
+          doc.text(40, 183, "Attachments - Position 13"); // description 0
           doc.text(40, 187, " "); // description 1
           doc.text(40, 191, " "); // description 2
           doc.text(40, 195, " "); // description 3
@@ -748,7 +753,7 @@ function ButtonQuote(props) {
           doc.text(149, 223, " "); // price, per
           doc.text(174, 223, " "); // price, extended
 
-          doc.text(40, 223, " "); // description 0
+          doc.text(40, 223, "Attachments - Position 14"); // description 0
           doc.text(40, 227, " "); // description 1
           doc.text(40, 231, " "); // description 2
           doc.text(40, 235, " "); // description 3
@@ -780,7 +785,9 @@ function ButtonQuote(props) {
         doc.text(
           21,
           208,
-          "3) Estimated time to ship " +  Leadtime(props.statesArray).toString() + " weeks after receipt of order (ARO), and receipt of acceptable End Use Certificate, if required."
+          "3) Estimated time to ship " +
+            Leadtime(props.statesArray).toString() +
+            " weeks after receipt of order (ARO), and receipt of acceptable End Use Certificate, if required."
         );
         doc.text(24.5, 212, "Subject to 3rd party component availability and length of work queue at time of receipt of P.O.");
         doc.text(

@@ -144,196 +144,212 @@ function Page() {
       <div className="md:flex text-black container relative">
         <aside className="h-fit min-h-screen w-1/3 dark:bg-stone-300 left-0">
           <div className="sidebar-content px-4 py-6">
-            <ul className="flex flex-col w-full text-black">
-              <li className="inline-block max-w-s px-1 py-4 text-center">
-                <span className="uppercase">Configure</span>
-              </li>
+            <ul className="flex flex-col w-full text-black divide-y divide-slate-700">
+              <div>
+                <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Colour  */}
+                  <SelectFormatted
+                    displayName={"Colour"}
+                    options={colourData}
+                    defaultValue={0}
+                    currentState={colourSelectionState}
+                    changeStateFunction={changeColourSelectionState}
+                  />
 
-              {/*  Select, Colour  */}
-              <SelectFormatted
-                displayName={"Colour"}
-                options={colourData}
-                defaultValue={0}
-                currentState={colourSelectionState}
-                changeStateFunction={changeColourSelectionState}
-              />
+                  {/*  Select, Battery  */}
+                  <SelectFormatted
+                    displayName={"Battery"}
+                    options={batteryData}
+                    defaultValue={0}
+                    currentState={batterySelectionState}
+                    changeStateFunction={changeBatterySelectionState}
+                  />
+                </ul>
+              </div>
 
-              {/*  Select, Battery  */}
-              <SelectFormatted
-                displayName={"Battery"}
-                options={batteryData}
-                defaultValue={0}
-                currentState={batterySelectionState}
-                changeStateFunction={changeBatterySelectionState}
-              />
+              <div>
+                <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Computer  */}
+                  <SelectFormatted
+                    displayName={"Computer"}
+                    options={computerData}
+                    defaultValue={0}
+                    currentState={computerSelectionState}
+                    changeStateFunction={changeComputerSelectionState}
+                  />
 
-              <br />
+                  {/*  Select, Computer, Processor  */}
+                  {computerSelectionState.configurableComputerBool && (
+                    <SelectFormatted
+                      displayName={"CPU"}
+                      options={computerProcessorData}
+                      defaultValue={1}
+                      currentState={computerProcessorSelectionState}
+                      changeStateFunction={changeComputerProcessorSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Computer  */}
-              <SelectFormatted
-                displayName={"Computer"}
-                options={computerData}
-                defaultValue={0}
-                currentState={computerSelectionState}
-                changeStateFunction={changeComputerSelectionState}
-              />
+                  {/*  Select, Computer, RAM  */}
+                  {computerSelectionState.configurableComputerBool && (
+                    <SelectFormatted
+                      displayName={"RAM"}
+                      options={computerRamData}
+                      defaultValue={0}
+                      currentState={computerRamSelectionState}
+                      changeStateFunction={changeComputerRamSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Computer, Processor  */}
-              {computerSelectionState.configurableComputerBool && (
-                <SelectFormatted
-                  displayName={"CPU"}
-                  options={computerProcessorData}
-                  defaultValue={1}
-                  currentState={computerProcessorSelectionState}
-                  changeStateFunction={changeComputerProcessorSelectionState}
-                />
-              )}
+                  {/*  Select, Computer, Storage  */}
+                  {computerSelectionState.configurableComputerBool && (
+                    <SelectFormatted
+                      displayName={"Storage"}
+                      options={computerStorageData}
+                      defaultValue={1}
+                      currentState={computerStorageSelectionState}
+                      changeStateFunction={changeComputerStorageSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Computer, RAM  */}
-              {computerSelectionState.configurableComputerBool && (
-                <SelectFormatted
-                  displayName={"RAM"}
-                  options={computerRamData}
-                  defaultValue={0}
-                  currentState={computerRamSelectionState}
-                  changeStateFunction={changeComputerRamSelectionState}
-                />
-              )}
+                  {/*  Select, Computer, GPU  */}
+                  {computerSelectionState.configurableComputerBool && (
+                    <SelectFormatted
+                      displayName={"GPU"}
+                      options={computerGpuData}
+                      defaultValue={0}
+                      currentState={computerGpuSelectionState}
+                      changeStateFunction={changeComputerGpuSelectionState}
+                    />
+                  )}
+                </ul>
+              </div>
 
-              {/*  Select, Computer, Storage  */}
-              {computerSelectionState.configurableComputerBool && (
-                <SelectFormatted
-                  displayName={"Storage"}
-                  options={computerStorageData}
-                  defaultValue={1}
-                  currentState={computerStorageSelectionState}
-                  changeStateFunction={changeComputerStorageSelectionState}
-                />
-              )}
+              <div>
+                <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Kits  */}
+                  <SelectFormatted
+                    displayName={"Kits"}
+                    options={kitData}
+                    defaultValue={0}
+                    currentState={kitSelectionState}
+                    changeStateFunction={changeKitSelectionState}
+                  />
+                </ul>
+              </div>
 
-              {/*  Select, Computer, GPU  */}
-              {computerSelectionState.configurableComputerBool && (
-                <SelectFormatted
-                  displayName={"GPU"}
-                  options={computerGpuData}
-                  defaultValue={0}
-                  currentState={computerGpuSelectionState}
-                  changeStateFunction={changeComputerGpuSelectionState}
-                />
-              )}
+              <div>
+                <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Tower  */}
+                  <SelectFormatted
+                    displayName={"Attachment Tower"}
+                    options={towerData}
+                    defaultValue={0}
+                    currentState={towerSelectionState}
+                    changeStateFunction={changeTowerSelectionState}
+                  />
 
-              <br />
+                  {/*  Select, Attachment 1  */}
+                  {kitSelectionState.attachmentPosition.one.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 1"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentOneSelectionState}
+                      changeStateFunction={changeAttachmentOneSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Kits  */}
-              <SelectFormatted
-                displayName={"Navigation Kits"}
-                options={kitData}
-                defaultValue={0}
-                currentState={kitSelectionState}
-                changeStateFunction={changeKitSelectionState}
-              />
+                  {/*  Select, Attachment 2  */}
+                  {kitSelectionState.attachmentPosition.two.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 2"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentTwoSelectionState}
+                      changeStateFunction={changeAttachmentTwoSelectionState}
+                    />
+                  )}
 
-              <br />
+                  {/*  Select, Attachment 3  */}
+                  {kitSelectionState.attachmentPosition.three.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 3"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentThreeSelectionState}
+                      changeStateFunction={changeAttachmentThreeSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Tower  */}
-              <SelectFormatted
-                displayName={"Attachment Tower"}
-                options={towerData}
-                defaultValue={0}
-                currentState={towerSelectionState}
-                changeStateFunction={changeTowerSelectionState}
-              />
+                  {/*  Select, Attachment 4  */}
+                  {kitSelectionState.attachmentPosition.four.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 4"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentFourSelectionState}
+                      changeStateFunction={changeAttachmentFourSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Attachment 1  */}
-              {kitSelectionState.attachmentPosition.one.bool && <SelectFormatted
-                displayName={"Attachment 1"}
-                options={attachmentData}
-                defaultValue={0}
-                currentState={attachmentOneSelectionState}
-                changeStateFunction={changeAttachmentOneSelectionState}
-              />}
+                  {/*  Select, Attachment 5  */}
+                  {towerSelectionState.attachmentPosition.five.bool && kitSelectionState.attachmentPosition.five.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 5"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentFiveSelectionState}
+                      changeStateFunction={changeAttachmentFiveSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Attachment 2  */}
-              <SelectFormatted
-                displayName={"Attachment 2"}
-                options={attachmentData}
-                defaultValue={0}
-                currentState={attachmentTwoSelectionState}
-                changeStateFunction={changeAttachmentTwoSelectionState}
-              />
+                  {/*  Select, Attachment 6  */}
+                  {towerSelectionState.attachmentPosition.six.bool && kitSelectionState.attachmentPosition.six.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 6"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentSixSelectionState}
+                      changeStateFunction={changeAttachmentSixSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Attachment 3  */}
-              <SelectFormatted
-                displayName={"Attachment 3"}
-                options={attachmentData}
-                defaultValue={0}
-                currentState={attachmentThreeSelectionState}
-                changeStateFunction={changeAttachmentThreeSelectionState}
-              />
+                  {/*  Select, Attachment 7  */}
+                  {towerSelectionState.attachmentPosition.seven.bool && kitSelectionState.attachmentPosition.seven.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 7"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentSevenSelectionState}
+                      changeStateFunction={changeAttachmentSevenSelectionState}
+                    />
+                  )}
 
-              {/*  Select, Attachment 4  */}
-              {kitSelectionState.attachmentPosition.four.bool && <SelectFormatted
-                displayName={"Attachment 4"}
-                options={attachmentData}
-                defaultValue={0}
-                currentState={attachmentFourSelectionState}
-                changeStateFunction={changeAttachmentFourSelectionState}
-              />}
+                  {/*  Select, Attachment 8  */}
+                  {towerSelectionState.attachmentPosition.eight.bool && kitSelectionState.attachmentPosition.eight.bool && (
+                    <SelectFormatted
+                      displayName={"Attachment 8"}
+                      options={attachmentData}
+                      defaultValue={0}
+                      currentState={attachmentEightSelectionState}
+                      changeStateFunction={changeAttachmentEightSelectionState}
+                    />
+                  )}
+                </ul>
+              </div>
 
-              {/*  Select, Attachment 5  */}
-              {towerSelectionState.attachmentPosition.five.bool && (
-                <SelectFormatted
-                  displayName={"Attachment 5"}
-                  options={attachmentData}
-                  defaultValue={0}
-                  currentState={attachmentFiveSelectionState}
-                  changeStateFunction={changeAttachmentFiveSelectionState}
-                />
-              )}
-
-              {/*  Select, Attachment 6  */}
-              {towerSelectionState.bool && (
-                <SelectFormatted
-                  displayName={"Attachment 6"}
-                  options={attachmentData}
-                  defaultValue={0}
-                  currentState={attachmentSixSelectionState}
-                  changeStateFunction={changeAttachmentSixSelectionState}
-                />
-              )}
-
-              {/*  Select, Attachment 7  */}
-              {towerSelectionState.bool && (
-                <SelectFormatted
-                  displayName={"Attachment 7"}
-                  options={attachmentData}
-                  defaultValue={0}
-                  currentState={attachmentSevenSelectionState}
-                  changeStateFunction={changeAttachmentSevenSelectionState}
-                />
-              )}
-
-              {/*  Select, Attachment 8  */}
-              {towerSelectionState.bool && (
-                <SelectFormatted
-                  displayName={"Attachment 8"}
-                  options={attachmentData}
-                  defaultValue={0}
-                  currentState={attachmentEightSelectionState}
-                  changeStateFunction={changeAttachmentEightSelectionState}
-                />
-              )}
-
-              <br />
-
-              {/*  Select, Banana For Scale  */}
-              <SelectFormatted
-                displayName={"Banana For Scale"}
-                options={selectYesNoData}
-                defaultValue={0}
-                currentState={bananaSelectionState}
-                changeStateFunction={changeBananaSelectionState}
-              />
+              <div>
+                <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Banana For Scale  */}
+                  <SelectFormatted
+                    displayName={"Banana For Scale"}
+                    options={selectYesNoData}
+                    defaultValue={0}
+                    currentState={bananaSelectionState}
+                    changeStateFunction={changeBananaSelectionState}
+                  />
+                </ul>
+              </div>
             </ul>
             <br /> {/*  leaving blank space at the bottom  */}
             <br />
@@ -356,27 +372,83 @@ function Page() {
               <ModelRobotChassisWheels />
 
               {/*  Kits  */}
-              {!kitSelectionState.attachmentPosition.one.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.one.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.one.position} />}
-              {!kitSelectionState.attachmentPosition.two.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.two.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.two.position} />}
-              {!kitSelectionState.attachmentPosition.three.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.three.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.three.position} />}
-              {!kitSelectionState.attachmentPosition.four.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.four.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.four.position} />}
-              {!kitSelectionState.attachmentPosition.five.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.five.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.five.position} />}
-              {!kitSelectionState.attachmentPosition.six.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.six.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.six.position} />}
-              {!kitSelectionState.attachmentPosition.seven.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.seven.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.seven.position} />}
-              {!kitSelectionState.attachmentPosition.eight.bool && <AttachmentRenderer attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.eight.attachmentItem]} attachmentPosition={kitSelectionState.attachmentPosition.eight.position} />}
+              {!kitSelectionState.attachmentPosition.one.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.one.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.one.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.two.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.two.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.two.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.three.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.three.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.three.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.four.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.four.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.four.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.five.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.five.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.five.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.six.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.six.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.six.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.seven.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.seven.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.seven.position}
+                />
+              )}
+              {!kitSelectionState.attachmentPosition.eight.bool && (
+                <AttachmentRenderer
+                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.eight.attachmentItem]}
+                  attachmentPosition={kitSelectionState.attachmentPosition.eight.position}
+                />
+              )}
 
               {/*  Tower Bracket  */}
               {towerSelectionState.bool && <ModelRobotChassisTower />}
 
               {/*  Attachments  */}
-              {kitSelectionState.attachmentPosition.one.bool && towerSelectionState.attachmentPosition.one.bool && <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />}
-              {kitSelectionState.attachmentPosition.two.bool && towerSelectionState.attachmentPosition.two.bool && <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />}
-              {kitSelectionState.attachmentPosition.three.bool && towerSelectionState.attachmentPosition.three.bool && <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />}
-              {kitSelectionState.attachmentPosition.four.bool && towerSelectionState.attachmentPosition.four.bool && <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />}
-              {kitSelectionState.attachmentPosition.five.bool && towerSelectionState.attachmentPosition.five.bool && <AttachmentRenderer attachmentSelectionState={attachmentFiveSelectionState} attachmentPosition={4} />}
-              {kitSelectionState.attachmentPosition.six.bool && towerSelectionState.attachmentPosition.six.bool && <AttachmentRenderer attachmentSelectionState={attachmentSixSelectionState} attachmentPosition={5} />}
-              {kitSelectionState.attachmentPosition.seven.bool && towerSelectionState.attachmentPosition.seven.bool && <AttachmentRenderer attachmentSelectionState={attachmentSevenSelectionState} attachmentPosition={6} />}
-              {kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool && <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />}
+              {kitSelectionState.attachmentPosition.one.bool && towerSelectionState.attachmentPosition.one.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />
+              )}
+              {kitSelectionState.attachmentPosition.two.bool && towerSelectionState.attachmentPosition.two.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
+              )}
+              {kitSelectionState.attachmentPosition.three.bool && towerSelectionState.attachmentPosition.three.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
+              )}
+              {kitSelectionState.attachmentPosition.four.bool && towerSelectionState.attachmentPosition.four.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
+              )}
+              {kitSelectionState.attachmentPosition.five.bool && towerSelectionState.attachmentPosition.five.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentFiveSelectionState} attachmentPosition={4} />
+              )}
+              {kitSelectionState.attachmentPosition.six.bool && towerSelectionState.attachmentPosition.six.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentSixSelectionState} attachmentPosition={5} />
+              )}
+              {kitSelectionState.attachmentPosition.seven.bool && towerSelectionState.attachmentPosition.seven.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentSevenSelectionState} attachmentPosition={6} />
+              )}
+              {kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool && (
+                <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />
+              )}
 
               {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
             </Suspense>
@@ -401,6 +473,7 @@ function Page() {
               ramState={computerRamSelectionState}
               storageState={computerStorageSelectionState}
               gpuState={computerGpuSelectionState}
+              kitState={kitSelectionState}
               statesArray={makePriceLeadStatesArray()}
             />
           </div>

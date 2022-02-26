@@ -368,7 +368,10 @@
     {
       "label": "None",
       "value": "none",
+      "itemNumber": " ",
       "price": 0,
+      "priceHardware": 0,
+      "priceSoftware": 0,
       "leadTime": 0,
       "attachmentPosition": {
         "one": {
@@ -403,8 +406,11 @@
     {
       "label": "IndoorNav",
       "value": "indoor_nav",
-      "price": 10000,
-      "leadTime": 3,
+      "itemNumber": "042000",
+      "price": 8500,
+      "priceHardware": 8500,
+      "priceSoftware": 0,
+      "leadTime": 5,
       "attachmentPosition": {
         "one": {
           "bool": false,
@@ -417,7 +423,9 @@
           "position": 1
         },
         "three": {
-          "bool": true,
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 5,
           "position": 2
         },
         "four": {
@@ -444,8 +452,28 @@
         }
       },
       "_comment": ["                                                         end of line|"],
-      "descriptionHardware": ["Kit, Hardware - IndoorNav", "Specifications: ", " ", " ", " ", " ", " ", " ", " "],
-      "descriptionSoftware": ["Kit, Software - IndoorNav", "Specifications: ", " ", " ", " ", " ", " ", " ", " "]
+      "descriptionHardware": [
+        "Kit, Hardware - IndoorNav", 
+        "Specifications: This kit includes 2X Hokuyo LiDAR and 1X Microstrain AHRS,", 
+        "and related cables.", 
+        " ", 
+        "Note: this kit does not include a computer or the robot platform.", 
+        " ", 
+        " ", 
+        " ", 
+        " "
+      ],
+      "descriptionSoftware": [
+        "Kit, Software - IndoorNav", 
+        "Specifications: This kit includes:", 
+        "  - a closed-source copy of the IndoorNav autonomy software", 
+        "    on the robot's computer", 
+        "  - sensor drivers and networking on the robot's computer", 
+        "  - URDF configuration on the robot's computer to include sensor postitions", 
+        " ", 
+        "Note: this software requires the purchase of the related hardware kit.", 
+        " "
+      ]
     }
   ]
 }
