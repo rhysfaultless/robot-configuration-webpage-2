@@ -6,7 +6,21 @@
   "robotPlatform": {
     "label": "Dingo Omnidirectional",
     "price": 10000,
-    "leadTime": 3
+    "leadTime": 3,
+    "itemNumber": "022609",
+    "labelPdf": "Dingo-O",
+    "_comment": ["                                                         end of line|"],
+    "description": [
+      "Robot Platform - Dingo Omnidirectional",
+      "Specifications: An omnidirectional drive mobile robot, Dingo ",
+      "includes user power breakouts for 5 V, 12 V, and unregulated 12 V ",
+      "battery voltage. Dingo has a maximum speed of 1.6 m/s with a ",
+      "payload of 20 kg. The base platform mass includes a computer and a ",
+      "single battery, and does not addect the 20 kg allowable payload. ",
+      "Dingo runs on ROS Melodic and Ubuntu Server 18-04. Dingo includes ",
+      "user-accessible ethernet, wifi, and bluetooth. ",
+      " "
+    ]
   },
 
   "panelColours": [
@@ -16,7 +30,19 @@
       "price": 0,
       "leadTime": 0,
       "hex": "0xffa700",
-      "rgb": "rgb(255, 167, 0)"
+      "rgb": "rgb(255, 167, 0)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Yellow",
+        "Specifications: The Dingo's side panels will be coated yellow.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Black",
@@ -24,7 +50,19 @@
       "price": 300,
       "leadTime": 7,
       "hex": "0x303030",
-      "rgb": "rgb(48, 48, 48)"
+      "rgb": "rgb(48, 48, 48)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Black",
+        "Specifications: The Dingo's side panels will be coated black.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "White",
@@ -32,7 +70,19 @@
       "price": 300,
       "leadTime": 7,
       "hex": "0xd6d6d6",
-      "rgb": "rgb(214, 214, 214)"
+      "rgb": "rgb(214, 214, 214)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - White",
+        "Specifications: The Dingo's side panels will be coated white.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Red",
@@ -40,7 +90,19 @@
       "price": 300,
       "leadTime": 7,
       "hex": "0xc92f24",
-      "rgb": "rgb(201, 47, 36)"
+      "rgb": "rgb(201, 47, 36)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Red",
+        "Specifications: The Dingo's side panels will be coated red.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Orange",
@@ -48,7 +110,19 @@
       "price": 300,
       "leadTime": 7,
       "hex": "0xff6700",
-      "rgb": "rgb(255, 103, 0)"
+      "rgb": "rgb(255, 103, 0)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Orange",
+        "Specifications: The Dingo's side panels will be coated orange.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Blue",
@@ -56,7 +130,19 @@
       "price": 300,
       "leadTime": 7,
       "hex": "0x536882",
-      "rgb": "rgb(83, 104, 130)"
+      "rgb": "rgb(83, 104, 130)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Navy Blue",
+        "Specifications: The Dingo's side panels will be coated navy blue.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Green",
@@ -64,7 +150,19 @@
       "price": 300,
       "leadTime": 7,
       "hex": "0x3b4216",
-      "rgb": "rgb(59,66, 22)"
+      "rgb": "rgb(59,66, 22)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Olive Drab",
+        "Specifications: The Dingo's side panels will be coated olive drab.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     }
   ],
 
@@ -73,13 +171,17 @@
       "label": "Lead Acid",
       "value": "A",
       "price": 0,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": ["Battery - Sealed Lead Acid", "Specifications: ", " ", " ", " ", " ", " ", " ", " "]
     },
     {
       "label": "Lithium",
       "value": "B",
       "price": 1000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": ["Battery - Lithium", "Specifications: ", " ", " ", " ", " ", " ", " ", " "]
     }
   ],
 
@@ -208,166 +310,5 @@
       "leadTime": 0,
       "bool": true
     }
-  ],
-
-  "pdfText": {
-    "robotPlatform": {
-      "label": "Dingo Omnidirectional",
-      "labelPdf": "Dingo-O",
-      "itemNumber": "022609",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Robot Platform - Dingo Omnidirectional",
-        "Specifications: An omnidirectional drive mobile robot, Dingo ",
-        "includes user power breakouts for 5 V, 12 V, and unregulated 12 V ",
-        "battery voltage. Dingo has a maximum speed of 1.6 m/s with a ",
-        "payload of 20 kg. The base platform mass includes a computer and a ",
-        "single battery, and does not addect the 20 kg allowable payload. ",
-        "Dingo runs on ROS Melodic and Ubuntu Server 18-04. Dingo includes ",
-        "user-accessible ethernet, wifi, and bluetooth. ",
-        " "
-      ]
-    },
-
-    "panelColours": {
-      "Yellow": {
-        "label": "Yellow",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - Yellow",
-          "Specifications: The Dingo's side panels will be coated yellow.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "Black": {
-        "label": "Black",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - Black",
-          "Specifications: The Dingo's side panels will be coated black.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "White": {
-        "label": "White",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - White",
-          "Specifications: The Dingo's side panels will be coated white.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "Red": {
-        "label": "Red",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - Red",
-          "Specifications: The Dingo's side panels will be coated red.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "Orange": {
-        "label": "Orange",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - Orange",
-          "Specifications: The Dingo's side panels will be coated orange.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "Blue": {
-        "label": "Blue",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - Navy Blue",
-          "Specifications: The Dingo's side panels will be coated navy blue.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "Green": {
-        "label": "Green",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Colour, side panels - Olive Drab",
-          "Specifications: The Dingo's side panels will be coated olive drab.",
-          "Note: The default colour is yellow. Optional colours are available",
-          "at an increased price and lead-time.",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      }
-    },
-
-    "batteryItems": {
-      "Lead Acid": {
-        "label": "Lead Acid",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Battery - Sealed Lead Acid", 
-          "Specifications: ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      },
-      "Lithium": {
-        "label": "Lithium",
-        "_comment": ["                                                         end of line|"],
-        "description": [
-          "Battery - Lithium", 
-          "Specifications: ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " ",
-          " "
-        ]
-      }
-    }
-  }
+  ]
 }

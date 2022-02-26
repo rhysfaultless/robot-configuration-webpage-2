@@ -13,7 +13,7 @@ const DataFiles = [DataFile_DingoOmni, DataFile_DingoDiff];
 const ImagePath_CprIcon = "/public/images/clearpath_robotics_color.jpg";
 
 // number of PDF pages
-const PageCount = 6;
+const PageCount = 7;
 
 function ButtonQuote(props) {
   function GeneratePdfQuote() {
@@ -24,7 +24,7 @@ function ButtonQuote(props) {
       }
     }
 
-    // PDF setup - create PDF
+    // PDF setup - create PDF -----------------------------------------------------------
     {
       const doc = new jsPDF();
       doc.setFont("helvetica");
@@ -91,7 +91,7 @@ function ButtonQuote(props) {
       // header - title
       doc.setFontSize(12);
       doc.text(20, 48, "Title: ");
-      doc.text(40, 48, DataFile.pdfText.robotPlatform.labelPdf + ", Robot Configuration Webpage");
+      doc.text(40, 48, DataFile.robotPlatform.labelPdf + ", Robot Configuration Webpage");
 
       // horizontal line separating header and columns
       doc.setLineWidth(0.2);
@@ -133,10 +133,9 @@ function ButtonQuote(props) {
       }
     }
 
-    // PDF setup - content for robot configuration
+    // PDF setup - content for robot configuration --------------------------------------
     {
-      // page 1 -------------------------------------------------------------------------
-      // page 1 - robot platform, colour, battery
+      // page 1 - robot platform, colour, battery ---------------------------------------
       {
         doc.setPage(1);
         doc.setTextColor(255); // make text white
@@ -145,19 +144,19 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "1"); // line ID
         {
-          doc.text(27, 63, DataFile.pdfText.robotPlatform.itemNumber); // item number
+          doc.text(27, 63, DataFile.robotPlatform.itemNumber); // item number
           doc.text(141, 63, "1"); // quantity
           doc.text(149, 63, "$" + String(DataFile.robotPlatform.price)); // price, per
           doc.text(174, 63, "$" + String(DataFile.robotPlatform.price)); // price, extended
-          doc.text(40, 63, DataFile.pdfText.robotPlatform.description[0]); // description 0
-          doc.text(40, 67, DataFile.pdfText.robotPlatform.description[1]); // description 1
-          doc.text(40, 71, DataFile.pdfText.robotPlatform.description[2]); // description 2
-          doc.text(40, 75, DataFile.pdfText.robotPlatform.description[3]); // description 3
-          doc.text(40, 79, DataFile.pdfText.robotPlatform.description[4]); // description 4
-          doc.text(40, 83, DataFile.pdfText.robotPlatform.description[5]); // description 5
-          doc.text(40, 87, DataFile.pdfText.robotPlatform.description[6]); // description 6
-          doc.text(40, 91, DataFile.pdfText.robotPlatform.description[7]); // description 7
-          doc.text(40, 95, DataFile.pdfText.robotPlatform.description[8]); // description 8
+          doc.text(40, 63, DataFile.robotPlatform.description[0]); // description 0
+          doc.text(40, 67, DataFile.robotPlatform.description[1]); // description 1
+          doc.text(40, 71, DataFile.robotPlatform.description[2]); // description 2
+          doc.text(40, 75, DataFile.robotPlatform.description[3]); // description 3
+          doc.text(40, 79, DataFile.robotPlatform.description[4]); // description 4
+          doc.text(40, 83, DataFile.robotPlatform.description[5]); // description 5
+          doc.text(40, 87, DataFile.robotPlatform.description[6]); // description 6
+          doc.text(40, 91, DataFile.robotPlatform.description[7]); // description 7
+          doc.text(40, 95, DataFile.robotPlatform.description[8]); // description 8
         }
 
         doc.text(21, 103, "2"); // line ID
@@ -168,17 +167,18 @@ function ButtonQuote(props) {
             if (DataFile.panelColours[i].label == props.colourState.label) {
               doc.text(149, 103, "$" + String(DataFile.panelColours[i].price)); // price, per
               doc.text(174, 103, "$" + String(DataFile.panelColours[i].price)); // price, extended
+              doc.text(40, 103, DataFile.panelColours[i].description[0]); // description 0
+              doc.text(40, 107, DataFile.panelColours[i].description[1]); // description 1
+              doc.text(40, 111, DataFile.panelColours[i].description[2]); // description 2
+              doc.text(40, 115, DataFile.panelColours[i].description[3]); // description 3
+              doc.text(40, 119, DataFile.panelColours[i].description[4]); // description 4
+              doc.text(40, 123, DataFile.panelColours[i].description[5]); // description 5
+              doc.text(40, 127, DataFile.panelColours[i].description[6]); // description 6
+              doc.text(40, 131, DataFile.panelColours[i].description[7]); // description 7
+              doc.text(40, 135, DataFile.panelColours[i].description[8]); // description 8
             }
           }
-          doc.text(40, 103, DataFile.pdfText.panelColours[props.colourState.label].description[0]); // description 0
-          doc.text(40, 107, DataFile.pdfText.panelColours[props.colourState.label].description[1]); // description 1
-          doc.text(40, 111, DataFile.pdfText.panelColours[props.colourState.label].description[2]); // description 2
-          doc.text(40, 115, DataFile.pdfText.panelColours[props.colourState.label].description[3]); // description 3
-          doc.text(40, 119, DataFile.pdfText.panelColours[props.colourState.label].description[4]); // description 4
-          doc.text(40, 123, DataFile.pdfText.panelColours[props.colourState.label].description[5]); // description 5
-          doc.text(40, 127, DataFile.pdfText.panelColours[props.colourState.label].description[6]); // description 6
-          doc.text(40, 131, DataFile.pdfText.panelColours[props.colourState.label].description[7]); // description 7
-          doc.text(40, 135, DataFile.pdfText.panelColours[props.colourState.label].description[8]); // description 8
+
         }
 
         doc.text(21, 143, "3"); // line ID
@@ -189,17 +189,17 @@ function ButtonQuote(props) {
             if (DataFile.batteryItems[i].label == props.batteryState.label) {
               doc.text(149, 143, "$" + String(DataFile.batteryItems[i].price)); // price, per
               doc.text(174, 143, "$" + String(DataFile.batteryItems[i].price)); // price, extended
+              doc.text(40, 143, DataFile.batteryItems[i].description[0]); // description 0
+              doc.text(40, 147, DataFile.batteryItems[i].description[1]); // description 1
+              doc.text(40, 151, DataFile.batteryItems[i].description[2]); // description 2
+              doc.text(40, 155, DataFile.batteryItems[i].description[3]); // description 3
+              doc.text(40, 159, DataFile.batteryItems[i].description[4]); // description 4
+              doc.text(40, 163, DataFile.batteryItems[i].description[5]); // description 5
+              doc.text(40, 167, DataFile.batteryItems[i].description[6]); // description 6
+              doc.text(40, 171, DataFile.batteryItems[i].description[7]); // description 7
+              doc.text(40, 175, DataFile.batteryItems[i].description[8]); // description 8
             }
           }
-          doc.text(40, 143, DataFile.pdfText.batteryItems[props.batteryState.label].description[0]); // description 0
-          doc.text(40, 147, DataFile.pdfText.batteryItems[props.batteryState.label].description[1]); // description 1
-          doc.text(40, 151, DataFile.pdfText.batteryItems[props.batteryState.label].description[2]); // description 2
-          doc.text(40, 155, DataFile.pdfText.batteryItems[props.batteryState.label].description[3]); // description 3
-          doc.text(40, 159, DataFile.pdfText.batteryItems[props.batteryState.label].description[4]); // description 4
-          doc.text(40, 163, DataFile.pdfText.batteryItems[props.batteryState.label].description[5]); // description 5
-          doc.text(40, 167, DataFile.pdfText.batteryItems[props.batteryState.label].description[6]); // description 6
-          doc.text(40, 171, DataFile.pdfText.batteryItems[props.batteryState.label].description[7]); // description 7
-          doc.text(40, 175, DataFile.pdfText.batteryItems[props.batteryState.label].description[8]); // description 8
         }
 
         doc.text(21, 183, "4"); // line ID
@@ -239,8 +239,7 @@ function ButtonQuote(props) {
         }
       }
 
-      // page 2 -------------------------------------------------------------------------
-      // page 2 - computer
+      // page 2 - computer --------------------------------------------------------------
       {
         doc.setPage(2);
         doc.setTextColor(255); // make text white
@@ -255,17 +254,17 @@ function ButtonQuote(props) {
             if (DataComputer.computers[i].label == props.computerState.label) {
               doc.text(149, 63, "$" + String(DataComputer.computers[i].price)); // price, per
               doc.text(174, 63, "$" + String(DataComputer.computers[i].price)); // price, extended
+              doc.text(40, 63, DataComputer.computers[i].description[0]); // description 0
+              doc.text(40, 67, DataComputer.computers[i].description[1]); // description 1
+              doc.text(40, 71, DataComputer.computers[i].description[2]); // description 2
+              doc.text(40, 75, DataComputer.computers[i].description[3]); // description 3
+              doc.text(40, 79, DataComputer.computers[i].description[4]); // description 4
+              doc.text(40, 83, DataComputer.computers[i].description[5]); // description 5
+              doc.text(40, 87, DataComputer.computers[i].description[6]); // description 6
+              doc.text(40, 91, DataComputer.computers[i].description[7]); // description 7
+              doc.text(40, 95, DataComputer.computers[i].description[8]); // description 8
             }
           }
-          doc.text(40, 63, DataComputer.pdfText.computers[props.computerState.label].description[0]); // description 0
-          doc.text(40, 67, DataComputer.pdfText.computers[props.computerState.label].description[1]); // description 1
-          doc.text(40, 71, DataComputer.pdfText.computers[props.computerState.label].description[2]); // description 2
-          doc.text(40, 75, DataComputer.pdfText.computers[props.computerState.label].description[3]); // description 3
-          doc.text(40, 79, DataComputer.pdfText.computers[props.computerState.label].description[4]); // description 4
-          doc.text(40, 83, DataComputer.pdfText.computers[props.computerState.label].description[5]); // description 5
-          doc.text(40, 87, DataComputer.pdfText.computers[props.computerState.label].description[6]); // description 6
-          doc.text(40, 91, DataComputer.pdfText.computers[props.computerState.label].description[7]); // description 7
-          doc.text(40, 95, DataComputer.pdfText.computers[props.computerState.label].description[8]); // description 8
         }
 
         doc.text(21, 103, "7"); // line ID
@@ -277,17 +276,17 @@ function ButtonQuote(props) {
               if (DataComputer.processors[i].label == props.processorState.label) {
                 doc.text(149, 103, "$" + String(DataComputer.processors[i].price)); // price, per
                 doc.text(174, 103, "$" + String(DataComputer.processors[i].price)); // price, extended
+                doc.text(40, 103, DataComputer.processors[i].description[0]); // description 0
+                doc.text(40, 107, DataComputer.processors[i].description[1]); // description 1
+                doc.text(40, 111, DataComputer.processors[i].description[2]); // description 2
+                doc.text(40, 115, DataComputer.processors[i].description[3]); // description 3
+                doc.text(40, 119, DataComputer.processors[i].description[4]); // description 4
+                doc.text(40, 123, DataComputer.processors[i].description[5]); // description 5
+                doc.text(40, 127, DataComputer.processors[i].description[6]); // description 6
+                doc.text(40, 131, DataComputer.processors[i].description[7]); // description 7
+                doc.text(40, 135, DataComputer.processors[i].description[8]); // description 8
               }
             }
-            doc.text(40, 103, DataComputer.pdfText.processors[props.processorState.label].description[0]); // description 0
-            doc.text(40, 107, DataComputer.pdfText.processors[props.processorState.label].description[1]); // description 1
-            doc.text(40, 111, DataComputer.pdfText.processors[props.processorState.label].description[2]); // description 2
-            doc.text(40, 115, DataComputer.pdfText.processors[props.processorState.label].description[3]); // description 3
-            doc.text(40, 119, DataComputer.pdfText.processors[props.processorState.label].description[4]); // description 4
-            doc.text(40, 123, DataComputer.pdfText.processors[props.processorState.label].description[5]); // description 5
-            doc.text(40, 127, DataComputer.pdfText.processors[props.processorState.label].description[6]); // description 6
-            doc.text(40, 131, DataComputer.pdfText.processors[props.processorState.label].description[7]); // description 7
-            doc.text(40, 135, DataComputer.pdfText.processors[props.processorState.label].description[8]); // description 8
           } else {
             doc.text(40, 103, "Empty line item"); // description 0
           }
@@ -302,17 +301,17 @@ function ButtonQuote(props) {
               if (DataComputer.ram[i].label == props.ramState.label) {
                 doc.text(149, 143, "$" + String(DataComputer.ram[i].price)); // price, per
                 doc.text(174, 143, "$" + String(DataComputer.ram[i].price)); // price, extended
+                doc.text(40, 143, DataComputer.ram[i].description[0]); // description 0
+                doc.text(40, 147, DataComputer.ram[i].description[1]); // description 1
+                doc.text(40, 151, DataComputer.ram[i].description[2]); // description 2
+                doc.text(40, 155, DataComputer.ram[i].description[3]); // description 3
+                doc.text(40, 159, DataComputer.ram[i].description[4]); // description 4
+                doc.text(40, 163, DataComputer.ram[i].description[5]); // description 5
+                doc.text(40, 167, DataComputer.ram[i].description[6]); // description 6
+                doc.text(40, 171, DataComputer.ram[i].description[7]); // description 7
+                doc.text(40, 175, DataComputer.ram[i].description[8]); // description 8
               }
             }
-            doc.text(40, 143, DataComputer.pdfText.ram[props.ramState.label].description[0]); // description 0
-            doc.text(40, 147, DataComputer.pdfText.ram[props.ramState.label].description[1]); // description 1
-            doc.text(40, 151, DataComputer.pdfText.ram[props.ramState.label].description[2]); // description 2
-            doc.text(40, 155, DataComputer.pdfText.ram[props.ramState.label].description[3]); // description 3
-            doc.text(40, 159, DataComputer.pdfText.ram[props.ramState.label].description[4]); // description 4
-            doc.text(40, 163, DataComputer.pdfText.ram[props.ramState.label].description[5]); // description 5
-            doc.text(40, 167, DataComputer.pdfText.ram[props.ramState.label].description[6]); // description 6
-            doc.text(40, 171, DataComputer.pdfText.ram[props.ramState.label].description[7]); // description 7
-            doc.text(40, 175, DataComputer.pdfText.ram[props.ramState.label].description[8]); // description 8
           } else {
             doc.text(40, 143, "Empty line item"); // description 0
           }
@@ -327,17 +326,17 @@ function ButtonQuote(props) {
               if (DataComputer.storage[i].label == props.storageState.label) {
                 doc.text(149, 183, "$" + String(DataComputer.storage[i].price)); // price, per
                 doc.text(174, 183, "$" + String(DataComputer.storage[i].price)); // price, extended
+                doc.text(40, 183, DataComputer.storage[i].description[0]); // description 0
+                doc.text(40, 187, DataComputer.storage[i].description[1]); // description 1
+                doc.text(40, 191, DataComputer.storage[i].description[2]); // description 2
+                doc.text(40, 195, DataComputer.storage[i].description[3]); // description 3
+                doc.text(40, 199, DataComputer.storage[i].description[4]); // description 4
+                doc.text(40, 203, DataComputer.storage[i].description[5]); // description 5
+                doc.text(40, 207, DataComputer.storage[i].description[6]); // description 6
+                doc.text(40, 211, DataComputer.storage[i].description[7]); // description 7
+                doc.text(40, 215, DataComputer.storage[i].description[8]); // description 8
               }
             }
-            doc.text(40, 183, DataComputer.pdfText.storage[props.storageState.label].description[0]); // description 0
-            doc.text(40, 187, DataComputer.pdfText.storage[props.storageState.label].description[1]); // description 1
-            doc.text(40, 191, DataComputer.pdfText.storage[props.storageState.label].description[2]); // description 2
-            doc.text(40, 195, DataComputer.pdfText.storage[props.storageState.label].description[3]); // description 3
-            doc.text(40, 199, DataComputer.pdfText.storage[props.storageState.label].description[4]); // description 4
-            doc.text(40, 203, DataComputer.pdfText.storage[props.storageState.label].description[5]); // description 5
-            doc.text(40, 207, DataComputer.pdfText.storage[props.storageState.label].description[6]); // description 6
-            doc.text(40, 211, DataComputer.pdfText.storage[props.storageState.label].description[7]); // description 7
-            doc.text(40, 215, DataComputer.pdfText.storage[props.storageState.label].description[8]); // description 8
           } else {
             doc.text(40, 183, "Empty line item"); // description 0
           }
@@ -352,29 +351,28 @@ function ButtonQuote(props) {
               if (DataComputer.gpu[i].label == props.gpuState.label) {
                 doc.text(149, 223, "$" + String(DataComputer.gpu[i].price)); // price, per
                 doc.text(174, 223, "$" + String(DataComputer.gpu[i].price)); // price, extended
+                doc.text(40, 223, DataComputer.gpu[i].description[0]); // description 0
+                doc.text(40, 227, DataComputer.gpu[i].description[1]); // description 1
+                doc.text(40, 231, DataComputer.gpu[i].description[2]); // description 2
+                doc.text(40, 235, DataComputer.gpu[i].description[3]); // description 3
+                doc.text(40, 239, DataComputer.gpu[i].description[4]); // description 4
+                doc.text(40, 243, DataComputer.gpu[i].description[5]); // description 5
+                doc.text(40, 247, DataComputer.gpu[i].description[6]); // description 6
+                doc.text(40, 251, DataComputer.gpu[i].description[7]); // description 7
+                doc.text(40, 255, DataComputer.gpu[i].description[8]); // description 8
               }
             }
-            doc.text(40, 223, DataComputer.pdfText.gpu[props.gpuState.label].description[0]); // description 0
-            doc.text(40, 227, DataComputer.pdfText.gpu[props.gpuState.label].description[1]); // description 1
-            doc.text(40, 231, DataComputer.pdfText.gpu[props.gpuState.label].description[2]); // description 2
-            doc.text(40, 235, DataComputer.pdfText.gpu[props.gpuState.label].description[3]); // description 3
-            doc.text(40, 239, DataComputer.pdfText.gpu[props.gpuState.label].description[4]); // description 4
-            doc.text(40, 243, DataComputer.pdfText.gpu[props.gpuState.label].description[5]); // description 5
-            doc.text(40, 247, DataComputer.pdfText.gpu[props.gpuState.label].description[6]); // description 6
-            doc.text(40, 251, DataComputer.pdfText.gpu[props.gpuState.label].description[7]); // description 7
-            doc.text(40, 255, DataComputer.pdfText.gpu[props.gpuState.label].description[8]); // description 8
           } else {
             doc.text(40, 223, "Empty line item"); // description 0
           }
         }
       }
 
-      // page 3 -------------------------------------------------------------------------
-      // page 3 - attachments
+      // page 3 - kits ------------------------------------------------------------------
       {
         doc.setPage(3);
         doc.setTextColor(255); // make text white
-        doc.text(40, 57.5, "Attachments");
+        doc.text(40, 57.5, "Kits");
         doc.setTextColor(0); // make text black
 
         doc.text(21, 63, "11"); // line ID
@@ -468,8 +466,7 @@ function ButtonQuote(props) {
         }
       }
 
-      // page 4 -------------------------------------------------------------------------
-      // page 4 - attachments
+      // page 4 - attachments -----------------------------------------------------------
       {
         doc.setPage(4);
         doc.setTextColor(255); // make text white
@@ -567,7 +564,7 @@ function ButtonQuote(props) {
         }
       }
 
-      // page 5 ---------------------------------------------------------------------
+      // page 5 - attachments -----------------------------------------------------------
       {
         doc.setPage(5);
         doc.setTextColor(255); // make text white
@@ -665,9 +662,107 @@ function ButtonQuote(props) {
         }
       }
 
-      // page 6 ---------------------------------------------------------------------
+      // page 6 - attachments -----------------------------------------------------------
       {
         doc.setPage(6);
+        doc.setTextColor(255); // make text white
+        doc.text(40, 57.5, "Attachments");
+        doc.setTextColor(0); // make text black
+
+        doc.text(21, 63, "26"); // line ID
+        {
+          doc.text(27, 63, " "); // item number
+          doc.text(141, 63, ""); // quantity
+          doc.text(149, 63, " "); // price, per
+          doc.text(174, 63, " "); // price, extended
+
+          doc.text(40, 63, " "); // description 0
+          doc.text(40, 67, " "); // description 1
+          doc.text(40, 71, " "); // description 2
+          doc.text(40, 75, " "); // description 3
+          doc.text(40, 79, " "); // description 4
+          doc.text(40, 83, " "); // description 5
+          doc.text(40, 87, " "); // description 6
+          doc.text(40, 91, " "); // description 7
+          doc.text(40, 95, " "); // description 8
+        }
+
+        doc.text(21, 103, "27"); // line ID
+        {
+          doc.text(27, 103, " "); // item number
+          doc.text(141, 103, " "); // quantity
+          doc.text(149, 103, " "); // price, per
+          doc.text(174, 103, " "); // price, extended
+
+          doc.text(40, 103, " "); // description 0
+          doc.text(40, 107, " "); // description 1
+          doc.text(40, 111, " "); // description 2
+          doc.text(40, 115, " "); // description 3
+          doc.text(40, 119, " "); // description 4
+          doc.text(40, 123, " "); // description 5
+          doc.text(40, 127, " "); // description 6
+          doc.text(40, 131, " "); // description 7
+          doc.text(40, 135, " "); // description 8
+        }
+
+        doc.text(21, 143, "28"); // line ID
+        {
+          doc.text(27, 143, " "); // item number
+          doc.text(141, 143, " "); // quantity
+          doc.text(149, 143, " "); // price, per
+          doc.text(174, 143, " "); // price, extended
+
+          doc.text(40, 143, " "); // description 0
+          doc.text(40, 147, " "); // description 1
+          doc.text(40, 151, " "); // description 2
+          doc.text(40, 155, " "); // description 3
+          doc.text(40, 159, " "); // description 4
+          doc.text(40, 163, " "); // description 5
+          doc.text(40, 167, " "); // description 6
+          doc.text(40, 171, " "); // description 7
+          doc.text(40, 175, " "); // description 8
+        }
+
+        doc.text(21, 183, "29"); // line ID
+        {
+          doc.text(27, 183, " "); // item number
+          doc.text(141, 183, " "); // quantity
+          doc.text(149, 183, " "); // price, per
+          doc.text(174, 183, " "); // price, extended
+
+          doc.text(40, 183, " "); // description 0
+          doc.text(40, 187, " "); // description 1
+          doc.text(40, 191, " "); // description 2
+          doc.text(40, 195, " "); // description 3
+          doc.text(40, 199, " "); // description 4
+          doc.text(40, 203, " "); // description 5
+          doc.text(40, 207, " "); // description 6
+          doc.text(40, 211, " "); // description 7
+          doc.text(40, 215, " "); // description 8
+        }
+
+        doc.text(21, 223, "30"); // line ID
+        {
+          doc.text(27, 223, " "); // item number
+          doc.text(141, 223, " "); // quantity
+          doc.text(149, 223, " "); // price, per
+          doc.text(174, 223, " "); // price, extended
+
+          doc.text(40, 223, " "); // description 0
+          doc.text(40, 227, " "); // description 1
+          doc.text(40, 231, " "); // description 2
+          doc.text(40, 235, " "); // description 3
+          doc.text(40, 239, " "); // description 4
+          doc.text(40, 243, " "); // description 5
+          doc.text(40, 247, " "); // description 6
+          doc.text(40, 251, " "); // description 7
+          doc.text(40, 255, " "); // description 8
+        }
+      }
+
+      // page 7 - summary ---------------------------------------------------------------
+      {
+        doc.setPage(7);
 
         // total price
         doc.setFontSize(12);
@@ -730,7 +825,7 @@ function ButtonQuote(props) {
       }
     }
 
-    // save PDF -----------------------------------------------------------------------
+    // save PDF
     doc.save(quote_name);
   }
 
