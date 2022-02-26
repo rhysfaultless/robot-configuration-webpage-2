@@ -480,92 +480,128 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "16"); // line ID
         {
-          doc.text(27, 63, " "); // item number
-          doc.text(141, 63, ""); // quantity
-          doc.text(149, 63, " "); // price, per
-          doc.text(174, 63, " "); // price, extended
-
-          doc.text(40, 63, "Attachments - Tower Bracket"); // description 0
-          doc.text(40, 67, " "); // description 1
-          doc.text(40, 71, " "); // description 2
-          doc.text(40, 75, " "); // description 3
-          doc.text(40, 79, " "); // description 4
-          doc.text(40, 83, " "); // description 5
-          doc.text(40, 87, " "); // description 6
-          doc.text(40, 91, " "); // description 7
-          doc.text(40, 95, " "); // description 8
+          for (let i = 0; i < DataFile.tower.length; i++) {
+            if (DataFile.tower[i].label == props.attachmentTowerState.label) {
+              doc.text(27, 63, DataFile.tower[i].itemNumber); // item number
+              doc.text(141, 63, "1"); // quantity
+              doc.text(149, 63, "$" + String(DataFile.tower[i].price)); // price, per
+              doc.text(174, 63, "$" + String(DataFile.tower[i].price)); // price, extended
+              doc.text(40, 63, "Attachments - Tower Bracket"); // description 0
+              doc.text(40, 67, DataFile.tower[i].description[1]); // description 1
+              doc.text(40, 71, DataFile.tower[i].description[2]); // description 2
+              doc.text(40, 75, DataFile.tower[i].description[3]); // description 3
+              doc.text(40, 79, DataFile.tower[i].description[4]); // description 4
+              doc.text(40, 83, DataFile.tower[i].description[5]); // description 5
+              doc.text(40, 87, DataFile.tower[i].description[6]); // description 6
+              doc.text(40, 91, DataFile.tower[i].description[7]); // description 7
+              doc.text(40, 95, DataFile.tower[i].description[8]); // description 8
+            }
+          }
         }
 
         doc.text(21, 103, "17"); // line ID
         {
-          doc.text(27, 103, " "); // item number
-          doc.text(141, 103, " "); // quantity
-          doc.text(149, 103, " "); // price, per
-          doc.text(174, 103, " "); // price, extended
-
-          doc.text(40, 103, "Attachments - Position 1"); // description 0
-          doc.text(40, 107, " "); // description 1
-          doc.text(40, 111, " "); // description 2
-          doc.text(40, 115, " "); // description 3
-          doc.text(40, 119, " "); // description 4
-          doc.text(40, 123, " "); // description 5
-          doc.text(40, 127, " "); // description 6
-          doc.text(40, 131, " "); // description 7
-          doc.text(40, 135, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.one.bool && props.kitState.attachmentPosition.one.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentOneState.label) {
+                doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 103, "1"); // quantity
+                doc.text(149, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 103, "Attachments - Position 1"); // description 0
+                doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 115, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 119, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 123, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 127, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 131, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 135, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 103, "Attachments - Position 1"); // description 0
+            doc.text(40, 111, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 143, "18"); // line ID
         {
-          doc.text(27, 143, " "); // item number
-          doc.text(141, 143, " "); // quantity
-          doc.text(149, 143, " "); // price, per
-          doc.text(174, 143, " "); // price, extended
-
-          doc.text(40, 143, "Attachments - Position 2"); // description 0
-          doc.text(40, 147, " "); // description 1
-          doc.text(40, 151, " "); // description 2
-          doc.text(40, 155, " "); // description 3
-          doc.text(40, 159, " "); // description 4
-          doc.text(40, 163, " "); // description 5
-          doc.text(40, 167, " "); // description 6
-          doc.text(40, 171, " "); // description 7
-          doc.text(40, 175, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.two.bool && props.kitState.attachmentPosition.two.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentTwoState.label) {
+                doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 143, "1"); // quantity
+                doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 143, "Attachments - Position 2"); // description 0
+                doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 155, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 159, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 163, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 167, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 171, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 175, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 143, "Attachments - Position 2"); // description 0
+            doc.text(40, 151, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 183, "19"); // line ID
         {
-          doc.text(27, 183, " "); // item number
-          doc.text(141, 183, " "); // quantity
-          doc.text(149, 183, " "); // price, per
-          doc.text(174, 183, " "); // price, extended
-
-          doc.text(40, 183, "Attachments - Position 3"); // description 0
-          doc.text(40, 187, " "); // description 1
-          doc.text(40, 191, " "); // description 2
-          doc.text(40, 195, " "); // description 3
-          doc.text(40, 199, " "); // description 4
-          doc.text(40, 203, " "); // description 5
-          doc.text(40, 207, " "); // description 6
-          doc.text(40, 211, " "); // description 7
-          doc.text(40, 215, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.three.bool && props.kitState.attachmentPosition.three.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentThreeState.label) {
+                doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 183, "1"); // quantity
+                doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 183, "Attachments - Position 3"); // description 0
+                doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 195, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 199, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 203, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 207, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 211, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 215, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          }
+          else {
+            doc.text(40, 183, "Attachments - Position 3"); // description 0
+            doc.text(40, 191, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 223, "20"); // line ID
         {
-          doc.text(27, 223, " "); // item number
-          doc.text(141, 223, " "); // quantity
-          doc.text(149, 223, " "); // price, per
-          doc.text(174, 223, " "); // price, extended
-
-          doc.text(40, 223, "Attachments - Position 4"); // description 0
-          doc.text(40, 227, " "); // description 1
-          doc.text(40, 231, " "); // description 2
-          doc.text(40, 235, " "); // description 3
-          doc.text(40, 239, " "); // description 4
-          doc.text(40, 243, " "); // description 5
-          doc.text(40, 247, " "); // description 6
-          doc.text(40, 251, " "); // description 7
-          doc.text(40, 255, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.four.bool && props.kitState.attachmentPosition.four.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentFourState.label) {
+                doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 223, "1"); // quantity
+                doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 223, "Attachments - Position 4"); // description 0
+                doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 235, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 239, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 243, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 247, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 251, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 255, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 223, "Attachments - Position 4"); // description 0
+            doc.text(40, 231, "Empty line item"); // description 2
+          }
         }
       }
 
@@ -578,74 +614,106 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "21"); // line ID
         {
-          doc.text(27, 63, " "); // item number
-          doc.text(141, 63, ""); // quantity
-          doc.text(149, 63, " "); // price, per
-          doc.text(174, 63, " "); // price, extended
-
-          doc.text(40, 63, "Attachments - Position 5"); // description 0
-          doc.text(40, 67, " "); // description 1
-          doc.text(40, 71, " "); // description 2
-          doc.text(40, 75, " "); // description 3
-          doc.text(40, 79, " "); // description 4
-          doc.text(40, 83, " "); // description 5
-          doc.text(40, 87, " "); // description 6
-          doc.text(40, 91, " "); // description 7
-          doc.text(40, 95, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.five.bool && props.kitState.attachmentPosition.five.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentFiveState.label) {
+                doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 63, "1"); // quantity
+                doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 63, "Attachments - Position 5"); // description 0
+                doc.text(40, 67, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 71, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 75, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 79, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 83, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 87, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 91, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 95, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 63, "Attachments - Position 5"); // description 0
+            doc.text(40, 71, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 103, "22"); // line ID
         {
-          doc.text(27, 103, " "); // item number
-          doc.text(141, 103, " "); // quantity
-          doc.text(149, 103, " "); // price, per
-          doc.text(174, 103, " "); // price, extended
-
-          doc.text(40, 103, "Attachments - Position 6"); // description 0
-          doc.text(40, 107, " "); // description 1
-          doc.text(40, 111, " "); // description 2
-          doc.text(40, 115, " "); // description 3
-          doc.text(40, 119, " "); // description 4
-          doc.text(40, 123, " "); // description 5
-          doc.text(40, 127, " "); // description 6
-          doc.text(40, 131, " "); // description 7
-          doc.text(40, 135, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.six.bool && props.kitState.attachmentPosition.six.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentSixState.label) {
+                doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 103, "1"); // quantity
+                doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 103, "Attachments - Position 6"); // description 0
+                doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 115, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 119, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 123, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 127, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 131, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 135, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 103, "Attachments - Position 6"); // description 0
+            doc.text(40,111, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 143, "23"); // line ID
         {
-          doc.text(27, 143, " "); // item number
-          doc.text(141, 143, " "); // quantity
-          doc.text(149, 143, " "); // price, per
-          doc.text(174, 143, " "); // price, extended
-
-          doc.text(40, 143, "Attachments - Position 7"); // description 0
-          doc.text(40, 147, " "); // description 1
-          doc.text(40, 151, " "); // description 2
-          doc.text(40, 155, " "); // description 3
-          doc.text(40, 159, " "); // description 4
-          doc.text(40, 163, " "); // description 5
-          doc.text(40, 167, " "); // description 6
-          doc.text(40, 171, " "); // description 7
-          doc.text(40, 175, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.seven.bool && props.kitState.attachmentPosition.seven.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentSevenState.label) {
+                doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 143, "1"); // quantity
+                doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 143, "Attachments - Position 7"); // description 0
+                doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 155, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 159, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 163, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 167, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 171, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 175, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 143, "Attachments - Position 7"); // description 0
+            doc.text(40, 151, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 183, "24"); // line ID
         {
-          doc.text(27, 183, " "); // item number
-          doc.text(141, 183, " "); // quantity
-          doc.text(149, 183, " "); // price, per
-          doc.text(174, 183, " "); // price, extended
-
-          doc.text(40, 183, "Attachments - Position 8"); // description 0
-          doc.text(40, 187, " "); // description 1
-          doc.text(40, 191, " "); // description 2
-          doc.text(40, 195, " "); // description 3
-          doc.text(40, 199, " "); // description 4
-          doc.text(40, 203, " "); // description 5
-          doc.text(40, 207, " "); // description 6
-          doc.text(40, 211, " "); // description 7
-          doc.text(40, 215, " "); // description 8
+          if (props.attachmentTowerState.attachmentPosition.eight.bool && props.kitState.attachmentPosition.eight.bool) {
+            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
+              if (DataFile.attachmentItems[i].label == props.attachmentEightState.label) {
+                doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
+                doc.text(141, 183, "1"); // quantity
+                doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
+                doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                doc.text(40, 183, "Attachments - Position 8"); // description 0
+                doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, 195, DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, 199, DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, 203, DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, 207, DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, 211, DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, 215, DataFile.attachmentItems[i].description[8]); // description 8
+              }
+            }
+          } else {
+            doc.text(40, 183, "Attachments - Position 8"); // description 0
+            doc.text(40, 191, "Empty line item"); // description 2
+          }
         }
 
         doc.text(21, 223, "25"); // line ID
@@ -654,7 +722,6 @@ function ButtonQuote(props) {
           doc.text(141, 223, " "); // quantity
           doc.text(149, 223, " "); // price, per
           doc.text(174, 223, " "); // price, extended
-
           doc.text(40, 223, "Attachments - Position 9"); // description 0
           doc.text(40, 227, " "); // description 1
           doc.text(40, 231, " "); // description 2
@@ -680,7 +747,6 @@ function ButtonQuote(props) {
           doc.text(141, 63, ""); // quantity
           doc.text(149, 63, " "); // price, per
           doc.text(174, 63, " "); // price, extended
-
           doc.text(40, 63, "Attachments - Position 10"); // description 0
           doc.text(40, 67, " "); // description 1
           doc.text(40, 71, " "); // description 2
@@ -698,7 +764,6 @@ function ButtonQuote(props) {
           doc.text(141, 103, " "); // quantity
           doc.text(149, 103, " "); // price, per
           doc.text(174, 103, " "); // price, extended
-
           doc.text(40, 103, "Attachments - Position 11"); // description 0
           doc.text(40, 107, " "); // description 1
           doc.text(40, 111, " "); // description 2
@@ -716,7 +781,6 @@ function ButtonQuote(props) {
           doc.text(141, 143, " "); // quantity
           doc.text(149, 143, " "); // price, per
           doc.text(174, 143, " "); // price, extended
-
           doc.text(40, 143, "Attachments - Position 12"); // description 0
           doc.text(40, 147, " "); // description 1
           doc.text(40, 151, " "); // description 2
@@ -734,7 +798,6 @@ function ButtonQuote(props) {
           doc.text(141, 183, " "); // quantity
           doc.text(149, 183, " "); // price, per
           doc.text(174, 183, " "); // price, extended
-
           doc.text(40, 183, "Attachments - Position 13"); // description 0
           doc.text(40, 187, " "); // description 1
           doc.text(40, 191, " "); // description 2
@@ -752,7 +815,6 @@ function ButtonQuote(props) {
           doc.text(141, 223, " "); // quantity
           doc.text(149, 223, " "); // price, per
           doc.text(174, 223, " "); // price, extended
-
           doc.text(40, 223, "Attachments - Position 14"); // description 0
           doc.text(40, 227, " "); // description 1
           doc.text(40, 231, " "); // description 2

@@ -280,6 +280,7 @@
       "label": "None",
       "value": "A",
       "price": 0,
+      "itemNumber": " ",
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
       "description": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "]

@@ -54,7 +54,6 @@ function Page() {
   const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
   //
   const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
-  const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
   const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
   //
   const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
@@ -66,6 +65,7 @@ function Page() {
   //
   const [kitSelectionState, changeKitSelectionState] = useState(kitData[0]);
   //
+  const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
   const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
   const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
@@ -93,7 +93,7 @@ function Page() {
       }
     }
     for (let i = 0; i < computerComponentStates.length; i++) {
-      if (computerSelectionState.configurableComputerBool) {
+      if (computerSelectionState.configurableComputerBool) {    
         priceLeadStatesArray.push(computerComponentStates[i]);
       }
     }
@@ -468,13 +468,25 @@ function Page() {
               robotPlatform={robotPlatformData_label}
               colourState={colourSelectionState}
               batteryState={batterySelectionState}
+              
               computerState={computerSelectionState}
               processorState={computerProcessorSelectionState}
               ramState={computerRamSelectionState}
               storageState={computerStorageSelectionState}
               gpuState={computerGpuSelectionState}
+              
               kitState={kitSelectionState}
+              
               statesArray={makePriceLeadStatesArray()}
+              attachmentTowerState={towerSelectionState}
+              attachmentOneState={attachmentOneSelectionState}
+              attachmentTwoState={attachmentTwoSelectionState}
+              attachmentThreeState={attachmentThreeSelectionState}
+              attachmentFourState={attachmentFourSelectionState}
+              attachmentFiveState={attachmentFiveSelectionState}
+              attachmentSixState={attachmentSixSelectionState}
+              attachmentSevenState={attachmentSevenSelectionState}
+              attachmentEightState={attachmentEightSelectionState}
             />
           </div>
         </span>

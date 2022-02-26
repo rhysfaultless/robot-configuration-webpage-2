@@ -177,6 +177,7 @@
     {
       "label": "Lead Acid",
       "value": "A",
+      "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
@@ -195,6 +196,7 @@
     {
       "label": "Lithium",
       "value": "B",
+      "itemNumber": "042000",
       "price": 1000,
       "leadTime": 3,
       "_comment": ["                                                         end of line|"],
@@ -206,6 +208,101 @@
         " ", 
         " ", 
         " ", 
+        " "
+      ]
+    }
+  ],
+
+  "tower": [
+    {
+      "label": "No",
+      "value": "A",
+      "itemNumber": " ",
+      "price": 0,
+      "leadTime": 0,
+      "bool": false,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": false
+        },
+        "six": {
+          "bool": false
+        },
+        "seven": {
+          "bool": false
+        },
+        "eight": {
+          "bool": false
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "Empty line item", 
+        " ", 
+        "  ", 
+        " ", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes",
+      "value": "B",
+      "itemNumber": "042000",
+      "price": 300,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": true
+        },
+        "six": {
+          "bool": true
+        },
+        "seven": {
+          "bool": true
+        },
+        "eight": {
+          "bool": true
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
         " "
       ]
     }
@@ -275,112 +372,121 @@
       "label": "None",
       "value": "none",
       "category": "null",
+      "itemNumber": " ",
       "price": 0,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes", 
+        " ", 
+        "Empty line item", 
+        " ", 
+        " ", 
+        " ", 
+        " ", 
+        " ", 
+        " "
+      ]
     },
     {
       "label": "Velodyne, Low",
       "value": "velodyne_low",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 5000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
+        "  - a 100 m range", 
+        "  - a 360° horizontal field-of-view", 
+        "  - a ±15° vertical FOV", 
+        "  - an accuracy of ±30 mm", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot",
+        "with metal fasteners."
+      ]
     },
     {
       "label": "Velodyne, Mid",
       "value": "velodyne_mid",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 5000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
+        "  - a 100 m range", 
+        "  - a 360° horizontal field-of-view", 
+        "  - a ±15° vertical FOV", 
+        "  - an accuracy of ±30 mm", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot",
+        "with metal fasteners on a 40 mm tall bracket."
+      ]
     },
     {
       "label": "Velodyne, High",
       "value": "velodyne_high",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 5000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
+        "  - a 100 m range", 
+        "  - a 360° horizontal field-of-view", 
+        "  - a ±15° vertical FOV", 
+        "  - an accuracy of ±30 mm", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot",
+        "with metal fasteners on a 80 mm tall bracket."
+      ]
     },
     {
       "label": "Hokuyo",
       "value": "hokuyo",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 3000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Hokuyo UST-10LX. The Hokuyo has: ", 
+        "  - a 10 m range", 
+        "  - a 270° horizontal field-of-view", 
+        "  - a resolution of 0.25°", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot", 
+        "with metal fasteners.",
+        ""
+      ]
     },
     {
       "label": "Microstain",
       "value": "microstrain",
       "category": "ahrs",
+      "itemNumber": "042000",
       "price": 3000,
-      "leadTime": 3
-    }
-  ],
-
-  "tower": [
-    {
-      "label": "No",
-      "value": "A",
-      "price": 0,
-      "leadTime": 0,
-      "bool": false,
-      "attachmentPosition": {
-        "one": {
-          "bool": true
-        },
-        "two": {
-          "bool": true
-        },
-        "three": {
-          "bool": true
-        },
-        "four": {
-          "bool": true
-        },
-        "five": {
-          "bool": false
-        },
-        "six": {
-          "bool": false
-        },
-        "seven": {
-          "bool": false
-        },
-        "eight": {
-          "bool": false
-        }
-      }
-    },
-    {
-      "label": "Yes",
-      "value": "B",
-      "price": 300,
-      "leadTime": 0,
-      "bool": true,
-      "attachmentPosition": {
-        "one": {
-          "bool": true
-        },
-        "two": {
-          "bool": true
-        },
-        "three": {
-          "bool": true
-        },
-        "four": {
-          "bool": true
-        },
-        "five": {
-          "bool": true
-        },
-        "six": {
-          "bool": true
-        },
-        "seven": {
-          "bool": true
-        },
-        "eight": {
-          "bool": true
-        }
-      }
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Microstrain 3DM-GX5-25. The sensor has: ", 
+        "  - a triaxial accelerometer with ±8 g acceleration range", 
+        "  - a triaxial gyroscope with ±300°/second gyro range", 
+        "  - a repeatability of 0.2°", 
+        "This sensor will be connected to the robot's computer through USB.", 
+        "The sensor will be attached to the robot with metal fasteners.", 
+        "",
+        ""
+      ]
     }
   ],
 
