@@ -144,7 +144,7 @@ function Page() {
       <div className="md:flex text-black container relative">
         <aside className="h-fit min-h-screen w-1/3 dark:bg-stone-300 left-0">
           <div className="sidebar-content px-4 py-6">
-            <ul className="flex flex-col w-full text-black divide-y divide-slate-700">
+            <ul className="flex flex-col w-full text-black divide-y divide-slate-500">
               <div>
                 <ul className="flex flex-col w-full text-black">
                   {/*  Select, Colour  */}
