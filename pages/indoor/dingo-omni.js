@@ -365,7 +365,7 @@ function Page() {
           <div className="w-full h-full z-0">
             <Canvas>
               <ambientLight intensity={0.7} />
-              <spotLight position={[1000, 300, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
+              <spotLight position={[10000, 3000, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
               <ConfiguredOrbitControls />
               <ConfiguredCamera />
 
@@ -453,6 +453,7 @@ function Page() {
                 {kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool && (
                   <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />
                 )}
+
 
                 {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
               </Suspense>

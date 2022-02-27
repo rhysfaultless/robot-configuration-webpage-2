@@ -30,7 +30,7 @@
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
-      "hex": "0xffa700",
+      "hex": "",
       "rgb": "rgb(255, 167, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -51,8 +51,8 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0x303030",
-      "rgb": "rgb(48, 48, 48)",
+      "hex": "",
+      "rgb": "rgb(55, 55, 55)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Black",
@@ -72,7 +72,7 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0xd6d6d6",
+      "hex": "",
       "rgb": "rgb(214, 214, 214)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -93,8 +93,8 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0xc92f24",
-      "rgb": "rgb(201, 47, 36)",
+      "hex": "",
+      "rgb": "rgb(185, 0, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Red",
@@ -114,7 +114,7 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0xff6700",
+      "hex": "",
       "rgb": "rgb(255, 103, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -135,7 +135,7 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0x536882",
+      "hex": "",
       "rgb": "rgb(83, 104, 130)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -156,8 +156,8 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0x3b4216",
-      "rgb": "rgb(59,66, 22)",
+      "hex": "",
+      "rgb": "rgb(104, 120, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Olive Drab",
