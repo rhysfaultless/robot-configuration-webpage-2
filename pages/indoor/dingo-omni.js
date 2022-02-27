@@ -77,24 +77,37 @@ function Page() {
   const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
   const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
   const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
-  const attachmentPositionsAndStates = [
-    [attachmentPositionData[0], attachmentOneSelectionState],
-    [attachmentPositionData[1], attachmentTwoSelectionState],
-    [attachmentPositionData[2], attachmentThreeSelectionState],
-    [attachmentPositionData[3], attachmentFourSelectionState],
-    [attachmentPositionData[4], attachmentFiveSelectionState],
-    [attachmentPositionData[5], attachmentSixSelectionState],
-    [attachmentPositionData[6], attachmentSevenSelectionState],
-    [attachmentPositionData[7], attachmentEightSelectionState],
-  ];
 
   function makePriceLeadStatesArray() {
-    let priceLeadStatesArray = [robotPlatformData, colourSelectionState, batterySelectionState, computerSelectionState, towerSelectionState];
-    for (let i = 0; i < attachmentPositionsAndStates.length; i++) {
-      if (!attachmentPositionsAndStates[i][0].onTowerBool || towerSelectionState.bool) {
-        priceLeadStatesArray.push(attachmentPositionsAndStates[i][1]);
+    let priceLeadStatesArray = [robotPlatformData, colourSelectionState, batterySelectionState, computerSelectionState, kitSelectionState, towerSelectionState];
+    // add attachments to priceLeadStatesArray
+    {
+      if (kitSelectionState.attachmentPosition.one.bool && towerSelectionState.attachmentPosition.one.bool) {
+        priceLeadStatesArray.push(attachmentOneSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.two.bool && towerSelectionState.attachmentPosition.two.bool) {
+        priceLeadStatesArray.push(attachmentTwoSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.three.bool && towerSelectionState.attachmentPosition.three.bool) {
+        priceLeadStatesArray.push(attachmentThreeSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.four.bool && towerSelectionState.attachmentPosition.four.bool) {
+        priceLeadStatesArray.push(attachmentFourSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.five.bool && towerSelectionState.attachmentPosition.five.bool) {
+        priceLeadStatesArray.push(attachmentFiveSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.six.bool && towerSelectionState.attachmentPosition.six.bool) {
+        priceLeadStatesArray.push(attachmentSixSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.seven.bool && towerSelectionState.attachmentPosition.seven.bool) {
+        priceLeadStatesArray.push(attachmentSevenSelectionState);
+      }
+      if (kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool) {
+        priceLeadStatesArray.push(attachmentEightSelectionState);
       }
     }
+    //add computer and components to priceLeadStatesArray
     for (let i = 0; i < computerComponentStates.length; i++) {
       if (computerSelectionState.configurableComputerBool) {
         priceLeadStatesArray.push(computerComponentStates[i]);
@@ -453,7 +466,6 @@ function Page() {
                 {kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool && (
                   <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />
                 )}
-
 
                 {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
               </Suspense>
