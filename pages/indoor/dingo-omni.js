@@ -5,6 +5,9 @@ import Head from "next/head";
 import { React, Suspense, useState } from "react";
 import Select from "react-select";
 
+// Rotate Model Notification to User
+import ShowRotateModelNotification from "/components/page-layout/NotificationRotateModel";
+
 // Price, Lead-time, and Quoting imports
 import PriceText from "/components/price-lead-quote/PriceText";
 import LeadtimeText from "/components/price-lead-quote/LeadtimeText";
@@ -93,7 +96,7 @@ function Page() {
       }
     }
     for (let i = 0; i < computerComponentStates.length; i++) {
-      if (computerSelectionState.configurableComputerBool) {    
+      if (computerSelectionState.configurableComputerBool) {
         priceLeadStatesArray.push(computerComponentStates[i]);
       }
     }
@@ -359,100 +362,103 @@ function Page() {
           </div>
         </aside>
         <main className="w-2/3 fixed h-screen right-0">
-          <Canvas>
-            <ambientLight intensity={0.7} />
-            <spotLight position={[1000, 300, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
-            <ConfiguredOrbitControls />
-            <ConfiguredCamera />
+          <div className="w-full h-full z-0">
+            <Canvas>
+              <ambientLight intensity={0.7} />
+              <spotLight position={[1000, 300, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
+              <ConfiguredOrbitControls />
+              <ConfiguredCamera />
 
-            {/*  Three.js models  */}
-            <Suspense fallback={null}>
-              <ModelRobotChassisBase />
-              <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
-              <ModelRobotChassisWheels />
+              {/*  Three.js models  */}
+              <Suspense fallback={null}>
+                <ModelRobotChassisBase />
+                <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
+                <ModelRobotChassisWheels />
 
-              {/*  Kits  */}
-              {!kitSelectionState.attachmentPosition.one.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.one.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.one.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.two.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.two.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.two.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.three.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.three.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.three.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.four.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.four.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.four.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.five.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.five.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.five.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.six.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.six.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.six.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.seven.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.seven.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.seven.position}
-                />
-              )}
-              {!kitSelectionState.attachmentPosition.eight.bool && (
-                <AttachmentRenderer
-                  attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.eight.attachmentItem]}
-                  attachmentPosition={kitSelectionState.attachmentPosition.eight.position}
-                />
-              )}
+                {/*  Kits  */}
+                {!kitSelectionState.attachmentPosition.one.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.one.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.one.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.two.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.two.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.two.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.three.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.three.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.three.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.four.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.four.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.four.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.five.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.five.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.five.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.six.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.six.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.six.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.seven.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.seven.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.seven.position}
+                  />
+                )}
+                {!kitSelectionState.attachmentPosition.eight.bool && (
+                  <AttachmentRenderer
+                    attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition.eight.attachmentItem]}
+                    attachmentPosition={kitSelectionState.attachmentPosition.eight.position}
+                  />
+                )}
 
-              {/*  Tower Bracket  */}
-              {towerSelectionState.bool && <ModelRobotChassisTower />}
+                {/*  Tower Bracket  */}
+                {towerSelectionState.bool && <ModelRobotChassisTower />}
 
-              {/*  Attachments  */}
-              {kitSelectionState.attachmentPosition.one.bool && towerSelectionState.attachmentPosition.one.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />
-              )}
-              {kitSelectionState.attachmentPosition.two.bool && towerSelectionState.attachmentPosition.two.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
-              )}
-              {kitSelectionState.attachmentPosition.three.bool && towerSelectionState.attachmentPosition.three.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
-              )}
-              {kitSelectionState.attachmentPosition.four.bool && towerSelectionState.attachmentPosition.four.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
-              )}
-              {kitSelectionState.attachmentPosition.five.bool && towerSelectionState.attachmentPosition.five.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentFiveSelectionState} attachmentPosition={4} />
-              )}
-              {kitSelectionState.attachmentPosition.six.bool && towerSelectionState.attachmentPosition.six.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentSixSelectionState} attachmentPosition={5} />
-              )}
-              {kitSelectionState.attachmentPosition.seven.bool && towerSelectionState.attachmentPosition.seven.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentSevenSelectionState} attachmentPosition={6} />
-              )}
-              {kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool && (
-                <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />
-              )}
+                {/*  Attachments  */}
+                {kitSelectionState.attachmentPosition.one.bool && towerSelectionState.attachmentPosition.one.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentOneSelectionState} attachmentPosition={0} />
+                )}
+                {kitSelectionState.attachmentPosition.two.bool && towerSelectionState.attachmentPosition.two.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentTwoSelectionState} attachmentPosition={1} />
+                )}
+                {kitSelectionState.attachmentPosition.three.bool && towerSelectionState.attachmentPosition.three.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentThreeSelectionState} attachmentPosition={2} />
+                )}
+                {kitSelectionState.attachmentPosition.four.bool && towerSelectionState.attachmentPosition.four.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentFourSelectionState} attachmentPosition={3} />
+                )}
+                {kitSelectionState.attachmentPosition.five.bool && towerSelectionState.attachmentPosition.five.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentFiveSelectionState} attachmentPosition={4} />
+                )}
+                {kitSelectionState.attachmentPosition.six.bool && towerSelectionState.attachmentPosition.six.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentSixSelectionState} attachmentPosition={5} />
+                )}
+                {kitSelectionState.attachmentPosition.seven.bool && towerSelectionState.attachmentPosition.seven.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentSevenSelectionState} attachmentPosition={6} />
+                )}
+                {kitSelectionState.attachmentPosition.eight.bool && towerSelectionState.attachmentPosition.eight.bool && (
+                  <AttachmentRenderer attachmentSelectionState={attachmentEightSelectionState} attachmentPosition={7} />
+                )}
 
-              {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
-            </Suspense>
-          </Canvas>
+                {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
+              </Suspense>
+            </Canvas>
+          </div>
+          <ShowRotateModelNotification />
         </main>
       </div>
       <footer className="py-1.5 bottom-0 h-16 fixed flex w-full dark:bg-stone-700 text-white justify-center">
@@ -468,15 +474,12 @@ function Page() {
               robotPlatform={robotPlatformData_label}
               colourState={colourSelectionState}
               batteryState={batterySelectionState}
-              
               computerState={computerSelectionState}
               processorState={computerProcessorSelectionState}
               ramState={computerRamSelectionState}
               storageState={computerStorageSelectionState}
               gpuState={computerGpuSelectionState}
-              
               kitState={kitSelectionState}
-              
               statesArray={makePriceLeadStatesArray()}
               attachmentTowerState={towerSelectionState}
               attachmentOneState={attachmentOneSelectionState}
