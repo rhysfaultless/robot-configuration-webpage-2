@@ -250,9 +250,11 @@ function ButtonQuote(props) {
           for (let i = 0; i < DataComputer.computers.length; i++) {
             if (DataComputer.computers[i].label == props.computerState.label) {
               doc.text(27, 63, DataComputer.computers[i].itemNumber); // item number
-              doc.text(141, 63, "1"); // quantity
-              doc.text(149, 63, "$" + String(DataComputer.computers[i].price)); // price, per
-              doc.text(174, 63, "$" + String(DataComputer.computers[i].price)); // price, extended
+              if (DataComputer.computers[i].price != 0) {
+                doc.text(141, 63, "1"); // quantity
+                doc.text(149, 63, "$" + String(DataComputer.computers[i].price)); // price, per
+                doc.text(174, 63, "$" + String(DataComputer.computers[i].price)); // price, extended
+              }
               doc.text(40, 63, DataComputer.computers[i].description[0]); // description 0
               doc.text(40, 67, DataComputer.computers[i].description[1]); // description 1
               doc.text(40, 71, DataComputer.computers[i].description[2]); // description 2
@@ -272,9 +274,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataComputer.processors.length; i++) {
               if (DataComputer.processors[i].label == props.processorState.label) {
                 doc.text(27, 103, DataComputer.processors[i].itemNumber); // item number
-                doc.text(141, 103, "1"); // quantity
-                doc.text(149, 103, "$" + String(DataComputer.processors[i].price)); // price, per
-                doc.text(174, 103, "$" + String(DataComputer.processors[i].price)); // price, extended
+                if (DataComputer.processors[i].price != 0) {
+                  doc.text(141, 103, "1"); // quantity
+                  doc.text(149, 103, "$" + String(DataComputer.processors[i].price)); // price, per
+                  doc.text(174, 103, "$" + String(DataComputer.processors[i].price)); // price, extended
+                }
                 doc.text(40, 103, DataComputer.processors[i].description[0]); // description 0
                 doc.text(40, 107, DataComputer.processors[i].description[1]); // description 1
                 doc.text(40, 111, DataComputer.processors[i].description[2]); // description 2
@@ -297,9 +301,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataComputer.ram.length; i++) {
               if (DataComputer.ram[i].label == props.ramState.label) {
                 doc.text(27, 143, DataComputer.ram[i].itemNumber); // item number
-                doc.text(141, 143, "1"); // quantity
-                doc.text(149, 143, "$" + String(DataComputer.ram[i].price)); // price, per
-                doc.text(174, 143, "$" + String(DataComputer.ram[i].price)); // price, extended
+                if (DataComputer.ram[i].price != 0) {
+                  doc.text(141, 143, "1"); // quantity
+                  doc.text(149, 143, "$" + String(DataComputer.ram[i].price)); // price, per
+                  doc.text(174, 143, "$" + String(DataComputer.ram[i].price)); // price, extended
+                }
                 doc.text(40, 143, DataComputer.ram[i].description[0]); // description 0
                 doc.text(40, 147, DataComputer.ram[i].description[1]); // description 1
                 doc.text(40, 151, DataComputer.ram[i].description[2]); // description 2
@@ -322,9 +328,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataComputer.storage.length; i++) {
               if (DataComputer.storage[i].label == props.storageState.label) {
                 doc.text(27, 183, DataComputer.storage[i].itemNumber); // item number
-                doc.text(141, 183, "1"); // quantity
-                doc.text(149, 183, "$" + String(DataComputer.storage[i].price)); // price, per
-                doc.text(174, 183, "$" + String(DataComputer.storage[i].price)); // price, extended
+                if (DataComputer.storage[i].price != 0) {
+                  doc.text(141, 183, "1"); // quantity
+                  doc.text(149, 183, "$" + String(DataComputer.storage[i].price)); // price, per
+                  doc.text(174, 183, "$" + String(DataComputer.storage[i].price)); // price, extended
+                }
                 doc.text(40, 183, DataComputer.storage[i].description[0]); // description 0
                 doc.text(40, 187, DataComputer.storage[i].description[1]); // description 1
                 doc.text(40, 191, DataComputer.storage[i].description[2]); // description 2
@@ -347,9 +355,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataComputer.gpu.length; i++) {
               if (DataComputer.gpu[i].label == props.gpuState.label) {
                 doc.text(27, 223, DataComputer.gpu[i].itemNumber); // item number
-                doc.text(141, 223, "1"); // quantity
-                doc.text(149, 223, "$" + String(DataComputer.gpu[i].price)); // price, per
-                doc.text(174, 223, "$" + String(DataComputer.gpu[i].price)); // price, extended
+                if (DataComputer.gpu[i].price != 0) {
+                  doc.text(141, 223, "1"); // quantity
+                  doc.text(149, 223, "$" + String(DataComputer.gpu[i].price)); // price, per
+                  doc.text(174, 223, "$" + String(DataComputer.gpu[i].price)); // price, extended
+                }
                 doc.text(40, 223, DataComputer.gpu[i].description[0]); // description 0
                 doc.text(40, 227, DataComputer.gpu[i].description[1]); // description 1
                 doc.text(40, 231, DataComputer.gpu[i].description[2]); // description 2
@@ -423,7 +433,7 @@ function ButtonQuote(props) {
             doc.text(40, 103, "Empty line item"); // description 0
           }
         }
-        
+
         doc.text(21, 143, "13"); // line ID
         {
           doc.text(40, 143, "Empty line item"); // description 0
@@ -452,9 +462,11 @@ function ButtonQuote(props) {
           for (let i = 0; i < DataFile.tower.length; i++) {
             if (DataFile.tower[i].label == props.attachmentTowerState.label) {
               doc.text(27, 63, DataFile.tower[i].itemNumber); // item number
-              doc.text(141, 63, "1"); // quantity
-              doc.text(149, 63, "$" + String(DataFile.tower[i].price)); // price, per
-              doc.text(174, 63, "$" + String(DataFile.tower[i].price)); // price, extended
+              if (DataFile.tower[i].price != 0) {
+                doc.text(141, 63, "1"); // quantity
+                doc.text(149, 63, "$" + String(DataFile.tower[i].price)); // price, per
+                doc.text(174, 63, "$" + String(DataFile.tower[i].price)); // price, extended
+              }
               doc.text(40, 63, "Attachments - Tower Bracket"); // description 0
               doc.text(40, 67, DataFile.tower[i].description[1]); // description 1
               doc.text(40, 71, DataFile.tower[i].description[2]); // description 2
@@ -474,9 +486,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentOneState.label) {
                 doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 103, "1"); // quantity
-                doc.text(149, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 103, "1"); // quantity
+                  doc.text(149, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 103, "Attachments - Position 1"); // description 0
                 doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
@@ -500,9 +514,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentTwoState.label) {
                 doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 143, "1"); // quantity
-                doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 143, "1"); // quantity
+                  doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 143, "Attachments - Position 2"); // description 0
                 doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
@@ -526,9 +542,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentThreeState.label) {
                 doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 183, "1"); // quantity
-                doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 183, "1"); // quantity
+                  doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 183, "Attachments - Position 3"); // description 0
                 doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
@@ -552,9 +570,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentFourState.label) {
                 doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 223, "1"); // quantity
-                doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 223, "1"); // quantity
+                  doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 223, "Attachments - Position 4"); // description 0
                 doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
@@ -586,9 +606,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentFiveState.label) {
                 doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 63, "1"); // quantity
-                doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 63, "1"); // quantity
+                  doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 63, "Attachments - Position 5"); // description 0
                 doc.text(40, 67, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 71, DataFile.attachmentItems[i].description[2]); // description 2
@@ -612,9 +634,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentSixState.label) {
                 doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 103, "1"); // quantity
-                doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 103, "1"); // quantity
+                  doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 103, "Attachments - Position 6"); // description 0
                 doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
@@ -638,9 +662,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentSevenState.label) {
                 doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 143, "1"); // quantity
-                doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 143, "1"); // quantity
+                  doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 143, "Attachments - Position 7"); // description 0
                 doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
@@ -664,9 +690,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentEightState.label) {
                 doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 183, "1"); // quantity
-                doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 183, "1"); // quantity
+                  doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 183, "Attachments - Position 8"); // description 0
                 doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
@@ -690,9 +718,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentNineState.label) {
                 doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 223, "1"); // quantity
-                doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 223, "1"); // quantity
+                  doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 223, "Attachments - Position 9"); // description 0
                 doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
@@ -724,9 +754,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentTenState.label) {
                 doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 63, "1"); // quantity
-                doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 63, "1"); // quantity
+                  doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 63, "Attachments - Position 10"); // description 0
                 doc.text(40, 67, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 71, DataFile.attachmentItems[i].description[2]); // description 2
@@ -750,9 +782,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentElevenState.label) {
                 doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 103, "1"); // quantity
-                doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 103, "1"); // quantity
+                  doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 103, "Attachments - Position 11"); // description 0
                 doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
@@ -776,9 +810,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentTwelveState.label) {
                 doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 143, "1"); // quantity
-                doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 143, "1"); // quantity
+                  doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 143, "Attachments - Position 12"); // description 0
                 doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
@@ -802,9 +838,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentThirteenState.label) {
                 doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 183, "1"); // quantity
-                doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 183, "1"); // quantity
+                  doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 183, "Attachments - Position 13"); // description 0
                 doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
@@ -828,9 +866,11 @@ function ButtonQuote(props) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
               if (DataFile.attachmentItems[i].label == props.attachmentFourteenState.label) {
                 doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
-                doc.text(141, 223, "1"); // quantity
-                doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
-                doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                if (DataFile.attachmentItems[i].price != 0) {
+                  doc.text(141, 223, "1"); // quantity
+                  doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                }
                 doc.text(40, 223, "Attachments - Position 14"); // description 0
                 doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
                 doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
