@@ -386,9 +386,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "11"); // line ID
         {
-          if (DataFile.kits.bool) {
-            for (let i = 0; i < DataFile.kits.length; i++) {
-              if (DataFile.kits[i].label == props.kitState.label) {
+          for (let i = 0; i < DataFile.kits.length; i++) {
+            if (DataFile.kits[i].label == props.kitState.label) {
+              if (DataFile.kits[i].bool) {
                 doc.text(27, 63, DataFile.kits[i].itemNumber); // item number
                 doc.text(141, 63, "1"); // quantity
                 doc.text(149, 63, "$" + String(DataFile.kits[i].priceHardware)); // price, per
@@ -402,18 +402,18 @@ function ButtonQuote(props) {
                 doc.text(40, 87, DataFile.kits[i].descriptionHardware[6]); // description 6
                 doc.text(40, 91, DataFile.kits[i].descriptionHardware[7]); // description 7
                 doc.text(40, 95, DataFile.kits[i].descriptionHardware[8]); // description 8
+              } else {
+                doc.text(40, 63, "Empty line item"); // description 0
               }
             }
-          } else {
-            doc.text(40, 63, "Empty line item"); // description 0
           }
         }
 
         doc.text(21, 103, "12"); // line ID
         {
-          if (DataFile.kits.bool) {
-            for (let i = 0; i < DataFile.kits.length; i++) {
-              if (DataFile.kits[i].label == props.kitState.label) {
+          for (let i = 0; i < DataFile.kits.length; i++) {
+            if (DataFile.kits[i].label == props.kitState.label) {
+              if (DataFile.kits[i].bool) {
                 doc.text(27, 103, DataFile.kits[i].itemNumber); // item number
                 doc.text(141, 103, "1"); // quantity
                 doc.text(149, 103, "$" + String(DataFile.kits[i].priceSoftware)); // price, per
@@ -427,10 +427,10 @@ function ButtonQuote(props) {
                 doc.text(40, 127, DataFile.kits[i].descriptionSoftware[6]); // description 6
                 doc.text(40, 131, DataFile.kits[i].descriptionSoftware[7]); // description 7
                 doc.text(40, 135, DataFile.kits[i].descriptionSoftware[8]); // description 8
+              } else {
+                doc.text(40, 103, "Empty line item"); // description 0
               }
             }
-          } else {
-            doc.text(40, 103, "Empty line item"); // description 0
           }
         }
 
