@@ -1,110 +1,278 @@
 {
   "computers": [
     {
-      "label": "mini ITX, Intel i5",
+      "label": "mini ITX",
       "value": "A",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 0,
-      "configurableComputerBool": true
+      "configurableComputerBool": true,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Computer - mini ITX motherboard",
+        "Specifications: Your robot will include a mini ITX motherboard with:",
+        "  - a CPU socket for an Intel 12th generation processor",
+        "  - two RAM slots",
+        "  - an M.2 slot for an NVMe storage drive",
+        "  - another M.2 slot, that is populated with a WiFi + Bluetooth card",
+        "  - a PCIe slot for a GPU",
+        "Note that this line item is just for the motherboard. Further lines of this",
+        "quote will specify the other required computer components and related prices."
+      ]
     },
     {
       "label": "Raspberry Pi, 4 GB RAM",
       "value": "B",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 3,
-      "configurableComputerBool": false
+      "configurableComputerBool": false,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Computer - Raspberry Pi, 4 GB RAM",
+        "Specifications: Your robot will include a Raspberry Pi 4, with 4 GB of RAM.",
+        "This includes:",
+        "  - a 64 GB micro-SD card, configured with Clearpath Robotics software",
+        "  - a power cable from the robot's power supplies ",
+        "  - networking to the robot",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Nvidia Jetson Nano, 4 GB RAM",
       "value": "C",
+      "itemNumber": "042000",
       "price": 600,
       "leadTime": 3,
-      "configurableComputerBool": false
+      "configurableComputerBool": false,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Computer - Nvidia Jetson Nano",
+        "Specifications: Your robot will include an Nvidia Jetson Nano developer kit",
+        "This includes:",
+        "  - a 64 GB micro-SD card, configured with your robot's Clearpath Robotics software",
+        "  - the Nano's built in 4 GB of RAM",
+        "  - a power cable from the robot's power supplies",
+        "  - networking to the robot",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Nvidia Jetson AGX",
       "value": "D",
+      "itemNumber": "042000",
       "price": 1500,
       "leadTime": 3,
-      "configurableComputerBool": false
+      "configurableComputerBool": false,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Computer - Nvidia Jetson AGX",
+        "Specifications: Your robot will include an Nvidia Jetson AGX Xavier developer kit",
+        "This includes:",
+        "  - the AGX's built in 32 GB of storage, configured with your robot's Clearpath software",
+        "  - the AGX's built in 32 GB of RAM",
+        "  - a power cable from the robot's power supplies",
+        "  - networking to the robot",
+        " ",
+        " "
+      ]
     }
   ],
   "processors": [
     {
       "label": "intel i3",
       "value": "A",
+      "itemNumber": "042000",
       "price": 300,
-      "leadTime": 4
+      "leadTime": 4,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Processor - Intel i3",
+        "Specifications: Your robot's computer will include a 12th generation Intel i3 ",
+        "processor with an adequate power supply and cooling system to operate at",
+        "Intel's power specification.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "intel i5",
       "value": "B",
+      "itemNumber": "042000",
       "price": 350,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Processor - Intel i5",
+        "Specifications: Your robot's computer will include a 12th generation Intel i5 ",
+        "processor with an adequate power supply and cooling system to operate at",
+        "Intel's power specification.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "intel i7",
-      "value": "A",
+      "value": "C",
+      "itemNumber": "042000",
       "price": 400,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Processor - Intel i3",
+        "Specifications: Your robot's computer will include a 12th generation Intel i7 ",
+        "processor with an adequate power supply and cooling system to operate at",
+        "Intel's power specification.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "intel i9",
-      "value": "A",
+      "value": "D",
+      "itemNumber": "042000",
       "price": 500,
-      "leadTime": 4
+      "leadTime": 4,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Processor - Intel i9",
+        "Specifications: Your robot's computer will include a 12th generation Intel i9 ",
+        "processor with an adequate power supply and cooling system to operate at",
+        "Intel's power specification.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     }
   ],
   "ram": [
     {
       "label": "8 GB",
       "value": "A",
+      "itemNumber": "042000",
       "price": 100,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": ["RAM - 8 GB", "Specifications: Your robot's computer will include 8 GB of RAM.", " ", " ", " ", " ", " ", " ", " "]
     },
     {
       "label": "16 GB",
-      "value": "A",
+      "value": "B",
+      "itemNumber": "042000",
       "price": 200,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": ["RAM - 16 GB", "Specifications: Your robot's computer will include 16 GB of RAM.", " ", " ", " ", " ", " ", " ", " "]
     },
     {
       "label": "32 GB",
-      "value": "A",
+      "value": "C",
+      "itemNumber": "042000",
       "price": 400,
-      "leadTime": 4
+      "leadTime": 4,
+      "_comment": ["                                                         end of line|"],
+      "description": ["RAM - 32 GB", "Specifications: Your robot's computer will include 32 GB of RAM.", " ", " ", " ", " ", " ", " ", " "]
     },
     {
       "label": "64 GB",
-      "value": "A",
+      "value": "D",
+      "itemNumber": "042000",
       "price": 700,
-      "leadTime": 4
+      "leadTime": 4,
+      "_comment": ["                                                         end of line|"],
+      "description": ["RAM - 64 GB", "Specifications: Your robot's computer will include 64 GB of RAM.", " ", " ", " ", " ", " ", " ", " "]
     }
   ],
   "storage": [
     {
       "label": "250 GB, NVMe",
       "value": "A",
+      "itemNumber": "042000",
       "price": 140,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Storage - 250 GB, NVMe",
+        "Specifications: Your robot's computer will include 250 GB of storage using",
+        "an NVMe drive. This NVMe drive will be configured with your robot's",
+        "Clearpath Robotics software.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "500 GB, NVMe",
-      "value": "A",
+      "value": "B",
+      "itemNumber": "042000",
       "price": 220,
-      "leadTime": 1
+      "leadTime": 1,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Storage - 500 GB, NVMe",
+        "Specifications: Your robot's computer will include 500 GB of storage using",
+        "an NVMe drive. This NVMe drive will be configured with your robot's",
+        "Clearpath Robotics software.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "1 TB, NVMe",
-      "value": "A",
+      "value": "C",
+      "itemNumber": "042000",
       "price": 310,
-      "leadTime": 1
+      "leadTime": 1,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Storage - 1 TB, NVMe",
+        "Specifications: Your robot's computer will include 1 TB of storage using",
+        "an NVMe drive. This NVMe drive will be configured with your robot's",
+        "Clearpath Robotics software.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "2 TB, NVMe",
-      "value": "A",
+      "value": "D",
+      "itemNumber": "042000",
       "price": 675,
-      "leadTime": 1
+      "leadTime": 1,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Storage - 2 TB, NVMe",
+        "Specifications: Your robot's computer will include 2 TB of storage using",
+        "an NVMe drive. This NVMe drive will be configured with your robot's",
+        "Clearpath Robotics software.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     }
   ],
   "gpu": [
@@ -112,19 +280,48 @@
       "label": "None",
       "value": "A",
       "price": 0,
-      "leadTime": 0
+      "itemNumber": " ",
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     {
       "label": "Nvidia GTX 1050 Ti",
       "value": "B",
+      "itemNumber": "042000",
       "price": 640,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "GPU - Nvidia GTX 1050 Ti",
+        "Specifications: Your robot's computer will include a graphics card with an ",
+        "Nvidia GTX 1050 Ti graphics processing unit on its circuit board.",
+        "The graphics card manufacturer may be Asus, MSI, Gigabyte, EVGA, ZOTAC,",
+        "PNY, Sapphire, or XFX. ",
+        "The graphics card will be installed in your robot's computer, and will have",
+        "sufficient power and air cooling in accordance with the manufacturer's",
+        "power specifications.",
+        " "
+      ]
     },
     {
       "label": "Nvidia GTX 3060",
       "value": "C",
+      "itemNumber": "042000",
       "price": 2000,
-      "leadTime": 2
+      "leadTime": 2,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "GPU - Nvidia GTX 3060",
+        "Specifications: Your robot's computer will include a graphics card with an ",
+        "Nvidia GTX 3060 graphics processing unit on its circuit board.",
+        "The graphics card manufacturer may be Asus, MSI, Gigabyte, EVGA, ZOTAC,",
+        "PNY, Sapphire, or XFX. ",
+        "The graphics card will be installed in your robot's computer, and will have",
+        "sufficient power and air cooling in accordance with the manufacturer's",
+        "power specifications.",
+        " "
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@ function Error404Page() {
   return (
     <div>
       <Head>
-        <title>Robot Configurator | 404 Error</title>
+        <title>Clearpath | 404 Error</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>

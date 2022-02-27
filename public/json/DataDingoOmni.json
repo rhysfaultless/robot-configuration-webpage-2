@@ -4,66 +4,172 @@
   },
 
   "robotPlatform": {
+    "label": "Dingo Omnidirectional",
     "price": 10000,
-    "leadTime": 3
+    "leadTime": 3,
+    "itemNumber": "022609",
+    "labelPdf": "Dingo-O",
+    "_comment": ["                                                         end of line|"],
+    "description": [
+      "Robot Platform - Dingo Omnidirectional",
+      "Specifications: An omnidirectional drive mobile robot, Dingo ",
+      "includes user power breakouts for 5 V, 12 V, and unregulated 12 V ",
+      "battery voltage. Dingo has a maximum speed of 1.6 m/s with a ",
+      "payload of 20 kg. The base platform mass includes a computer and a ",
+      "single battery, and does not addect the 20 kg allowable payload. ",
+      "Dingo runs on ROS Melodic and Ubuntu Server 18-04. Dingo includes ",
+      "user-accessible ethernet, wifi, and bluetooth. ",
+      " "
+    ]
   },
 
   "panelColours": [
     {
       "label": "Yellow",
       "value": "A",
+      "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
-      "hex": "0xffa700",
-      "rgb": "rgb(255, 167, 0)"
+      "hex": "",
+      "rgb": "rgb(255, 167, 0)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Yellow",
+        "Specifications: The Dingo's side panels will be coated yellow.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Black",
       "value": "B",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0x303030",
-      "rgb": "rgb(48, 48, 48)"
+      "hex": "",
+      "rgb": "rgb(55, 55, 55)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Black",
+        "Specifications: The Dingo's side panels will be coated black.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "White",
       "value": "C",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0xd6d6d6",
-      "rgb": "rgb(214, 214, 214)"
+      "hex": "",
+      "rgb": "rgb(214, 214, 214)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - White",
+        "Specifications: The Dingo's side panels will be coated white.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Red",
       "value": "D",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0xc92f24",
-      "rgb": "rgb(201, 47, 36)"
+      "hex": "",
+      "rgb": "rgb(185, 0, 0)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Red",
+        "Specifications: The Dingo's side panels will be coated red.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Orange",
       "value": "E",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0xff6700",
-      "rgb": "rgb(255, 103, 0)"
+      "hex": "",
+      "rgb": "rgb(255, 103, 0)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Orange",
+        "Specifications: The Dingo's side panels will be coated orange.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Blue",
       "value": "F",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0x536882",
-      "rgb": "rgb(83, 104, 130)"
+      "hex": "",
+      "rgb": "rgb(83, 104, 130)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Navy Blue",
+        "Specifications: The Dingo's side panels will be coated navy blue.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     },
     {
       "label": "Green",
       "value": "G",
+      "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "0x3b4216",
-      "rgb": "rgb(59,66, 22)"
+      "hex": "",
+      "rgb": "rgb(104, 120, 0)",
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Colour, side panels - Olive Drab",
+        "Specifications: The Dingo's side panels will be coated olive drab.",
+        "Note: The default colour is yellow. Optional colours are available",
+        "at an increased price and lead-time.",
+        " ",
+        " ",
+        " ",
+        " ",
+        " "
+      ]
     }
   ],
 
@@ -71,22 +177,172 @@
     {
       "label": "Lead Acid",
       "value": "A",
+      "itemNumber": "042000",
       "price": 0,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Battery - Sealed Lead Acid", 
+        "Specifications: Includes:", 
+        "  - 1X Dingo PCBA for attaching 1X sealed-lead-acid battery to a Dingo.", 
+        "  - 1X sealed-lead-acid battery at 12V with 18Ah of capacity.", 
+        "  - 1X charger for a sealed-lead-acid battery.", 
+        " ", 
+        "Note: this line requires the purchase of a Dingo robot.", 
+        " ", 
+        " "
+      ]
     },
     {
       "label": "Lithium",
       "value": "B",
+      "itemNumber": "042000",
       "price": 1000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "Battery - Lithium", "Specifications: Includes:", 
+        "  - 1X Dingo PCBA for attaching 6X lithium batteries to Dingo.", 
+        "  - 6X lithium batteries at 14.4V with 6.8Ah of capacity (40.8Ah total).", 
+        "  - 1X charger for lithium batteries. This can charge 4X batteries at a time.", 
+        " ", 
+        " ", 
+        " ", 
+        " "
+      ]
     }
   ],
 
-  "bananaPosition": {
-    "name": "bananaPosition",
-    "xyz": [100, 0, 305],
-    "uvw": [0, 0.97, 0]
-  },
+  "tower": [
+    {
+      "label": "No",
+      "value": "A",
+      "itemNumber": " ",
+      "price": 0,
+      "leadTime": 0,
+      "bool": false,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": false
+        },
+        "six": {
+          "bool": false
+        },
+        "seven": {
+          "bool": false
+        },
+        "eight": {
+          "bool": false
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "Empty line item", 
+        " ", 
+        "  ", 
+        " ", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes",
+      "value": "B",
+      "itemNumber": "042000",
+      "price": 300,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": true
+        },
+        "six": {
+          "bool": true
+        },
+        "seven": {
+          "bool": true
+        },
+        "eight": {
+          "bool": true
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
+        " "
+      ]
+    }
+  ],
 
   "attachmentPositions": [
     {
@@ -145,7 +401,6 @@
       "uvw": [0, 3.14159, 0],
       "onTowerBool": true
     }
-    
   ],
 
   "attachmentItems": [
@@ -153,60 +408,278 @@
       "label": "None",
       "value": "none",
       "category": "null",
+      "itemNumber": " ",
       "price": 0,
-      "leadTime": 0
+      "leadTime": 0,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes", 
+        " ", 
+        "Empty line item", 
+        " ", 
+        " ", 
+        " ", 
+        " ", 
+        " ", 
+        " "
+      ]
     },
     {
       "label": "Velodyne, Low",
       "value": "velodyne_low",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 5000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
+        "  - a 100 m range", 
+        "  - a 360° horizontal field-of-view", 
+        "  - a ±15° vertical FOV", 
+        "  - an accuracy of ±30 mm", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot",
+        "with metal fasteners."
+      ]
     },
     {
       "label": "Velodyne, Mid",
       "value": "velodyne_mid",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 5000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
+        "  - a 100 m range", 
+        "  - a 360° horizontal field-of-view", 
+        "  - a ±15° vertical FOV", 
+        "  - an accuracy of ±30 mm", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot",
+        "with metal fasteners on a 40 mm tall bracket."
+      ]
     },
     {
       "label": "Velodyne, High",
       "value": "velodyne_high",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 5000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
+        "  - a 100 m range", 
+        "  - a 360° horizontal field-of-view", 
+        "  - a ±15° vertical FOV", 
+        "  - an accuracy of ±30 mm", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot",
+        "with metal fasteners on a 80 mm tall bracket."
+      ]
     },
     {
       "label": "Hokuyo",
       "value": "hokuyo",
       "category": "lidar",
+      "itemNumber": "042000",
       "price": 3000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Hokuyo UST-10LX. The Hokuyo has: ", 
+        "  - a 10 m range", 
+        "  - a 270° horizontal field-of-view", 
+        "  - a resolution of 0.25°", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot", 
+        "with metal fasteners.",
+        ""
+      ]
     },
     {
       "label": "Microstain",
       "value": "microstrain",
       "category": "ahrs",
+      "itemNumber": "042000",
       "price": 3000,
-      "leadTime": 3
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Microstrain 3DM-GX5-25. The sensor has: ", 
+        "  - a triaxial accelerometer with ±8 g acceleration range", 
+        "  - a triaxial gyroscope with ±300°/second gyro range", 
+        "  - a repeatability of 0.2°", 
+        "This sensor will be connected to the robot's computer through USB.", 
+        "The sensor will be attached to the robot with metal fasteners.", 
+        "",
+        ""
+      ]
     }
   ],
 
-  "tower": [
+  "kits": [
     {
-      "label": "No",
-      "value": "A",
+      "label": "None",
+      "value": "none",
+      "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
-      "bool": false
+      "priceHardware": 0,
+      "priceSoftware": 0,
+      "bool": false,
+      "attachmentPosition": {
+        "one": {
+          "bool": true
+        },
+        "two": {
+          "bool": true
+        },
+        "three": {
+          "bool": true
+        },
+        "four": {
+          "bool": true
+        },
+        "five": {
+          "bool": true
+        },
+        "six": {
+          "bool": true
+        },
+        "seven": {
+          "bool": true
+        },
+        "eight": {
+          "bool": true
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "descriptionHardware": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "],
+      "descriptionSoftware": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     {
-      "label": "Yes",
-      "value": "B",
-      "price": 300,
-      "leadTime": 0,
-      "bool": true
+      "label": "IndoorNav",
+      "value": "indoor_nav",
+      "itemNumber": "042000",
+      "price": 8500,
+      "leadTime": 5,
+      "priceHardware": 8500,
+      "priceSoftware": 0,
+      "bool": true,
+      "attachmentPosition": {
+        "one": {
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 4,
+          "position": 0
+        },
+        "two": {
+          "bool": true,
+          "position": 1
+        },
+        "three": {
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 5,
+          "position": 2
+        },
+        "four": {
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 4,
+          "position": 3
+        },
+        "five": {
+          "bool": true,
+          "position": 4
+        },
+        "six": {
+          "bool": true,
+          "position": 5
+        },
+        "seven": {
+          "bool": true,
+          "position": 6
+        },
+        "eight": {
+          "bool": true,
+          "position": 7
+        },
+        "nine": {
+          "bool": false
+        },
+        "ten": {
+          "bool": false
+        },
+        "eleven": {
+          "bool": false
+        },
+        "twelve": {
+          "bool": false
+        },
+        "thirteen": {
+          "bool": false
+        },
+        "fourteen": {
+          "bool": false
+        }
+      },
+      "_comment": ["                                                         end of line|"],
+      "descriptionHardware": [
+        "Kit, Hardware - IndoorNav", 
+        "Specifications: This kit includes 2X Hokuyo LiDAR and 1X Microstrain AHRS,", 
+        "and related cables.", 
+        " ", 
+        "Note: this kit does not include a computer or the robot platform.", 
+        " ", 
+        " ", 
+        " ", 
+        " "
+      ],
+      "descriptionSoftware": [
+        "Kit, Software - IndoorNav", 
+        "Specifications: This kit includes:", 
+        "  - a closed-source copy of the IndoorNav autonomy software", 
+        "    on the robot's computer", 
+        "  - sensor drivers and networking on the robot's computer", 
+        "  - URDF configuration on the robot's computer to include sensor postitions", 
+        " ", 
+        "Note: this software requires the purchase of the related hardware kit.", 
+        " "
+      ]
     }
-  ]
+  ],
+
+  "bananaPosition": {
+    "name": "bananaPosition",
+    "xyz": [100, 0, 305],
+    "uvw": [0, 0.97, 0]
+  }
 }
