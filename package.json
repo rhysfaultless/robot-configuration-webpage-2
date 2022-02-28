@@ -9,6 +9,7 @@
   "dependencies": {
     "@react-three/drei": "^8.10.5",
     "@react-three/fiber": "^7.0.26",
+    "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "next": "^12.1.0",
     "react": "^17.0.2",
