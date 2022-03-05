@@ -893,6 +893,15 @@ function ButtonQuote(props) {
       {
         doc.setPage(7);
 
+        // screenshot image of the configured robot
+        var screenshotImageData = props.screenshotData;
+        if (screenshotImageData != null) {
+          const screenshotProperties = doc.getImageProperties(screenshotImageData);
+          const screenshotWidth = 140;
+          const screenshotAspect = screenshotProperties.height / screenshotProperties.width;
+          doc.addImage(screenshotImageData, "JPEG", 40, 60, screenshotWidth, (screenshotWidth * screenshotAspect));
+        }
+
         // total price
         doc.setFontSize(12);
         doc.text(149, 190, "Total");

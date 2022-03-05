@@ -51,6 +51,7 @@ const bananaPositionData = dataFile.bananaPosition;
 
 // pdf import - for generating a quote
 import ButtonGeneratePdfQuote from "/components/price-lead-quote/ButtonQuote";
+import html2canvas from "html2canvas";
 
 function Page() {
   // define states
@@ -77,6 +78,14 @@ function Page() {
   const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
   const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
   const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
+  const [screenshotDataState, changeScreenshotDataState] = useState(null);
+
+  function UpdateScreenshotData() {
+    const input = document.getElementById("divToPrint");
+    html2canvas(input).then((canvas) => {
+      changeScreenshotDataState(canvas.toDataURL("image/jpeg"));
+    });
+  }
 
   function makePriceLeadStatesArray() {
     let priceLeadStatesArray = [robotPlatformData, colourSelectionState, batterySelectionState, computerSelectionState, kitSelectionState, towerSelectionState];
@@ -376,7 +385,7 @@ function Page() {
         </aside>
         <main className="w-2/3 fixed h-screen right-0">
           <div className="w-full h-full z-0">
-            <Canvas>
+            <Canvas id="divToPrint" gl={{ preserveDrawingBuffer: true }}>
               <ambientLight intensity={0.7} />
               <spotLight position={[10000, 3000, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
               <ConfiguredOrbitControls />
@@ -482,7 +491,7 @@ function Page() {
           <div className="px-5">
             <LeadtimeText statesArray={makePriceLeadStatesArray()} />
           </div>
-          <div className="px-5">
+          <div className="px-5" onMouseOver={() => UpdateScreenshotData()}>
             <ButtonGeneratePdfQuote
               robotPlatform={robotPlatformData_label}
               colourState={colourSelectionState}
@@ -503,6 +512,7 @@ function Page() {
               attachmentSixState={attachmentSixSelectionState}
               attachmentSevenState={attachmentSevenSelectionState}
               attachmentEightState={attachmentEightSelectionState}
+              screenshotData={screenshotDataState}
             />
           </div>
         </span>
