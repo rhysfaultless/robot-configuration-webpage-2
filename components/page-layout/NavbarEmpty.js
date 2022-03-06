@@ -3,7 +3,7 @@ import { React } from "react";
 
 function NavbarEmpty() {
   return (
-    <nav className="dark:bg-stone-300 py-1 z-50">
+    <nav className="bg-stone-300 py-1 z-50">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <ul className="justify-end flex space-x-8 px-10">
           <li>

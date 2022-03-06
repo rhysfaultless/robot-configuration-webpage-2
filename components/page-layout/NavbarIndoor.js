@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function NavbarIndoor() {
   return (
-    <nav className="dark:bg-stone-300 py-1">
+    <nav className="bg-stone-300 py-1">
       <ul className="justify-end flex space-x-8 px-10 z-50">
         <li>
           <Link href="/indoor/dingo-diff">
