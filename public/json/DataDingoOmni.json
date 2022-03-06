@@ -221,50 +221,64 @@
       "price": 0,
       "leadTime": 0,
       "bool": false,
-      "attachmentPosition": {
-        "one": {
+      "attachmentPosition": [
+        {
+          "id": 1,
           "bool": true
         },
-        "two": {
+        {
+          "id": 2,
           "bool": true
         },
-        "three": {
+        {
+          "id": 3,
           "bool": true
         },
-        "four": {
+        {
+          "id": 4,
           "bool": true
         },
-        "five": {
+        {
+          "id": 5,
           "bool": false
         },
-        "six": {
+        {
+          "id": 6,
           "bool": false
         },
-        "seven": {
+        {
+          "id": 7,
           "bool": false
         },
-        "eight": {
+        {
+          "id": 8,
           "bool": false
         },
-        "nine": {
+        {
+          "id": 9,
           "bool": false
         },
-        "ten": {
+        {
+          "id": 10,
           "bool": false
         },
-        "eleven": {
+        {
+          "id": 11,
           "bool": false
         },
-        "twelve": {
+        {
+          "id": 12,
           "bool": false
         },
-        "thirteen": {
+        {
+          "id": 13,
           "bool": false
         },
-        "fourteen": {
+        {
+          "id": 14,
           "bool": false
         }
-      },
+      ],
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -285,50 +299,64 @@
       "price": 300,
       "leadTime": 0,
       "bool": true,
-      "attachmentPosition": {
-        "one": {
+      "attachmentPosition": [
+        {
+          "id": 1,
           "bool": true
         },
-        "two": {
+        {
+          "id": 2,
           "bool": true
         },
-        "three": {
+        {
+          "id": 3,
           "bool": true
         },
-        "four": {
+        {
+          "id": 4,
           "bool": true
         },
-        "five": {
+        {
+          "id": 5,
           "bool": true
         },
-        "six": {
+        {
+          "id": 6,
           "bool": true
         },
-        "seven": {
+        {
+          "id": 7,
           "bool": true
         },
-        "eight": {
+        {
+          "id": 8,
           "bool": true
         },
-        "nine": {
+        {
+          "id": 9,
           "bool": false
         },
-        "ten": {
+        {
+          "id": 10,
           "bool": false
         },
-        "eleven": {
+        {
+          "id": 11,
           "bool": false
         },
-        "twelve": {
+        {
+          "id": 12,
           "bool": false
         },
-        "thirteen": {
+        {
+          "id": 13,
           "bool": false
         },
-        "fourteen": {
+        {
+          "id": 14,
           "bool": false
         }
-      },
+      ],
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -400,6 +428,24 @@
       "xyz": [-240, 269, 0],
       "uvw": [0, 3.14159, 0],
       "onTowerBool": true
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
     }
   ],
 
@@ -536,50 +582,64 @@
       "priceHardware": 0,
       "priceSoftware": 0,
       "bool": false,
-      "attachmentPosition": {
-        "one": {
+      "attachmentPosition": [
+        {
+          "id": 1,
           "bool": true
         },
-        "two": {
+        {
+          "id": 2,
           "bool": true
         },
-        "three": {
+        {
+          "id": 3,
           "bool": true
         },
-        "four": {
+        {
+          "id": 4,
           "bool": true
         },
-        "five": {
+        {
+          "id": 5,
           "bool": true
         },
-        "six": {
+        {
+          "id": 6,
           "bool": true
         },
-        "seven": {
+        {
+          "id": 7,
           "bool": true
         },
-        "eight": {
+        {
+          "id": 8,
           "bool": true
         },
-        "nine": {
+        {
+          "id": 9,
           "bool": false
         },
-        "ten": {
+        {
+          "id": 10,
           "bool": false
         },
-        "eleven": {
+        {
+          "id": 11,
           "bool": false
         },
-        "twelve": {
+        {
+          "id": 12,
           "bool": false
         },
-        "thirteen": {
+        {
+          "id": 13,
           "bool": false
         },
-        "fourteen": {
+        {
+          "id": 14,
           "bool": false
         }
-      },
+      ],
       "_comment": ["                                                         end of line|"],
       "descriptionHardware": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "],
       "descriptionSoftware": ["Empty line item", " ", " ", " ", " ", " ", " ", " ", " "]
@@ -593,64 +653,78 @@
       "priceHardware": 8500,
       "priceSoftware": 0,
       "bool": true,
-      "attachmentPosition": {
-        "one": {
+      "attachmentPosition": [
+        {
+          "id": 1,
           "bool": false,
           "_comment": "attachmentItem should be an integer, matching the index of the item",
           "attachmentItem": 4,
           "position": 0
         },
-        "two": {
+        {
+          "id": 2,
           "bool": true,
           "position": 1
         },
-        "three": {
+        {
+          "id": 3,
           "bool": false,
           "_comment": "attachmentItem should be an integer, matching the index of the item",
           "attachmentItem": 5,
           "position": 2
         },
-        "four": {
+        {
+          "id": 4,
           "bool": false,
           "_comment": "attachmentItem should be an integer, matching the index of the item",
           "attachmentItem": 4,
           "position": 3
         },
-        "five": {
+        {
+          "id": 5,
           "bool": true,
           "position": 4
         },
-        "six": {
+        {
+          "id": 6,
           "bool": true,
           "position": 5
         },
-        "seven": {
+        {
+          "id": 7,
           "bool": true,
           "position": 6
         },
-        "eight": {
+        {
+          "id": 8,
           "bool": true,
           "position": 7
         },
-        "nine": {
+        {
+          "id": 9,
           "bool": false
         },
-        "ten": {
+        {
+          "id": 10,
           "bool": false
         },
-        "eleven": {
+        {
+          "id": 11,
           "bool": false
         },
-        "twelve": {
+        {
+          "id": 12,
           "bool": false
         },
-        "thirteen": {
+        {
+          "id": 13,
           "bool": false
         },
-        "fourteen": {
+        {
+          "id": 14,
           "bool": false
         }
-      },
+      ],
       "_comment": ["                                                         end of line|"],
       "descriptionHardware": [
         "Kit, Hardware - IndoorNav", 

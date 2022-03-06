@@ -482,9 +482,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 103, "17"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.one.bool && props.kitState.attachmentPosition.one.bool) {
+          if (props.attachmentTowerState.attachmentPosition[0].bool && props.kitState.attachmentPosition[0].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentOneState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[0][0].label) {
                 doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 103, "1"); // quantity
@@ -510,9 +510,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 143, "18"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.two.bool && props.kitState.attachmentPosition.two.bool) {
+          if (props.attachmentTowerState.attachmentPosition[1].bool && props.kitState.attachmentPosition[1].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentTwoState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[1][0].label) {
                 doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 143, "1"); // quantity
@@ -538,9 +538,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 183, "19"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.three.bool && props.kitState.attachmentPosition.three.bool) {
+          if (props.attachmentTowerState.attachmentPosition[2].bool && props.kitState.attachmentPosition[2].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentThreeState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[2][0].label) {
                 doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 183, "1"); // quantity
@@ -566,9 +566,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 223, "20"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.four.bool && props.kitState.attachmentPosition.four.bool) {
+          if (props.attachmentTowerState.attachmentPosition[3].bool && props.kitState.attachmentPosition[3].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentFourState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[3][0].label) {
                 doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 223, "1"); // quantity
@@ -602,9 +602,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "21"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.five.bool && props.kitState.attachmentPosition.five.bool) {
+          if (props.attachmentTowerState.attachmentPosition[4].bool && props.kitState.attachmentPosition[4].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentFiveState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[4][0].label) {
                 doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 63, "1"); // quantity
@@ -630,9 +630,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 103, "22"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.six.bool && props.kitState.attachmentPosition.six.bool) {
+          if (props.attachmentTowerState.attachmentPosition[5].bool && props.kitState.attachmentPosition[5].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentSixState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[5][0].label) {
                 doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 103, "1"); // quantity
@@ -658,9 +658,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 143, "23"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.seven.bool && props.kitState.attachmentPosition.seven.bool) {
+          if (props.attachmentTowerState.attachmentPosition[6].bool && props.kitState.attachmentPosition[6].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentSevenState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[6][0].label) {
                 doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 143, "1"); // quantity
@@ -686,11 +686,13 @@ function ButtonQuote(props) {
 
         doc.text(21, 183, "24"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.eight.bool && props.kitState.attachmentPosition.eight.bool) {
+          if (props.attachmentTowerState.attachmentPosition[7].bool && props.kitState.attachmentPosition[7].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentEightState.label) {
+              console.log('loop, 2nd');
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[7][0].label) {
                 doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
+                  console.log('if 4th');
                   doc.text(141, 183, "1"); // quantity
                   doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
                   doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
@@ -714,9 +716,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 223, "25"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.nine.bool && props.kitState.attachmentPosition.nine.bool) {
+          if (props.attachmentTowerState.attachmentPosition[8].bool && props.kitState.attachmentPosition[8].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentNineState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[8][0].label) {
                 doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 223, "1"); // quantity
@@ -750,9 +752,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 63, "26"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.ten.bool && props.kitState.attachmentPosition.ten.bool) {
+          if (props.attachmentTowerState.attachmentPosition[9].bool && props.kitState.attachmentPosition[9].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentTenState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[9][0].label) {
                 doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 63, "1"); // quantity
@@ -778,9 +780,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 103, "27"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.eleven.bool && props.kitState.attachmentPosition.eleven.bool) {
+          if (props.attachmentTowerState.attachmentPosition[10].bool && props.kitState.attachmentPosition[10].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentElevenState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[10][0].label) {
                 doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 103, "1"); // quantity
@@ -806,9 +808,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 143, "28"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.twelve.bool && props.kitState.attachmentPosition.twelve.bool) {
+          if (props.attachmentTowerState.attachmentPosition[11].bool && props.kitState.attachmentPosition[11].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentTwelveState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[11][0].label) {
                 doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 143, "1"); // quantity
@@ -834,9 +836,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 183, "29"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.thirteen.bool && props.kitState.attachmentPosition.thirteen.bool) {
+          if (props.attachmentTowerState.attachmentPosition[12].bool && props.kitState.attachmentPosition[12].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentThirteenState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[12][0].label) {
                 doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 183, "1"); // quantity
@@ -862,9 +864,9 @@ function ButtonQuote(props) {
 
         doc.text(21, 223, "30"); // line ID
         {
-          if (props.attachmentTowerState.attachmentPosition.fourteen.bool && props.kitState.attachmentPosition.fourteen.bool) {
+          if (props.attachmentTowerState.attachmentPosition[13].bool && props.kitState.attachmentPosition[13].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentFourteenState.label) {
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[13][0].label) {
                 doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
                   doc.text(141, 223, "1"); // quantity
