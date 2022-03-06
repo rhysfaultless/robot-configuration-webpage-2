@@ -31,26 +31,23 @@ import computerDataFile from "/public/json/DataComputer";
 import dataFile from "/public/json/DataDingoOmni";
 
 // constants from JSON files
-{
-  const computerData = computerDataFile.computers;
-  const computerProcessorData = computerDataFile.processors;
-  const computerRamData = computerDataFile.ram;
-  const computerStorageData = computerDataFile.storage;
-  const computerGpuData = computerDataFile.gpu;
-  const webpageTabTitle = dataFile.webpage.tabTitle;
-  const robotPlatformData = dataFile.robotPlatform;
-  const robotPlatformDataLabel = robotPlatformData.label;
-  const colourData = dataFile.panelColours;
-  const batteryData = dataFile.batteryItems;
-  const kitData = dataFile.kits;
-  const towerData = dataFile.tower;
-  const attachmentData = dataFile.attachmentItems;
-  const bananaPositionData = dataFile.bananaPosition;
-}
+const computerData = computerDataFile.computers;
+const computerProcessorData = computerDataFile.processors;
+const computerRamData = computerDataFile.ram;
+const computerStorageData = computerDataFile.storage;
+const computerGpuData = computerDataFile.gpu;
+const webpageTabTitle = dataFile.webpage.tabTitle;
+const robotPlatformData = dataFile.robotPlatform;
+const robotPlatformDataLabel = robotPlatformData.label;
+const colourData = dataFile.panelColours;
+const batteryData = dataFile.batteryItems;
+const kitData = dataFile.kits;
+const towerData = dataFile.tower;
+const attachmentData = dataFile.attachmentItems;
+const bananaPositionData = dataFile.bananaPosition;
 
-export default function Page() {
+function Page() {
   // define states
-  {
     const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
     const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
     //
@@ -98,7 +95,6 @@ export default function Page() {
     const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
     //
     const [screenshotDataState, changeScreenshotDataState] = useState(null);
-  }
 
   function UpdateScreenshotData() {
     const input = document.getElementById("divToPrint");
@@ -427,3 +423,5 @@ export default function Page() {
     </div>
   );
 }
+
+export default Page;
