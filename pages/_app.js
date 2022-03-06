@@ -1,3 +1,4 @@
+import { React } from "react";
 import "/styles/globals.css";
 import Layout from "/components/page-layout/Layout";
 
@@ -7,13 +8,11 @@ function SafeHydrate({ children }) {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <SafeHydrate>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </SafeHydrate>
-    </>
+    <SafeHydrate>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SafeHydrate>
   );
 }
 

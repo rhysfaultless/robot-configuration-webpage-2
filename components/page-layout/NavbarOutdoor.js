@@ -4,7 +4,7 @@ import Link from "next/link";
 function NavbarOutdoor() {
   return (
     <nav className="dark:bg-stone-300 py-1">
-      <ul className="justify-end flex space-x-8 px-10">
+      <ul className="justify-end flex space-x-8 px-10 z-50">
         <li>
           <Link href="/outdoor/jackal">
             <a className="px-3 text-white hover:text-stone-700">Jackal</a>
