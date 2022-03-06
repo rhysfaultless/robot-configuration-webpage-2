@@ -8,7 +8,7 @@ function RotateModelNotification() {
   );
 }
 
-export default function ShowRotateModelNotification(props) {
+function ShowRotateModelNotification(props) {
   const [showRotateModelNotificationState, setShowRotateModelNotificationState] = useState(true);
   const TimerToRemoveNotification = setTimeout(() => {
     setShowRotateModelNotificationState(false);
@@ -23,3 +23,5 @@ export default function ShowRotateModelNotification(props) {
     return null;
   }
 }
+
+export default ShowRotateModelNotification;

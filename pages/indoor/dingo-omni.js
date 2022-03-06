@@ -1,21 +1,17 @@
-// Next.js library imports
+// Next.js and React library imports
 import Head from "next/head";
-
-// React library imports
 import { React, Suspense, useState } from "react";
-import Select from "react-select";
-
-// Rotate Model Notification to User
+import SelectFormatted from "/components/page-layout/SelectFormatted";
 import ShowRotateModelNotification from "/components/page-layout/NotificationRotateModel";
 
 // Price, Lead-time, and Quoting imports
 import PriceText from "/components/price-lead-quote/PriceText";
 import LeadtimeText from "/components/price-lead-quote/LeadtimeText";
+import ButtonGeneratePdfQuote from "/components/price-lead-quote/ButtonQuote";
+import html2canvas from "html2canvas";
 
-// Three.js library imports
+// Three.js library imports, including custom components used on all robot platforms
 import { Canvas } from "@react-three/fiber";
-
-// custom component imports - three.js - all robots
 import ConfiguredOrbitControls from "/components/three-settings/ConfiguredOrbitControls";
 import ConfiguredCamera from "/components/three-settings/ConfiguredCamera";
 import ModelBanana from "/components/three-models/ModelBanana";
@@ -25,12 +21,9 @@ import ModelRobotChassisBase from "/components/three-models/ModelRobotChassisBas
 import ModelRobotChassisPanels from "/components/three-models/ModelRobotChassisPanelsDingoOmni";
 import ModelRobotChassisWheels from "/components/three-models/ModelRobotChassisWheelsDingoOmni";
 import ModelRobotChassisTower from "/components/three-models/ModelRobotChassisTowerDingoOmni";
-
-// custom component imports - three.js - attachments and sensors
 import ModelAttachments from "/components/three-models/ModelAttachmentsDingoOmni.js";
 
-// json data imports - robot specific
-import dataFile from "/public/json/DataDingoOmni";
+// json data imports - common for all robot platforms
 import selectYesNoData from "/public/json/DataYesNo";
 import computerDataFile from "/public/json/DataComputer";
 const computerData = computerDataFile.computers;
@@ -38,25 +31,21 @@ const computerProcessorData = computerDataFile.processors;
 const computerRamData = computerDataFile.ram;
 const computerStorageData = computerDataFile.storage;
 const computerGpuData = computerDataFile.gpu;
+
+// json data imports - robot platform specific
+import dataFile from "/public/json/DataDingoOmni";
 const webpageTabTitle = dataFile.webpage.tabTitle;
 const robotPlatformData = dataFile.robotPlatform;
-const robotPlatformData_label = robotPlatformData.label;
-const attachmentPositionData = dataFile.attachmentPositions;
+const robotPlatformDataLabel = robotPlatformData.label;
 const colourData = dataFile.panelColours;
 const batteryData = dataFile.batteryItems;
-const towerData = dataFile.tower;
 const kitData = dataFile.kits;
+const towerData = dataFile.tower;
 const attachmentData = dataFile.attachmentItems;
 const bananaPositionData = dataFile.bananaPosition;
 
-// pdf import - for generating a quote
-import ButtonGeneratePdfQuote from "/components/price-lead-quote/ButtonQuote";
-import html2canvas from "html2canvas";
-
 function Page() {
   // define states
-  const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
-  //
   const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
   const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
   //
@@ -78,6 +67,9 @@ function Page() {
   const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
   const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
   const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
+  //
+  const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
+  //
   const [screenshotDataState, changeScreenshotDataState] = useState(null);
 
   function UpdateScreenshotData() {
@@ -134,32 +126,6 @@ function Page() {
     return null;
   }
 
-  function SelectFormatted(props) {
-    return (
-      <li className="inline-block max-w-s px-1 py-1">
-        <p className="float-left w-1/3">{props.displayName}</p>
-        <div className="float-right w-2/3">
-          <Select
-            options={props.options}
-            value={props.currentState}
-            defaultValue={props.options[props.defaultValue]}
-            onChange={(event) => props.changeStateFunction(event)}
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 5,
-              colors: {
-                ...theme.colors,
-                primary: "#f0c700",
-                primary25: "#d4d4d4",
-                primary50: "#aaaaaa",
-              },
-            })}
-          />
-        </div>
-      </li>
-    );
-  }
-
   return (
     <div className="container">
       <Head>
@@ -191,7 +157,6 @@ function Page() {
                   />
                 </ul>
               </div>
-
               <div>
                 <ul className="flex flex-col w-full text-black">
                   {/*  Select, Computer  */}
@@ -248,7 +213,6 @@ function Page() {
                   )}
                 </ul>
               </div>
-
               <div>
                 <ul className="flex flex-col w-full text-black">
                   {/*  Select, Kits  */}
@@ -493,7 +457,7 @@ function Page() {
           </div>
           <div className="px-5" onMouseOver={() => UpdateScreenshotData()}>
             <ButtonGeneratePdfQuote
-              robotPlatform={robotPlatformData_label}
+              robotPlatform={robotPlatformDataLabel}
               colourState={colourSelectionState}
               batteryState={batterySelectionState}
               computerState={computerSelectionState}
