@@ -6,13 +6,9 @@ function Layout({ children }) {
   return (
     <>
       <div className="w-full h-full">
-        <div>
-          <Navbar />
-        </div>
-        <div>{children}</div>
-        <div>
-          <Footer />
-        </div>
+        <Navbar />
+        {children}
+        <Footer />
       </div>
     </>
   );
