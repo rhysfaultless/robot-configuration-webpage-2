@@ -48,53 +48,53 @@ const bananaPositionData = dataFile.bananaPosition;
 
 function Page() {
   // define states
-    const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
-    const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
-    //
-    const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
-    const [computerProcessorSelectionState, changeComputerProcessorSelectionState] = useState(computerProcessorData[1]);
-    const [computerRamSelectionState, changeComputerRamSelectionState] = useState(computerRamData[0]);
-    const [computerStorageSelectionState, changeComputerStorageSelectionState] = useState(computerStorageData[0]);
-    const [computerGpuSelectionState, changeComputerGpuSelectionState] = useState(computerGpuData[0]);
-    const computerComponentStates = [computerProcessorSelectionState, computerRamSelectionState, computerStorageSelectionState, computerGpuSelectionState];
-    //
-    const [kitSelectionState, changeKitSelectionState] = useState(kitData[0]);
-    //
-    const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
-    const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
-    const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
-    const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
-    const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(attachmentData[0]);
-    const [attachmentFiveSelectionState, changeAttachmentFiveSelectionState] = useState(attachmentData[0]);
-    const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
-    const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
-    const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
-    const [attachmentNineSelectionState, changeAttachmentNineSelectionState] = useState(attachmentData[0]);
-    const [attachmentTenSelectionState, changeAttachmentTenSelectionState] = useState(attachmentData[0]);
-    const [attachmentElevenSelectionState, changeAttachmentElevenSelectionState] = useState(attachmentData[0]);
-    const [attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState] = useState(attachmentData[0]);
-    const [attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState] = useState(attachmentData[0]);
-    const [attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState] = useState(attachmentData[0]);
-    const attachmentSelectionStates = [
-      [attachmentOneSelectionState, changeAttachmentOneSelectionState, 0],
-      [attachmentTwoSelectionState, changeAttachmentTwoSelectionState, 1],
-      [attachmentThreeSelectionState, changeAttachmentThreeSelectionState, 2],
-      [attachmentFourSelectionState, changeAttachmentFourSelectionState, 3],
-      [attachmentFiveSelectionState, changeAttachmentFiveSelectionState, 4],
-      [attachmentSixSelectionState, changeAttachmentSixSelectionState, 5],
-      [attachmentSevenSelectionState, changeAttachmentSevenSelectionState, 6],
-      [attachmentEightSelectionState, changeAttachmentEightSelectionState, 7],
-      [attachmentNineSelectionState, changeAttachmentNineSelectionState, 8],
-      [attachmentTenSelectionState, changeAttachmentTenSelectionState, 9],
-      [attachmentElevenSelectionState, changeAttachmentElevenSelectionState, 10],
-      [attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState, 11],
-      [attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState, 12],
-      [attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState, 13],
-    ];
-    //
-    const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
-    //
-    const [screenshotDataState, changeScreenshotDataState] = useState(null);
+  const [colourSelectionState, changeColourSelectionState] = useState(colourData[0]);
+  const [batterySelectionState, changeBatterySelectionState] = useState(batteryData[0]);
+  //
+  const [computerSelectionState, changeComputerSelectionState] = useState(computerData[0]);
+  const [computerProcessorSelectionState, changeComputerProcessorSelectionState] = useState(computerProcessorData[1]);
+  const [computerRamSelectionState, changeComputerRamSelectionState] = useState(computerRamData[0]);
+  const [computerStorageSelectionState, changeComputerStorageSelectionState] = useState(computerStorageData[0]);
+  const [computerGpuSelectionState, changeComputerGpuSelectionState] = useState(computerGpuData[0]);
+  const computerComponentStates = [computerProcessorSelectionState, computerRamSelectionState, computerStorageSelectionState, computerGpuSelectionState];
+  //
+  const [kitSelectionState, changeKitSelectionState] = useState(kitData[0]);
+  //
+  const [towerSelectionState, changeTowerSelectionState] = useState(towerData[0]);
+  const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
+  const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
+  const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
+  const [attachmentFourSelectionState, changeAttachmentFourSelectionState] = useState(attachmentData[0]);
+  const [attachmentFiveSelectionState, changeAttachmentFiveSelectionState] = useState(attachmentData[0]);
+  const [attachmentSixSelectionState, changeAttachmentSixSelectionState] = useState(attachmentData[0]);
+  const [attachmentSevenSelectionState, changeAttachmentSevenSelectionState] = useState(attachmentData[0]);
+  const [attachmentEightSelectionState, changeAttachmentEightSelectionState] = useState(attachmentData[0]);
+  const [attachmentNineSelectionState, changeAttachmentNineSelectionState] = useState(attachmentData[0]);
+  const [attachmentTenSelectionState, changeAttachmentTenSelectionState] = useState(attachmentData[0]);
+  const [attachmentElevenSelectionState, changeAttachmentElevenSelectionState] = useState(attachmentData[0]);
+  const [attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState] = useState(attachmentData[0]);
+  const [attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState] = useState(attachmentData[0]);
+  const [attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState] = useState(attachmentData[0]);
+  const attachmentSelectionStates = [
+    [attachmentOneSelectionState, changeAttachmentOneSelectionState, 0],
+    [attachmentTwoSelectionState, changeAttachmentTwoSelectionState, 1],
+    [attachmentThreeSelectionState, changeAttachmentThreeSelectionState, 2],
+    [attachmentFourSelectionState, changeAttachmentFourSelectionState, 3],
+    [attachmentFiveSelectionState, changeAttachmentFiveSelectionState, 4],
+    [attachmentSixSelectionState, changeAttachmentSixSelectionState, 5],
+    [attachmentSevenSelectionState, changeAttachmentSevenSelectionState, 6],
+    [attachmentEightSelectionState, changeAttachmentEightSelectionState, 7],
+    [attachmentNineSelectionState, changeAttachmentNineSelectionState, 8],
+    [attachmentTenSelectionState, changeAttachmentTenSelectionState, 9],
+    [attachmentElevenSelectionState, changeAttachmentElevenSelectionState, 10],
+    [attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState, 11],
+    [attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState, 12],
+    [attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState, 13],
+  ];
+  //
+  const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
+  //
+  const [screenshotDataState, changeScreenshotDataState] = useState(null);
 
   function UpdateScreenshotData() {
     const input = document.getElementById("divToPrint");
@@ -173,7 +173,6 @@ function Page() {
       );
     }
   }
-
   function SelectAttachmentsRenderer() {
     let selectFieldsArray = [];
     // using forEach rather than a for loop, so I can return a DOM component for each element of the array
@@ -187,16 +186,15 @@ function Page() {
   function ModelAttachmentsRendererHelper(elementFromArray) {
     if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && towerSelectionState.attachmentPosition[elementFromArray[2]].bool) {
       return (
-        <AttachmentsRenderer 
-          attachmentSelectionState={elementFromArray[0]} 
-          attachmentPosition={elementFromArray[2]} 
-          options={attachmentData} 
-          dataFile={dataFile} 
+        <AttachmentsRenderer
+          attachmentSelectionState={elementFromArray[0]}
+          attachmentPosition={elementFromArray[2]}
+          options={attachmentData}
+          dataFile={dataFile}
         />
       );
     }
   }
-
   function ModelAttachmentsRenderer() {
     let attachmentModelsArray = [];
     // using forEach rather than a for loop, so I can return a DOM component for each element of the array
@@ -210,7 +208,7 @@ function Page() {
   function ModelKitsRendererHelper(elementFromArray) {
     if (!kitSelectionState.attachmentPosition[elementFromArray[2]].bool) {
       return (
-        <AttachmentsRenderer 
+        <AttachmentsRenderer
           attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition[elementFromArray[2]].attachmentItem]}
           attachmentPosition={kitSelectionState.attachmentPosition[elementFromArray[2]].position}
           options={attachmentData}
@@ -219,7 +217,6 @@ function Page() {
       );
     }
   }
-
   function ModelKitsRenderer() {
     let kitModelsArray = [];
     // using forEach rather than a for loop, so I can return a DOM component for each element of the array
@@ -377,7 +374,7 @@ function Page() {
                 <ModelRobotChassisBase />
                 <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
                 <ModelRobotChassisWheels />
-                <ModelKitsRenderer/>
+                <ModelKitsRenderer />
                 {towerSelectionState.bool && <ModelRobotChassisTower />}
                 <ModelAttachmentsRenderer />
                 {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
