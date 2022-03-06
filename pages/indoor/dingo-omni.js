@@ -162,6 +162,7 @@ function Page() {
   // Select rendering functions
   function SelectAttachmentsRendererHelper(indexOfElementFromArray) {
     if (towerSelectionState.attachmentPosition[indexOfElementFromArray].bool && kitSelectionState.attachmentPosition[indexOfElementFromArray].bool) {
+      const tempKeyName = "selectAttachmentsRendererKey" + String(indexOfElementFromArray);
       return (
         <SelectFormatted
           displayName={"Attachment " + String(indexOfElementFromArray + 1)}
@@ -169,6 +170,7 @@ function Page() {
           defaultValue={indexOfElementFromArray}
           currentState={attachmentSelectionStates[indexOfElementFromArray][0]}
           changeStateFunction={attachmentSelectionStates[indexOfElementFromArray][1]}
+          key={tempKeyName}
         />
       );
     }
@@ -184,6 +186,7 @@ function Page() {
 
   // Attachment Models rendering functions
   function ModelAttachmentsRendererHelper(elementFromArray) {
+    const tempKeyName = "modelAttachmentsRendererKey" + String(elementFromArray[2]);
     if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && towerSelectionState.attachmentPosition[elementFromArray[2]].bool) {
       return (
         <AttachmentsRenderer
@@ -191,6 +194,7 @@ function Page() {
           attachmentPosition={elementFromArray[2]}
           options={attachmentData}
           dataFile={dataFile}
+          key={tempKeyName}
         />
       );
     }
@@ -206,6 +210,7 @@ function Page() {
 
   // Kit Models rendering functions
   function ModelKitsRendererHelper(elementFromArray) {
+    const tempKeyName = "modelKitsRendererKey" + String(elementFromArray[2]);
     if (!kitSelectionState.attachmentPosition[elementFromArray[2]].bool) {
       return (
         <AttachmentsRenderer
@@ -213,6 +218,7 @@ function Page() {
           attachmentPosition={kitSelectionState.attachmentPosition[elementFromArray[2]].position}
           options={attachmentData}
           dataFile={dataFile}
+          key={tempKeyName}
         />
       );
     }
