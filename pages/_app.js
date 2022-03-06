@@ -7,11 +7,13 @@ function SafeHydrate({ children }) {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <SafeHydrate>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </SafeHydrate>
+    <>
+      <SafeHydrate>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SafeHydrate>
+    </>
   );
 }
 
