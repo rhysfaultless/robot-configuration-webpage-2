@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Navbar() {
   return (
-    <nav className="bg-white dark:bg-stone-700 px-2 py-1.5 sticky top-0 z-50 flex">
+    <nav className="bg-stone-700 px-2 py-1.5 sticky top-0 z-50 flex">
       <div className="left-0 relative w-1/2">
         <Link href="/">
           <a>
