@@ -160,79 +160,73 @@ function Page() {
   }
 
   // Select rendering functions
-  {
-    function SelectAttachmentsRendererHelper(indexOfElementFromArray) {
-      if (towerSelectionState.attachmentPosition[indexOfElementFromArray].bool && kitSelectionState.attachmentPosition[indexOfElementFromArray].bool) {
-        return (
-          <SelectFormatted
-            displayName={"Attachment " + String(indexOfElementFromArray + 1)}
-            options={attachmentData}
-            defaultValue={indexOfElementFromArray}
-            currentState={attachmentSelectionStates[indexOfElementFromArray][0]}
-            changeStateFunction={attachmentSelectionStates[indexOfElementFromArray][1]}
-          />
-        );
-      }
+  function SelectAttachmentsRendererHelper(indexOfElementFromArray) {
+    if (towerSelectionState.attachmentPosition[indexOfElementFromArray].bool && kitSelectionState.attachmentPosition[indexOfElementFromArray].bool) {
+      return (
+        <SelectFormatted
+          displayName={"Attachment " + String(indexOfElementFromArray + 1)}
+          options={attachmentData}
+          defaultValue={indexOfElementFromArray}
+          currentState={attachmentSelectionStates[indexOfElementFromArray][0]}
+          changeStateFunction={attachmentSelectionStates[indexOfElementFromArray][1]}
+        />
+      );
     }
+  }
 
-    function SelectAttachmentsRenderer() {
-      let selectFieldsArray = [];
-      // using forEach rather than a for loop, so I can return a DOM component for each element of the array
-      attachmentSelectionStates.forEach((elementFromArray) => {
-        selectFieldsArray.push(SelectAttachmentsRendererHelper(elementFromArray[2]));
-      });
-      return <>{selectFieldsArray}</>;
-    }
+  function SelectAttachmentsRenderer() {
+    let selectFieldsArray = [];
+    // using forEach rather than a for loop, so I can return a DOM component for each element of the array
+    attachmentSelectionStates.forEach((elementFromArray) => {
+      selectFieldsArray.push(SelectAttachmentsRendererHelper(elementFromArray[2]));
+    });
+    return <>{selectFieldsArray}</>;
   }
 
   // Attachment Models rendering functions
-  {
-    function ModelAttachmentsRendererHelper(elementFromArray) {
-      if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && towerSelectionState.attachmentPosition[elementFromArray[2]].bool) {
-        return (
-          <AttachmentsRenderer 
-            attachmentSelectionState={elementFromArray[0]} 
-            attachmentPosition={elementFromArray[2]} 
-            options={attachmentData} 
-            dataFile={dataFile} 
-          />
-        );
-      }
-    }
-
-    function ModelAttachmentsRenderer() {
-      let attachmentModelsArray = [];
-      // using forEach rather than a for loop, so I can return a DOM component for each element of the array
-      attachmentSelectionStates.forEach((elementFromArray) => {
-        attachmentModelsArray.push(ModelAttachmentsRendererHelper(elementFromArray));
-      });
-      return <>{attachmentModelsArray}</>;
+  function ModelAttachmentsRendererHelper(elementFromArray) {
+    if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && towerSelectionState.attachmentPosition[elementFromArray[2]].bool) {
+      return (
+        <AttachmentsRenderer 
+          attachmentSelectionState={elementFromArray[0]} 
+          attachmentPosition={elementFromArray[2]} 
+          options={attachmentData} 
+          dataFile={dataFile} 
+        />
+      );
     }
   }
 
-  // Kit Models rendering functions
-  {
-    function ModelKitsRendererHelper(elementFromArray) {
-      if (!kitSelectionState.attachmentPosition[elementFromArray[2]].bool) {
-        return (
-          <AttachmentsRenderer 
-            attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition[elementFromArray[2]].attachmentItem]}
-            attachmentPosition={kitSelectionState.attachmentPosition[elementFromArray[2]].position}
-            options={attachmentData}
-            dataFile={dataFile}
-          />
-        );
-      }
-    }
+  function ModelAttachmentsRenderer() {
+    let attachmentModelsArray = [];
+    // using forEach rather than a for loop, so I can return a DOM component for each element of the array
+    attachmentSelectionStates.forEach((elementFromArray) => {
+      attachmentModelsArray.push(ModelAttachmentsRendererHelper(elementFromArray));
+    });
+    return <>{attachmentModelsArray}</>;
+  }
 
-    function ModelKitsRenderer() {
-      let kitModelsArray = [];
-      // using forEach rather than a for loop, so I can return a DOM component for each element of the array
-      attachmentSelectionStates.forEach((elementFromArray) => {
-        kitModelsArray.push(ModelKitsRendererHelper(elementFromArray));
-      });
-      return <>{kitModelsArray}</>;
+  // Kit Models rendering functions
+  function ModelKitsRendererHelper(elementFromArray) {
+    if (!kitSelectionState.attachmentPosition[elementFromArray[2]].bool) {
+      return (
+        <AttachmentsRenderer 
+          attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition[elementFromArray[2]].attachmentItem]}
+          attachmentPosition={kitSelectionState.attachmentPosition[elementFromArray[2]].position}
+          options={attachmentData}
+          dataFile={dataFile}
+        />
+      );
     }
+  }
+
+  function ModelKitsRenderer() {
+    let kitModelsArray = [];
+    // using forEach rather than a for loop, so I can return a DOM component for each element of the array
+    attachmentSelectionStates.forEach((elementFromArray) => {
+      kitModelsArray.push(ModelKitsRendererHelper(elementFromArray));
+    });
+    return <>{kitModelsArray}</>;
   }
 
   return (
