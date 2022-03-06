@@ -390,7 +390,7 @@ function Page() {
           <ShowRotateModelNotification />
         </main>
       </div>
-      <footer className="py-1.5 bottom-0 h-16 fixed flex w-full dark:bg-stone-700 text-white justify-center">
+      <footer className="py-1.5 bottom-0 h-16 fixed flex w-full bg-stone-700 text-white justify-center">
         <span className="flex">
           <div className="px-5">
             <PriceText statesArray={makePriceLeadStatesArray()} />
