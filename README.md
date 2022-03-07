@@ -53,7 +53,7 @@ This site uses Next.js, a framework built around React.
 Next.js uses Pages to define the routing structure of the site, rather than using the react-router library. 
 Next.js still maintains the React approach, of making reuasable Components that will render the User's web browser. 
 
-```bash
+```
 project
 ├───.gitignore
 ├───next.config.js
@@ -65,25 +65,25 @@ project
 │   ├───page-layout
 │   |   ├───page-layout-component-1.js
 │   |   ├───page-layout-component-2.js
-│   |   ├───...
+│   |   |    ...
 │   |   └───page-layout-component-n.js
 │   |
 │   ├───price-lead-quote
 │   |   ├───price-lead-quote-component-1.js
 │   |   ├───price-lead-quote-component-2.js
-│   |   ├───...
+│   |   |    ...
 │   |   └───price-lead-quote-component-n.js
 │   |
 │   ├───three-models
 │   |   ├───three-model-component-1.js
 │   |   ├───three-model-component-2.js
-│   |   ├───...
+│   |   |    ...
 │   |   └───three-model-component-n.js
 │   |
 │   └───three-settings
 │       ├───three-settings-component-1.js
 │       ├───three-settings-component-2.js
-│       ├───...
+│       |    ...
 │       └───three-settings-component-n.js
 │   
 ├───pages
@@ -108,7 +108,7 @@ project
 │   ├───images
 │   |   ├───image-file-1.png
 │   |   ├───image-file-2.jpg
-│   |   ├───...
+│   |   |    ...
 │   |   └───image-file-n.jpg
 │   │
 │   ├───json
