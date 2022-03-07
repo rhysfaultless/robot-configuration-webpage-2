@@ -55,91 +55,91 @@ Next.js still maintains the React approach, of making reuasable Components that 
 
 ```
 project
-├───.gitignore
-├───next.config.js
-├───package.json
-├───README.md
-├───tailwind.config.js
+├─── .gitignore
+├─── next.config.js
+├─── package.json
+├─── README.md
+├─── tailwind.config.js
 │
-├───components
-│   ├───page-layout
-│   |   ├───page-layout-component-1.js
-│   |   ├───page-layout-component-2.js
-│   |   |    ...
-│   |   └───page-layout-component-n.js
-│   |
-│   ├───price-lead-quote
-│   |   ├───price-lead-quote-component-1.js
-│   |   ├───price-lead-quote-component-2.js
-│   |   |    ...
-│   |   └───price-lead-quote-component-n.js
-│   |
-│   ├───three-models
-│   |   ├───three-model-component-1.js
-│   |   ├───three-model-component-2.js
-│   |   |    ...
-│   |   └───three-model-component-n.js
-│   |
-│   └───three-settings
-│       ├───three-settings-component-1.js
-│       ├───three-settings-component-2.js
-│       |    ...
-│       └───three-settings-component-n.js
-│   
-├───pages
-│   ├───_app_.js
-│   ├───index.js
-│   ├───404.js
-│   │
-│   ├───indoor
-│   |   ├───index.js
-│   |   ├───dingo-diff.js
-│   |   ├───dingo-omni.js
-│   |   └───ridgeback.js
-│   │
-│   └───outdoor
-│       ├───index.js
-│       ├───husky.js
-│       └───jackal.js
+├─── components
+│    ├─── page-layout
+│    |    ├─── page-layout-component-1.js
+│    |    ├─── page-layout-component-2.js
+│    |    |     ...
+│    |    └─── page-layout-component-n.js
+│    |
+│    ├─── price-lead-quote
+│    |    ├─── price-lead-quote-component-1.js
+│    |    ├─── price-lead-quote-component-2.js
+│    |    |     ...
+│    |    └─── price-lead-quote-component-n.js
+│    |
+│    ├─── three-models
+│    |    ├─── three-model-component-1.js
+│    |    ├─── three-model-component-2.js
+│    |    |     ...
+│    |    └─── three-model-component-n.js
+│    |
+│    └─── three-settings
+│         ├─── three-settings-component-1.js
+│         ├─── three-settings-component-2.js
+│         |     ...
+│         └─── three-settings-component-n.js
+│    
+├─── pages
+│    ├─── _app_.js
+│    ├─── index.js
+│    ├─── 404.js
+│    │
+│    ├─── indoor
+│    |    ├─── index.js
+│    |    ├─── dingo-diff.js
+│    |    ├─── dingo-omni.js
+│    |    └─── ridgeback.js
+│    │
+│    └─── outdoor
+│         ├─── index.js
+│         ├─── husky.js
+│         └─── jackal.js
 │
-├───public
-│   │   favicon.ico
-│   │
-│   ├───images
-│   |   ├───image-file-1.png
-│   |   ├───image-file-2.jpg
-│   |   |    ...
-│   |   └───image-file-n.jpg
-│   │
-│   ├───json
-│   |   ├───DataComputer.json
-│   |   ├───DataDingoDiff.js
-│   |   ├───DataDingoOmni.js
-│   |   ├───Husky.js
-│   |   ├───Jackal.js
-│   |   └───Ridgeback.js
-│   │
-│   └───models
-│       ├───attachment-hokuyo.glb
-│       ├───attachment-microstrain-3dm-gx5-15.glb
-│       │    ...
-│       ├───banana.glb
-│       |    ...
-│       ├───chassis-base-dingo-d.glb
-│       ├───chassis-panels-dingo-d.glb
-│       ├───chassis-tower-dingo-d.glb
-│       ├───chassis-wheels-dingo-d.glb
-│       │   ...
-│       ├───chassis-base-husky.glb
-│       ├───chassis-panels-husky.glb
-│       ├───chassis-tower-husky.glb
-│       └───chassis-wheels-husky.glb
-│           ...
+├─── public
+│    │    favicon.ico
+│    │
+│    ├─── images
+│    |    ├─── image-file-1.png
+│    |    ├─── image-file-2.jpg
+│    |    |     ...
+│    |    └─── image-file-n.jpg
+│    │
+│    ├─── json
+│    |    ├─── DataComputer.json
+│    |    ├─── DataDingoDiff.js
+│    |    ├─── DataDingoOmni.js
+│    |    ├─── Husky.js
+│    |    ├─── Jackal.js
+│    |    └─── Ridgeback.js
+│    │
+│    └─── models
+│         ├─── attachment-hokuyo.glb
+│         ├─── attachment-microstrain-3dm-gx5-15.glb
+│         │     ...
+│         ├─── banana.glb
+│         |     ...
+│         ├─── chassis-base-dingo-d.glb
+│         ├─── chassis-panels-dingo-d.glb
+│         ├─── chassis-tower-dingo-d.glb
+│         ├─── chassis-wheels-dingo-d.glb
+│         │    ...
+│         ├─── chassis-base-husky.glb
+│         ├─── chassis-panels-husky.glb
+│         ├─── chassis-tower-husky.glb
+│         └─── chassis-wheels-husky.glb
+│              ...
 │
-└───styles
-    ├───global.css
-    ├───Home.module.css
-    └───Layout.module.css
+└─── styles
+     ├─── global.css
+     ├─── Home.module.css
+     └─── Layout.module.css
 ```
 
 ## how three.js works on this site
