@@ -16,10 +16,20 @@ Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</
 1. `react.js`
 2. `next.js`
 3. `tailwind css`
-4. `react-three-fiber`
-5. `react-three-drei`
+4. `react-three/fiber`
+5. `react-three/drei`
 6. `jspdf`
 7. `html2canvas`
+
+`react-three/fiber` and `react-three/drei` could be replaced with `react-three-next` in the future. 
+`react-three-next` includes:
+
+- `react-three/fiber`
+- `react-three/drei`
+- `react-three/a11y`
+
+This change would simplify the `import` process for three.js functions into our javascript pages, 
+even though we do not make use of `react-three/a11y`.
 
 ## deploying on Vercel
 
@@ -39,9 +49,13 @@ You can test code by:
 
 ## site's architecture
 
+This site uses Next.js, a framework built around React. 
+Next.js uses Pages to define the routing structure of the site, rather than using the react-router library. 
+Next.js still maintains the React approach, of making reuasable Components that will render the User's web browser. 
 ```
 project
 │   .gitignore
+|   next.config.js
 │   package.json
 │   README.md
 │   tailwind.config.js
@@ -126,6 +140,27 @@ project
 │   │   Home.module.css
 │   │   Layout.module.css
 ```
+
+## how three.js works on this site
+
+On our Next.js pages, we import the libraries `react-three/fiber` and `react-three/drei`. 
+Then, in the `return()` section of the Page, we add a three.js `<Canvas>   <Canvas/>`.
+We then add these components inside the `<Canvas>   <Canvas/>` tags.
+
+- lighing
+- view controls
+- cameras
+- models
+
+The lighting, controls, and cameras are all standard components from the three libraries.
+Models or Meshes can be added in a number of different ways. 
+Our site uses a loader from the `react-three/drei` library to use a `.glb` surface model.
+This process is decrubed in the next section of this README.
+
+The only major change from a standard Three.js implementation we have made, is by adding an `id` and `prop` to the `<Canvas>` shown here: `<Canvas id="divToPrint" gl={{ preserveDrawingBuffer: true }}>`. 
+These additions allow us to take a screenshot image of the `<Canvas>`, which is then used in a PDF quote. 
+This will be described in the README section *how PDF quotes are generated*.
+
 
 
 ## process for adding a new 3d model
@@ -216,3 +251,5 @@ project
     }
     export default Page;
     ```
+
+## how PDF quotes are generated
