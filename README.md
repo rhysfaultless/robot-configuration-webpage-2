@@ -13,25 +13,120 @@ Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</
 
 ## opensource packages used in this project:
 
-1. `npm install next react react-dom`
-2. `npm i --save react-select`
-3. `npm install three @react-three/fiber`
-4. `npm install @react-three/drei`
+1. `react.js`
+2. `next.js`
+3. `tailwind css`
+4. `react-three-fiber`
+5. `react-three-drei`
+6. `jspdf`
+7. `html2canvas`
 
 ## deploying on Vercel
 
-This proccess is rather simple. The Production Deployment on Vercel uses the code on this Github repositories `main` branch.
+This proccess is rather simple. 
+The Production Deployment on Vercel uses the code on this Github repositorie's `main` branch.
 Vercel uses the information in this repositorie's `package.json` to build the site properly.
 You can test code by:
 
-1. creating a new bracnh on Github
-2. make changes as necessary, and then locally build the project using `npm run build` to find errors
-3. assuming the local build went well, push the changes to Github
-4. Then, no the Vercel deashboard, you should see a Preview Deplyment being built.
-5. This Preview Deployment will have a Visit option in its hamburger menu so you can confirm that the site looks correct
-6. There shouldnt be any errors since you tested with a local build. Any errors could be related to issues with the `package.json'
+1. Creating a new branch on Github.
+2. Make changes as necessary, and then locally build the project using `npm run build` to find errors.
+3. Assuming the local build went well, push the changes to the new branch on Github
+4. Then, on the Vercel deashboard, you should see a Preview Deplyment being built. This is also visible on the right side of the Github repository.
+5. This Preview Deployment will have a Visit option in its hamburger menu so you can confirm that the site looks correct.
+6. There shouldn't be any errors since you tested with a local build. Any errors could be related to issues with the `package.json'
 7. Once you are happy that the Preview Deployment looks good; merge the development branch into the main branch.
 8. Vercel will build again, and the Production Deployment should show the changes.
+
+## site's architecture
+
+```
+project
+│   .gitignore
+│   package.json
+│   README.md
+│   tailwind.config.js
+│
+└───components
+│   └───page-layout
+│   |   │   page-layout-component-1.js
+│   |   │   page-layout-component-2.js
+│   |   │   ...
+│   |   │   page-layout-component-n.js
+│   |
+│   └───price-lead-quote
+│   |   │   price-lead-quote-component-1.js
+│   |   │   price-lead-quote-component-2.js
+│   |   │   ...
+│   |   │   price-lead-quote-component-n.js
+│   |
+│   └───three-models
+│   |   │   three-model-component-1.js
+│   |   │   three-model-component-2.js
+│   |   │   ...
+│   |   │   three-model-component-n.js
+│   |
+│   └───three-settings
+│   |   │   three-settings-component-1.js
+│   |   │   three-settings-component-2.js
+│   |   │   ...
+│   |   │   three-settings-component-n.js
+│   
+└───pages
+│   │   _app_.js
+│   │   index.js
+│   │   404.js
+│   │
+│   └───indoor
+│   |   │   index.js
+│   |   │   dingo-diff.js
+│   |   │   dingo-omni.js
+│   |   │   ridgeback.js
+│   │
+│   └───outdoor
+│   |   │   index.js
+│   |   │   husky.js
+│   |   │   jackal.js
+│
+└───public
+│   │   favicon.ico
+│   │
+│   └───images
+│   |   │   image-file-1.png
+│   |   │   image-file-2.jpg
+│   |   │   ...
+│   |   │   image-file-n.jpg
+│   │
+│   └───json
+│   |   │   DataComputer.json
+│   |   │   DataDingoDiff.js
+│   |   │   DataDingoOmni.js
+│   |   │   Husky.js
+│   |   │   Jackal.js
+│   |   │   Ridgeback.js
+│   │
+│   └───models
+│   |   │   attachment-hokuyo.glb
+│   |   │   attachment-microstrain-3dm-gx5-15.glb
+│   |   │   ...
+│   |   │   banana.glb
+│   |   │   ...
+│   |   │   chassis-base-dingo-d.glb
+│   |   │   chassis-panels-dingo-d.glb
+│   |   │   chassis-tower-dingo-d.glb
+│   |   │   chassis-wheels-dingo-d.glb
+│   |   │   ...
+│   |   │   chassis-base-husky.glb
+│   |   │   chassis-panels-husky.glb
+│   |   │   chassis-tower-husky.glb
+│   |   │   chassis-wheels-husky.glb
+│   |   │   ...
+│
+└───styles
+│   │   global.css
+│   │   Home.module.css
+│   │   Layout.module.css
+```
+
 
 ## process for adding a new 3d model
 
