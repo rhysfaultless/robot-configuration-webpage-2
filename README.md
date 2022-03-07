@@ -353,23 +353,13 @@ Notice a few things that are important in the robots's JSON files, for the websi
   }
   ```
 
-  - related to the `kits -> attachmentPosition`, you may also see two move fields in an element:
+  - related to the `kits -> attachmentPosition`, you may also see two more fields in an element:
     - `"attachmentItem": 4,`
     - `"postion": 0`
     
-    this will attach the 4th item from the attachmentItem list, to position 0, noting that both lists are zero indexed
-  - `attachmentPositions` have fourteen elements, detailing the *xyz* location and *uvw* rotation of the attachment positions
-
-  ```javascript
-    {
-      "id": 1,
-      "xyz": [240, 69, 0],
-      "uvw": [0, 0, 0]
-    },
-    {
-      "id": 14
-    }
-  ```
+    this will attach the 4th item from the `attachmentItem` list, to position 0, noting that both lists are zero indexed
+  - the order of elements in `attachmentItems` will be the order they are displayed in the webpage's Select fields
+  - the `attachmentItem -> value` element needs to match the key in model rendering component `/components/three-models/AtachmentRenderer.js`
 
 
 Some other things to note:
@@ -382,6 +372,20 @@ Some other things to note:
 - `price` should be an integer rather than a string, since it is used in calculating the total configured robot price
 - `leadTime` should be an integer, for similar reasons as `price`
 - `description` will be displayed on the PDF quote, and does not line wrap, so keep lines under 75 characters long
+- `attachmentPositions` have fourteen elements, detailing the *xyz* location and *uvw* rotation of the attachment positions
+
+```javascript
+  {
+    "id": 1,
+    "xyz": [240, 69, 0],
+    "uvw": [0, 0, 0]
+  },
+  {
+    "id": 14
+  }
+```
+
+- `bananaPosition` has a similar structure, with *xyz* location, and *uvw* rotation
 
 <details>
   <summary>Structure, click to expand</summary>
