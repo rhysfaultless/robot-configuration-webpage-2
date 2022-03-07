@@ -30,7 +30,6 @@
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
-      "hex": "",
       "rgb": "rgb(255, 167, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -51,7 +50,6 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "",
       "rgb": "rgb(55, 55, 55)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -72,7 +70,6 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "",
       "rgb": "rgb(214, 214, 214)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -93,7 +90,6 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "",
       "rgb": "rgb(185, 0, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -114,7 +110,6 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "",
       "rgb": "rgb(255, 103, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -135,7 +130,6 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "",
       "rgb": "rgb(83, 104, 130)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -156,7 +150,6 @@
       "itemNumber": "042000",
       "price": 300,
       "leadTime": 7,
-      "hex": "",
       "rgb": "rgb(104, 120, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -375,59 +368,43 @@
   "attachmentPositions": [
     {
       "id": 1,
-      "name": "attachmentPositionOne",
       "xyz": [240, 69, 0],
-      "uvw": [0, 0, 0],
-      "onTowerBool": false
+      "uvw": [0, 0, 0]
     },
     {
       "id": 2,
-      "name": "attachmentPositionTwo",
       "xyz": [80, 69, 0],
-      "uvw": [0, 0, 0],
-      "onTowerBool": false
+      "uvw": [0, 0, 0]
     },
     {
       "id": 3,
-      "name": "attachmentPositionThree",
       "xyz": [-80, 69, 0],
-      "uvw": [0, 3.14159, 0],
-      "onTowerBool": false
+      "uvw": [0, 3.14159, 0]
     },
     {
       "id": 4,
-      "name": "attachmentPositionFour",
       "xyz": [-240, 69, 0],
-      "uvw": [0, 3.14159, 0],
-      "onTowerBool": false
+      "uvw": [0, 3.14159, 0]
     },
     {
       "id": 5,
-      "name": "attachmentPositionOne",
       "xyz": [240, 269, 0],
-      "uvw": [0, 0, 0],
-      "onTowerBool": true
+      "uvw": [0, 0, 0]
     },
     {
       "id": 6,
-      "name": "attachmentPositionTwo",
       "xyz": [80, 269, 0],
-      "uvw": [0, 0, 0],
-      "onTowerBool": true
+      "uvw": [0, 0, 0]
     },
     {
       "id": 7,
-      "name": "attachmentPositionThree",
       "xyz": [-80, 269, 0],
-      "uvw": [0, 3.14159, 0],
-      "onTowerBool": true
+      "uvw": [0, 3.14159, 0]
     },
     {
       "id": 8,
-      "name": "attachmentPositionFour",
       "xyz": [-240, 269, 0],
-      "uvw": [0, 3.14159, 0],
-      "onTowerBool": true
+      "uvw": [0, 3.14159, 0]
     },
     {
       "id": 9

@@ -336,7 +336,7 @@ function Page() {
                 <ul className="flex flex-col w-full text-black">
                   {/*  Select, Tower  */}
                   <SelectFormatted
-                    displayName={"Attachment Tower"}
+                    displayName={"Tower"}
                     options={towerData}
                     defaultValue={0}
                     currentState={towerSelectionState}

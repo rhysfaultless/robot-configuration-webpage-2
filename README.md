@@ -3,14 +3,6 @@
 Deployed site: <a>https://robot-configuration-webpage-2.vercel.app/</a> <br />
 Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</a> <br />
 
-## running on a local machine
-
-1. clone this repository
-2. in a terminal, navigate to the repository on your local machine, and then run:
-  1. `npm install`
-  2. `npm run dev`
-3. go to a web browser like Google Chrome, and enter the address <a>localhost:3000</a>
-
 ## opensource packages used in this project:
 
 1. `react.js`
@@ -31,7 +23,15 @@ Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</
 This change would simplify the `import` process for three.js functions into our javascript pages, 
 even though we do not make use of `react-three/a11y`.
 
-## deploying on Vercel
+## running on a local machine
+
+1. clone this repository
+2. in a terminal, navigate to the repository on your local machine, and then run:
+  1. `npm install`
+  2. `npm run dev`
+3. go to a web browser like Google Chrome, and enter the address <a>localhost:3000</a>
+
+## deploying on Vercel ( internet )
 
 This proccess is rather simple. 
 The Production Deployment on Vercel uses the code on this Github repositorie's `main` branch.
@@ -48,7 +48,6 @@ You can test code by:
 8. Vercel will build again, and the Production Deployment should show the changes.
 
 ## site's architecture
-
 
 This site uses Next.js, a framework built around React. 
 Next.js uses Pages to define the routing structure of the site, rather than using the react-router library. 
@@ -149,9 +148,9 @@ Next.js still maintains the React approach, of making reuasable Components that 
 
 ## JSON structure, computers
 
-Notice a few things that are important in this JSON file, for the websites state-machine to function:
+Notice a few things that are important in the computers JSON file, for the website's state-machine to function:
 
-- computers hade a value `configurableComputerBool`
+- computers have a value `configurableComputerBool`
   - when `true`, the site will allow the user to select a processor, RAM, storage, and a GPU
   - when `false`, the site will remove these select filels, such as with a Raspberry Pi
 
@@ -187,7 +186,7 @@ Some other things to note:
   |    |           "line 6, on PDF quote",
   |    |           "line 7, on PDF quote",
   |    |           "line 8, on PDF quote",
-  |    |           "line 9, on PDF quote"]
+  |    |           "line 9, on PDF quote" ]
   |    |
   |    ├─── raspberry-pi
   |    |    ├─── "label": "Raspberry Pi, 4 GB RAM",
@@ -200,7 +199,7 @@ Some other things to note:
   |    |           "line 1, on PDF quote",
   |    |           "line 2, on PDF quote",
   |    |           ...
-  |    |           "line 9, on PDF quote"]
+  |    |           "line 9, on PDF quote" ]
   |    | 
   |    └─── ...
   |
@@ -215,7 +214,7 @@ Some other things to note:
   |    |           "line 1, on PDF quote",
   |    |           "line 2, on PDF quote",
   |    |           ...
-  |    |           "line 9, on PDF quote"]
+  |    |           "line 9, on PDF quote" ]
   |    |
   |    ├─── ...
   |    |
@@ -229,7 +228,7 @@ Some other things to note:
   |                "line 1, on PDF quote",
   |                "line 2, on PDF quote",
   |                ...
-  |                "line 9, on PDF quote"]
+  |                "line 9, on PDF quote" ]
   |
   ├─── ram
   |    ├─── 8 GB
@@ -242,7 +241,7 @@ Some other things to note:
   |    |           "line 1, on PDF quote",
   |    |           "line 2, on PDF quote",
   |    |           ...
-  |    |           "line 9, on PDF quote"]
+  |    |           "line 9, on PDF quote" ]
   |    |
   |    ├─── ...
   |    |
@@ -257,7 +256,7 @@ Some other things to note:
   |                "line 1, on PDF quote",
   |                "line 2, on PDF quote",
   |                ...
-  |                "line 9, on PDF quote"]
+  |                "line 9, on PDF quote" ]
   |     
   ├─── storage
   |    ├─── 250 GB
@@ -270,7 +269,7 @@ Some other things to note:
   |    |           "line 1, on PDF quote",
   |    |           "line 2, on PDF quote",
   |    |           ...
-  |    |           "line 9, on PDF quote"]
+  |    |           "line 9, on PDF quote" ]
   |    |
   |    ├─── ...
   |    |
@@ -284,7 +283,7 @@ Some other things to note:
   |                "line 1, on PDF quote",
   |                "line 2, on PDF quote",
   |                ...
-  |                "line 9, on PDF quote"]
+  |                "line 9, on PDF quote" ]
   |
   └─── gpu
       ├─── None
@@ -297,7 +296,7 @@ Some other things to note:
       |           "line 1, on PDF quote",
       |           "line 2, on PDF quote",
       |           ...
-      |           "line 9, on PDF quote"]
+      |           "line 9, on PDF quote" ]
       |
       ├─── 1050 Ti
       |    ├─── "Nvidia GTX 1050 Ti",
@@ -309,7 +308,7 @@ Some other things to note:
       |           "line 1, on PDF quote",
       |           "line 2, on PDF quote",
       |           ...
-      |           "line 9, on PDF quote"]
+      |           "line 9, on PDF quote" ]
       |
       └─── ...
   ```
@@ -324,10 +323,335 @@ Some other things to note:
 - Jackal.json
 - Ridgeback.json
 
+Notice a few things that are important in the robots's JSON files, for the website's state-machine to function:
+- `panelColours` have an element `"rgb": "rgb(255, 167, 0)"` where the three values from 0-255 will alter the 3d model's colour
+  - this colour update happens as a prop, passed from the dingo-omni.js Page into the Component:
+  `<ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />`
+- `tower` and `kits` each have a field called `attachmentPosition`
+  - `attachmentPosition` has fourteen `{}` items, each with an:
+    - `id`
+    - `bool`
+  - the `bool` value will decide if sensor attachments can be placed on these parts of the robot. 
+  - example: the dingo-omni.js state machine will not allow a sensor to be placed on position 5 when the tower is set to *No*, since `tower -> attachmentPosition -> {"id": 5, "bool": false}`
+  - models are hidden or added based on an *if* statement in dingo-omni.js, and only renders if both the *kit* and *tower* `attachmentPosition` bools are true:
+
+  ```javascript
+  // Attachment Models rendering functions
+  function ModelAttachmentsRendererHelper(elementFromArray) {
+    const tempKeyName = "modelAttachmentsRendererKey" + String(elementFromArray[2]);
+    if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && towerSelectionState.attachmentPosition[elementFromArray[2]].bool) {
+      return (
+        <AttachmentsRenderer
+          attachmentSelectionState={elementFromArray[0]}
+          attachmentPosition={elementFromArray[2]}
+          options={attachmentData}
+          dataFile={dataFile}
+          key={tempKeyName}
+        />
+      );
+    }
+  }
+  ```
+
+  - related to the `kits -> attachmentPosition`, you may also see two move fields in an element:
+    - `"attachmentItem": 4,`
+    - `"postion": 0`
+    
+    this will attach the 4th item from the attachmentItem list, to position 0, noting that both lists are zero indexed
+  - `attachmentPositions` have fourteen elements, detailing the *xyz* location and *uvw* rotation of the attachment positions
+
+  ```javascript
+    {
+      "id": 1,
+      "xyz": [240, 69, 0],
+      "uvw": [0, 0, 0]
+    },
+    {
+      "id": 14
+    }
+  ```
 
 
+Some other things to note:
 
-## how three.js works on this site
+- the `webpage` element `tabTitle` value will populate what is displayed on their web-browser's tab
+- the `robotPlatform` element `labelPdf` value will populate what is displayed the PDF quote
+- `labels` are what appear in the webpage's Select dropdowns
+- `value` is just used as a key, so you may notice odd behaviour when they are not unique per Select dropdown
+- `itemNumber` is shown on the PDF quote, and should match a unique Arena PLM number when possible, or use *042000* by default
+- `price` should be an integer rather than a string, since it is used in calculating the total configured robot price
+- `leadTime` should be an integer, for similar reasons as `price`
+- `description` will be displayed on the PDF quote, and does not line wrap, so keep lines under 75 characters long
+
+<details>
+  <summary>Structure, click to expand</summary>
+  
+  ```
+  DataDingoOmni.json
+  ├─── webpage
+  |    └─── "tabTitle": "Clearpath | Dingo-O"
+  |
+  ├─── robotPlatform
+  |    ├─── "label": "Dingo Omnidirectional",
+  |    ├─── "price": 10000,
+  |    ├─── "leadTime": 3,
+  |    ├─── "itemNumber": "022609",
+  |    ├─── "labelPdf": "Dingo-O",
+  |    └─── "description": [
+  |           "line 1, on PDF quote",
+  |           "line 2, on PDF quote",
+  |           "line 3, on PDF quote",
+  |           "line 4, on PDF quote",
+  |           "line 5, on PDF quote",
+  |           "line 6, on PDF quote",
+  |           "line 7, on PDF quote",
+  |           "line 8, on PDF quote",
+  |           "line 9, on PDF quote" ]
+  |
+  ├─── panelColours
+  |    ├─── yellow
+  |    |    ├─── "label": "Yellow",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 0,
+  |    |    ├─── "leadTime": 0,
+  |    |    ├─── "rgb": "rgb(255, 167, 0)",
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    ├─── black
+  |    |    ├─── "label": "Black",
+  |    |    ├─── "value": "B",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 300,
+  |    |    ├─── "leadTime": 7,
+  |    |    ├─── "rgb": "rgb(55, 55, 55)",
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    | 
+  |    └─── ...
+  |
+  ├─── batteryItems
+  |    ├─── lead acid
+  |    |    ├─── "label": "Lead Acid",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 0,
+  |    |    ├─── "leadTime": 0,
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    └─── lithium
+  |         ├─── "label": "Lithium",
+  |         ├─── "value": "B",
+  |         ├─── "itemNumber": "042000",
+  |         ├─── "price": 1000,
+  |         ├─── "leadTime": 3,
+  |         └─── "description": [
+  |                "line 1, on PDF quote",
+  |                "line 2, on PDF quote",
+  |                ...
+  |                "line 9, on PDF quote" ]
+  |
+  ├─── tower
+  |    ├─── no
+  |    |    ├─── "label": "No",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": " ",
+  |    |    ├─── "price": 0,
+  |    |    ├─── "leadTime": 0,
+  |    |    ├─── "bool": false,
+  |    |    ├─── "attachmentPosition": [
+  |    |    |      {"id":1, "bool":true},
+  |    |    |      {"id":2, "bool":true},
+  |    |    |      {"id":3, "bool":true},
+  |    |    |      {"id":4, "bool":true},
+  |    |    |      {"id":5, "bool":false},
+  |    |    |      {"id":6, "bool":false},
+  |    |    |      {"id":7, "bool":false},
+  |    |    |      {"id":8, "bool":false},
+  |    |    |      {"id":9, "bool":false},
+  |    |    |      ...
+  |    |    |      {"id":14, "bool":false} ]
+  |    |    └─── "description": [
+  |    |           "COMMENT - skip this line for structuring purposes",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    └─── yes
+  |         ├─── "label": "Yes",
+  |         ├─── "value": "B",
+  |         ├─── "itemNumber": "042000",
+  |         ├─── "price": 300,
+  |         ├─── "leadTime": 0,
+  |         ├─── "bool": true,
+  |         ├─── "attachmentPosition": [
+  |         |      {"id":1, "bool":true},
+  |         |      {"id":2, "bool":true},
+  |         |      {"id":3, "bool":true},
+  |         |      {"id":4, "bool":true},
+  |         |      {"id":5, "bool":true},
+  |         |      {"id":6, "bool":true},
+  |         |      {"id":7, "bool":true},
+  |         |      {"id":8, "bool":true},
+  |         |      {"id":9, "bool":false},
+  |         |      ...
+  |         |      {"id":14, "bool":false} ]
+  |         └─── "description": [
+  |                "COMMENT - skip this line for structuring purposes",
+  |                "line 2, on PDF quote",
+  |                ...
+  |                "line 9, on PDF quote"]
+  |     
+  ├─── attachmentPositions
+  |    ├─── 1
+  |    |    ├─── "id": 1,
+  |    |    ├─── "name": "attachmentPositionOne",
+  |    |    ├─── "xyz": [240, 69, 0],
+  |    |    ├─── "uvw": [0, 0, 0],
+  |    |    └─── "onTowerBool": false
+  |    |
+  |    ├─── ...
+  |    |
+  |    ├─── 5
+  |    |    ├─── "id": 5,
+  |    |    ├─── "name": "attachmentPositionFive",
+  |    |    ├─── "xyz": [240, 269, 0],
+  |    |    ├─── "uvw": [0, 3.14159, 0],
+  |    |    └─── "onTowerBool": false
+  |    |
+  |    ├─── ...
+  |    |
+  |    ├─── 9
+  |    |    └─── "id": 9
+  |    |
+  |    ├─── ...
+  |    |   
+  |    └─── 14
+  |         └─── "id": 14
+  |     
+  ├─── attachmentItems
+  |    ├─── none
+  |    |    ├─── "label": "None",
+  |    |    ├─── "value": "none",
+  |    |    ├─── "category": "null",
+  |    |    ├─── "itemNumber": " ",
+  |    |    ├─── "price": 0,
+  |    |    ├─── "leadTime": 0,
+  |    |    └─── "description": [
+  |    |           "COMMENT - skip this line for structuring purposes",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    ├─── velodyne low
+  |    |    ├─── "label": "Velodyne, Low",
+  |    |    ├─── "value": "velodyne_low",
+  |    |    ├─── "category": "lidar",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 5000,
+  |    |    ├─── "leadTime": 3,
+  |    |    └─── "description": [
+  |    |           "COMMENT - skip this line for structuring purposes",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    ├─── velodyne mid
+  |    |    ├─── "label": "Velodyne, Mid",
+  |    |    ├─── "value": "velodyne_mid",
+  |    |    ├─── "category": "lidar",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 5000,
+  |    |    ├─── "leadTime": 3,
+  |    |    └─── "description": [
+  |    |           "COMMENT - skip this line for structuring purposes",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    └─── ...
+  |     
+  ├─── kits
+  |    ├─── none
+  |    |    ├─── "label": "None",
+  |    |    ├─── "value": "none",
+  |    |    ├─── "itemNumber": " ",
+  |    |    ├─── "price": 0,
+  |    |    ├─── "leadTime": 0,
+  |    |    ├─── "priceHardware": 0,
+  |    |    ├─── "priceSoftware": 0,
+  |    |    ├─── "bool": false,
+  |    |    ├─── "attachmentPosition": [
+  |    |    |      {"id":1, "bool":true},
+  |    |    |      ...
+  |    |    |      {"id":8, "bool":true},
+  |    |    |      {"id":9, "bool":false},
+  |    |    |      ...
+  |    |    |      {"id":14, "bool":false} ]
+  |    |    ├─── "descriptionHardware": [
+  |    |    |      "line 1, on PDF quote",
+  |    |    |      "line 2, on PDF quote",
+  |    |    |      ...
+  |    |    |      "line 9, on PDF quote" ]
+  |    |    └─── "descriptionSoftware": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote" ]
+  |    |
+  |    └─── indoor nav
+  |         ├─── "label": "IndoorNav",
+  |         ├─── "value": "indoor_nav",
+  |         ├─── "itemNumber": "042000",
+  |         ├─── "price": 8500,
+  |         ├─── "leadTime": 5,
+  |         ├─── "priceHardware": 8500,
+  |         ├─── "priceSoftware": 0,
+  |         ├─── "bool": true,
+  |         ├─── "attachmentPosition": [
+  |         |      {"id":1, "bool":false, "attachmentItem": 4, "position": 0},
+  |         |      {"id":2, "bool":true},
+  |         |      {"id":3, "bool":false, "attachmentItem": 5, "position": 2},
+  |         |      {"id":4, "bool":false, "attachmentItem": 4, "position": 3},
+  |         |      {"id":5, "bool":true},
+  |         |      {"id":6, "bool":true},
+  |         |      {"id":7, "bool":true},
+  |         |      {"id":8, "bool":true},
+  |         |      {"id":9, "bool":false},
+  |         |      ...
+  |         |      {"id":14, "bool":false} ]
+  |         ├─── "descriptionHardware": [
+  |         |      "line 1, on PDF quote",
+  |         |      "line 2, on PDF quote",
+  |         |      ...
+  |         |      "line 9, on PDF quote" ]
+  |         └─── "descriptionSoftware": [
+  |                "line 1, on PDF quote",
+  |                "line 2, on PDF quote",
+  |                ...
+  |                "line 9, on PDF quote" ]
+  |
+  └─── bananaPosition
+       ├─── "name": "bananaPosition",
+       ├─── "xyz": [100, 0, 305],
+       └─── "uvw": [0, 0.97, 0]
+  
+  ```
+</details>
+
+
+## how three.js adds 3d models to our webpages
 
 On our Next.js pages, we import the libraries `react-three/fiber` and `react-three/drei`. 
 Then, in the `return()` section of the Page, we add a three.js `<Canvas>   <Canvas/>`.
@@ -352,7 +676,7 @@ There are several boolean values in the related robot's JSON file, suggesting if
 This is briefly described in the section *JSON structure*
 
 
-## process for adding a new 3d model
+## process for adding a new thre.js 3d model
 
 1. Using Solidworks:
 2. Create a SLDPRT of the attachment with the origin centred at (0, 0, 0,) .
@@ -369,77 +693,73 @@ This is briefly described in the section *JSON structure*
 12. The webpage will now show a rendering of your model, and some JavaScript code.
     Keep this page open as you will copy the JavaScript code into our project shortly.
 13. In VS Code:
-  1. Create a JavaScript file in the project directory `/components/three-models/`.
+14. Create a JavaScript file in the project directory `/components/three-models/`.
     Name this new file with a similar scheme to your model but using PascalCase, such as `AttachmentHokuyo.js`.
     This example would have a file with the path `/components/three-models/AttachmentHokuyo.js`
-  2. Copy the webpage code from step 3.3.
-  3. Paste this code into your new JavaScript file that was created in step 4.1.
-  4. change line 10:
+15. Copy the webpage code from step 3.3.
+16. Paste this code into your new JavaScript file that was created in step 4.1.
+17. change line 10:
 
-    - from: `const { nodes, materials } = useGLTF('/attachment-hokuyo.glb')`
-    - to: `const { nodes, materials } = useGLTF('/models/attachment-hokuyo.glb')`
-      Note: your file will have a different name than this example of `attachment-hokuyo.glb`.
+  - from: `const { nodes, materials } = useGLTF('/attachment-hokuyo.glb')`
+  - to: `const { nodes, materials } = useGLTF('/models/attachment-hokuyo.glb')`
+    Note: your file will have a different name than this example of `attachment-hokuyo.glb`.
 
-  5. change line 23:
+18. change line 23:
 
-    - from: `useGLTF.preload('/attachment-hokuyo.glb')`
-    - to: `useGLTF.preload('/models/attachment-hokuyo.glb')`
-      Note: your file will have a different name than this example of `attachment-hokuyo.glb`.
+  - from: `useGLTF.preload('/attachment-hokuyo.glb')`
+  - to: `useGLTF.preload('/models/attachment-hokuyo.glb')`
+    Note: your file will have a different name than this example of `attachment-hokuyo.glb`.
 
-  6. Optonal: you can add more parameters to your three.js model by adding to the `<mesh />`.
+19. Optonal: you can add more parameters to your three.js model by adding to the `<mesh />`.
     For example, you could add a colour to the model by adding `color={props.modelColour}` to the `<mesh />` component.
     Here is the full JavaScript code of the example component:
 
-    ```javascript
-    /*
-    Auto-generated by: https://github.com/pmndrs/gltfjsx
-    */
+  ```javascript
+  import React, { useRef } from "react";
+  import { useGLTF } from "@react-three/drei";
 
-    import React, { useRef } from "react";
-    import { useGLTF } from "@react-three/drei";
+  function Model(props) {
+    const group = useRef();
+    const { nodes, materials } = useGLTF("/models/attachment-hokuyo.glb");
+    return (
+      <group>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["attachment-hokuyo"].geometry}
+          material={nodes["attachment-hokuyo"].material}
+          color={props.modelColour}
+        />
+      </group>
+    );
+  }
+  export default  Model;
+  useGLTF.preload("/attachment-hokuyo.glb");
+  ```
 
-    export default function Model(props) {
-      const group = useRef();
-      const { nodes, materials } = useGLTF("/models/attachment-hokuyo.glb");
-      return (
-        <group ref={group} {...props} dispose={null}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes["attachment-hokuyo"].geometry}
-            material={nodes["attachment-hokuyo"].material}
-            color={props.modelColour}
-          />
-        </group>
-      );
-    }
+20. you can now add this component to three.js scenes like any other React component in Next.js:
 
-    useGLTF.preload("/attachment-hokuyo.glb");
-    ```
+  ```javascript
+  import { React } from "react";
+  import { Canvas } from "@react-three/fiber";
+  import { OrbitControls } from "@react-three/drei";
+  import ModelAttachmentHokuyo from "/components/three-models/ModelAttachmentHokuyo";
 
-14. you can now add this component to three.js scenes like any other React component in Next.js:
+  function Page() {
+    return (
+      <main>
+        <Canvas>
+          <ambientLight intensity={0.7} />
 
-    ```javascript
-    import { React } from "react";
-    import { Canvas } from "@react-three/fiber";
-    import { OrbitControls } from "@react-three/drei";
-    import ModelAttachmentHokuyo from "/components/three-models/ModelAttachmentHokuyo";
+          <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.4} minPolarAngle={0.5} enableZoom={false} enablePan={false} />
 
-    function Page() {
-      return (
-        <main>
-          <Canvas>
-            <ambientLight intensity={0.7} />
-
-            <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.4} minPolarAngle={0.5} enableZoom={false} enablePan={false} />
-
-            <ModelAttachmentHokuyo />
-          </Canvas>
-        </main>
-      );
-    }
-    export default Page;
-    ```
+          <ModelAttachmentHokuyo />
+        </Canvas>
+      </main>
+    );
+  }
+  export default Page;
+  ```
 
 ## how the Configuration's Price and Lead-time are generated
 
