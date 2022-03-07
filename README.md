@@ -52,93 +52,94 @@ You can test code by:
 This site uses Next.js, a framework built around React. 
 Next.js uses Pages to define the routing structure of the site, rather than using the react-router library. 
 Next.js still maintains the React approach, of making reuasable Components that will render the User's web browser. 
-```
+
+```bash
 project
-│   .gitignore
-|   next.config.js
-│   package.json
-│   README.md
-│   tailwind.config.js
+├───.gitignore
+├───next.config.js
+├───package.json
+├───README.md
+├───tailwind.config.js
 │
-└───components
-│   └───page-layout
-│   |   │   page-layout-component-1.js
-│   |   │   page-layout-component-2.js
-│   |   │   ...
-│   |   │   page-layout-component-n.js
+├───components
+│   ├───page-layout
+│   |   ├───page-layout-component-1.js
+│   |   ├───page-layout-component-2.js
+│   |   ├───...
+│   |   └───page-layout-component-n.js
 │   |
-│   └───price-lead-quote
-│   |   │   price-lead-quote-component-1.js
-│   |   │   price-lead-quote-component-2.js
-│   |   │   ...
-│   |   │   price-lead-quote-component-n.js
+│   ├───price-lead-quote
+│   |   ├───price-lead-quote-component-1.js
+│   |   ├───price-lead-quote-component-2.js
+│   |   ├───...
+│   |   └───price-lead-quote-component-n.js
 │   |
-│   └───three-models
-│   |   │   three-model-component-1.js
-│   |   │   three-model-component-2.js
-│   |   │   ...
-│   |   │   three-model-component-n.js
+│   ├───three-models
+│   |   ├───three-model-component-1.js
+│   |   ├───three-model-component-2.js
+│   |   ├───...
+│   |   └───three-model-component-n.js
 │   |
 │   └───three-settings
-│   |   │   three-settings-component-1.js
-│   |   │   three-settings-component-2.js
-│   |   │   ...
-│   |   │   three-settings-component-n.js
+│       ├───three-settings-component-1.js
+│       ├───three-settings-component-2.js
+│       ├───...
+│       └───three-settings-component-n.js
 │   
-└───pages
-│   │   _app_.js
-│   │   index.js
-│   │   404.js
+├───pages
+│   ├───_app_.js
+│   ├───index.js
+│   ├───404.js
 │   │
-│   └───indoor
-│   |   │   index.js
-│   |   │   dingo-diff.js
-│   |   │   dingo-omni.js
-│   |   │   ridgeback.js
+│   ├───indoor
+│   |   ├───index.js
+│   |   ├───dingo-diff.js
+│   |   ├───dingo-omni.js
+│   |   └───ridgeback.js
 │   │
 │   └───outdoor
-│   |   │   index.js
-│   |   │   husky.js
-│   |   │   jackal.js
+│       ├───index.js
+│       ├───husky.js
+│       └───jackal.js
 │
-└───public
+├───public
 │   │   favicon.ico
 │   │
-│   └───images
-│   |   │   image-file-1.png
-│   |   │   image-file-2.jpg
-│   |   │   ...
-│   |   │   image-file-n.jpg
+│   ├───images
+│   |   ├───image-file-1.png
+│   |   ├───image-file-2.jpg
+│   |   ├───...
+│   |   └───image-file-n.jpg
 │   │
-│   └───json
-│   |   │   DataComputer.json
-│   |   │   DataDingoDiff.js
-│   |   │   DataDingoOmni.js
-│   |   │   Husky.js
-│   |   │   Jackal.js
-│   |   │   Ridgeback.js
+│   ├───json
+│   |   ├───DataComputer.json
+│   |   ├───DataDingoDiff.js
+│   |   ├───DataDingoOmni.js
+│   |   ├───Husky.js
+│   |   ├───Jackal.js
+│   |   └───Ridgeback.js
 │   │
 │   └───models
-│   |   │   attachment-hokuyo.glb
-│   |   │   attachment-microstrain-3dm-gx5-15.glb
-│   |   │   ...
-│   |   │   banana.glb
-│   |   │   ...
-│   |   │   chassis-base-dingo-d.glb
-│   |   │   chassis-panels-dingo-d.glb
-│   |   │   chassis-tower-dingo-d.glb
-│   |   │   chassis-wheels-dingo-d.glb
-│   |   │   ...
-│   |   │   chassis-base-husky.glb
-│   |   │   chassis-panels-husky.glb
-│   |   │   chassis-tower-husky.glb
-│   |   │   chassis-wheels-husky.glb
-│   |   │   ...
+│       ├───attachment-hokuyo.glb
+│       ├───attachment-microstrain-3dm-gx5-15.glb
+│       │    ...
+│       ├───banana.glb
+│       |    ...
+│       ├───chassis-base-dingo-d.glb
+│       ├───chassis-panels-dingo-d.glb
+│       ├───chassis-tower-dingo-d.glb
+│       ├───chassis-wheels-dingo-d.glb
+│       │   ...
+│       ├───chassis-base-husky.glb
+│       ├───chassis-panels-husky.glb
+│       ├───chassis-tower-husky.glb
+│       └───chassis-wheels-husky.glb
+│           ...
 │
 └───styles
-│   │   global.css
-│   │   Home.module.css
-│   │   Layout.module.css
+    ├───global.css
+    ├───Home.module.css
+    └───Layout.module.css
 ```
 
 ## how three.js works on this site
