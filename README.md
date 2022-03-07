@@ -49,98 +49,283 @@ You can test code by:
 
 ## site's architecture
 
+
 This site uses Next.js, a framework built around React. 
 Next.js uses Pages to define the routing structure of the site, rather than using the react-router library. 
 Next.js still maintains the React approach, of making reuasable Components that will render the User's web browser. 
 
-```
-project
-├─── .gitignore
-├─── next.config.js
-├─── package.json
-├─── README.md
-├─── tailwind.config.js
-│
-├─── components
-│    ├─── page-layout
-│    |    ├─── page-layout-component-1.js
-│    |    ├─── page-layout-component-2.js
-│    |    |     ...
-│    |    └─── page-layout-component-n.js
-│    |
-│    ├─── price-lead-quote
-│    |    ├─── price-lead-quote-component-1.js
-│    |    ├─── price-lead-quote-component-2.js
-│    |    |     ...
-│    |    └─── price-lead-quote-component-n.js
-│    |
-│    ├─── three-models
-│    |    ├─── three-model-component-1.js
-│    |    ├─── three-model-component-2.js
-│    |    |     ...
-│    |    └─── three-model-component-n.js
-│    |
-│    └─── three-settings
-│         ├─── three-settings-component-1.js
-│         ├─── three-settings-component-2.js
-│         |     ...
-│         └─── three-settings-component-n.js
-│    
-├─── pages
-│    ├─── _app_.js
-│    ├─── index.js
-│    ├─── 404.js
-│    │
-│    ├─── indoor
-│    |    ├─── index.js
-│    |    ├─── dingo-diff.js
-│    |    ├─── dingo-omni.js
-│    |    └─── ridgeback.js
-│    │
-│    └─── outdoor
-│         ├─── index.js
-│         ├─── husky.js
-│         └─── jackal.js
-│
-├─── public
-│    │    favicon.ico
-│    │
-│    ├─── images
-│    |    ├─── image-file-1.png
-│    |    ├─── image-file-2.jpg
-│    |    |     ...
-│    |    └─── image-file-n.jpg
-│    │
-│    ├─── json
-│    |    ├─── DataComputer.json
-│    |    ├─── DataDingoDiff.js
-│    |    ├─── DataDingoOmni.js
-│    |    ├─── Husky.js
-│    |    ├─── Jackal.js
-│    |    └─── Ridgeback.js
-│    │
-│    └─── models
-│         ├─── attachment-hokuyo.glb
-│         ├─── attachment-microstrain-3dm-gx5-15.glb
-│         │     ...
-│         ├─── banana.glb
-│         |     ...
-│         ├─── chassis-base-dingo-d.glb
-│         ├─── chassis-panels-dingo-d.glb
-│         ├─── chassis-tower-dingo-d.glb
-│         ├─── chassis-wheels-dingo-d.glb
-│         │    ...
-│         ├─── chassis-base-husky.glb
-│         ├─── chassis-panels-husky.glb
-│         ├─── chassis-tower-husky.glb
-│         └─── chassis-wheels-husky.glb
-│              ...
-│
-└─── styles
-     ├─── global.css
-     ├─── Home.module.css
-     └─── Layout.module.css
-```
+<details>
+  <summary>Structure, click to expand</summary>
+
+  ```
+  project
+  ├─── .gitignore
+  ├─── next.config.js
+  ├─── package.json
+  ├─── README.md
+  ├─── tailwind.config.js
+  │
+  ├─── components
+  │    ├─── page-layout
+  │    |    ├─── page-layout-component-1.js
+  │    |    ├─── page-layout-component-2.js
+  │    |    |     ...
+  │    |    └─── page-layout-component-n.js
+  │    |
+  │    ├─── price-lead-quote
+  │    |    ├─── price-lead-quote-component-1.js
+  │    |    ├─── price-lead-quote-component-2.js
+  │    |    |     ...
+  │    |    └─── price-lead-quote-component-n.js
+  │    |
+  │    ├─── three-models
+  │    |    ├─── three-model-component-1.js
+  │    |    ├─── three-model-component-2.js
+  │    |    |     ...
+  │    |    └─── three-model-component-n.js
+  │    |
+  │    └─── three-settings
+  │         ├─── three-settings-component-1.js
+  │         ├─── three-settings-component-2.js
+  │         |     ...
+  │         └─── three-settings-component-n.js
+  │    
+  ├─── pages
+  │    ├─── _app_.js
+  │    ├─── index.js
+  │    ├─── 404.js
+  │    │
+  │    ├─── indoor
+  │    |    ├─── index.js
+  │    |    ├─── dingo-diff.js
+  │    |    ├─── dingo-omni.js
+  │    |    └─── ridgeback.js
+  │    │
+  │    └─── outdoor
+  │         ├─── index.js
+  │         ├─── husky.js
+  │         └─── jackal.js
+  │
+  ├─── public
+  │    │    favicon.ico
+  │    │
+  │    ├─── images
+  │    |    ├─── image-file-1.png
+  │    |    ├─── image-file-2.jpg
+  │    |    |     ...
+  │    |    └─── image-file-n.jpg
+  │    │
+  │    ├─── json
+  │    |    ├─── DataComputer.json
+  │    |    ├─── DataDingoDiff.js
+  │    |    ├─── DataDingoOmni.js
+  │    |    ├─── Husky.js
+  │    |    ├─── Jackal.js
+  │    |    └─── Ridgeback.js
+  │    │
+  │    └─── models
+  │         ├─── attachment-hokuyo.glb
+  │         ├─── attachment-microstrain-3dm-gx5-15.glb
+  │         │     ...
+  │         ├─── banana.glb
+  │         |     ...
+  │         ├─── chassis-base-dingo-d.glb
+  │         ├─── chassis-panels-dingo-d.glb
+  │         ├─── chassis-tower-dingo-d.glb
+  │         ├─── chassis-wheels-dingo-d.glb
+  │         │    ...
+  │         ├─── chassis-base-husky.glb
+  │         ├─── chassis-panels-husky.glb
+  │         ├─── chassis-tower-husky.glb
+  │         └─── chassis-wheels-husky.glb
+  │              ...
+  │
+  └─── styles
+      ├─── global.css
+      ├─── Home.module.css
+      └─── Layout.module.css
+  ```
+</details>
+
+## JSON structure, computers
+
+Notice a few things that are important in this JSON file, for the websites state-machine to function:
+
+- computers hade a value `configurableComputerBool`
+  - when `true`, the site will allow the user to select a processor, RAM, storage, and a GPU
+  - when `false`, the site will remove these select filels, such as with a Raspberry Pi
+
+
+Some other things to note:
+
+- `labels` are what appear in the webpage's Select dropdowns
+- `value` is just used as a key, so you may notice odd behaviour when they are not unique per Select dropdown
+- `itemNumber` is shown on the PDF quote, and should match a unique Arena PLM number when possible, or use *042000* by default
+- `price` should be an integer rather than a string, since it is used in calculating the total configured robot price
+- `leadTime` should be an integer, for similar reasons as `price`
+- `description` will be displayed on the PDF quote, and does not line wrap, so keep lines under 75 characters long
+
+<details>
+  <summary>Structure, click to expand</summary>
+  
+  ```
+  DataComputers.json
+  ├─── computers
+  |    ├─── mini-itx
+  |    |    ├─── "label": "mini ITX",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 300,
+  |    |    ├─── "leadTime": 3,
+  |    |    ├─── "configurableComputerBool": true,
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           "line 3, on PDF quote",
+  |    |           "line 4, on PDF quote",
+  |    |           "line 5, on PDF quote",
+  |    |           "line 6, on PDF quote",
+  |    |           "line 7, on PDF quote",
+  |    |           "line 8, on PDF quote",
+  |    |           "line 9, on PDF quote"]
+  |    |
+  |    ├─── raspberry-pi
+  |    |    ├─── "label": "Raspberry Pi, 4 GB RAM",
+  |    |    ├─── "value": "B",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 300,
+  |    |    ├─── "leadTime": 3,
+  |    |    ├─── "configurableComputerBool": false,
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote"]
+  |    | 
+  |    └─── ...
+  |
+  ├─── processors
+  |    ├─── intel i3
+  |    |    ├─── "label": "intel i3",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 300,
+  |    |    ├─── "leadTime": 4,
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote"]
+  |    |
+  |    ├─── ...
+  |    |
+  |    └─── intel i9
+  |         ├─── "label": "intel i9",
+  |         ├─── "value": "B",
+  |         ├─── "itemNumber": "042000",
+  |         ├─── "price": 500,
+  |         ├─── "leadTime": 4,
+  |         └─── "description": [
+  |                "line 1, on PDF quote",
+  |                "line 2, on PDF quote",
+  |                ...
+  |                "line 9, on PDF quote"]
+  |
+  ├─── ram
+  |    ├─── 8 GB
+  |    |    ├─── "label": "8 GB",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 100,
+  |    |    ├─── "leadTime": 0,
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote"]
+  |    |
+  |    ├─── ...
+  |    |
+  |    |
+  |    └─── 64 GB
+  |         ├─── "label": "64 GB",
+  |         ├─── "value": "D",
+  |         ├─── "itemNumber": "042000",
+  |         ├─── "price": 700,
+  |         ├─── "leadTime": 0,
+  |         └─── "description": [
+  |                "line 1, on PDF quote",
+  |                "line 2, on PDF quote",
+  |                ...
+  |                "line 9, on PDF quote"]
+  |     
+  ├─── storage
+  |    ├─── 250 GB
+  |    |    ├─── "label": "250 GB",
+  |    |    ├─── "value": "A",
+  |    |    ├─── "itemNumber": "042000",
+  |    |    ├─── "price": 140,
+  |    |    ├─── "leadTime": 0,
+  |    |    └─── "description": [
+  |    |           "line 1, on PDF quote",
+  |    |           "line 2, on PDF quote",
+  |    |           ...
+  |    |           "line 9, on PDF quote"]
+  |    |
+  |    ├─── ...
+  |    |
+  |    └─── 2 TB
+  |         ├─── "label": "2 TB",
+  |         ├─── "value": "D",
+  |         ├─── "itemNumber": "042000",
+  |         ├─── "price": 675,
+  |         ├─── "leadTime": 1,
+  |         └─── "description": [
+  |                "line 1, on PDF quote",
+  |                "line 2, on PDF quote",
+  |                ...
+  |                "line 9, on PDF quote"]
+  |
+  └─── gpu
+      ├─── None
+      |    ├─── "None",
+      |    ├─── "value": "A",
+      |    ├─── "itemNumber": "042000",
+      |    ├─── "price": 140,
+      |    ├─── "leadTime": 0,
+      |    └─── "description": [
+      |           "line 1, on PDF quote",
+      |           "line 2, on PDF quote",
+      |           ...
+      |           "line 9, on PDF quote"]
+      |
+      ├─── 1050 Ti
+      |    ├─── "Nvidia GTX 1050 Ti",
+      |    ├─── "value": "B",
+      |    ├─── "itemNumber": "042000",
+      |    ├─── "price": 640,
+      |    ├─── "leadTime": 0,
+      |    └─── "description": [
+      |           "line 1, on PDF quote",
+      |           "line 2, on PDF quote",
+      |           ...
+      |           "line 9, on PDF quote"]
+      |
+      └─── ...
+  ```
+</details>
+
+
+## JSON structure, robots
+
+- DataDingoDiff.json
+- DataDingoOmni.json
+- Husky.json
+- Jackal.json
+- Ridgeback.json
+
+
+
 
 ## how three.js works on this site
 
@@ -162,6 +347,9 @@ The only major change from a standard Three.js implementation we have made, is b
 These additions allow us to take a screenshot image of the `<Canvas>`, which is then used in a PDF quote. 
 This will be described in the README section *how PDF quotes are generated*.
 
+An individual model is rendered if its React State suggests that it be rendered. 
+There are several boolean values in the related robot's JSON file, suggesting if what attachment position is can be populated with sensors.
+This is briefly described in the section *JSON structure*
 
 
 ## process for adding a new 3d model
@@ -253,4 +441,8 @@ This will be described in the README section *how PDF quotes are generated*.
     export default Page;
     ```
 
+## how the Configuration's Price and Lead-time are generated
+
 ## how PDF quotes are generated
+
+## how the PDF's robot screenshot is generated
