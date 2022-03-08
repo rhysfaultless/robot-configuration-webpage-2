@@ -372,20 +372,20 @@ Some other things to note:
 - `price` should be an integer rather than a string, since it is used in calculating the total configured robot price
 - `leadTime` should be an integer, for similar reasons as `price`
 - `description` will be displayed on the PDF quote, and does not line wrap, so keep lines under 75 characters long
-- `attachmentPositions` have fourteen elements, detailing the *xyz* location and *uvw* rotation of the attachment positions
+- `attachmentPositions` have fourteen elements, detailing the *xyz* location and *rpy* rotation of the attachment positions
 
 ```javascript
   {
     "id": 1,
     "xyz": [240, 69, 0],
-    "uvw": [0, 0, 0]
+    "rpy": [0, 0, 0]
   },
   {
     "id": 14
   }
 ```
 
-- `bananaPosition` has a similar structure, with *xyz* location, and *uvw* rotation
+- `bananaPosition` has a similar structure, with *xyz* location, and *rpy* rotation
 
 <details>
   <summary>Structure, click to expand</summary>
@@ -522,7 +522,7 @@ Some other things to note:
   |    |    ├─── "id": 1,
   |    |    ├─── "name": "attachmentPositionOne",
   |    |    ├─── "xyz": [240, 69, 0],
-  |    |    ├─── "uvw": [0, 0, 0],
+  |    |    ├─── "rpy": [0, 0, 0],
   |    |    └─── "onTowerBool": false
   |    |
   |    ├─── ...
@@ -531,7 +531,7 @@ Some other things to note:
   |    |    ├─── "id": 5,
   |    |    ├─── "name": "attachmentPositionFive",
   |    |    ├─── "xyz": [240, 269, 0],
-  |    |    ├─── "uvw": [0, 3.14159, 0],
+  |    |    ├─── "rpy": [0, 3.14159, 0],
   |    |    └─── "onTowerBool": false
   |    |
   |    ├─── ...
@@ -649,7 +649,7 @@ Some other things to note:
   └─── bananaPosition
        ├─── "name": "bananaPosition",
        ├─── "xyz": [100, 0, 305],
-       └─── "uvw": [0, 0.97, 0]
+       └─── "rpy": [0, 0.97, 0]
   
   ```
 </details>

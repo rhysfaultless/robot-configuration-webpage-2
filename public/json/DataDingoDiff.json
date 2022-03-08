@@ -86,7 +86,7 @@
   "bananaPosition": {
     "name": "bananaPosition",
     "xyz": [100, 0, 305],
-    "uvw": [0, 0.97, 0]
+    "rpy": [0, 0.97, 0]
   },
 
   "attachmentPositions": [
@@ -94,56 +94,56 @@
       "id": 1,
       "name": "attachmentPositionOne",
       "xyz": [240, 69, 0],
-      "uvw": [0, 0, 0],
+      "rpy": [0, 0, 0],
       "onTowerBool": false
     },
     {
       "id": 2,
       "name": "attachmentPositionTwo",
       "xyz": [80, 69, 0],
-      "uvw": [0, 0, 0],
+      "rpy": [0, 0, 0],
       "onTowerBool": false
     },
     {
       "id": 3,
       "name": "attachmentPositionThree",
       "xyz": [-80, 69, 0],
-      "uvw": [0, 3.14159, 0],
+      "rpy": [0, 3.14159, 0],
       "onTowerBool": false
     },
     {
       "id": 4,
       "name": "attachmentPositionFour",
       "xyz": [-240, 69, 0],
-      "uvw": [0, 3.14159, 0],
+      "rpy": [0, 3.14159, 0],
       "onTowerBool": false
     },
     {
       "id": 5,
       "name": "attachmentPositionOne",
       "xyz": [240, 269, 0],
-      "uvw": [0, 0, 0],
+      "rpy": [0, 0, 0],
       "onTowerBool": true
     },
     {
       "id": 6,
       "name": "attachmentPositionTwo",
       "xyz": [80, 269, 0],
-      "uvw": [0, 0, 0],
+      "rpy": [0, 0, 0],
       "onTowerBool": true
     },
     {
       "id": 7,
       "name": "attachmentPositionThree",
       "xyz": [-80, 269, 0],
-      "uvw": [0, 3.14159, 0],
+      "rpy": [0, 3.14159, 0],
       "onTowerBool": true
     },
     {
       "id": 8,
       "name": "attachmentPositionFour",
       "xyz": [-240, 269, 0],
-      "uvw": [0, 3.14159, 0],
+      "rpy": [0, 3.14159, 0],
       "onTowerBool": true
     }
   ],

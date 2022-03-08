@@ -11,7 +11,7 @@ export default function Model(props) {
   let modelRotation = [];
   for (let i = 0; i < 3; i++) {
     modelPosition[i] = props.dataOne.xyz[i] + props.dataTwo.xyz[i]; 
-    modelRotation[i] = props.dataOne.uvw[i] + props.dataTwo.uvw[i];
+    modelRotation[i] = props.dataOne.rpy[i] + props.dataTwo.rpy[i];
   }
   const { nodes, materials } = useGLTF('/models/attachment-plate-100.glb');
   return (
