@@ -15,11 +15,6 @@ function NavbarIndoor() {
             <a className="lg:inline-flex lg:w-auto w-full px-3 rounded text-white items-center justify-center hover:text-stone-700">Dingo Omnidirectional</a>
           </Link>
         </li>
-        <li>
-          <Link href="/indoor/boxer">
-            <a className="lg:inline-flex lg:w-auto w-full px-3 rounded text-white items-center justify-center hover:text-stone-700">Boxer</a>
-          </Link>
-        </li>
       </ul>
     </nav>
   );

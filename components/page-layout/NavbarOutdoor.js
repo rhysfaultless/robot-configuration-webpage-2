@@ -15,11 +15,6 @@ function NavbarOutdoor() {
             <a className="px-3 text-white hover:text-stone-700">Husky</a>
           </Link>
         </li>
-        <li>
-          <Link href="/outdoor/warthog">
-            <a className="px-3 text-white hover:text-stone-700">Warthog</a>
-          </Link>
-        </li>
       </ul>
     </nav>
   );
