@@ -767,6 +767,46 @@ This is briefly described in the section *JSON structure*
 
 ## descibing the webpage's Layout, including CSS ( Navbars, Footers, Aside, Main )
 
+- In the `pages` directory you will see `_app.js` which defines the structure for all Pages.
+
+  ```javascript
+    <>
+      <SafeHydrate>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SafeHydrate>
+    </>
+  ```
+
+  Two things to note from `_app.js`:
+
+    - `<SafeHydrate>` is making the site statically gerated. This was done for speed, and to allow Google's crawler to index the sites HTML.
+    - `<Layout>  </Layout>` is adding a Navbar and Footer to all Pages on our website. You can find the Layout, Navbar, and Footer in `/components/page-layout`
+- On an actual Page, like `dingo-omni.js`, you will find that the Page is structured as:
+
+  ```javascript
+    <div>
+      <Head></Head>
+      <div>
+        <aside></aside>
+        <main></main>
+      </div>
+      <footer></footer>
+    </div>
+  ```
+
+  These elements are in addition to those of `_app.js`.
+
+    - `<Head></Head>` populates the web-browser's tab
+    - `<aside></aside>` holds all the Select elements for the User to configure their robot
+    - `<main></main>` holds the Three.js model, and a small notification telling the User to rotate the model
+    - `<footer></footer>` is an additional footer, that holds price, leadtime, and quoting infomation
+
+  - Positions of these eements are controlled using `className` with *tailwind.css* infomation for colour, positioning, and other style calls.
+
+
+
 ## how the Configuration's Price and Lead-time are generated
 
 ## how PDF quotes are generated
