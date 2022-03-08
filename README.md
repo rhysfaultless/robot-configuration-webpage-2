@@ -655,7 +655,7 @@ Some other things to note:
 </details>
 
 
-## how three.js adds 3d models to our webpages
+## how we add three.js 3d models to our webpages
 
 On our Next.js pages, we import the libraries `react-three/fiber` and `react-three/drei`. 
 Then, in the `return()` section of the Page, we add a three.js `<Canvas>   <Canvas/>`.
@@ -680,7 +680,7 @@ There are several boolean values in the related robot's JSON file, suggesting if
 This is briefly described in the section *JSON structure*
 
 
-## process for adding a new thre.js 3d model
+## process for adding a new three.js 3d model
 
 1. Using Solidworks:
 2. Create a SLDPRT of the attachment with the origin centred at (0, 0, 0,) .
@@ -764,6 +764,8 @@ This is briefly described in the section *JSON structure*
   }
   export default Page;
   ```
+
+## descibing the webpage's Layout, including CSS ( Navbars, Footers, Aside, Main )
 
 ## how the Configuration's Price and Lead-time are generated
 
