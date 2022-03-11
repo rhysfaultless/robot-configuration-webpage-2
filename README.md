@@ -981,5 +981,5 @@ This function finds the Three.Js element `<Canvas id="divToPrint" gl={{ preserve
 
 Known odd functionality:
 
-- This screenshot is of the current rendering of the Three.js canvas, as displayed in the User's browser, so it could look odd depending how the User has the model oriented, and hos CSS has placed the `<Canvas>` component related to the User's screensize.
+- This screenshot is of the current rendering of the Three.js canvas, as displayed in the User's browser, so it could look odd depending how the User has the model oriented, and how CSS has placed the `<Canvas>` component related to the User's screensize.
 - I had to set *WebGL* to `preserveDrawingBuffer: true`. This can cause odd jumping or flickering of the model between rendered frames. I needed to set this to true, so the `<Canvas>` is never blank between frames. The User's eye wouldn't notice blank screens between renders, but the screenshot would likely be saved as a blank screen.
