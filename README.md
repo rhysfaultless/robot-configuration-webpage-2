@@ -805,9 +805,72 @@ This is briefly described in the section *JSON structure*
 
   - Positions of these eements are controlled using `className` with *tailwind.css* infomation for colour, positioning, and other style calls.
 
+## how the Configuration's Price is generated
+There are two components of interest in `/components/price-lead-quote`:
 
+- PriceText.js
+- Price.js
 
-## how the Configuration's Price and Lead-time are generated
+The individual robot pages, like ` dinco-omni.js` import and call `<PriceText statesArray={makePriceLeadStatesArray()}>`.
+The Prop *statesArray* is passing JSON data of configured robot including:
+
+- panel colour
+- battery chemistry
+- computer and components
+- kits, like *IndoorNav*
+- attachment tower structures
+- attachments
+
+This JSON data can be updated in two places:
+
+- /public/json/DataComputer.json
+- /public/json/Data*ROBOT-PLATFORM*.json
+
+The JSON files have multiple keys, like:
+- *robotPlatform*
+- *panelColours*
+- *batteryItems*
+- *tower*
+- *attachmentItems*
+- *kits*
+
+Each of these keys have a nested key called *price* which needs an integer value. 
+An example from *DataDingoOmni.json* is shown:
+
+```javascript
+  "robotPlatform": {
+    "label": "Dingo Omnidirectional",
+    "price": 10000,
+    "leadTime": 3,
+    "itemNumber": "022609",
+    "labelPdf": "Dingo-O",
+    "description": [
+      "Robot Platform - Dingo Omnidirectional",
+      "PDF line 2",
+      "PDF line 3",
+      "PDF line 4",
+      "PDF line 5",
+      "PDF line 6",
+      "PDF line 7",
+      "PDF line 8",
+      "PDF line 9"
+    ]
+  }
+```
+
+All of the integer values from JSON price keys with `<PriceText statesArray={makePriceLeadStatesArray()}>` are then summed with `<Price> `.
+
+## how the Configuration's Lead-time is generated
+This functionality is very similar to the `<Price>` component.
+The difference is that `<Leadtime>` takes all the integer vales passed to it, and returns the largest value.
+So if the user configures a robot with:
+
+- 3 weeks — *Dingo-Omni*
+- 7 weeks — *red panels*
+- 0 weeks — *lead acid battery*
+- 3 weeks — *front velodyne*
+
+The returned lead time will be 7 weeks, since that corresponds to the largest value for *red panels*
 
 ## how PDF quotes are generated
 
