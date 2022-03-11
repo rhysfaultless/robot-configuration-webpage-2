@@ -1,5 +1,4 @@
 # robot-configuration-webpage-2
-
 Deployed site: <a>https://robot-configuration-webpage-2.vercel.app/</a> <br />
 Vercel home: <a>https://vercel.com/rhysfaultless/robot-configuration-webpage-2</a> <br />
 
@@ -24,7 +23,6 @@ This change would simplify the `import` process for three.js functions into our 
 even though we do not make use of `react-three/a11y`.
 
 ## running on a local machine
-
 1. clone this repository
 2. in a terminal, navigate to the repository on your local machine, and then run:
   1. `npm install`
@@ -32,7 +30,6 @@ even though we do not make use of `react-three/a11y`.
 3. go to a web browser like Google Chrome, and enter the address <a>localhost:3000</a>
 
 ## deploying on Vercel ( internet )
-
 This proccess is rather simple. 
 The Production Deployment on Vercel uses the code on this Github repositorie's `main` branch.
 Vercel uses the information in this repositorie's `package.json` to build the site properly.
@@ -48,7 +45,6 @@ You can test code by:
 8. Vercel will build again, and the Production Deployment should show the changes.
 
 ## site's architecture
-
 This site uses Next.js, a framework built around React. 
 Next.js uses Pages to define the routing structure of the site, rather than using the react-router library. 
 Next.js still maintains the React approach, of making reuasable Components that will render the User's web browser. 
@@ -147,7 +143,6 @@ Next.js still maintains the React approach, of making reuasable Components that 
 </details>
 
 ## JSON structure, computers
-
 Notice a few things that are important in the computers JSON file, for the website's state-machine to function:
 
 - computers have a value `configurableComputerBool`
@@ -656,7 +651,6 @@ Some other things to note:
 
 
 ## how we add three.js 3d models to our webpages
-
 On our Next.js pages, we import the libraries `react-three/fiber` and `react-three/drei`. 
 Then, in the `return()` section of the Page, we add a three.js `<Canvas>   <Canvas/>`.
 We then add these components inside the `<Canvas>   <Canvas/>` tags.
