@@ -922,3 +922,64 @@ All the text elements are 53 mm down from the top left corner of the PDF sheet, 
 You can also see that these are methods, appending to the *.doc* that was created in step one.
 
 ## how the PDF's robot screenshot is generated
+The `<ButtonQuote>` component adds the screenshot on the final sheet of the PDF:
+
+```javascript
+  // screenshot image of the configured robot
+  var screenshotImageData = props.screenshotData;
+  if (screenshotImageData != null) {
+    const screenshotProperties = doc.getImageProperties(screenshotImageData);
+    const screenshotWidth = 140;
+    const screenshotAspect = screenshotProperties.height / screenshotProperties.width;
+    doc.addImage(screenshotImageData, "JPEG", 40, 60, screenshotWidth, (screenshotWidth * screenshotAspect));
+  }
+```
+
+The image is only added if the Prop has base64 JPEG data attached to it.
+The actual JPEG data is generated in the robot Pages, like */pages/indoor/dingo-omni.js*, and is passed as the Prop `screenshotData={screenshotDataState}`:
+
+```javascript
+  <div className="px-5" onMouseOver={() => UpdateScreenshotData()}>
+    <ButtonGeneratePdfQuote
+      robotPlatform={robotPlatformDataLabel}
+      colourState={colourSelectionState}
+      batteryState={batterySelectionState}
+      computerState={computerSelectionState}
+      processorState={computerProcessorSelectionState}
+      ramState={computerRamSelectionState}
+      storageState={computerStorageSelectionState}
+      gpuState={computerGpuSelectionState}
+      kitState={kitSelectionState}
+      statesArray={makePriceLeadStatesArray()}
+      attachmentTowerState={towerSelectionState}
+      attachmentStates={attachmentSelectionStates}
+      screenshotData={screenshotDataState}
+    />
+  </div>
+```
+
+`screenshotDataState` is defined at the top of *dingo-omni.js*, and defaults to a value of *null*.
+This data gets updated using the function `UpdateScreenShotData`, which is only called when the User's cursor hovers over the button to generate a PDF quote. This means some PDF quotes will not have screenshots if:
+  - the User does not hover over the button long enough for the JPEG base64 data to be saved to *screenshotDataState*
+  - the User uses *tab* and *return* to click the button rather than using a mouse
+  - the User clicks the button using a touchscreen
+
+*onMouseOver* was chosen so the screenshot is only generated when the User is finished configuring the robot. The intention is to minimize the number of State updates since base64 is a rather large file, and could slow down the browser experience if it runs frequently.
+
+The actual screenshot is taken using the opensource library *html2canvas*, implemented in our function `UpdateScreenshotData`.
+
+```javascript
+  function UpdateScreenshotData() {
+    const input = document.getElementById("divToPrint");
+    html2canvas(input).then((canvas) => {
+      changeScreenshotDataState(canvas.toDataURL("image/jpeg"));
+    });
+  }
+```
+
+This function finds the Three.Js element `<Canvas id="divToPrint" gl={{ preserveDrawingBuffer: true }}>  ...  </Canvas>` and takes a screenshot of it. 
+
+Known odd functionality:
+
+- This screenshot is of the current rendering of the Three.js canvas, as displayed in the User's browser, so it could look odd depending how the User has the model oriented, and hos CSS has placed the `<Canvas>` component related to the User's screensize.
+- I had to set *WebGL* to `preserveDrawingBuffer: true`. This can cause odd jumping or flickering of the model between rendered frames. I needed to set this to true, so the `<Canvas>` is never blank between frames. The User's eye wouldn't notice blank screens between renders, but the screenshot would likely be saved as a blank screen.
