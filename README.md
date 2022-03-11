@@ -873,5 +873,58 @@ So if the user configures a robot with:
 The returned lead time will be 7 weeks, since that corresponds to the largest value for *red panels*
 
 ## how PDF quotes are generated
+The component `<ButtonQuote>` is added to each of the configuration Pages.
+This component only reders one thing in the DOM:
+
+```javascript
+  return (
+    <button onClick={GeneratePdfQuote} className="hover:text-yellow-400">
+      Download Quote
+    </button>
+  );
+```
+
+The actual function, `GeneratePdfQuote` uses the opensource library jsPDF to generate and download the PDF in the Users browser. 
+This is run entirely on the User's computer.
+`GeneratePdfQuote` runs through these steps:
+
+1. creates a new pdf file *.doc*
+2. creates all the sheets of the pdf, based off the integer in the constant *PageCount*.
+3. while creating these pages, `GeneratePdfQuote` adds text, images, and formatting that is common to all sheets, like:
+  - the company icon
+  - sheet count
+  - the seller's contact information
+  - the date and time the quote was generated
+  - line item formatting
+  - title of the PDF
+4. then the individual pages are appended, with content that is specific to that sheet:
+  - sheet 1 — robot platform, panel colour, battery chemistry
+  - sheet 2 — computer and related components
+  - sheet 3 — kits, like *IndoorNav*
+  - sheet 4 — attachment towers, and attachments
+  - sheet 5 — attachments
+  - sheet 6 — attachments
+  - sheet 7 — summary, legal, and a screenshot of the robot
+5. save the PDF to the User's computer
+
+The total Price and Leadtime are generated using the related components mentioned in the previous sections of this README.
+
+The screenshot process is described in the next section.
+
+jsPDF uses millimeters and font sizes for defining elements. 
+For example, this is how the line item's header is defined, showing the different columns of information:
+
+```javascript
+  doc.setFontSize(8);
+  doc.text(21, 53, "ID");
+  doc.text(27, 53, "Part #");
+  doc.text(40, 53, "Description");
+  doc.text(141, 53, "Qty");
+  doc.text(149, 53, "Price ($ USD )");
+  doc.text(174, 53, "Ext. Price ($ USD )");
+```
+
+All the text elements are 53 mm down from the top left corner of the PDF sheet, and are 21 - 174 mm to the right.
+You can also see that these are methods, appending to the *.doc* that was created in step one.
 
 ## how the PDF's robot screenshot is generated
