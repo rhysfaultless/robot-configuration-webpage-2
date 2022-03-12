@@ -28,7 +28,7 @@ import ModelIntegrationRiser3 from "/components/three-models/husky/IntegrationRi
 import ModelIntegrationTower1 from "/components/three-models/husky/IntegrationTower-1";
 import ModelIntegrationTower2 from "/components/three-models/husky/IntegrationTower-2";
 import ModelIntegrationTower3 from "/components/three-models/husky/IntegrationTower-3";
-import ModelWeatherproofing from "/components/three-models/husky/WeatherProofing";
+import ModelWeatherproofing from "/components/three-models/husky/Weatherproofing";
 import AttachmentsRenderer from "/components/three-models/attachments/AttachmentsRenderer";
 
 // json data imports - common for all robot platforms
