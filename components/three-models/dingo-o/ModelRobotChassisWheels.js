@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei';
 
 export default function Model(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/models/chassis-wheels-dingo-o.glb');
+  const { nodes, materials } = useGLTF('/models/dingo-o/chassis-wheels-dingo-o.glb');
   return (
     <group ref={group} {...props} dispose={null} position={props.modelPosition} rotation={props.modelRotation}>
       <mesh
@@ -22,4 +22,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload('/models/chassis-wheels-dingo-o.glb');
+useGLTF.preload('/models/dingo-o/chassis-wheels-dingo-o.glb');

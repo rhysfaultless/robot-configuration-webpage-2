@@ -4,10 +4,10 @@
   },
 
   "robotPlatform": {
-    "label": "Dingo Omnidirectional",
+    "label": "Husky",
     "price": 10000,
     "leadTime": 3,
-    "itemNumber": "022609",
+    "itemNumber": "042000",
     "labelPdf": "Dingo-O",
     "_comment": ["                                                         end of line|"],
     "description": [
@@ -206,7 +206,7 @@
     }
   ],
 
-  "integrationRiser": {
+  "integrationPlate": {
     "bool": true,
     "value":[
       {
@@ -219,19 +219,19 @@
         "attachmentPosition": [
           {
             "id": 1,
-            "bool": true
+            "bool": false
           },
           {
             "id": 2,
-            "bool": true
+            "bool": false
           },
           {
             "id": 3,
-            "bool": true
+            "bool": false
           },
           {
             "id": 4,
-            "bool": true
+            "bool": false
           },
           {
             "id": 5,
@@ -291,7 +291,7 @@
         "label": "Yes",
         "value": "B",
         "itemNumber": "042000",
-        "price": 300,
+        "price": 400,
         "leadTime": 0,
         "bool": true,
         "attachmentPosition": [
@@ -326,6 +326,167 @@
           {
             "id": 8,
             "bool": true
+          },
+          {
+            "id": 9,
+            "bool": true
+          },
+          {
+            "id": 10,
+            "bool": true
+          },
+          {
+            "id": 11,
+            "bool": true
+          },
+          {
+            "id": 12,
+            "bool": true
+          },
+          {
+            "id": 13,
+            "bool": false
+          },
+          {
+            "id": 14,
+            "bool": false
+          }
+      ],
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
+        " "
+      ]
+    }
+  ]},
+
+  "integrationRiser": {
+    "bool": true,
+    "value":[
+      {
+        "label": "No",
+        "value": "A",
+        "itemNumber": " ",
+        "price": 0,
+        "leadTime": 0,
+        "bool": false,
+        "attachmentPosition": [
+          {
+            "id": 1,
+            "bool": true
+          },
+          {
+            "id": 2,
+            "bool": true
+          },
+          {
+            "id": 3,
+            "bool": true
+          },
+          {
+            "id": 4,
+            "bool": true
+          },
+          {
+            "id": 5,
+            "bool": true
+          },
+          {
+            "id": 6,
+            "bool": true
+          },
+          {
+            "id": 7,
+            "bool": false
+          },
+          {
+            "id": 8,
+            "bool": false
+          },
+          {
+            "id": 9,
+            "bool": false
+          },
+          {
+            "id": 10,
+            "bool": false
+          },
+          {
+            "id": 11,
+            "bool": false
+          },
+          {
+            "id": 12,
+            "bool": false
+          },
+          {
+            "id": 13,
+            "bool": false
+          },
+          {
+            "id": 14,
+            "bool": false
+          }
+        ],
+        "_comment": ["                                                         end of line|"],
+        "description": [
+          "COMMENT - skip this line for structuring purposes",  
+          " ", 
+          "Empty line item", 
+          " ", 
+          "  ", 
+          " ", 
+          " ", 
+          " ",
+          " "
+        ]
+      },
+      {
+        "label": "Yes – 100 mm",
+        "value": "B",
+        "itemNumber": "042000",
+        "price": 300,
+        "leadTime": 0,
+        "bool": true,
+        "attachmentPosition": [
+          {
+            "id": 1,
+            "bool": false
+          },
+          {
+            "id": 2,
+            "bool": true
+          },
+          {
+            "id": 3,
+            "bool": false
+          },
+          {
+            "id": 4,
+            "bool": false
+          },
+          {
+            "id": 5,
+            "bool": true
+          },
+          {
+            "id": 6,
+            "bool": false
+          },
+          {
+            "id": 7,
+            "bool": false
+          },
+          {
+            "id": 8,
+            "bool": false
           },
           {
             "id": 9,
@@ -368,7 +529,7 @@
   ]},
 
   "integrationTower": {
-    "bool": false,
+    "bool": true,
     "value": [
     {
       "label": "No",
@@ -396,11 +557,11 @@
         },
         {
           "id": 5,
-          "bool": false
+          "bool": true
         },
         {
           "id": 6,
-          "bool": false
+          "bool": true
         },
         {
           "id": 7,
@@ -449,7 +610,7 @@
       ]
     },
     {
-      "label": "Yes",
+      "label": "Yes — 100 mm",
       "value": "B",
       "itemNumber": "042000",
       "price": 300,
@@ -490,15 +651,15 @@
         },
         {
           "id": 9,
-          "bool": false
+          "bool": true
         },
         {
           "id": 10,
-          "bool": false
+          "bool": true
         },
         {
           "id": 11,
-          "bool": false
+          "bool": true
         },
         {
           "id": 12,
@@ -531,43 +692,39 @@
   "attachmentPositions": [
     {
       "id": 1,
-      "xyz": [240, 69, 0],
+      "xyz": [328.3, 233.85, -240],
       "rpy": [0, 0, 0]
     },
     {
       "id": 2,
-      "xyz": [80, 69, 0],
+      "xyz": [328.3, 233.85, 0],
       "rpy": [0, 0, 0]
     },
     {
       "id": 3,
-      "xyz": [-80, 69, 0],
-      "rpy": [0, 3.14159, 0]
+      "xyz": [328.3, 233.85, 0],
+      "rpy": [0, 0, 0]
     },
     {
       "id": 4,
-      "xyz": [-240, 69, 0],
+      "xyz": [-231.7, 233.85, 0],
       "rpy": [0, 3.14159, 0]
     },
     {
       "id": 5,
-      "xyz": [240, 269, 0],
-      "rpy": [0, 0, 0]
+      "xyz": [-231.7, 233.85, 0],
+      "rpy": [0, 3.14159, 0]
     },
     {
       "id": 6,
-      "xyz": [80, 269, 0],
-      "rpy": [0, 0, 0]
-    },
-    {
-      "id": 7,
-      "xyz": [-80, 269, 0],
+      "xyz": [-231.7, 233.85, 0],
       "rpy": [0, 3.14159, 0]
     },
     {
-      "id": 8,
-      "xyz": [-240, 269, 0],
-      "rpy": [0, 3.14159, 0]
+      "id": 7
+    },
+    {
+      "id": 8
     },
     {
       "id": 9
@@ -757,19 +914,19 @@
         },
         {
           "id": 9,
-          "bool": false
+          "bool": true
         },
         {
           "id": 10,
-          "bool": false
+          "bool": true
         },
         {
           "id": 11,
-          "bool": false
+          "bool": true
         },
         {
           "id": 12,
-          "bool": false
+          "bool": true
         },
         {
           "id": 13,

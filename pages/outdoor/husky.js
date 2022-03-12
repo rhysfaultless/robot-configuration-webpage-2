@@ -13,14 +13,22 @@ import html2canvas from "html2canvas";
 // Three.js library imports, including custom components used on all robot platforms
 import { Canvas } from "@react-three/fiber";
 import ConfiguredOrbitControls from "/components/three-settings/ConfiguredOrbitControls";
-import ConfiguredCamera from "/components/three-settings/ConfiguredCamera";
+import { PerspectiveCamera } from "@react-three/drei";
 import ModelBanana from "/components/three-models/ModelBanana";
 
 // custom component imports - three.js - robot specific
-import ModelRobotChassisBase from "/components/three-models/dingo-o/ModelRobotChassisBase";
-import ModelRobotChassisPanels from "/components/three-models/dingo-o/ModelRobotChassisPanels";
-import ModelRobotChassisWheels from "/components/three-models/dingo-o/ModelRobotChassisWheels";
-import ModelRobotChassisIntegrationRiser from "/components/three-models/dingo-o/ModelRobotChassisIntegrationRiser";
+import ModelRobotChassisBase from "/components/three-models/husky/ChassisBase";
+import ModelRobotChassisPanels from "/components/three-models/husky/ChassisPanels";
+import ModelRobotChassisWheels from "/components/three-models/husky/ChassisWheels";
+import ModelIntegrationExtrusion from "/components/three-models/husky/IntegrationExtrusion";
+import ModelIntegrationPlate from "/components/three-models/husky/IntegrationPlate";
+import ModelIntegrationRiser1 from "/components/three-models/husky/IntegrationRiser-1";
+import ModelIntegrationRiser2 from "/components/three-models/husky/IntegrationRiser-2";
+import ModelIntegrationRiser3 from "/components/three-models/husky/IntegrationRiser-3";
+import ModelIntegrationTower1 from "/components/three-models/husky/IntegrationTower-1";
+import ModelIntegrationTower2 from "/components/three-models/husky/IntegrationTower-2";
+import ModelIntegrationTower3 from "/components/three-models/husky/IntegrationTower-3";
+import ModelWeatherproofing from "/components/three-models/husky/WeatherProofing";
 import AttachmentsRenderer from "/components/three-models/attachments/AttachmentsRenderer";
 
 // json data imports - common for all robot platforms
@@ -28,7 +36,7 @@ import selectYesNoData from "/public/json/DataYesNo";
 import computerDataFile from "/public/json/DataComputer";
 
 // json data imports - robot platform specific
-import dataFile from "/public/json/DataDingoOmni";
+import dataFile from "/public/json/DataHusky";
 
 // constants from JSON files
 const computerData = computerDataFile.computers;
@@ -42,10 +50,12 @@ const robotPlatformDataLabel = robotPlatformData.label;
 const colourData = dataFile.panelColours;
 const batteryData = dataFile.batteryItems;
 const kitData = dataFile.kits;
-const allowIntegrationRiser = dataFile.integrationRiser.bool; 
+const allowIntegrationPlate = dataFile.integrationPlate.bool;
+const integrationPlateData = dataFile.integrationPlate.value;
+const allowIntegrationRiser = dataFile.integrationRiser.bool;
 const integrationRiserData = dataFile.integrationRiser.value;
 const allowIntegrationTower = dataFile.integrationTower.bool;
-const integrationTowerData = dataFile.integrationTower.value; 
+const integrationTowerData = dataFile.integrationTower.value;
 const attachmentData = dataFile.attachmentItems;
 const bananaPositionData = dataFile.bananaPosition;
 
@@ -63,6 +73,7 @@ function Page() {
   //
   const [kitSelectionState, changeKitSelectionState] = useState(kitData[0]);
   //
+  const [integrationPlateSelectionState, changeIntegrationPlateSelectionState] = useState(integrationPlateData[0]);
   const [integrationRiserSelectionState, changeIntegrationRiserSelectionState] = useState(integrationRiserData[0]);
   const [integrationTowerOneSelectionState, changeIntegrationTowerOneSelectionState] = useState(integrationRiserData[0]);
   const [integrationTowerTwoSelectionState, changeIntegrationTowerTwoSelectionState] = useState(integrationRiserData[0]);
@@ -109,7 +120,14 @@ function Page() {
   }
 
   function makePriceLeadStatesArray() {
-    let priceLeadStatesArray = [robotPlatformData, colourSelectionState, batterySelectionState, computerSelectionState, kitSelectionState, integrationRiserSelectionState];
+    let priceLeadStatesArray = [
+      robotPlatformData,
+      colourSelectionState,
+      batterySelectionState,
+      computerSelectionState,
+      kitSelectionState,
+      integrationRiserSelectionState,
+    ];
     // add attachments to priceLeadStatesArray
     {
       if (kitSelectionState.attachmentPosition[0].bool && integrationRiserSelectionState.attachmentPosition[0].bool) {
@@ -166,7 +184,11 @@ function Page() {
 
   // Select rendering functions
   function SelectAttachmentsRendererHelper(indexOfElementFromArray) {
-    if (integrationRiserSelectionState.attachmentPosition[indexOfElementFromArray].bool && kitSelectionState.attachmentPosition[indexOfElementFromArray].bool) {
+    if (
+      integrationPlateSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
+      integrationRiserSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
+      kitSelectionState.attachmentPosition[indexOfElementFromArray].bool
+    ) {
       const tempKeyName = "selectAttachmentsRendererKey" + String(indexOfElementFromArray);
       return (
         <SelectFormatted
@@ -192,7 +214,11 @@ function Page() {
   // Attachment Models rendering functions
   function ModelAttachmentsRendererHelper(elementFromArray) {
     const tempKeyName = "modelAttachmentsRendererKey" + String(elementFromArray[2]);
-    if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && integrationRiserSelectionState.attachmentPosition[elementFromArray[2]].bool) {
+    if (
+      integrationPlateSelectionState.attachmentPosition[elementFromArray[2]].bool &&
+      kitSelectionState.attachmentPosition[elementFromArray[2]].bool &&
+      integrationRiserSelectionState.attachmentPosition[elementFromArray[2]].bool
+    ) {
       return (
         <AttachmentsRenderer
           attachmentSelectionState={elementFromArray[0]}
@@ -339,23 +365,38 @@ function Page() {
 
               <div>
                 <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Integration Plate  */}
+                  {allowIntegrationPlate && (
+                    <SelectFormatted
+                      displayName={"Top Plate"}
+                      options={integrationPlateData}
+                      defaultValue={0}
+                      currentState={integrationPlateSelectionState}
+                      changeStateFunction={changeIntegrationPlateSelectionState}
+                    />
+                  )}
+
                   {/*  Select, Integration Riser  */}
-                  {allowIntegrationRiser && <SelectFormatted
-                    displayName={"Riser"}
-                    options={integrationRiserData}
-                    defaultValue={0}
-                    currentState={integrationRiserSelectionState}
-                    changeStateFunction={changeIntegrationRiserSelectionState}
-                  />}
+                  {integrationPlateSelectionState.bool && allowIntegrationRiser && !(integrationTowerOneSelectionState.bool) && (
+                    <SelectFormatted
+                      displayName={"Riser"}
+                      options={integrationRiserData}
+                      defaultValue={0}
+                      currentState={integrationRiserSelectionState}
+                      changeStateFunction={changeIntegrationRiserSelectionState}
+                    />
+                  )}
 
                   {/*  Select, Integration Tower  */}
-                  {allowIntegrationTower && <SelectFormatted
-                    displayName={"Riser"}
-                    options={integrationRiserData}
-                    defaultValue={0}
-                    currentState={integrationRiserSelectionState}
-                    changeStateFunction={changeIntegrationRiserSelectionState}
-                  />}
+                  {integrationPlateSelectionState.bool && allowIntegrationTower  && !(integrationRiserSelectionState.bool) && (
+                    <SelectFormatted
+                      displayName={"Tower"}
+                      options={integrationTowerData}
+                      defaultValue={0}
+                      currentState={integrationTowerOneSelectionState}
+                      changeStateFunction={changeIntegrationTowerOneSelectionState}
+                    />
+                  )}
 
                   <SelectAttachmentsRenderer />
                 </ul>
@@ -379,6 +420,12 @@ function Page() {
             <br />
             <br />
             <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         </aside>
         <main className="w-2/3 fixed h-screen right-0">
@@ -387,15 +434,17 @@ function Page() {
               <ambientLight intensity={0.7} />
               <spotLight position={[10000, 3000, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
               <ConfiguredOrbitControls />
-              <ConfiguredCamera />
+              <PerspectiveCamera makeDefault fov={65} position={[600, -900, 600]} />
 
               {/*  Three.js models  */}
               <Suspense fallback={null}>
                 <ModelRobotChassisBase />
                 <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
                 <ModelRobotChassisWheels />
+                {integrationPlateSelectionState.bool && <ModelIntegrationPlate />}
+                {integrationPlateSelectionState.bool && integrationRiserSelectionState.bool && <ModelIntegrationRiser1 />}
+                {integrationPlateSelectionState.bool && integrationTowerOneSelectionState.bool && <ModelIntegrationTower1 />}
                 <ModelKitsRenderer />
-                {integrationRiserSelectionState.bool && <ModelRobotChassisIntegrationRiser />}
                 <ModelAttachmentsRenderer />
                 {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
               </Suspense>
