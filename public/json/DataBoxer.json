@@ -1212,7 +1212,7 @@
 
   "bananaPosition": {
     "name": "bananaPosition",
-    "xyz": [0, 0, 305],
+    "xyz": [-50, 5, 315],
     "rpy": [0, 0.97, 0]
   }
 }
