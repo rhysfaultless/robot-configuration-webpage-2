@@ -1129,6 +1129,46 @@
         "",
         ""
       ]
+    },
+    {
+      "label": "RealSense D435",
+      "value": "realsense_d435",
+      "category": "camera",
+      "itemNumber": "026869",
+      "price": 600,
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include an Intel RealSense D435. ", 
+        "This sensor will be connected to the robot's computer through USB.", 
+        "The sensor will be attached to the robot with metal fasteners.", 
+        "", 
+        "", 
+        "", 
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "ZED2",
+      "value": "zed2",
+      "category": "camera",
+      "itemNumber": "026872",
+      "price": 900,
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include an StereoLabs ZED2. ", 
+        "This sensor will be connected to the robot's computer through USB.", 
+        "The sensor will be attached to the robot with metal fasteners.", 
+        "", 
+        "", 
+        "", 
+        "",
+        ""
+      ]
     }
   ],
 

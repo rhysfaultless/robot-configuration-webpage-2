@@ -2,6 +2,8 @@
 import ModelAttachmentVelodyne from "./ModelAttachmentVelodyne";
 import ModelAttachmentHokuyo from "./ModelAttachmentHokuyo";
 import ModelAttachmentMicrostrain15 from "./ModelAttachmentMicrostrain15";
+import ModelAttachmentRealsenseD435 from "./ModelAttachmentRealsenseD435";
+import ModelAttachmentZed2 from "./ModelAttachmentZed2";
 
 import ModelAttachmentBracketHorizontal from "./ModelAttachmentBracketHorizontal";
 import ModelAttachmentBracketVertical from "./ModelAttachmentBracketVertical";
@@ -46,6 +48,18 @@ function AttachmentsModels(props) {
         <ModelAttachmentMicrostrain15 key="microstrain" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketHorizontal}/>
       </group>
     ),
+    realsense_d435: (
+      <group key="null">
+        <ModelAttachmentBracketHorizontal key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentRealsenseD435 key="realsense_d435" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketHorizontal}/>
+      </group>
+    ),
+    zed2: (
+      <group key="null">
+        <ModelAttachmentBracketHorizontal key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentZed2 key="zed2" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketHorizontal}/>
+      </group>
+    )
   };
 
   return attachmentModels[props.userSelectedData.value];
