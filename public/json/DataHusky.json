@@ -1,25 +1,25 @@
 {
   "webpage": {
-    "tabTitle": "Clearpath | Dingo-O"
+    "tabTitle": "Clearpath | Husky"
   },
 
   "robotPlatform": {
     "label": "Husky",
-    "price": 10000,
+    "price": 18625,
     "leadTime": 3,
-    "itemNumber": "042000",
-    "labelPdf": "Dingo-O",
+    "itemNumber": "040000",
+    "labelPdf": "Husky",
     "_comment": ["                                                         end of line|"],
     "description": [
-      "Robot Platform - Dingo Omnidirectional",
-      "Specifications: An omnidirectional drive mobile robot, Dingo ",
-      "includes user power breakouts for 5 V, 12 V, and unregulated 12 V ",
-      "battery voltage. Dingo has a maximum speed of 1.6 m/s with a ",
-      "payload of 20 kg. The base platform mass includes a computer and a ",
-      "single battery, and does not addect the 20 kg allowable payload. ",
-      "Dingo runs on ROS Melodic and Ubuntu Server 18-04. Dingo includes ",
-      "user-accessible ethernet, wifi, and bluetooth. ",
-      " "
+      "Robot Platform - Husky A200",
+      "Specifications: A 4 wheel drive, differential robot, Husky",
+      "includes user power breakouts for 12 V, 24 V, and unregulated 24 V ",
+      "battery voltage. Husky has a maximum speed of 1 m/s with a ",
+      "maximum payload of 75 kg. ",
+      "Husky runs on ROS Noetic and Ubuntu Server 20-04. ",
+      "",
+      "",
+      ""
     ]
   },
 
@@ -34,7 +34,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Yellow",
-        "Specifications: The Dingo's side panels will be coated yellow.",
+        "Specifications: The Husky's front and rear panels will be coated yellow.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -48,13 +48,13 @@
       "label": "Black",
       "value": "B",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 600,
       "leadTime": 7,
       "rgb": "rgb(55, 55, 55)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Black",
-        "Specifications: The Dingo's side panels will be coated black.",
+        "Specifications: The Husky's front and rear panels will be coated black.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -68,13 +68,13 @@
       "label": "White",
       "value": "C",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 600,
       "leadTime": 7,
       "rgb": "rgb(214, 214, 214)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - White",
-        "Specifications: The Dingo's side panels will be coated white.",
+        "Specifications: The Husky's front and rear panels will be coated white.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -88,13 +88,13 @@
       "label": "Red",
       "value": "D",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 600,
       "leadTime": 7,
       "rgb": "rgb(185, 0, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Red",
-        "Specifications: The Dingo's side panels will be coated red.",
+        "Specifications: The Husky's front and rear panels will be coated red.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -108,13 +108,13 @@
       "label": "Orange",
       "value": "E",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 600,
       "leadTime": 7,
       "rgb": "rgb(255, 103, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Orange",
-        "Specifications: The Dingo's side panels will be coated orange.",
+        "Specifications: The Husky's front and rear panels will be coated orange.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -128,13 +128,13 @@
       "label": "Blue",
       "value": "F",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 600,
       "leadTime": 7,
       "rgb": "rgb(83, 104, 130)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Navy Blue",
-        "Specifications: The Dingo's side panels will be coated navy blue.",
+        "Specifications: The Husky's front and rear panels will be coated navy blue.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -148,13 +148,13 @@
       "label": "Green",
       "value": "G",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 600,
       "leadTime": 7,
       "rgb": "rgb(104, 120, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Olive Drab",
-        "Specifications: The Dingo's side panels will be coated olive drab.",
+        "Specifications: The Husky's front and rear panels will be coated olive drab.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -177,11 +177,11 @@
       "description": [
         "Battery - Sealed Lead Acid", 
         "Specifications: Includes:", 
-        "  - 1X Dingo PCBA for attaching 1X sealed-lead-acid battery to a Dingo.", 
-        "  - 1X sealed-lead-acid battery at 12V with 18Ah of capacity.", 
+        "  - 1X Husky sealed-lead-acid battery.", 
+        "  - 1X sealed-lead-acid battery at 24 V with 20 Ah of capacity.", 
         "  - 1X charger for a sealed-lead-acid battery.", 
         " ", 
-        "Note: this line requires the purchase of a Dingo robot.", 
+        "Note: this line requires the purchase of a Husky robot.", 
         " ", 
         " "
       ]
@@ -189,18 +189,19 @@
     {
       "label": "Lithium",
       "value": "B",
-      "itemNumber": "042000",
-      "price": 1000,
+      "itemNumber": "007060",
+      "price": 4700,
       "leadTime": 3,
       "_comment": ["                                                         end of line|"],
       "description": [
-        "Battery - Lithium", "Specifications: Includes:", 
-        "  - 1X Dingo PCBA for attaching 6X lithium batteries to Dingo.", 
-        "  - 6X lithium batteries at 14.4V with 6.8Ah of capacity (40.8Ah total).", 
-        "  - 1X charger for lithium batteries. This can charge 4X batteries at a time.", 
+        "Battery - Lithium", 
+        "Specifications: Includes:", 
+        "  - 1X Husky lithium battery.", 
+        "  - 1X lithium battery at 24 V with 20 Ah of capacity.", 
+        "  - 1X charger for a lithium battery.", 
         " ", 
-        " ", 
-        " ", 
+        "This upgrade increase the average runtime of Husky by 3 hours.", 
+        "This replaces the standard sealed-lead-acid battery and charger.", 
         " "
       ]
     }
@@ -272,6 +273,10 @@
           {
             "id": 14,
             "bool": false
+          },
+          {
+            "id": 15,
+            "bool": true
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -290,8 +295,8 @@
       {
         "label": "Yes",
         "value": "B",
-        "itemNumber": "042000",
-        "price": 400,
+        "itemNumber": "026942",
+        "price": 600,
         "leadTime": 0,
         "bool": true,
         "attachmentPosition": [
@@ -350,16 +355,20 @@
           {
             "id": 14,
             "bool": false
+          },
+          {
+            "id": 15,
+            "bool": true
           }
       ],
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
         " ", 
-        "The robot will include a tower bracket for additional attachments.", 
-        "This bracket will be made of aluminum, and will include steel or", 
-        "stainless-steel fasteners. The tower bracket will be included in the", 
-        "robot's URDF.", 
+        "The robot will include a 6 mm thick aluminum top plate for attachments.", 
+        "Brackets will be anodized or powdercoated black.", 
+        "The Husky's computer will be configured with a URDF incluing this top plate.", 
+        " ", 
         " ", 
         " ",
         " "
@@ -367,7 +376,7 @@
     }
   ]},
 
-  "integrationRiser": {
+  "weatherproofing": {
     "bool": true,
     "value":[
       {
@@ -404,35 +413,197 @@
           },
           {
             "id": 7,
-            "bool": false
+            "bool": true
           },
           {
             "id": 8,
-            "bool": false
+            "bool": true
           },
           {
             "id": 9,
-            "bool": false
+            "bool": true
           },
           {
             "id": 10,
-            "bool": false
+            "bool": true
           },
           {
             "id": 11,
-            "bool": false
+            "bool": true
           },
           {
             "id": 12,
-            "bool": false
+            "bool": true
           },
           {
             "id": 13,
-            "bool": false
+            "bool": true
           },
           {
             "id": 14,
-            "bool": false
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
+          }
+        ],
+        "_comment": ["                                                         end of line|"],
+        "description": [
+          "COMMENT - skip this line for structuring purposes",  
+          " ", 
+          "Empty line item", 
+          " ", 
+          "  ", 
+          " ", 
+          " ", 
+          " ",
+          " "
+        ]
+      },
+      {
+        "label": "Yes",
+        "value": "B",
+        "itemNumber": "026947",
+        "price": 200,
+        "leadTime": 0,
+        "bool": true,
+        "attachmentPosition": [
+          {
+            "id": 1,
+            "bool": true
+          },
+          {
+            "id": 2,
+            "bool": true
+          },
+          {
+            "id": 3,
+            "bool": true
+          },
+          {
+            "id": 4,
+            "bool": true
+          },
+          {
+            "id": 5,
+            "bool": true
+          },
+          {
+            "id": 6,
+            "bool": true
+          },
+          {
+            "id": 7,
+            "bool": true
+          },
+          {
+            "id": 8,
+            "bool": true
+          },
+          {
+            "id": 9,
+            "bool": true
+          },
+          {
+            "id": 10,
+            "bool": true
+          },
+          {
+            "id": 11,
+            "bool": true
+          },
+          {
+            "id": 12,
+            "bool": true
+          },
+          {
+            "id": 13,
+            "bool": true
+          },
+          {
+            "id": 14,
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
+          }
+        ]
+      }
+    ]
+  },
+
+  "integrationRiser": {
+    "bool": true,
+    "value":[
+      {
+        "label": "No",
+        "value": "none",
+        "itemNumber": " ",
+        "price": 0,
+        "leadTime": 0,
+        "bool": false,
+        "attachmentPosition": [
+          {
+            "id": 1,
+            "bool": true
+          },
+          {
+            "id": 2,
+            "bool": true
+          },
+          {
+            "id": 3,
+            "bool": true
+          },
+          {
+            "id": 4,
+            "bool": true
+          },
+          {
+            "id": 5,
+            "bool": true
+          },
+          {
+            "id": 6,
+            "bool": true
+          },
+          {
+            "id": 7,
+            "bool": true
+          },
+          {
+            "id": 8,
+            "bool": true
+          },
+          {
+            "id": 9,
+            "bool": true
+          },
+          {
+            "id": 10,
+            "bool": true
+          },
+          {
+            "id": 11,
+            "bool": true
+          },
+          {
+            "id": 12,
+            "bool": true
+          },
+          {
+            "id": 13,
+            "bool": true
+          },
+          {
+            "id": 14,
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -450,15 +621,15 @@
       },
       {
         "label": "Yes – 100 mm",
-        "value": "B",
-        "itemNumber": "042000",
-        "price": 300,
+        "value": "height_one",
+        "itemNumber": "026948",
+        "price": 600,
         "leadTime": 0,
         "bool": true,
         "attachmentPosition": [
           {
             "id": 1,
-            "bool": false
+            "bool": true
           },
           {
             "id": 2,
@@ -466,11 +637,11 @@
           },
           {
             "id": 3,
-            "bool": false
+            "bool": true
           },
           {
             "id": 4,
-            "bool": false
+            "bool": true
           },
           {
             "id": 5,
@@ -478,7 +649,7 @@
           },
           {
             "id": 6,
-            "bool": false
+            "bool": true
           },
           {
             "id": 7,
@@ -506,12 +677,641 @@
           },
           {
             "id": 13,
-            "bool": false
+            "bool": true
           },
           {
             "id": 14,
-            "bool": false
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
           }
+        ],
+        "_comment": ["                                                         end of line|"],
+        "description": [
+          "COMMENT - skip this line for structuring purposes",  
+          " ", 
+          "The robot will include a tower bracket for additional attachments.", 
+          "This bracket will be made of aluminum, and will include steel or", 
+          "stainless-steel fasteners. The tower bracket will be included in the", 
+          "robot's URDF.", 
+          " ", 
+          " ",
+          " "
+        ]
+      },
+      {
+        "label": "Yes – 200 mm",
+        "value": "height_two",
+        "itemNumber": "026949",
+        "price": 620,
+        "leadTime": 0,
+        "bool": true,
+        "attachmentPosition": [
+          {
+            "id": 1,
+            "bool": true
+          },
+          {
+            "id": 2,
+            "bool": true
+          },
+          {
+            "id": 3,
+            "bool": true
+          },
+          {
+            "id": 4,
+            "bool": true
+          },
+          {
+            "id": 5,
+            "bool": true
+          },
+          {
+            "id": 6,
+            "bool": true
+          },
+          {
+            "id": 7,
+            "bool": false
+          },
+          {
+            "id": 8,
+            "bool": false
+          },
+          {
+            "id": 9,
+            "bool": false
+          },
+          {
+            "id": 10,
+            "bool": false
+          },
+          {
+            "id": 11,
+            "bool": false
+          },
+          {
+            "id": 12,
+            "bool": false
+          },
+          {
+            "id": 13,
+            "bool": true
+          },
+          {
+            "id": 14,
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
+          }
+        ],
+        "_comment": ["                                                         end of line|"],
+        "description": [
+          "COMMENT - skip this line for structuring purposes",  
+          " ", 
+          "The robot will include a tower bracket for additional attachments.", 
+          "This bracket will be made of aluminum, and will include steel or", 
+          "stainless-steel fasteners. The tower bracket will be included in the", 
+          "robot's URDF.", 
+          " ", 
+          " ",
+          " "
+        ]
+      },
+      {
+        "label": "Yes – 300 mm",
+        "value": "height_three",
+        "itemNumber": "026950",
+        "price": 650,
+        "leadTime": 0,
+        "bool": true,
+        "attachmentPosition": [
+          {
+            "id": 1,
+            "bool": true
+          },
+          {
+            "id": 2,
+            "bool": true
+          },
+          {
+            "id": 3,
+            "bool": true
+          },
+          {
+            "id": 4,
+            "bool": true
+          },
+          {
+            "id": 5,
+            "bool": true
+          },
+          {
+            "id": 6,
+            "bool": true
+          },
+          {
+            "id": 7,
+            "bool": false
+          },
+          {
+            "id": 8,
+            "bool": false
+          },
+          {
+            "id": 9,
+            "bool": false
+          },
+          {
+            "id": 10,
+            "bool": false
+          },
+          {
+            "id": 11,
+            "bool": false
+          },
+          {
+            "id": 12,
+            "bool": false
+          },
+          {
+            "id": 13,
+            "bool": true
+          },
+          {
+            "id": 14,
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
+          }
+        ],
+        "_comment": ["                                                         end of line|"],
+        "description": [
+          "COMMENT - skip this line for structuring purposes",  
+          " ", 
+          "The robot will include a tower bracket for additional attachments.", 
+          "This bracket will be made of aluminum, and will include steel or", 
+          "stainless-steel fasteners. The tower bracket will be included in the", 
+          "robot's URDF.", 
+          " ", 
+          " ",
+          " "
+        ]
+      }
+  ]},
+
+  "integrationTowerOne": {
+    "bool": true,
+    "positions": [
+      {
+        "id": 1,
+        "xyz": [328.3, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 1",
+        "value": "row_1"
+      },
+      {
+        "id": 2,
+        "xyz": [248.3, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 2",
+        "value": "row_2"
+      },
+      {
+        "id": 3,
+        "xyz": [168.3, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 3",
+        "value": "row_3"
+      },
+      {
+        "id": 4,
+        "xyz": [88.3, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 4",
+        "value": "row_4"
+      },
+      {
+        "id": 5,
+        "xyz": [8.3, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 5",
+        "value": "row_5"
+      },
+      {
+        "id": 6,
+        "xyz": [-71.7, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 6",
+        "value": "row_6"
+      },
+      {
+        "id": 7,
+        "xyz": [-151.7, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 7",
+        "value": "row_7"
+      },
+      {
+        "id": 8,
+        "xyz": [-231.7, 233.85, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 8",
+        "value": "row_8"
+      }
+    ],
+    "relatedAttachmentPositions": [
+      {
+        "id": 1,
+        "bool": false
+      },
+      {
+        "id": 2,
+        "bool": false
+      },
+      {
+        "id": 3,
+        "bool": false
+      },
+      {
+        "id": 4,
+        "bool": false
+      },
+      {
+        "id": 5,
+        "bool": false
+      },
+      {
+        "id": 6,
+        "bool": false
+      },
+      {
+        "id": 7,
+        "bool": true
+      },
+      {
+        "id": 8,
+        "bool": true
+      },
+      {
+        "id": 9,
+        "bool": true
+      },
+      {
+        "id": 10,
+        "bool": false
+      },
+      {
+        "id": 11,
+        "bool": false
+      },
+      {
+        "id": 12,
+        "bool": false
+      },
+      {
+        "id": 13,
+        "bool": true
+      },
+      {
+        "id": 14,
+        "bool": true
+      },
+      {
+        "id": 15,
+        "bool": true
+      }
+    ],
+    "value": [
+    {
+      "label": "No",
+      "value": "none",
+      "xyz": [0, 233.85, 0],
+      "itemNumber": " ",
+      "price": 0,
+      "leadTime": 0,
+      "bool": false,
+      "attachmentPosition": [
+        {
+          "id": 1,
+          "bool": true
+        },
+        {
+          "id": 2,
+          "bool": true
+        },
+        {
+          "id": 3,
+          "bool": true
+        },
+        {
+          "id": 4,
+          "bool": true
+        },
+        {
+          "id": 5,
+          "bool": true
+        },
+        {
+          "id": 6,
+          "bool": true
+        },
+        {
+          "id": 7,
+          "bool": false
+        },
+        {
+          "id": 8,
+          "bool": false
+        },
+        {
+          "id": 9,
+          "bool": false
+        },
+        {
+          "id": 10,
+          "bool": false
+        },
+        {
+          "id": 11,
+          "bool": false
+        },
+        {
+          "id": 12,
+          "bool": false
+        },
+        {
+          "id": 13,
+          "bool": true
+        },
+        {
+          "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        }
+      ],
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "Empty line item", 
+        " ", 
+        "  ", 
+        " ", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes — 100 mm",
+      "value": "tower_height_100",
+      "xyz": [0, 327.85, 0],
+      "itemNumber": "026932",
+      "price": 150,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": [
+        {
+          "id": 1,
+          "bool": true
+        },
+        {
+          "id": 2,
+          "bool": true
+        },
+        {
+          "id": 3,
+          "bool": true
+        },
+        {
+          "id": 4,
+          "bool": true
+        },
+        {
+          "id": 5,
+          "bool": true
+        },
+        {
+          "id": 6,
+          "bool": true
+        },
+        {
+          "id": 7,
+          "bool": true
+        },
+        {
+          "id": 8,
+          "bool": true
+        },
+        {
+          "id": 9,
+          "bool": true
+        },
+        {
+          "id": 10,
+          "bool": false
+        },
+        {
+          "id": 11,
+          "bool": false
+        },
+        {
+          "id": 12,
+          "bool": false
+        },
+        {
+          "id": 13,
+          "bool": true
+        },
+        {
+          "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        }
+      ],
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes — 200 mm",
+      "value": "tower_height_200",
+      "xyz": [0, 427.85, 0],
+      "itemNumber": "026933",
+      "price": 170,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": [
+        {
+          "id": 1,
+          "bool": true
+        },
+        {
+          "id": 2,
+          "bool": true
+        },
+        {
+          "id": 3,
+          "bool": true
+        },
+        {
+          "id": 4,
+          "bool": true
+        },
+        {
+          "id": 5,
+          "bool": true
+        },
+        {
+          "id": 6,
+          "bool": true
+        },
+        {
+          "id": 7,
+          "bool": true
+        },
+        {
+          "id": 8,
+          "bool": true
+        },
+        {
+          "id": 9,
+          "bool": true
+        },
+        {
+          "id": 10,
+          "bool": false
+        },
+        {
+          "id": 11,
+          "bool": false
+        },
+        {
+          "id": 12,
+          "bool": false
+        },
+        {
+          "id": 13,
+          "bool": true
+        },
+        {
+          "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        }
+      ],
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes — 300 mm",
+      "value": "tower_height_300",
+      "xyz": [0, 527.85, 0],
+      "itemNumber": "026934",
+      "price": 200,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": [
+        {
+          "id": 1,
+          "bool": true
+        },
+        {
+          "id": 2,
+          "bool": true
+        },
+        {
+          "id": 3,
+          "bool": true
+        },
+        {
+          "id": 4,
+          "bool": true
+        },
+        {
+          "id": 5,
+          "bool": true
+        },
+        {
+          "id": 6,
+          "bool": true
+        },
+        {
+          "id": 7,
+          "bool": true
+        },
+        {
+          "id": 8,
+          "bool": true
+        },
+        {
+          "id": 9,
+          "bool": true
+        },
+        {
+          "id": 10,
+          "bool": false
+        },
+        {
+          "id": 11,
+          "bool": false
+        },
+        {
+          "id": 12,
+          "bool": false
+        },
+        {
+          "id": 13,
+          "bool": true
+        },
+        {
+          "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        }
       ],
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -528,7 +1328,7 @@
     }
   ]},
 
-  "integrationTower": {
+  "integrationTowerTwo": {
     "bool": true,
     "value": [
     {
@@ -589,11 +1389,15 @@
         },
         {
           "id": 13,
-          "bool": false
+          "bool": true
         },
         {
           "id": 14,
-          "bool": false
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -611,9 +1415,9 @@
     },
     {
       "label": "Yes — 100 mm",
-      "value": "B",
+      "value": "tower_height_100",
       "itemNumber": "042000",
-      "price": 300,
+      "price": 150,
       "leadTime": 0,
       "bool": true,
       "attachmentPosition": [
@@ -643,15 +1447,15 @@
         },
         {
           "id": 7,
-          "bool": true
+          "bool": false
         },
         {
           "id": 8,
-          "bool": true
+          "bool": false
         },
         {
           "id": 9,
-          "bool": true
+          "bool": false
         },
         {
           "id": 10,
@@ -663,15 +1467,183 @@
         },
         {
           "id": 12,
-          "bool": false
+          "bool": true
         },
         {
           "id": 13,
-          "bool": false
+          "bool": true
         },
         {
           "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        }
+      ],
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes — 200 mm",
+      "value": "tower_height_200",
+      "itemNumber": "042000",
+      "price": 170,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": [
+        {
+          "id": 1,
+          "bool": true
+        },
+        {
+          "id": 2,
+          "bool": true
+        },
+        {
+          "id": 3,
+          "bool": true
+        },
+        {
+          "id": 4,
+          "bool": true
+        },
+        {
+          "id": 5,
+          "bool": true
+        },
+        {
+          "id": 6,
+          "bool": true
+        },
+        {
+          "id": 7,
           "bool": false
+        },
+        {
+          "id": 8,
+          "bool": false
+        },
+        {
+          "id": 9,
+          "bool": false
+        },
+        {
+          "id": 10,
+          "bool": true
+        },
+        {
+          "id": 11,
+          "bool": true
+        },
+        {
+          "id": 12,
+          "bool": true
+        },
+        {
+          "id": 13,
+          "bool": true
+        },
+        {
+          "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
+        }
+      ],
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        " ", 
+        "The robot will include a tower bracket for additional attachments.", 
+        "This bracket will be made of aluminum, and will include steel or", 
+        "stainless-steel fasteners. The tower bracket will be included in the", 
+        "robot's URDF.", 
+        " ", 
+        " ",
+        " "
+      ]
+    },
+    {
+      "label": "Yes — 300 mm",
+      "value": "tower_height_300",
+      "itemNumber": "042000",
+      "price": 200,
+      "leadTime": 0,
+      "bool": true,
+      "attachmentPosition": [
+        {
+          "id": 1,
+          "bool": true
+        },
+        {
+          "id": 2,
+          "bool": true
+        },
+        {
+          "id": 3,
+          "bool": true
+        },
+        {
+          "id": 4,
+          "bool": true
+        },
+        {
+          "id": 5,
+          "bool": true
+        },
+        {
+          "id": 6,
+          "bool": true
+        },
+        {
+          "id": 7,
+          "bool": false
+        },
+        {
+          "id": 8,
+          "bool": false
+        },
+        {
+          "id": 9,
+          "bool": false
+        },
+        {
+          "id": 10,
+          "bool": true
+        },
+        {
+          "id": 11,
+          "bool": true
+        },
+        {
+          "id": 12,
+          "bool": true
+        },
+        {
+          "id": 13,
+          "bool": true
+        },
+        {
+          "id": 14,
+          "bool": true
+        },
+        {
+          "id": 15,
+          "bool": true
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -692,7 +1664,7 @@
   "attachmentPositions": [
     {
       "id": 1,
-      "xyz": [328.3, 233.85, -240],
+      "xyz": [328.3, 233.85, -160],
       "rpy": [0, 0, 0]
     },
     {
@@ -702,12 +1674,12 @@
     },
     {
       "id": 3,
-      "xyz": [328.3, 233.85, 0],
+      "xyz": [328.3, 233.85, 160],
       "rpy": [0, 0, 0]
     },
     {
       "id": 4,
-      "xyz": [-231.7, 233.85, 0],
+      "xyz": [-231.7, 233.85, -160],
       "rpy": [0, 3.14159, 0]
     },
     {
@@ -717,23 +1689,33 @@
     },
     {
       "id": 6,
-      "xyz": [-231.7, 233.85, 0],
+      "xyz": [-231.7, 233.85, 160],
       "rpy": [0, 3.14159, 0]
     },
     {
-      "id": 7
+      "id": 7,
+      "xyz": [0, 0, -160],
+      "rpy": [0, 0, 0]
     },
     {
-      "id": 8
+      "id": 8,
+      "xyz": [0, 0, 0],
+      "rpy": [0, 0, 0]
     },
     {
-      "id": 9
+      "id": 9,
+      "xyz": [0, 0, 160],
+      "rpy": [0, 0, 0]
     },
     {
-      "id": 10
+      "id": 10,
+      "xyz": [0, 0, 0],
+      "rpy": [0, 0, 0]
     },
     {
-      "id": 11
+      "id": 11,
+      "xyz": [0, 0, 160],
+      "rpy": [0, 0, 0]
     },
     {
       "id": 12
@@ -743,6 +1725,9 @@
     },
     {
       "id": 14
+    },
+    {
+      "id": 15
     }
   ],
 
@@ -768,10 +1753,10 @@
       ]
     },
     {
-      "label": "Velodyne, Low",
-      "value": "velodyne_low",
+      "label": "Velodyne",
+      "value": "velodyne",
       "category": "lidar",
-      "itemNumber": "042000",
+      "itemNumber": "026859",
       "price": 5000,
       "leadTime": 3,
       "_comment": ["                                                         end of line|"],
@@ -788,10 +1773,10 @@
       ]
     },
     {
-      "label": "Velodyne, Mid",
-      "value": "velodyne_mid",
+      "label": "Velodyne, Vertical",
+      "value": "velodyne_vertical",
       "category": "lidar",
-      "itemNumber": "042000",
+      "itemNumber": "026965",
       "price": 5000,
       "leadTime": 3,
       "_comment": ["                                                         end of line|"],
@@ -804,34 +1789,34 @@
         "  - an accuracy of ±30 mm", 
         "This sensor will be adequately powered from the robot, will be connected", 
         "to the robot's computer through ethernet, and will be attached to the robot",
-        "with metal fasteners on a 40 mm tall bracket."
-      ]
-    },
-    {
-      "label": "Velodyne, High",
-      "value": "velodyne_high",
-      "category": "lidar",
-      "itemNumber": "042000",
-      "price": 5000,
-      "leadTime": 3,
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "COMMENT - skip this line for structuring purposes",  
-        "This attachment position will include a Velodyne Puck. The Velodyne Puck has: ", 
-        "  - a 100 m range", 
-        "  - a 360° horizontal field-of-view", 
-        "  - a ±15° vertical FOV", 
-        "  - an accuracy of ±30 mm", 
-        "This sensor will be adequately powered from the robot, will be connected", 
-        "to the robot's computer through ethernet, and will be attached to the robot",
-        "with metal fasteners on a 80 mm tall bracket."
+        "with metal fasteners."
       ]
     },
     {
       "label": "Hokuyo",
       "value": "hokuyo",
       "category": "lidar",
-      "itemNumber": "042000",
+      "itemNumber": "026611",
+      "price": 3000,
+      "leadTime": 3,
+      "_comment": ["                                                         end of line|"],
+      "description": [
+        "COMMENT - skip this line for structuring purposes",  
+        "This attachment position will include a Hokuyo UST-10LX. The Hokuyo has: ", 
+        "  - a 10 m range", 
+        "  - a 270° horizontal field-of-view", 
+        "  - a resolution of 0.25°", 
+        "This sensor will be adequately powered from the robot, will be connected", 
+        "to the robot's computer through ethernet, and will be attached to the robot", 
+        "with metal fasteners.",
+        ""
+      ]
+    },
+    {
+      "label": "Hokuyo, Vertical",
+      "value": "hokuyo_vertical",
+      "category": "lidar",
+      "itemNumber": "026966",
       "price": 3000,
       "leadTime": 3,
       "_comment": ["                                                         end of line|"],
@@ -935,6 +1920,10 @@
         {
           "id": 14,
           "bool": false
+        },
+        {
+          "id": 15,
+          "bool": false
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -953,14 +1942,14 @@
       "attachmentPosition": [
         {
           "id": 1,
-          "bool": false,
-          "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 4,
+          "bool": true,
           "position": 0
         },
         {
           "id": 2,
-          "bool": true,
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 3,
           "position": 1
         },
         {
@@ -972,14 +1961,14 @@
         },
         {
           "id": 4,
-          "bool": false,
-          "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 4,
+          "bool": true,
           "position": 3
         },
         {
           "id": 5,
-          "bool": true,
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 3,
           "position": 4
         },
         {
@@ -999,27 +1988,38 @@
         },
         {
           "id": 9,
-          "bool": false
+          "bool": true,
+          "position": 8
         },
         {
           "id": 10,
-          "bool": false
+          "bool": true,
+          "position": 9
         },
         {
           "id": 11,
-          "bool": false
+          "bool": true,
+          "position": 10
         },
         {
           "id": 12,
-          "bool": false
+          "bool": true,
+          "position": 11
         },
         {
           "id": 13,
-          "bool": false
+          "bool": true,
+          "position": 12
         },
         {
           "id": 14,
-          "bool": false
+          "bool": true,
+          "position": 13
+        },
+        {
+          "id": 15,
+          "bool": true,
+          "position": 14
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -1050,7 +2050,7 @@
 
   "bananaPosition": {
     "name": "bananaPosition",
-    "xyz": [100, 0, 305],
+    "xyz": [365, -110, 375],
     "rpy": [0, 0.97, 0]
   }
 }

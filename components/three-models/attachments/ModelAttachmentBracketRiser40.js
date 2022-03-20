@@ -6,17 +6,17 @@ export default function Model(props) {
   let modelPosition = [];
   let modelRotation = [];
   for (let i = 0; i < 3; i++) {
-    modelPosition[i] = props.dataOne.xyz[i] + props.dataTwo.xyz[i] + props.dataThree.xyz[i]; 
-    modelRotation[i] = props.dataOne.rpy[i] + props.dataTwo.rpy[i] + props.dataThree.rpy[i];
+    modelPosition[i] = props.dataOne.xyz[i] + props.dataTwo.xyz[i]; 
+    modelRotation[i] = props.dataOne.rpy[i] + props.dataTwo.rpy[i];
   }
-  const { nodes, materials } = useGLTF('/models/attachments/attachment-velodyne.glb');
+  const { nodes, materials } = useGLTF('/models/attachments/attachment-bracket-riser-40.glb');
   return (
     <group ref={group} {...props} dispose={null} position={modelPosition} rotation={modelRotation} >
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes['attachment-velodyne'].geometry}
-        material={nodes['attachment-velodyne'].material}
+        geometry={nodes['attachment-bracket-riser-40'].geometry}
+        material={nodes['attachment-bracket-riser-40'].material}
       >
         <meshStandardMaterial attach="material" color="rgb(150, 150, 150)" />
       </ mesh>
@@ -24,4 +24,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload('/models/attachments/attachment-velodyne.glb');
+useGLTF.preload('/models/attachments/attachment-bracket-riser-40.glb');

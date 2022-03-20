@@ -7,7 +7,8 @@ import { Leadtime } from "/components/price-lead-quote/Leadtime";
 import DataComputer from "/public/json/DataComputer.json";
 import DataFile_DingoOmni from "/public/json/DataDingoOmni.json";
 import DataFile_DingoDiff from "/public/json/DataDingoDiff.json";
-const DataFiles = [DataFile_DingoOmni, DataFile_DingoDiff];
+import DataFile_Husky from "/public/json/DataHusky.json"
+const DataFiles = [DataFile_DingoOmni, DataFile_DingoDiff, DataFile_Husky];
 
 // CPR logo path for PDF
 const ImagePath_CprIcon = "/public/images/clearpath_robotics_color.jpg";
@@ -381,512 +382,206 @@ function ButtonQuote(props) {
       {
         doc.setPage(3);
         doc.setTextColor(255); // make text white
-        doc.text(40, 57.5, "Kits");
+        doc.text(40, 57.5, "Weatherproofing, Riser Brackets, Navigation Kits");
         doc.setTextColor(0); // make text black
 
         doc.text(21, 63, "11"); // line ID
         {
-          for (let i = 0; i < DataFile.kits.length; i++) {
-            if (DataFile.kits[i].label == props.kitState.label) {
-              if (DataFile.kits[i].bool) {
-                doc.text(27, 63, DataFile.kits[i].itemNumber); // item number
+          for (let i = 0; i < DataFile.integrationPlate.value.length; i++) {
+            if (DataFile.integrationPlate.value[i].label == props.integrationPlateState.label) {
+              doc.text(27, 63, DataFile.integrationPlate.value[i].itemNumber); // item number
+              if (DataFile.integrationPlate.value[i].price != 0) {
                 doc.text(141, 63, "1"); // quantity
-                doc.text(149, 63, "$" + String(DataFile.kits[i].priceHardware)); // price, per
-                doc.text(174, 63, "$" + String(DataFile.kits[i].priceHardware)); // price, extended
-                doc.text(40, 63, DataFile.kits[i].descriptionHardware[0]); // description 0
-                doc.text(40, 67, DataFile.kits[i].descriptionHardware[1]); // description 1
-                doc.text(40, 71, DataFile.kits[i].descriptionHardware[2]); // description 2
-                doc.text(40, 75, DataFile.kits[i].descriptionHardware[3]); // description 3
-                doc.text(40, 79, DataFile.kits[i].descriptionHardware[4]); // description 4
-                doc.text(40, 83, DataFile.kits[i].descriptionHardware[5]); // description 5
-                doc.text(40, 87, DataFile.kits[i].descriptionHardware[6]); // description 6
-                doc.text(40, 91, DataFile.kits[i].descriptionHardware[7]); // description 7
-                doc.text(40, 95, DataFile.kits[i].descriptionHardware[8]); // description 8
-              } else {
-                doc.text(40, 63, "Empty line item"); // description 0
+                doc.text(149, 63, "$" + String(DataFile.integrationPlate.value[i].price)); // price, per
+                doc.text(174, 63, "$" + String(DataFile.integrationPlate.value[i].price)); // price, extended
               }
+              doc.text(40, 63, "Brackets - Top Integration Plate"); // description 0
+              doc.text(40, 67, DataFile.integrationPlate.value[i].description[1]); // description 1
+              doc.text(40, 71, DataFile.integrationPlate.value[i].description[2]); // description 2
+              doc.text(40, 75, DataFile.integrationPlate.value[i].description[3]); // description 3
+              doc.text(40, 79, DataFile.integrationPlate.value[i].description[4]); // description 4
+              doc.text(40, 83, DataFile.integrationPlate.value[i].description[5]); // description 5
+              doc.text(40, 87, DataFile.integrationPlate.value[i].description[6]); // description 6
+              doc.text(40, 91, DataFile.integrationPlate.value[i].description[7]); // description 7
+              doc.text(40, 95, DataFile.integrationPlate.value[i].description[8]); // description 8
             }
           }
         }
 
         doc.text(21, 103, "12"); // line ID
         {
-          for (let i = 0; i < DataFile.kits.length; i++) {
-            if (DataFile.kits[i].label == props.kitState.label) {
-              if (DataFile.kits[i].bool) {
-                doc.text(27, 103, DataFile.kits[i].itemNumber); // item number
-                doc.text(141, 103, "1"); // quantity
-                doc.text(149, 103, "$" + String(DataFile.kits[i].priceSoftware)); // price, per
-                doc.text(174, 103, "$" + String(DataFile.kits[i].priceSoftware)); // price, extended
-                doc.text(40, 103, DataFile.kits[i].descriptionSoftware[0]); // description 0
-                doc.text(40, 107, DataFile.kits[i].descriptionSoftware[1]); // description 1
-                doc.text(40, 111, DataFile.kits[i].descriptionSoftware[2]); // description 2
-                doc.text(40, 115, DataFile.kits[i].descriptionSoftware[3]); // description 3
-                doc.text(40, 119, DataFile.kits[i].descriptionSoftware[4]); // description 4
-                doc.text(40, 123, DataFile.kits[i].descriptionSoftware[5]); // description 5
-                doc.text(40, 127, DataFile.kits[i].descriptionSoftware[6]); // description 6
-                doc.text(40, 131, DataFile.kits[i].descriptionSoftware[7]); // description 7
-                doc.text(40, 135, DataFile.kits[i].descriptionSoftware[8]); // description 8
-              } else {
-                doc.text(40, 103, "Empty line item"); // description 0
+          if (props.integrationPlateState.bool) {
+            for (let i = 0; i < DataFile.weatherproofing.value.length; i++) {
+              if (DataFile.weatherproofing.value[i].label == props.weatherproofingState.label) {
+                doc.text(27, 103, DataFile.weatherproofing.value[i].itemNumber); // item number
+                if (DataFile.weatherproofing.value[i].price != 0) {
+                  doc.text(141, 103, "1"); // quantity
+                  doc.text(149, 103, "$" + String(DataFile.integrationPlate.value[i].price)); // price, per
+                  doc.text(174, 103, "$" + String(DataFile.integrationPlate.value[i].price)); // price, extended
+                }
+                doc.text(40, 103, "Brackets - Weatherproofing"); // description 0
+                doc.text(40, 107, DataFile.integrationPlate.value[i].description[1]); // description 1
+                doc.text(40, 111, DataFile.integrationPlate.value[i].description[2]); // description 2
+                doc.text(40, 115, DataFile.integrationPlate.value[i].description[3]); // description 3
+                doc.text(40, 119, DataFile.integrationPlate.value[i].description[4]); // description 4
+                doc.text(40, 123, DataFile.integrationPlate.value[i].description[5]); // description 5
+                doc.text(40, 127, DataFile.integrationPlate.value[i].description[6]); // description 6
+                doc.text(40, 131, DataFile.integrationPlate.value[i].description[7]); // description 7
+                doc.text(40, 135, DataFile.integrationPlate.value[i].description[8]); // description 8
               }
             }
+          } else {
+            doc.text(40, 103, "Brackets - Weatherproofing"); // description 0
+            doc.text(40, 111, "Empty line item"); // description 3
           }
         }
 
         doc.text(21, 143, "13"); // line ID
         {
-          doc.text(40, 143, "Empty line item"); // description 0
+          if (props.integrationPlateState.bool) {
+            if (props.integrationRiserState.bool) {
+              for (let i = 0; i < DataFile.integrationRiser.value.length; i++) {
+                if (DataFile.integrationRiser.value[i].label == props.integrationRiserState.label) {
+                  doc.text(27, 143, DataFile.integrationRiser.value[i].itemNumber); // item number
+                  if (DataFile.integrationRiser.value[i].price != 0) {
+                    doc.text(141, 143, "1"); // quantity
+                    doc.text(149, 143, "$" + String(DataFile.integrationRiser.value[i].price)); // price, per
+                    doc.text(174, 143, "$" + String(DataFile.integrationRiser.value[i].price)); // price, extended
+                  }
+                  doc.text(40, 143, "Brackets - Riser"); // description 0
+                  doc.text(40, 147, DataFile.integrationRiser.value[i].description[1]); // description 1
+                  doc.text(40, 151, DataFile.integrationRiser.value[i].description[2]); // description 2
+                  doc.text(40, 155, DataFile.integrationRiser.value[i].description[3]); // description 3
+                  doc.text(40, 159, DataFile.integrationRiser.value[i].description[4]); // description 4
+                  doc.text(40, 163, DataFile.integrationRiser.value[i].description[5]); // description 5
+                  doc.text(40, 167, DataFile.integrationRiser.value[i].description[6]); // description 6
+                  doc.text(40, 171, DataFile.integrationRiser.value[i].description[7]); // description 7
+                  doc.text(40, 175, DataFile.integrationRiser.value[i].description[8]); // description 8
+                }
+              }
+            } else if (props.integrationTowerOneState.bool) {
+              for (let i = 0; i < DataFile.integrationTowerOne.value.length; i++) {
+                if (DataFile.integrationTowerOne.value[i].label == props.integrationTowerOneState.label) {
+                  doc.text(27, 143, DataFile.integrationTowerOne.value[i].itemNumber); // item number
+                  if (DataFile.integrationTowerOne.value[i].price != 0) {
+                    doc.text(141, 143, "1"); // quantity
+                    doc.text(149, 143, "$" + String(DataFile.integrationTowerOne.value[i].price)); // price, per
+                    doc.text(174, 143, "$" + String(DataFile.integrationTowerOne.value[i].price)); // price, extended
+                  }
+                  doc.text(40, 143, "Brackets - Tower"); // description 0
+                  doc.text(40, 147, DataFile.integrationTowerOne.value[i].description[1]); // description 1
+                  doc.text(40, 151, DataFile.integrationTowerOne.value[i].description[2]); // description 2
+                  doc.text(40, 155, DataFile.integrationTowerOne.value[i].description[3]); // description 3
+                  doc.text(40, 159, DataFile.integrationTowerOne.value[i].description[4]); // description 4
+                  doc.text(40, 163, DataFile.integrationTowerOne.value[i].description[5]); // description 5
+                  doc.text(40, 167, DataFile.integrationTowerOne.value[i].description[6]); // description 6
+                  doc.text(40, 171, DataFile.integrationTowerOne.value[i].description[7]); // description 7
+                  doc.text(40, 175, DataFile.integrationTowerOne.value[i].description[8]); // description 8
+                }
+              }
+            } else {
+              doc.text(40, 143, "Brackets - Riser"); // description 0
+              doc.text(40, 151, "Empty line item"); // description 3              
+            }
+
+          } else {
+            doc.text(40, 143, "Brackets - Riser"); // description 0
+            doc.text(40, 151, "Empty line item"); // description 3
+          }
         }
 
         doc.text(21, 183, "14"); // line ID
         {
-          doc.text(40, 183, "Empty line item"); // description 0
+          if (props.integrationPlateState.bool) {
+            for (let i = 0; i < DataFile.kits.length; i++) {
+              if (DataFile.kits[i].label == props.kitState.label) {
+                if (DataFile.kits[i].bool) {
+                  doc.text(27, 183, DataFile.kits[i].itemNumber); // item number
+                  doc.text(141, 183, "1"); // quantity
+                  doc.text(149, 183, "$" + String(DataFile.kits[i].priceHardware)); // price, per
+                  doc.text(174, 183, "$" + String(DataFile.kits[i].priceHardware)); // price, extended
+                  doc.text(40, 183, DataFile.kits[i].descriptionHardware[0]); // description 0
+                  doc.text(40, 187, DataFile.kits[i].descriptionHardware[1]); // description 1
+                  doc.text(40, 191, DataFile.kits[i].descriptionHardware[2]); // description 2
+                  doc.text(40, 195, DataFile.kits[i].descriptionHardware[3]); // description 3
+                  doc.text(40, 199, DataFile.kits[i].descriptionHardware[4]); // description 4
+                  doc.text(40, 203, DataFile.kits[i].descriptionHardware[5]); // description 5
+                  doc.text(40, 207, DataFile.kits[i].descriptionHardware[6]); // description 6
+                  doc.text(40, 211, DataFile.kits[i].descriptionHardware[7]); // description 7
+                  doc.text(40, 215, DataFile.kits[i].descriptionHardware[8]); // description 8
+                } else {
+                  doc.text(40, 183, "Empty line item"); // description 0
+                }
+              }
+            }
+          } else {
+            doc.text(40, 183, "Empty line item"); // description 0
+          }
         }
 
         doc.text(21, 223, "15"); // line ID
         {
-          doc.text(40, 223, "Empty line item"); // description 0
-        }
-      }
-
-      // page 4 - attachments -----------------------------------------------------------
-      {
-        doc.setPage(4);
-        doc.setTextColor(255); // make text white
-        doc.text(40, 57.5, "Attachments");
-        doc.setTextColor(0); // make text black
-
-        doc.text(21, 63, "16"); // line ID
-        {
-          for (let i = 0; i < DataFile.integrationRiser.length; i++) {
-            if (DataFile.integrationRiser[i].label == props.integrationRiserState.label) {
-              doc.text(27, 63, DataFile.integrationRiser[i].itemNumber); // item number
-              if (DataFile.integrationRiser[i].price != 0) {
-                doc.text(141, 63, "1"); // quantity
-                doc.text(149, 63, "$" + String(DataFile.integrationRiser[i].price)); // price, per
-                doc.text(174, 63, "$" + String(DataFile.integrationRiser[i].price)); // price, extended
-              }
-              doc.text(40, 63, "Attachments - Integration Riser Bracket"); // description 0
-              doc.text(40, 67, DataFile.integrationRiser[i].description[1]); // description 1
-              doc.text(40, 71, DataFile.integrationRiser[i].description[2]); // description 2
-              doc.text(40, 75, DataFile.integrationRiser[i].description[3]); // description 3
-              doc.text(40, 79, DataFile.integrationRiser[i].description[4]); // description 4
-              doc.text(40, 83, DataFile.integrationRiser[i].description[5]); // description 5
-              doc.text(40, 87, DataFile.integrationRiser[i].description[6]); // description 6
-              doc.text(40, 91, DataFile.integrationRiser[i].description[7]); // description 7
-              doc.text(40, 95, DataFile.integrationRiser[i].description[8]); // description 8
-            }
-          }
-        }
-
-        doc.text(21, 103, "17"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[0].bool && props.kitState.attachmentPosition[0].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[0][0].label) {
-                doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 103, "1"); // quantity
-                  doc.text(149, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 103, "$" + String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 103, "Attachments - Position 1"); // description 0
-                doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 115, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 119, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 123, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 127, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 131, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 135, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 103, "Attachments - Position 1"); // description 0
-            doc.text(40, 111, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 143, "18"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[1].bool && props.kitState.attachmentPosition[1].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[1][0].label) {
-                doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 143, "1"); // quantity
-                  doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 143, "Attachments - Position 2"); // description 0
-                doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 155, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 159, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 163, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 167, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 171, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 175, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 143, "Attachments - Position 2"); // description 0
-            doc.text(40, 151, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 183, "19"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[2].bool && props.kitState.attachmentPosition[2].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[2][0].label) {
-                doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 183, "1"); // quantity
-                  doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 183, "Attachments - Position 3"); // description 0
-                doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 195, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 199, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 203, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 207, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 211, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 215, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 183, "Attachments - Position 3"); // description 0
-            doc.text(40, 191, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 223, "20"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[3].bool && props.kitState.attachmentPosition[3].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[3][0].label) {
-                doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
+          if (props.integrationPlateState.bool) {
+            for (let i = 0; i < DataFile.kits.length; i++) {
+              if (DataFile.kits[i].label == props.kitState.label) {
+                if (DataFile.kits[i].bool) {
+                  doc.text(27, 223, DataFile.kits[i].itemNumber); // item number
                   doc.text(141, 223, "1"); // quantity
-                  doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
+                  doc.text(149, 223, "$" + String(DataFile.kits[i].priceSoftware)); // price, per
+                  doc.text(174, 223, "$" + String(DataFile.kits[i].priceSoftware)); // price, extended
+                  doc.text(40, 223, DataFile.kits[i].descriptionSoftware[0]); // description 0
+                  doc.text(40, 227, DataFile.kits[i].descriptionSoftware[1]); // description 1
+                  doc.text(40, 231, DataFile.kits[i].descriptionSoftware[2]); // description 2
+                  doc.text(40, 235, DataFile.kits[i].descriptionSoftware[3]); // description 3
+                  doc.text(40, 239, DataFile.kits[i].descriptionSoftware[4]); // description 4
+                  doc.text(40, 243, DataFile.kits[i].descriptionSoftware[5]); // description 5
+                  doc.text(40, 247, DataFile.kits[i].descriptionSoftware[6]); // description 6
+                  doc.text(40, 251, DataFile.kits[i].descriptionSoftware[7]); // description 7
+                  doc.text(40, 255, DataFile.kits[i].descriptionSoftware[8]); // description 8
+                } else {
+                  doc.text(40, 223, "Empty line item"); // description 0
                 }
-                doc.text(40, 223, "Attachments - Position 4"); // description 0
-                doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 235, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 239, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 243, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 247, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 251, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 255, DataFile.attachmentItems[i].description[8]); // description 8
               }
             }
           } else {
-            doc.text(40, 223, "Attachments - Position 4"); // description 0
-            doc.text(40, 231, "Empty line item"); // description 2
+            doc.text(40, 223, "Empty line item"); // description 0
           }
         }
       }
 
-      // page 5 - attachments -----------------------------------------------------------
-      {
-        doc.setPage(5);
+      // page 4, 5, 6 - attachments -----------------------------------------------------------
+      for (let sheetNumber=4, sheetLineIdStart=0; sheetNumber<7; sheetNumber++, sheetLineIdStart+=5){
+      
+        doc.setPage(sheetNumber);
         doc.setTextColor(255); // make text white
         doc.text(40, 57.5, "Attachments");
         doc.setTextColor(0); // make text black
-
-        doc.text(21, 63, "21"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[4].bool && props.kitState.attachmentPosition[4].bool) {
+        
+        for (let lineId=(16+sheetLineIdStart), attachmentPositionNumber=(1+sheetLineIdStart), yShift=60, lineOnSheet=0; lineOnSheet<5; lineId++, lineOnSheet++, yShift+=40, attachmentPositionNumber++) {
+          doc.text(21, (yShift + 3), String(lineId)); // line ID
+          if (props.integrationPlateState.bool && props.integrationRiserState.attachmentPosition[attachmentPositionNumber-1].bool && props.integrationTowerOneState.attachmentPosition[attachmentPositionNumber-1].bool && props.kitState.attachmentPosition[attachmentPositionNumber-1].bool) {
             for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[4][0].label) {
-                doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
+              if (DataFile.attachmentItems[i].label == props.attachmentStates[attachmentPositionNumber-1][1].label) {
+                doc.text(27, (yShift + 3), DataFile.attachmentItems[i].itemNumber); // item number
                 if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 63, "1"); // quantity
-                  doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
+                  doc.text(141, (yShift + 3), "1"); // quantity
+                  doc.text(149, (yShift + 3), "$" + String(DataFile.attachmentItems[i].price)); // price, per
+                  doc.text(174, (yShift + 3), "$" + String(DataFile.attachmentItems[i].price)); // price, extended
                 }
-                doc.text(40, 63, "Attachments - Position 5"); // description 0
-                doc.text(40, 67, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 71, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 75, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 79, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 83, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 87, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 91, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 95, DataFile.attachmentItems[i].description[8]); // description 8
+                doc.text(40, (yShift + 3), "Attachments - Position " + String(attachmentPositionNumber)); // description 0
+                doc.text(40, (yShift + 7), DataFile.attachmentItems[i].description[1]); // description 1
+                doc.text(40, (yShift + 11), DataFile.attachmentItems[i].description[2]); // description 2
+                doc.text(40, (yShift + 15), DataFile.attachmentItems[i].description[3]); // description 3
+                doc.text(40, (yShift + 19), DataFile.attachmentItems[i].description[4]); // description 4
+                doc.text(40, (yShift + 23), DataFile.attachmentItems[i].description[5]); // description 5
+                doc.text(40, (yShift + 27), DataFile.attachmentItems[i].description[6]); // description 6
+                doc.text(40, (yShift + 31), DataFile.attachmentItems[i].description[7]); // description 7
+                doc.text(40, (yShift + 35), DataFile.attachmentItems[i].description[8]); // description 8
               }
             }
           } else {
-            doc.text(40, 63, "Attachments - Position 5"); // description 0
-            doc.text(40, 71, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 103, "22"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[5].bool && props.kitState.attachmentPosition[5].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[5][0].label) {
-                doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 103, "1"); // quantity
-                  doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 103, "Attachments - Position 6"); // description 0
-                doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 115, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 119, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 123, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 127, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 131, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 135, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 103, "Attachments - Position 6"); // description 0
-            doc.text(40, 111, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 143, "23"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[6].bool && props.kitState.attachmentPosition[6].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[6][0].label) {
-                doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 143, "1"); // quantity
-                  doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 143, "Attachments - Position 7"); // description 0
-                doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 155, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 159, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 163, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 167, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 171, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 175, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 143, "Attachments - Position 7"); // description 0
-            doc.text(40, 151, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 183, "24"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[7].bool && props.kitState.attachmentPosition[7].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              console.log('loop, 2nd');
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[7][0].label) {
-                doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  console.log('if 4th');
-                  doc.text(141, 183, "1"); // quantity
-                  doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 183, "Attachments - Position 8"); // description 0
-                doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 195, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 199, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 203, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 207, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 211, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 215, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 183, "Attachments - Position 8"); // description 0
-            doc.text(40, 191, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 223, "25"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[8].bool && props.kitState.attachmentPosition[8].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[8][0].label) {
-                doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 223, "1"); // quantity
-                  doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 223, "Attachments - Position 9"); // description 0
-                doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 235, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 239, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 243, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 247, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 251, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 255, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 223, "Attachments - Position 9"); // description 0
-            doc.text(40, 231, "Empty line item"); // description 2
-          }
-        }
-      }
-
-      // page 6 - attachments -----------------------------------------------------------
-      {
-        doc.setPage(6);
-        doc.setTextColor(255); // make text white
-        doc.text(40, 57.5, "Attachments");
-        doc.setTextColor(0); // make text black
-
-        doc.text(21, 63, "26"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[9].bool && props.kitState.attachmentPosition[9].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[9][0].label) {
-                doc.text(27, 63, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 63, "1"); // quantity
-                  doc.text(149, 63, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 63, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 63, "Attachments - Position 10"); // description 0
-                doc.text(40, 67, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 71, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 75, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 79, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 83, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 87, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 91, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 95, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 63, "Attachments - Position 10"); // description 0
-            doc.text(40, 71, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 103, "27"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[10].bool && props.kitState.attachmentPosition[10].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[10][0].label) {
-                doc.text(27, 103, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 103, "1"); // quantity
-                  doc.text(149, 103, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 103, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 103, "Attachments - Position 11"); // description 0
-                doc.text(40, 107, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 111, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 115, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 119, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 123, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 127, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 131, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 135, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 103, "Attachments - Position 11"); // description 0
-            doc.text(40, 111, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 143, "28"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[11].bool && props.kitState.attachmentPosition[11].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[11][0].label) {
-                doc.text(27, 143, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 143, "1"); // quantity
-                  doc.text(149, 143, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 143, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 143, "Attachments - Position 12"); // description 0
-                doc.text(40, 147, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 151, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 155, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 159, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 163, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 167, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 171, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 175, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 143, "Attachments - Position 12"); // description 0
-            doc.text(40, 151, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 183, "29"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[12].bool && props.kitState.attachmentPosition[12].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[12][0].label) {
-                doc.text(27, 183, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 183, "1"); // quantity
-                  doc.text(149, 183, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 183, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 183, "Attachments - Position 13"); // description 0
-                doc.text(40, 187, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 191, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 195, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 199, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 203, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 207, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 211, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 215, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 183, "Attachments - Position 13"); // description 0
-            doc.text(40, 191, "Empty line item"); // description 2
-          }
-        }
-
-        doc.text(21, 223, "30"); // line ID
-        {
-          if (props.integrationRiserState.attachmentPosition[13].bool && props.kitState.attachmentPosition[13].bool) {
-            for (let i = 0; i < DataFile.attachmentItems.length; i++) {
-              if (DataFile.attachmentItems[i].label == props.attachmentStates[13][0].label) {
-                doc.text(27, 223, DataFile.attachmentItems[i].itemNumber); // item number
-                if (DataFile.attachmentItems[i].price != 0) {
-                  doc.text(141, 223, "1"); // quantity
-                  doc.text(149, 223, String(DataFile.attachmentItems[i].price)); // price, per
-                  doc.text(174, 223, String(DataFile.attachmentItems[i].price)); // price, extended
-                }
-                doc.text(40, 223, "Attachments - Position 14"); // description 0
-                doc.text(40, 227, DataFile.attachmentItems[i].description[1]); // description 1
-                doc.text(40, 231, DataFile.attachmentItems[i].description[2]); // description 2
-                doc.text(40, 235, DataFile.attachmentItems[i].description[3]); // description 3
-                doc.text(40, 239, DataFile.attachmentItems[i].description[4]); // description 4
-                doc.text(40, 243, DataFile.attachmentItems[i].description[5]); // description 5
-                doc.text(40, 247, DataFile.attachmentItems[i].description[6]); // description 6
-                doc.text(40, 251, DataFile.attachmentItems[i].description[7]); // description 7
-                doc.text(40, 255, DataFile.attachmentItems[i].description[8]); // description 8
-              }
-            }
-          } else {
-            doc.text(40, 223, "Attachments - Position 14"); // description 0
-            doc.text(40, 231, "Empty line item"); // description 2
+            doc.text(40, (yShift + 3), "Attachments - Position " + String(attachmentPositionNumber)); // description 0
+            doc.text(40, (yShift + 11), "Empty line item"); // description 2
           }
         }
       }

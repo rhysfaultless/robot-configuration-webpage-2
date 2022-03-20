@@ -1,12 +1,14 @@
 // model components
 import ModelAttachmentVelodyne from "./ModelAttachmentVelodyne";
-import ModelAttachmentPlate50 from "./ModelAttachmentPlate50";
-import ModelAttachmentPlate100 from "./ModelAttachmentPlate100";
 import ModelAttachmentHokuyo from "./ModelAttachmentHokuyo";
 import ModelAttachmentMicrostrain15 from "./ModelAttachmentMicrostrain15";
 
-// position data
-import attachmentPositionHeights from "/public/json/AttachmentPositionHeights";
+import ModelAttachmentBracketHorizontal from "./ModelAttachmentBracketHorizontal";
+import ModelAttachmentBracketVertical from "./ModelAttachmentBracketVertical";
+
+const offsetNull = {"xyz": [0, 0, 0], "rpy":[0, 0, 0]};
+const offsetBracketHorizontal = {"xyz": [0, 10.125, 0], "rpy":[0, 0, 0]};
+const offsetBracketVertical = {"xyz": [51.8, 96.925, 0], "rpy":[0, 0, (Math.PI/2)]};
 
 function AttachmentsModels(props) {
   const dataFile = props.dataFile;
@@ -14,21 +16,36 @@ function AttachmentsModels(props) {
   const attachmentPosition = attachmentPositionData[props.modelAttachmentPosition];
   var attachmentModels = {
     none: <></>,
-    velodyne_low: <ModelAttachmentVelodyne key="velodyne_low" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[0]} />,
-    velodyne_mid: (
+    velodyne: (
       <group key="null">
-        <ModelAttachmentPlate50 key="velodyne_mid" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[0]} />
-        <ModelAttachmentVelodyne key="null" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[1]} />
+        <ModelAttachmentBracketHorizontal key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentVelodyne key="velodyne" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketHorizontal}/>
       </group>
     ),
-    velodyne_high: (
+    velodyne_vertical: (
       <group key="null">
-        <ModelAttachmentPlate100 key="velodyne_high" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[0]} />
-        <ModelAttachmentVelodyne key="null" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[2]} />
+        <ModelAttachmentBracketVertical key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentVelodyne key="velodyne" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketVertical}/>
       </group>
     ),
-    hokuyo: <ModelAttachmentHokuyo key="hokuyo" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[0]} />,
-    microstrain: <ModelAttachmentMicrostrain15 key="microstrain" dataOne={attachmentPosition} dataTwo={attachmentPositionHeights[0]} />,
+    hokuyo: (
+      <group key="null">
+        <ModelAttachmentBracketHorizontal key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentHokuyo key="hokuyo" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketHorizontal}/>
+      </group>
+    ),
+    hokuyo_vertical: (
+      <group key="null">
+        <ModelAttachmentBracketVertical key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentHokuyo key="hokuyo" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketVertical}/>
+      </group>
+    ),
+    microstrain: (
+      <group key="null">
+        <ModelAttachmentBracketHorizontal key="bracket_riser_horizontal" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetNull}/>
+        <ModelAttachmentMicrostrain15 key="microstrain" dataOne={attachmentPosition} dataTwo={props.modelAttachmentPositionShiftOne} dataThree={offsetBracketHorizontal}/>
+      </group>
+    ),
   };
 
   return attachmentModels[props.userSelectedData.value];
@@ -42,6 +59,7 @@ function AttachmentRenderer(props) {
         <AttachmentsModels
           modelAttachmentId={i}
           modelAttachmentPosition={props.attachmentPosition}
+          modelAttachmentPositionShiftOne={props.modelAttachmentPositionShiftOne}
           userSelectedData={props.attachmentSelectionState}
           dataFile={props.dataFile}
         />

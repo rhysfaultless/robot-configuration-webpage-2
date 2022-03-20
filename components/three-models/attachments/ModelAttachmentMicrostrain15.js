@@ -6,10 +6,10 @@ export default function Model(props) {
   let modelPosition = [];
   let modelRotation = [];
   for (let i = 0; i < 3; i++) {
-    modelPosition[i] = props.dataOne.xyz[i] + props.dataTwo.xyz[i];
-    modelRotation[i] = props.dataOne.rpy[i] + props.dataTwo.rpy[i];
+    modelPosition[i] = props.dataOne.xyz[i] + props.dataTwo.xyz[i] + props.dataThree.xyz[i];
+    modelRotation[i] = props.dataOne.rpy[i] + props.dataTwo.rpy[i] + props.dataThree.rpy[i];
   }
-  const { nodes, materials } = useGLTF('/models/attachment-microstrain-3dm-gx5-15.glb');
+  const { nodes, materials } = useGLTF('/models/attachments/attachment-microstrain-3dm-gx5-15.glb');
   return (
     <group ref={group} {...props} dispose={null} position={modelPosition} rotation={modelRotation} >
       <mesh
@@ -24,4 +24,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload('/models/attachment-microstrain-3dm-gx5-15.glb');
+useGLTF.preload('/models/attachments/attachment-microstrain-3dm-gx5-15.glb');

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import NavbarEmpty from '/components/page-layout/NavbarEmpty';
 
 function Page() {
   return (
@@ -9,10 +8,7 @@ function Page() {
         <title>Clearpath | Home</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div>
-        <NavbarEmpty />
-      </div>
-      <div className="grid place-items-center">
+      <div className="flex items-center justify-center h-screen">
         <Image 
           src="/images/CPR_Family_Portrait.jpg" 
           alt="Clearpath Robotics hexagon logo"

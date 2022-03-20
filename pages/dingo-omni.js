@@ -13,15 +13,21 @@ import html2canvas from "html2canvas";
 // Three.js library imports, including custom components used on all robot platforms
 import { Canvas } from "@react-three/fiber";
 import ConfiguredOrbitControls from "/components/three-settings/ConfiguredOrbitControls";
-import ConfiguredCamera from "/components/three-settings/ConfiguredCamera";
+import { PerspectiveCamera } from "@react-three/drei";
 import ModelBanana from "/components/three-models/ModelBanana";
 
 // custom component imports - three.js - robot specific
 import ModelRobotChassisBase from "/components/three-models/dingo-o/ModelRobotChassisBase";
 import ModelRobotChassisPanels from "/components/three-models/dingo-o/ModelRobotChassisPanels";
 import ModelRobotChassisWheels from "/components/three-models/dingo-o/ModelRobotChassisWheels";
-import ModelRobotChassisIntegrationRiser from "/components/three-models/dingo-o/ModelRobotChassisIntegrationRiser";
+
+// import ModelIntegrationExtrusion from "/components/three-models/husky/IntegrationExtrusion";
+// import ModelIntegrationPlate from "/components/three-models/husky/IntegrationPlate";
+import RendererIntegrationRiser from "/components/three-models/dingo-o/RendererIntegrationRiser";
+// import RendererIntegrationTower from "/components/three-models/husky/RendererIntegrationTower";
+//import ModelWeatherproofing from "/components/three-models/husky/Weatherproofing";
 import AttachmentsRenderer from "/components/three-models/attachments/AttachmentsRenderer";
+// import ModelRobotChassisIntegrationRiser from "/components/three-models/dingo-o/ModelRobotChassisIntegrationRiser";
 
 // json data imports - common for all robot platforms
 import selectYesNoData from "/public/json/DataYesNo";
@@ -387,7 +393,7 @@ function Page() {
               <ambientLight intensity={0.7} />
               <spotLight position={[10000, 3000, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
               <ConfiguredOrbitControls />
-              <ConfiguredCamera />
+              <PerspectiveCamera makeDefault fov={65} position={[600, -200, 600]} />
 
               {/*  Three.js models  */}
               <Suspense fallback={null}>

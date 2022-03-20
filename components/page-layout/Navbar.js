@@ -12,16 +12,31 @@ function Navbar() {
           </a>
         </Link>
       </div>
-      <div className="right-0 relative w-1/2">
+      <div className="right-0 relative w-3/4">
         <ul className="justify-end flex space-x-8 px-10 ">
           <li>
-            <Link href="/outdoor">
-              <a className="px-6 text-white hover:text-yellow-400">Outdoor</a>
+            <Link href="/dingo-diff">
+              <a className="px-2 text-white hover:text-yellow-400">Dingo-D</a>
             </Link>
           </li>
           <li>
-            <Link href="/indoor">
-              <a className="text-white hover:text-yellow-400">Indoor</a>
+            <Link href="/dingo-omni">
+              <a className="px-2 text-white hover:text-yellow-400">Dingo-O</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/boxer">
+              <a className="px-2 text-white hover:text-yellow-400">Boxer</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/jackal">
+              <a className="px-2 text-white hover:text-yellow-400">Jackal</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/husky">
+              <a className="px-2 text-white hover:text-yellow-400">Husky</a>
             </Link>
           </li>
         </ul>

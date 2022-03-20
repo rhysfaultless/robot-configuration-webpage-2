@@ -18,4 +18,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload('/models/dingo-o/chassis-panels-husky.glb');
+useGLTF.preload('/models/husky/chassis-panels-husky.glb');
