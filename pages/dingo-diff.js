@@ -25,11 +25,7 @@ import computerDataFile from "/public/json/DataComputer";
 import ModelRobotChassisBase from "/components/three-models/dingo-diff/ChassisBase";
 import ModelRobotChassisPanels from "/components/three-models/dingo-diff/ChassisPanels";
 import ModelRobotChassisWheels from "/components/three-models/dingo-diff/ChassisWheels";
-// import ModelIntegrationExtrusion from "/components/three-models/dingo-diff/IntegrationExtrusion";
-// import ModelIntegrationPlate from "/components/three-models/dingo-diff/IntegrationPlate";
 import RendererIntegrationRiser from "/components/three-models/dingo-diff/RendererIntegrationRiser";
-// import RendererIntegrationTower from "/components/three-models/dingo-diff/RendererIntegrationTower";
-// import ModelWeatherproofing from "/components/three-models/dingo-diff/Weatherproofing";
 
 // json data imports - robot platform specific
 import dataFile from "/public/json/DataDingoDiff";

@@ -483,11 +483,11 @@
           },
           {
             "id": 2,
-            "bool": true
+            "bool": false
           },
           {
             "id": 3,
-            "bool": true
+            "bool": false
           },
           {
             "id": 4,
@@ -531,7 +531,11 @@
           },
           {
             "id": 14,
-            "bool": false
+            "bool": true
+          },
+          {
+            "id": 15,
+            "bool": true
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -562,11 +566,11 @@
           },
           {
             "id": 2,
-            "bool": true
+            "bool": false
           },
           {
             "id": 3,
-            "bool": true
+            "bool": false
           },
           {
             "id": 4,
@@ -611,6 +615,10 @@
           {
             "id": 14,
             "bool": false
+          },
+          {
+            "id": 15,
+            "bool": true
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -641,11 +649,11 @@
           },
           {
             "id": 2,
-            "bool": true
+            "bool": false
           },
           {
             "id": 3,
-            "bool": true
+            "bool": false
           },
           {
             "id": 4,
@@ -690,6 +698,10 @@
           {
             "id": 14,
             "bool": false
+          },
+          {
+            "id": 15,
+            "bool": true
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -704,32 +716,6 @@
           " ",
           " "
         ]
-      }
-  ]},
-
-  "integrationTowerOne": {
-    "bool": false,
-    "positions": [
-      {
-        "id": 1,
-        "xyz": [0, 0, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 1",
-        "value": "row_1"
-      },
-      {
-        "id": 2,
-        "xyz": [0, 0, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 2",
-        "value": "row_2"
-      },
-      {
-        "id": 3,
-        "xyz": [0, 0, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 3",
-        "value": "row_3"
       }
     ],
     "relatedAttachmentPositions": [
@@ -747,7 +733,7 @@
       },
       {
         "id": 4,
-        "bool": true
+        "bool": false
       },
       {
         "id": 5,
@@ -780,6 +766,102 @@
       {
         "id": 12,
         "bool": true
+      },
+      {
+        "id": 13,
+        "bool": true
+      },
+      {
+        "id": 14,
+        "bool": false
+      },
+      {
+        "id": 15,
+        "bool": false
+      }
+    ]
+  },
+
+  "integrationTowerOne": {
+    "bool": false,
+    "positions": [
+      {
+        "id": 1,
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 1",
+        "value": "row_1"
+      },
+      {
+        "id": 2,
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 2",
+        "value": "row_2"
+      },
+      {
+        "id": 3,
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 3",
+        "value": "row_3"
+      },
+      {
+        "id": 4,
+        "xyz": [0, 0, 0],
+        "rpy": [0, 0, 0],
+        "label": "Row 4",
+        "value": "row_4"
+      }
+    ],
+    "relatedAttachmentPositions": [
+      {
+        "id": 1,
+        "bool": false
+      },
+      {
+        "id": 2,
+        "bool": false
+      },
+      {
+        "id": 3,
+        "bool": false
+      },
+      {
+        "id": 4,
+        "bool": false
+      },
+      {
+        "id": 5,
+        "bool": false
+      },
+      {
+        "id": 6,
+        "bool": false
+      },
+      {
+        "id": 7,
+        "bool": false
+      },
+      {
+        "id": 8,
+        "bool": false
+      },
+      {
+        "id": 9,
+        "bool": false
+      },
+      {
+        "id": 10,
+        "bool": false
+      },
+      {
+        "id": 11,
+        "bool": false
+      },
+      {
+        "id": 12,
+        "bool": false
       },
       {
         "id": 13,
@@ -908,17 +990,17 @@
     },
     {
       "id": 6,
-      "xyz": [80, 69, -160],
+      "xyz": [240, 69, 0],
       "rpy": [0, 0, 0]
     },
     {
       "id": 7,
-      "xyz": [-80, 69, -160],
+      "xyz": [240, 69, 160],
       "rpy": [0, 0, 0]
     },
     {
       "id": 8,
-      "xyz": [240, 69, 0],
+      "xyz": [80, 69, -160],
       "rpy": [0, 0, 0]
     },
     {
@@ -928,22 +1010,22 @@
     },
     {
       "id": 10,
-      "xyz": [-80, 69, 160],
-      "rpy": [0, 0, 0]
-    },
-    {
-      "id": 11,
-      "xyz": [240, 69, 160],
-      "rpy": [0, 0, 0]
-    },
-    {
-      "id": 12,
       "xyz": [80, 69, 160],
       "rpy": [0, 0, 0]
     },
     {
+      "id": 11,
+      "xyz": [-160, 69, -160],
+      "rpy": [0, 0, 0]
+    },
+    {
+      "id": 12,
+      "xyz": [-160, 69, 0],
+      "rpy": [0, 0, 0]
+    },
+    {
       "id": 13,
-      "xyz": [-80, 69, 160],
+      "xyz": [-160, 69, 160],
       "rpy": [0, 0, 0]
     },
     {
@@ -1138,7 +1220,7 @@
         },
         {
           "id": 13,
-          "bool": false
+          "bool": true
         },
         {
           "id": 14,

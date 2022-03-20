@@ -15,23 +15,17 @@ import { Canvas } from "@react-three/fiber";
 import ConfiguredOrbitControls from "/components/three-settings/ConfiguredOrbitControls";
 import { PerspectiveCamera } from "@react-three/drei";
 import ModelBanana from "/components/three-models/ModelBanana";
-
-// custom component imports - three.js - robot specific
-import ModelRobotChassisBase from "/components/three-models/dingo-o/ModelRobotChassisBase";
-import ModelRobotChassisPanels from "/components/three-models/dingo-o/ModelRobotChassisPanels";
-import ModelRobotChassisWheels from "/components/three-models/dingo-o/ModelRobotChassisWheels";
-
-// import ModelIntegrationExtrusion from "/components/three-models/husky/IntegrationExtrusion";
-// import ModelIntegrationPlate from "/components/three-models/husky/IntegrationPlate";
-import RendererIntegrationRiser from "/components/three-models/dingo-o/RendererIntegrationRiser";
-// import RendererIntegrationTower from "/components/three-models/husky/RendererIntegrationTower";
-//import ModelWeatherproofing from "/components/three-models/husky/Weatherproofing";
 import AttachmentsRenderer from "/components/three-models/attachments/AttachmentsRenderer";
-// import ModelRobotChassisIntegrationRiser from "/components/three-models/dingo-o/ModelRobotChassisIntegrationRiser";
 
 // json data imports - common for all robot platforms
 import selectYesNoData from "/public/json/DataYesNo";
 import computerDataFile from "/public/json/DataComputer";
+
+// custom component imports - three.js - robot specific
+import ModelRobotChassisBase from "/components/three-models/dingo-omni/ChassisBase";
+import ModelRobotChassisPanels from "/components/three-models/dingo-omni/ChassisPanels";
+import ModelRobotChassisWheels from "/components/three-models/dingo-omni/ChassisWheels";
+import RendererIntegrationRiser from "/components/three-models/dingo-omni/RendererIntegrationRiser";
 
 // json data imports - robot platform specific
 import dataFile from "/public/json/DataDingoOmni";
@@ -48,10 +42,19 @@ const robotPlatformDataLabel = robotPlatformData.label;
 const colourData = dataFile.panelColours;
 const batteryData = dataFile.batteryItems;
 const kitData = dataFile.kits;
-const allowIntegrationRiser = dataFile.integrationRiser.bool; 
+const allowIntegrationPlate = dataFile.integrationPlate.bool;
+const integrationPlateData = dataFile.integrationPlate.value;
+const allowWeatherproofing = dataFile.integrationPlate.bool;
+const weatherproofingData = dataFile.weatherproofing.value;
+const allowIntegrationRiser = dataFile.integrationRiser.bool;
 const integrationRiserData = dataFile.integrationRiser.value;
-const allowIntegrationTower = dataFile.integrationTower.bool;
-const integrationTowerData = dataFile.integrationTower.value; 
+const integrationRiserRelatedAttachmentPositionsData = dataFile.integrationRiser.relatedAttachmentPositions;
+
+const allowIntegrationTowerOne = dataFile.integrationTowerOne.bool;
+const integrationTowerOneData = dataFile.integrationTowerOne.value;
+const integrationTowerOnePositionData = dataFile.integrationTowerOne.positions;
+const integrationTowerOneRelatedAttachmentPositionsData = dataFile.integrationTowerOne.relatedAttachmentPositions;
+
 const attachmentData = dataFile.attachmentItems;
 const bananaPositionData = dataFile.bananaPosition;
 
@@ -69,9 +72,12 @@ function Page() {
   //
   const [kitSelectionState, changeKitSelectionState] = useState(kitData[0]);
   //
+  const [integrationPlateSelectionState, changeIntegrationPlateSelectionState] = useState(integrationPlateData[0]);
+  const [weatherproofingSelectionState, changeWeatherproofingSelectionState] = useState(weatherproofingData[0]);
   const [integrationRiserSelectionState, changeIntegrationRiserSelectionState] = useState(integrationRiserData[0]);
-  const [integrationTowerOneSelectionState, changeIntegrationTowerOneSelectionState] = useState(integrationRiserData[0]);
-  const [integrationTowerTwoSelectionState, changeIntegrationTowerTwoSelectionState] = useState(integrationRiserData[0]);
+  const [integrationTowerOneSelectionState, changeIntegrationTowerOneSelectionState] = useState(integrationTowerOneData[0]);
+  const [integrationTowerOnePositionState, changeIntegrationTowerOnePositionState] = useState(integrationTowerOnePositionData[0]);
+  
   const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
   const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
@@ -86,21 +92,23 @@ function Page() {
   const [attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState] = useState(attachmentData[0]);
   const [attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState] = useState(attachmentData[0]);
   const [attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState] = useState(attachmentData[0]);
+  const [attachmentFifteenSelectionState, changeAttachmentFifteenSelectionState] = useState(attachmentData[0]);
   const attachmentSelectionStates = [
-    [attachmentOneSelectionState, changeAttachmentOneSelectionState, 0],
-    [attachmentTwoSelectionState, changeAttachmentTwoSelectionState, 1],
-    [attachmentThreeSelectionState, changeAttachmentThreeSelectionState, 2],
-    [attachmentFourSelectionState, changeAttachmentFourSelectionState, 3],
-    [attachmentFiveSelectionState, changeAttachmentFiveSelectionState, 4],
-    [attachmentSixSelectionState, changeAttachmentSixSelectionState, 5],
-    [attachmentSevenSelectionState, changeAttachmentSevenSelectionState, 6],
-    [attachmentEightSelectionState, changeAttachmentEightSelectionState, 7],
-    [attachmentNineSelectionState, changeAttachmentNineSelectionState, 8],
-    [attachmentTenSelectionState, changeAttachmentTenSelectionState, 9],
-    [attachmentElevenSelectionState, changeAttachmentElevenSelectionState, 10],
-    [attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState, 11],
-    [attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState, 12],
-    [attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState, 13],
+    [0, attachmentOneSelectionState, changeAttachmentOneSelectionState, integrationTowerOneSelectionState],
+    [1, attachmentTwoSelectionState, changeAttachmentTwoSelectionState, integrationTowerOneSelectionState],
+    [2, attachmentThreeSelectionState, changeAttachmentThreeSelectionState, integrationTowerOneSelectionState],
+    [3, attachmentFourSelectionState, changeAttachmentFourSelectionState, integrationTowerOneSelectionState],
+    [4, attachmentFiveSelectionState, changeAttachmentFiveSelectionState, integrationTowerOneSelectionState],
+    [5, attachmentSixSelectionState, changeAttachmentSixSelectionState, integrationTowerOneSelectionState],
+    [6, attachmentSevenSelectionState, changeAttachmentSevenSelectionState, integrationTowerOneSelectionState],
+    [7, attachmentEightSelectionState, changeAttachmentEightSelectionState, integrationTowerOneSelectionState],
+    [8, attachmentNineSelectionState, changeAttachmentNineSelectionState, integrationTowerOneSelectionState],
+    [9, attachmentTenSelectionState, changeAttachmentTenSelectionState, integrationTowerOneSelectionState],
+    [10, attachmentElevenSelectionState, changeAttachmentElevenSelectionState, integrationTowerOneSelectionState],
+    [11, attachmentTwelveSelectionState, changeAttachmentTwelveSelectionState, integrationTowerOneSelectionState],
+    [12, attachmentThirteenSelectionState, changeAttachmentThirteenSelectionState, integrationTowerOneSelectionState],
+    [13, attachmentFourteenSelectionState, changeAttachmentFourteenSelectionState, integrationTowerOneSelectionState],
+    [14, attachmentFifteenSelectionState, changeAttachmentFifteenSelectionState, integrationTowerOneSelectionState],
   ];
   //
   const [bananaSelectionState, changeBananaSelectionState] = useState(selectYesNoData[0]);
@@ -115,7 +123,18 @@ function Page() {
   }
 
   function makePriceLeadStatesArray() {
-    let priceLeadStatesArray = [robotPlatformData, colourSelectionState, batterySelectionState, computerSelectionState, kitSelectionState, integrationRiserSelectionState];
+    let priceLeadStatesArray = [
+      robotPlatformData,
+      colourSelectionState,
+      batterySelectionState,
+      computerSelectionState,
+      kitSelectionState,
+      integrationPlateSelectionState,
+      weatherproofingSelectionState,
+      integrationRiserSelectionState,
+      integrationTowerOneSelectionState,
+      // integrationTowerTwoSelectionState
+    ];
     // add attachments to priceLeadStatesArray
     {
       if (kitSelectionState.attachmentPosition[0].bool && integrationRiserSelectionState.attachmentPosition[0].bool) {
@@ -172,15 +191,20 @@ function Page() {
 
   // Select rendering functions
   function SelectAttachmentsRendererHelper(indexOfElementFromArray) {
-    if (integrationRiserSelectionState.attachmentPosition[indexOfElementFromArray].bool && kitSelectionState.attachmentPosition[indexOfElementFromArray].bool) {
+    if (
+      integrationPlateSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
+      integrationRiserSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
+      kitSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
+      integrationTowerOneSelectionState.attachmentPosition[indexOfElementFromArray].bool
+    ) {
       const tempKeyName = "selectAttachmentsRendererKey" + String(indexOfElementFromArray);
       return (
         <SelectFormatted
           displayName={"Attachment " + String(indexOfElementFromArray + 1)}
           options={attachmentData}
           defaultValue={indexOfElementFromArray}
-          currentState={attachmentSelectionStates[indexOfElementFromArray][0]}
-          changeStateFunction={attachmentSelectionStates[indexOfElementFromArray][1]}
+          currentState={attachmentSelectionStates[indexOfElementFromArray][1]}
+          changeStateFunction={attachmentSelectionStates[indexOfElementFromArray][2]}
           key={tempKeyName}
         />
       );
@@ -190,19 +214,34 @@ function Page() {
     let selectFieldsArray = [];
     // using forEach rather than a for loop, so I can return a DOM component for each element of the array
     attachmentSelectionStates.forEach((elementFromArray) => {
-      selectFieldsArray.push(SelectAttachmentsRendererHelper(elementFromArray[2]));
+      selectFieldsArray.push(SelectAttachmentsRendererHelper(elementFromArray[0]));
     });
     return <>{selectFieldsArray}</>;
   }
 
   // Attachment Models rendering functions
   function ModelAttachmentsRendererHelper(elementFromArray) {
-    const tempKeyName = "modelAttachmentsRendererKey" + String(elementFromArray[2]);
-    if (kitSelectionState.attachmentPosition[elementFromArray[2]].bool && integrationRiserSelectionState.attachmentPosition[elementFromArray[2]].bool) {
+    const tempKeyName = "modelAttachmentsRendererKey" + String(elementFromArray[0]);
+    if (
+      integrationPlateSelectionState.attachmentPosition[elementFromArray[0]].bool &&
+      kitSelectionState.attachmentPosition[elementFromArray[0]].bool &&
+      integrationRiserSelectionState.attachmentPosition[elementFromArray[0]].bool &&
+      integrationTowerOneSelectionState.attachmentPosition[elementFromArray[0]].bool
+    ) {
+      let tempObject = {"xyz": [0, 0, 0], "rpy":[0, 0, 0]};
+      if(integrationTowerOneRelatedAttachmentPositionsData[elementFromArray[0]].bool || integrationRiserRelatedAttachmentPositionsData[elementFromArray[0]].bool){
+        tempObject.xyz[0] = integrationTowerOnePositionState.xyz[0];
+        if(integrationTowerOneSelectionState.xyz[1] > integrationRiserSelectionState.xyz[1]) {
+          tempObject.xyz[1] = integrationTowerOneSelectionState.xyz[1];
+        }else{
+          tempObject.xyz[1] = integrationRiserSelectionState.xyz[1];
+        }
+      }
       return (
         <AttachmentsRenderer
-          attachmentSelectionState={elementFromArray[0]}
-          attachmentPosition={elementFromArray[2]}
+          attachmentSelectionState={elementFromArray[1]}
+          attachmentPosition={elementFromArray[0]}
+          modelAttachmentPositionShiftOne={tempObject}
           options={attachmentData}
           dataFile={dataFile}
           key={tempKeyName}
@@ -221,12 +260,14 @@ function Page() {
 
   // Kit Models rendering functions
   function ModelKitsRendererHelper(elementFromArray) {
-    const tempKeyName = "modelKitsRendererKey" + String(elementFromArray[2]);
-    if (!kitSelectionState.attachmentPosition[elementFromArray[2]].bool) {
+    const tempKeyName = "modelKitsRendererKey" + String(elementFromArray[0]);
+    if (!kitSelectionState.attachmentPosition[elementFromArray[0]].bool) {
+      let tempObject = {"xyz": [0, 0, 0], "rpy":[0, 0, 0]};
       return (
         <AttachmentsRenderer
-          attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition[elementFromArray[2]].attachmentItem]}
-          attachmentPosition={kitSelectionState.attachmentPosition[elementFromArray[2]].position}
+          attachmentSelectionState={attachmentData[kitSelectionState.attachmentPosition[elementFromArray[0]].attachmentItem]}
+          attachmentPosition={kitSelectionState.attachmentPosition[elementFromArray[0]].position}
+          modelAttachmentPositionShiftOne={tempObject}
           options={attachmentData}
           dataFile={dataFile}
           key={tempKeyName}
@@ -332,41 +373,32 @@ function Page() {
               </div>
               <div>
                 <ul className="flex flex-col w-full text-black">
+                  {/*  Select, Integration Riser  */}
+                  {!kitSelectionState.bool && allowIntegrationRiser && (
+                    <SelectFormatted
+                      displayName={"Riser"}
+                      options={integrationRiserData}
+                      defaultValue={0}
+                      currentState={integrationRiserSelectionState}
+                      changeStateFunction={changeIntegrationRiserSelectionState}
+                    />
+                  )}
+
                   {/*  Select, Kits  */}
-                  <SelectFormatted
+                  {!integrationRiserSelectionState.bool && <SelectFormatted
                     displayName={"Kits"}
                     options={kitData}
                     defaultValue={0}
                     currentState={kitSelectionState}
                     changeStateFunction={changeKitSelectionState}
-                  />
+                  />}
                 </ul>
               </div>
-
               <div>
                 <ul className="flex flex-col w-full text-black">
-                  {/*  Select, Integration Riser  */}
-                  {allowIntegrationRiser && <SelectFormatted
-                    displayName={"Riser"}
-                    options={integrationRiserData}
-                    defaultValue={0}
-                    currentState={integrationRiserSelectionState}
-                    changeStateFunction={changeIntegrationRiserSelectionState}
-                  />}
-
-                  {/*  Select, Integration Tower  */}
-                  {allowIntegrationTower && <SelectFormatted
-                    displayName={"Riser"}
-                    options={integrationRiserData}
-                    defaultValue={0}
-                    currentState={integrationRiserSelectionState}
-                    changeStateFunction={changeIntegrationRiserSelectionState}
-                  />}
-
                   <SelectAttachmentsRenderer />
                 </ul>
               </div>
-
               <div>
                 <ul className="flex flex-col w-full text-black">
                   {/*  Select, Banana For Scale  */}
@@ -385,6 +417,12 @@ function Page() {
             <br />
             <br />
             <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         </aside>
         <main className="w-2/3 fixed h-screen right-0">
@@ -393,15 +431,15 @@ function Page() {
               <ambientLight intensity={0.7} />
               <spotLight position={[10000, 3000, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
               <ConfiguredOrbitControls />
-              <PerspectiveCamera makeDefault fov={65} position={[600, -200, 600]} />
+              <PerspectiveCamera makeDefault fov={65} position={[600, -100, 600]} />
 
               {/*  Three.js models  */}
               <Suspense fallback={null}>
                 <ModelRobotChassisBase />
                 <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
                 <ModelRobotChassisWheels />
+                <RendererIntegrationRiser selectionState={integrationRiserSelectionState} options={integrationRiserData} key={integrationRiserSelectionState.value} /> 
                 <ModelKitsRenderer />
-                {integrationRiserSelectionState.bool && <ModelRobotChassisIntegrationRiser />}
                 <ModelAttachmentsRenderer />
                 {bananaSelectionState.bool && <ModelBanana dataOne={bananaPositionData} />}
               </Suspense>
@@ -428,10 +466,13 @@ function Page() {
               ramState={computerRamSelectionState}
               storageState={computerStorageSelectionState}
               gpuState={computerGpuSelectionState}
-              kitState={kitSelectionState}
-              statesArray={makePriceLeadStatesArray()}
+              integrationPlateState={integrationPlateSelectionState}
+              weatherproofingState={weatherproofingSelectionState}
               integrationRiserState={integrationRiserSelectionState}
+              integrationTowerOneState={integrationTowerOneSelectionState}
+              kitState={kitSelectionState}
               attachmentStates={attachmentSelectionStates}
+              statesArray={makePriceLeadStatesArray()}
               screenshotData={screenshotDataState}
             />
           </div>
