@@ -22,17 +22,15 @@ import selectYesNoData from "/public/json/DataYesNo";
 import computerDataFile from "/public/json/DataComputer";
 
 // custom component imports - three.js - robot specific
-import ModelRobotChassisBase from "/components/three-models/husky/ChassisBase";
-import ModelRobotChassisPanels from "/components/three-models/husky/ChassisPanels";
-import ModelRobotChassisWheels from "/components/three-models/husky/ChassisWheels";
-import ModelIntegrationExtrusion from "/components/three-models/husky/IntegrationExtrusion";
-import ModelIntegrationPlate from "/components/three-models/husky/IntegrationPlate";
-import RendererIntegrationRiser from "/components/three-models/husky/RendererIntegrationRiser";
-import RendererIntegrationTower from "/components/three-models/husky/RendererIntegrationTower";
-import ModelWeatherproofing from "/components/three-models/husky/Weatherproofing";
+import ModelRobotChassisBase from "/components/three-models/jackal/ChassisBase";
+import ModelRobotChassisPanels from "/components/three-models/jackal/ChassisPanels";
+import ModelRobotChassisWheels from "/components/three-models/jackal/ChassisWheels";
+import ModelIntegrationPlate from "/components/three-models/jackal/IntegrationPlate";
+import RendererIntegrationRiser from "/components/three-models/jackal/RendererIntegrationRiser";
+import RendererIntegrationTower from "/components/three-models/jackal/RendererIntegrationTower";
 
 // json data imports - robot platform specific
-import dataFile from "/public/json/DataHusky";
+import dataFile from "/public/json/DataJackal";
 
 // constants from JSON files
 const computerData = computerDataFile.computers;
@@ -52,6 +50,8 @@ const allowWeatherproofing = dataFile.integrationPlate.bool;
 const weatherproofingData = dataFile.weatherproofing.value;
 const allowIntegrationRiser = dataFile.integrationRiser.bool;
 const integrationRiserData = dataFile.integrationRiser.value;
+const integrationRiserRelatedAttachmentPositionsData = dataFile.integrationRiser.relatedAttachmentPositions;
+
 const allowIntegrationTowerOne = dataFile.integrationTowerOne.bool;
 const integrationTowerOneData = dataFile.integrationTowerOne.value;
 const integrationTowerOnePositionData = dataFile.integrationTowerOne.positions;
@@ -194,9 +194,11 @@ function Page() {
   function SelectAttachmentsRendererHelper(indexOfElementFromArray) {
     if (
       integrationPlateSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
-      integrationRiserSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
       kitSelectionState.attachmentPosition[indexOfElementFromArray].bool &&
-      integrationTowerOneSelectionState.attachmentPosition[indexOfElementFromArray].bool
+      (
+        integrationRiserSelectionState.attachmentPosition[indexOfElementFromArray].bool ||
+        integrationTowerOneSelectionState.attachmentPosition[indexOfElementFromArray].bool
+      )
     ) {
       const tempKeyName = "selectAttachmentsRendererKey" + String(indexOfElementFromArray);
       return (
@@ -226,13 +228,20 @@ function Page() {
     if (
       integrationPlateSelectionState.attachmentPosition[elementFromArray[0]].bool &&
       kitSelectionState.attachmentPosition[elementFromArray[0]].bool &&
-      integrationRiserSelectionState.attachmentPosition[elementFromArray[0]].bool &&
-      integrationTowerOneSelectionState.attachmentPosition[elementFromArray[0]].bool
+      (
+        integrationRiserSelectionState.attachmentPosition[elementFromArray[0]].bool ||
+        integrationTowerOneSelectionState.attachmentPosition[elementFromArray[0]].bool
+      )
     ) {
       let tempObject = {"xyz": [0, 0, 0], "rpy":[0, 0, 0]};
-      if(integrationTowerOneRelatedAttachmentPositionsData[elementFromArray[0]].bool){
-        tempObject.xyz[0] = integrationTowerOnePositionState.xyz[0];
-        tempObject.xyz[1] = integrationTowerOneSelectionState.xyz[1];
+      if(integrationTowerOneRelatedAttachmentPositionsData[elementFromArray[0]].bool || integrationRiserRelatedAttachmentPositionsData[elementFromArray[0]].bool){
+        // testing
+        if(integrationTowerOneSelectionState.xyz[1] > integrationRiserSelectionState.xyz[1]) {
+          tempObject.xyz[0] = integrationTowerOnePositionState.xyz[0];
+          tempObject.xyz[1] = integrationTowerOneSelectionState.xyz[1];
+        }else{
+          tempObject.xyz[1] = integrationRiserSelectionState.xyz[1];
+        }
       }
       return (
         <AttachmentsRenderer
@@ -250,6 +259,7 @@ function Page() {
     let attachmentModelsArray = [];
     // using forEach rather than a for loop, so I can return a DOM component for each element of the array
     attachmentSelectionStates.forEach((elementFromArray) => {
+      //console.log(elementFromArray);
       attachmentModelsArray.push(ModelAttachmentsRendererHelper(elementFromArray));
     });
     return <>{attachmentModelsArray}</>;
@@ -381,17 +391,6 @@ function Page() {
                     />
                   )}
 
-                  {/*  Select, Weatherproofing  */}
-                  {integrationPlateSelectionState.bool && allowWeatherproofing && (
-                    <SelectFormatted
-                      displayName={"Weatherproofing"}
-                      options={weatherproofingData}
-                      defaultValue={0}
-                      currentState={weatherproofingSelectionState}
-                      changeStateFunction={changeWeatherproofingSelectionState}
-                    />
-                  )}
-
                   {/*  Select, Integration Riser  */}
                   {integrationPlateSelectionState.bool && allowIntegrationRiser && !(integrationTowerOneSelectionState.bool) && (
                     <SelectFormatted
@@ -472,16 +471,14 @@ function Page() {
               <ambientLight intensity={0.7} />
               <spotLight position={[10000, 3000, 1000]} angle={0.9} penumbra={1} intensity={0.6} castShadow shadow-mapSize={[5000, 5000]} />
               <ConfiguredOrbitControls />
-              <PerspectiveCamera makeDefault fov={65} position={[600, -900, 600]} />
+              <PerspectiveCamera makeDefault fov={65} position={[600, -400, 600]} />
 
               {/*  Three.js models  */}
               <Suspense fallback={null}>
                 <ModelRobotChassisBase />
                 <ModelRobotChassisPanels modelColour={colourSelectionState.rgb} />
                 <ModelRobotChassisWheels />
-                {!integrationPlateSelectionState.bool && <ModelIntegrationExtrusion />}
                 {integrationPlateSelectionState.bool && <ModelIntegrationPlate />}
-                {integrationPlateSelectionState.bool && weatherproofingSelectionState.bool && <ModelWeatherproofing />}
                 {integrationPlateSelectionState.bool && 
                   <RendererIntegrationRiser
                     selectionState={integrationRiserSelectionState}

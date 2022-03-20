@@ -3,14 +3,14 @@ import { useGLTF } from '@react-three/drei';
 
 export default function Model(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('/models/jackal/integration-plate-jackal.glb');
+  const { nodes, materials } = useGLTF('/models/jackal/chassis-integration-plate-jackal.glb');
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes['integration-plate-jackal'].geometry}
-        material={nodes['integration-plate-jackal'].material}
+        geometry={nodes['chassis-integration-plate-jackal'].geometry}
+        material={nodes['chassis-integration-plate-jackal'].material}
       >
         <meshStandardMaterial attach="material" color="rgb(80, 80, 80)" />
       </ mesh>
@@ -18,4 +18,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload('/models/jackal/integration-plate-jackal.glb');
+useGLTF.preload('/models/jackal/chassis-integration-plate-jackal.glb');

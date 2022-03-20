@@ -1,22 +1,22 @@
 {
   "webpage": {
-    "tabTitle": "Clearpath | Husky"
+    "tabTitle": "Clearpath | Jackal"
   },
 
   "robotPlatform": {
-    "label": "Husky",
-    "price": 18625,
+    "label": "Jackal",
+    "price": 11750,
     "leadTime": 3,
-    "itemNumber": "040000",
-    "labelPdf": "Husky",
+    "itemNumber": "06510",
+    "labelPdf": "Jackal",
     "_comment": ["                                                         end of line|"],
     "description": [
-      "Robot Platform - Husky A200",
-      "Specifications: A 4 wheel drive, differential robot, Husky",
+      "Robot Platform - Jackal",
+      "Specifications: A 4 wheel drive, differential robot, Jackal",
       "includes user power breakouts for 12 V, 24 V, and unregulated 24 V ",
-      "battery voltage. Husky has a maximum speed of 1 m/s with a ",
-      "maximum payload of 75 kg. ",
-      "Husky runs on ROS Noetic and Ubuntu Server 20-04. ",
+      "battery voltage. Jackal has a maximum speed of 2 m/s with a ",
+      "maximum payload of 20 kg. ",
+      "Jackal runs on ROS Noetic and Ubuntu Server 20-04. ",
       "",
       "",
       ""
@@ -34,7 +34,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Yellow",
-        "Specifications: The Husky's front and rear panels will be coated yellow.",
+        "Specifications: The Jackal's front and rear panels will be coated yellow.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -54,7 +54,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Black",
-        "Specifications: The Husky's front and rear panels will be coated black.",
+        "Specifications: The Jackal's front and rear panels will be coated black.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -74,7 +74,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - White",
-        "Specifications: The Husky's front and rear panels will be coated white.",
+        "Specifications: The Jackal's front and rear panels will be coated white.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -94,7 +94,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Red",
-        "Specifications: The Husky's front and rear panels will be coated red.",
+        "Specifications: The Jackal's front and rear panels will be coated red.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -114,7 +114,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Orange",
-        "Specifications: The Husky's front and rear panels will be coated orange.",
+        "Specifications: The Jackal's front and rear panels will be coated orange.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -134,7 +134,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Navy Blue",
-        "Specifications: The Husky's front and rear panels will be coated navy blue.",
+        "Specifications: The Jackal's front and rear panels will be coated navy blue.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -154,7 +154,7 @@
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, side panels - Olive Drab",
-        "Specifications: The Husky's front and rear panels will be coated olive drab.",
+        "Specifications: The Jackal's front and rear panels will be coated olive drab.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -168,40 +168,21 @@
 
   "batteryItems": [
     {
-      "label": "Lead Acid",
+      "label": "Lithium",
       "value": "A",
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
       "_comment": ["                                                         end of line|"],
       "description": [
-        "Battery - Sealed Lead Acid", 
-        "Specifications: Includes:", 
-        "  - 1X Husky sealed-lead-acid battery.", 
-        "  - 1X sealed-lead-acid battery at 24 V with 20 Ah of capacity.", 
-        "  - 1X charger for a sealed-lead-acid battery.", 
-        " ", 
-        "Note: this line requires the purchase of a Husky robot.", 
-        " ", 
-        " "
-      ]
-    },
-    {
-      "label": "Lithium",
-      "value": "B",
-      "itemNumber": "007060",
-      "price": 4700,
-      "leadTime": 3,
-      "_comment": ["                                                         end of line|"],
-      "description": [
         "Battery - Lithium", 
         "Specifications: Includes:", 
-        "  - 1X Husky lithium battery.", 
-        "  - 1X lithium battery at 24 V with 20 Ah of capacity.", 
+        "  - 1X Jackal lithium battery.", 
         "  - 1X charger for a lithium battery.", 
         " ", 
-        "This upgrade increase the average runtime of Husky by 3 hours.", 
-        "This replaces the standard sealed-lead-acid battery and charger.", 
+        " ", 
+        "Note: this line requires the purchase of a Jackal robot.", 
+        " ", 
         " "
       ]
     }
@@ -295,8 +276,8 @@
       {
         "label": "Yes",
         "value": "B",
-        "itemNumber": "026942",
-        "price": 600,
+        "itemNumber": "027011",
+        "price": 300,
         "leadTime": 0,
         "bool": true,
         "attachmentPosition": [
@@ -330,23 +311,23 @@
           },
           {
             "id": 8,
-            "bool": true
+            "bool": false
           },
           {
             "id": 9,
-            "bool": true
+            "bool": false
           },
           {
             "id": 10,
-            "bool": true
+            "bool": false
           },
           {
             "id": 11,
-            "bool": true
+            "bool": false
           },
           {
             "id": 12,
-            "bool": true
+            "bool": false
           },
           {
             "id": 13,
@@ -460,76 +441,6 @@
           " ",
           " "
         ]
-      },
-      {
-        "label": "Yes",
-        "value": "B",
-        "itemNumber": "026947",
-        "price": 200,
-        "leadTime": 0,
-        "bool": true,
-        "attachmentPosition": [
-          {
-            "id": 1,
-            "bool": true
-          },
-          {
-            "id": 2,
-            "bool": true
-          },
-          {
-            "id": 3,
-            "bool": true
-          },
-          {
-            "id": 4,
-            "bool": true
-          },
-          {
-            "id": 5,
-            "bool": true
-          },
-          {
-            "id": 6,
-            "bool": true
-          },
-          {
-            "id": 7,
-            "bool": true
-          },
-          {
-            "id": 8,
-            "bool": true
-          },
-          {
-            "id": 9,
-            "bool": true
-          },
-          {
-            "id": 10,
-            "bool": true
-          },
-          {
-            "id": 11,
-            "bool": true
-          },
-          {
-            "id": 12,
-            "bool": true
-          },
-          {
-            "id": 13,
-            "bool": true
-          },
-          {
-            "id": 14,
-            "bool": true
-          },
-          {
-            "id": 15,
-            "bool": true
-          }
-        ]
       }
     ]
   },
@@ -560,51 +471,51 @@
           },
           {
             "id": 4,
-            "bool": true
+            "bool": false
           },
           {
             "id": 5,
-            "bool": true
+            "bool": false
           },
           {
             "id": 6,
-            "bool": true
+            "bool": false
           },
           {
             "id": 7,
-            "bool": true
+            "bool": false
           },
           {
             "id": 8,
-            "bool": true
+            "bool": false
           },
           {
             "id": 9,
-            "bool": true
+            "bool": false
           },
           {
             "id": 10,
-            "bool": true
+            "bool": false
           },
           {
             "id": 11,
-            "bool": true
+            "bool": false
           },
           {
             "id": 12,
-            "bool": true
+            "bool": false
           },
           {
             "id": 13,
-            "bool": true
+            "bool": false
           },
           {
             "id": 14,
-            "bool": true
+            "bool": false
           },
           {
             "id": 15,
-            "bool": true
+            "bool": false
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -623,8 +534,8 @@
       {
         "label": "Yes – 100 mm",
         "value": "height_one",
-        "itemNumber": "026948",
-        "price": 600,
+        "itemNumber": "027020",
+        "price": 400,
         "leadTime": 0,
         "bool": true,
         "xyz": [0, 100, 0],
@@ -679,15 +590,15 @@
           },
           {
             "id": 13,
-            "bool": true
+            "bool": false
           },
           {
             "id": 14,
-            "bool": true
+            "bool": false
           },
           {
             "id": 15,
-            "bool": true
+            "bool": false
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -706,8 +617,8 @@
       {
         "label": "Yes – 200 mm",
         "value": "height_two",
-        "itemNumber": "026949",
-        "price": 620,
+        "itemNumber": "027021",
+        "price": 420,
         "leadTime": 0,
         "bool": true,
         "xyz": [0, 200, 0],
@@ -762,15 +673,15 @@
           },
           {
             "id": 13,
-            "bool": true
+            "bool": false
           },
           {
             "id": 14,
-            "bool": true
+            "bool": false
           },
           {
             "id": 15,
-            "bool": true
+            "bool": false
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -789,8 +700,8 @@
       {
         "label": "Yes – 300 mm",
         "value": "height_three",
-        "itemNumber": "026950",
-        "price": 650,
+        "itemNumber": "027022",
+        "price": 450,
         "leadTime": 0,
         "bool": true,
         "xyz": [0, 300, 0],
@@ -845,15 +756,15 @@
           },
           {
             "id": 13,
-            "bool": true
+            "bool": false
           },
           {
             "id": 14,
-            "bool": true
+            "bool": false
           },
           {
             "id": 15,
-            "bool": true
+            "bool": false
           }
         ],
         "_comment": ["                                                         end of line|"],
@@ -885,15 +796,15 @@
       },
       {
         "id": 4,
-        "bool": false
+        "bool": true
       },
       {
         "id": 5,
-        "bool": false
+        "bool": true
       },
       {
         "id": 6,
-        "bool": false
+        "bool": true
       },
       {
         "id": 7,
@@ -939,59 +850,24 @@
     "positions": [
       {
         "id": 1,
-        "xyz": [328.3, 233.85, 0],
+        "xyz": [160, 190.29, 0],
         "rpy": [0, 0, 0],
         "label": "Row 1",
         "value": "row_1"
       },
       {
         "id": 2,
-        "xyz": [248.3, 233.85, 0],
+        "xyz": [0, 190.29, 0],
         "rpy": [0, 0, 0],
         "label": "Row 2",
         "value": "row_2"
       },
       {
         "id": 3,
-        "xyz": [168.3, 233.85, 0],
+        "xyz": [-160, 190.29, 0],
         "rpy": [0, 0, 0],
         "label": "Row 3",
         "value": "row_3"
-      },
-      {
-        "id": 4,
-        "xyz": [88.3, 233.85, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 4",
-        "value": "row_4"
-      },
-      {
-        "id": 5,
-        "xyz": [8.3, 233.85, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 5",
-        "value": "row_5"
-      },
-      {
-        "id": 6,
-        "xyz": [-71.7, 233.85, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 6",
-        "value": "row_6"
-      },
-      {
-        "id": 7,
-        "xyz": [-151.7, 233.85, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 7",
-        "value": "row_7"
-      },
-      {
-        "id": 8,
-        "xyz": [-231.7, 233.85, 0],
-        "rpy": [0, 0, 0],
-        "label": "Row 8",
-        "value": "row_8"
       }
     ],
     "relatedAttachmentPositions": [
@@ -1025,11 +901,11 @@
       },
       {
         "id": 8,
-        "bool": true
+        "bool": false
       },
       {
         "id": 9,
-        "bool": true
+        "bool": false
       },
       {
         "id": 10,
@@ -1045,22 +921,22 @@
       },
       {
         "id": 13,
-        "bool": true
+        "bool": false
       },
       {
         "id": 14,
-        "bool": true
+        "bool": false
       },
       {
         "id": 15,
-        "bool": true
+        "bool": false
       }
     ],
     "value": [
     {
       "label": "No",
       "value": "none",
-      "xyz": [0, 233.85, 0],
+      "xyz": [0, 0, 0],
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
@@ -1080,15 +956,15 @@
         },
         {
           "id": 4,
-          "bool": true
+          "bool": false
         },
         {
           "id": 5,
-          "bool": true
+          "bool": false
         },
         {
           "id": 6,
-          "bool": true
+          "bool": false
         },
         {
           "id": 7,
@@ -1116,15 +992,15 @@
         },
         {
           "id": 13,
-          "bool": true
+          "bool": false
         },
         {
           "id": 14,
-          "bool": true
+          "bool": false
         },
         {
           "id": 15,
-          "bool": true
+          "bool": false
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -1143,8 +1019,8 @@
     {
       "label": "Yes — 100 mm",
       "value": "tower_height_100",
-      "xyz": [0, 327.85, 0],
-      "itemNumber": "026932",
+      "xyz": [0, 100, 0],
+      "itemNumber": "027014",
       "price": 150,
       "leadTime": 0,
       "bool": true,
@@ -1163,15 +1039,15 @@
         },
         {
           "id": 4,
-          "bool": true
+          "bool": false
         },
         {
           "id": 5,
-          "bool": true
+          "bool": false
         },
         {
           "id": 6,
-          "bool": true
+          "bool": false
         },
         {
           "id": 7,
@@ -1179,11 +1055,11 @@
         },
         {
           "id": 8,
-          "bool": true
+          "bool": false
         },
         {
           "id": 9,
-          "bool": true
+          "bool": false
         },
         {
           "id": 10,
@@ -1199,19 +1075,15 @@
         },
         {
           "id": 13,
-          "bool": true
+          "bool": false
         },
         {
           "id": 14,
-          "bool": true
+          "bool": false
         },
         {
           "id": 15,
-          "bool": true
-        },
-        {
-          "id": 15,
-          "bool": true
+          "bool": false
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -1230,8 +1102,8 @@
     {
       "label": "Yes — 200 mm",
       "value": "tower_height_200",
-      "xyz": [0, 427.85, 0],
-      "itemNumber": "026933",
+      "xyz": [0, 200, 0],
+      "itemNumber": "027015",
       "price": 170,
       "leadTime": 0,
       "bool": true,
@@ -1250,15 +1122,15 @@
         },
         {
           "id": 4,
-          "bool": true
+          "bool": false
         },
         {
           "id": 5,
-          "bool": true
+          "bool": false
         },
         {
           "id": 6,
-          "bool": true
+          "bool": false
         },
         {
           "id": 7,
@@ -1266,11 +1138,11 @@
         },
         {
           "id": 8,
-          "bool": true
+          "bool": false
         },
         {
           "id": 9,
-          "bool": true
+          "bool": false
         },
         {
           "id": 10,
@@ -1286,15 +1158,15 @@
         },
         {
           "id": 13,
-          "bool": true
+          "bool": false
         },
         {
           "id": 14,
-          "bool": true
+          "bool": false
         },
         {
           "id": 15,
-          "bool": true
+          "bool": false
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -1313,8 +1185,8 @@
     {
       "label": "Yes — 300 mm",
       "value": "tower_height_300",
-      "xyz": [0, 527.85, 0],
-      "itemNumber": "026934",
+      "xyz": [0, 300, 0],
+      "itemNumber": "027016",
       "price": 200,
       "leadTime": 0,
       "bool": true,
@@ -1333,15 +1205,15 @@
         },
         {
           "id": 4,
-          "bool": true
+          "bool": false
         },
         {
           "id": 5,
-          "bool": true
+          "bool": false
         },
         {
           "id": 6,
-          "bool": true
+          "bool": false
         },
         {
           "id": 7,
@@ -1349,11 +1221,11 @@
         },
         {
           "id": 8,
-          "bool": true
+          "bool": false
         },
         {
           "id": 9,
-          "bool": true
+          "bool": false
         },
         {
           "id": 10,
@@ -1369,15 +1241,15 @@
         },
         {
           "id": 13,
-          "bool": true
+          "bool": false
         },
         {
           "id": 14,
-          "bool": true
+          "bool": false
         },
         {
           "id": 15,
-          "bool": true
+          "bool": false
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -1398,58 +1270,50 @@
   "attachmentPositions": [
     {
       "id": 1,
-      "xyz": [328.3, 233.85, -160],
+      "xyz": [160, 190.29, 0],
       "rpy": [0, 0, 0]
     },
     {
       "id": 2,
-      "xyz": [328.3, 233.85, 0],
+      "xyz": [0, 190.29, 0],
       "rpy": [0, 0, 0]
     },
     {
       "id": 3,
-      "xyz": [328.3, 233.85, 160],
+      "xyz": [-160, 190.29, 0],
       "rpy": [0, 0, 0]
     },
     {
       "id": 4,
-      "xyz": [-231.7, 233.85, -160],
-      "rpy": [0, 3.14159, 0]
+      "xyz": [160, 190.29, 0],
+      "rpy": [0, 0, 0]
     },
     {
       "id": 5,
-      "xyz": [-231.7, 233.85, 0],
-      "rpy": [0, 3.14159, 0]
+      "xyz": [0, 190.29, 0],
+      "rpy": [0, 0, 0]
     },
     {
       "id": 6,
-      "xyz": [-231.7, 233.85, 160],
-      "rpy": [0, 3.14159, 0]
+      "xyz": [-160, 190.29, 0],
+      "rpy": [0, 0, 0]
     },
     {
       "id": 7,
-      "xyz": [0, 0, -160],
+      "xyz": [0, 190.29, 0],
       "rpy": [0, 0, 0]
     },
     {
-      "id": 8,
-      "xyz": [0, 0, 0],
-      "rpy": [0, 0, 0]
+      "id": 8
     },
     {
-      "id": 9,
-      "xyz": [0, 0, 160],
-      "rpy": [0, 0, 0]
+      "id": 9
     },
     {
-      "id": 10,
-      "xyz": [0, 0, 0],
-      "rpy": [0, 0, 0]
+      "id": 10
     },
     {
-      "id": 11,
-      "xyz": [0, 0, 160],
-      "rpy": [0, 0, 0]
+      "id": 11
     },
     {
       "id": 12
@@ -1629,23 +1493,23 @@
         },
         {
           "id": 8,
-          "bool": true
+          "bool": false
         },
         {
           "id": 9,
-          "bool": true
+          "bool": false
         },
         {
           "id": 10,
-          "bool": true
+          "bool": false
         },
         {
           "id": 11,
-          "bool": true
+          "bool": false
         },
         {
           "id": 12,
-          "bool": true
+          "bool": false
         },
         {
           "id": 13,
@@ -1676,84 +1540,84 @@
       "attachmentPosition": [
         {
           "id": 1,
-          "bool": true,
-          "position": 0
+          "position": 0,
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 3
         },
         {
           "id": 2,
+          "position": 1,
           "bool": false,
           "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 3,
-          "position": 1
+          "attachmentItem": 5
         },
         {
           "id": 3,
+          "position": 2,
           "bool": false,
           "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 5,
-          "position": 2
+          "attachmentItem": 3
         },
         {
           "id": 4,
-          "bool": true,
-          "position": 3
+          "position": 3,
+          "bool": true
         },
         {
           "id": 5,
-          "bool": false,
-          "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 3,
-          "position": 4
+          "position": 4,
+          "bool": true
         },
         {
           "id": 6,
-          "bool": true,
-          "position": 5
+          "position": 5,
+          "bool": true
         },
         {
           "id": 7,
-          "bool": true,
-          "position": 6
+          "position": 6,
+          "bool": true
         },
         {
           "id": 8,
-          "bool": true,
-          "position": 7
+          "position": 7,
+          "bool": false
         },
         {
           "id": 9,
-          "bool": true,
-          "position": 8
+          "position": 8,
+          "bool": false
         },
         {
           "id": 10,
-          "bool": true,
-          "position": 9
+          "position": 9,
+          "bool": false
         },
         {
           "id": 11,
-          "bool": true,
-          "position": 10
+          "position": 10,
+          "bool": false
         },
         {
           "id": 12,
-          "bool": true,
-          "position": 11
+          "position": 11,
+          "bool": false
         },
         {
           "id": 13,
-          "bool": true,
-          "position": 12
+          "position": 12,
+          "bool": false
         },
         {
           "id": 14,
-          "bool": true,
-          "position": 13
+          "position": 13,
+          "bool": false
         },
         {
           "id": 15,
-          "bool": true,
-          "position": 14
+          "position": 14,
+          "bool": false
         }
       ],
       "_comment": ["                                                         end of line|"],
@@ -1784,7 +1648,7 @@
 
   "bananaPosition": {
     "name": "bananaPosition",
-    "xyz": [365, -110, 375],
+    "xyz": [50, -60, 300],
     "rpy": [0, 0.97, 0]
   }
 }
