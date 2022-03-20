@@ -7,8 +7,10 @@ import { Leadtime } from "/components/price-lead-quote/Leadtime";
 import DataComputer from "/public/json/DataComputer.json";
 import DataFile_DingoOmni from "/public/json/DataDingoOmni.json";
 import DataFile_DingoDiff from "/public/json/DataDingoDiff.json";
-import DataFile_Husky from "/public/json/DataHusky.json"
-const DataFiles = [DataFile_DingoOmni, DataFile_DingoDiff, DataFile_Husky];
+import DataFile_Boxer from "/public/json/DataBoxer.json";
+import DataFile_Jackal from "/public/json/DataJackal.json";
+import DataFile_Husky from "/public/json/DataHusky.json";
+const DataFiles = [DataFile_DingoOmni, DataFile_DingoDiff, DataFile_Boxer, DataFile_Jackal, DataFile_Husky];
 
 // CPR logo path for PDF
 const ImagePath_CprIcon = "/public/images/clearpath_robotics_color.jpg";
