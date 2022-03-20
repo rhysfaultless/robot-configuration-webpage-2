@@ -80,8 +80,6 @@ function Page() {
   const [integrationTowerOneSelectionState, changeIntegrationTowerOneSelectionState] = useState(integrationTowerOneData[0]);
   const [integrationTowerOnePositionState, changeIntegrationTowerOnePositionState] = useState(integrationTowerOnePositionData[0]);
   
-  const [integrationTowerTwoSelectionState, changeIntegrationTowerTwoSelectionState] = useState(integrationRiserData[0]);
-  
   const [attachmentOneSelectionState, changeAttachmentOneSelectionState] = useState(attachmentData[0]);
   const [attachmentTwoSelectionState, changeAttachmentTwoSelectionState] = useState(attachmentData[0]);
   const [attachmentThreeSelectionState, changeAttachmentThreeSelectionState] = useState(attachmentData[0]);
@@ -137,7 +135,6 @@ function Page() {
       weatherproofingSelectionState,
       integrationRiserSelectionState,
       integrationTowerOneSelectionState,
-      integrationTowerTwoSelectionState
     ];
     // add attachments to priceLeadStatesArray
     {
