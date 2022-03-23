@@ -1,8 +1,7 @@
 import { Price } from "/components/price-lead-quote/Price";
 
 function PriceText(props) {
-  let returnedString = "Price: $" + Price(props.statesArray).toString();
-  return <p> {returnedString} </p>;
+  return <p> {"Price: $" + Price(props.statesArray).toString() + '\u00A0' + '\u00A0' + '\u00A0' + "USD"} </p>;
 }
 
 export default PriceText;
