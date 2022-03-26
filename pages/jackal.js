@@ -46,7 +46,7 @@ const batteryData = dataFile.batteryItems;
 const kitData = dataFile.kits;
 const allowIntegrationPlate = dataFile.integrationPlate.bool;
 const integrationPlateData = dataFile.integrationPlate.value;
-const allowWeatherproofing = dataFile.integrationPlate.bool;
+//const allowWeatherproofing = dataFile.integrationPlate.bool;
 const weatherproofingData = dataFile.weatherproofing.value;
 const allowIntegrationRiser = dataFile.integrationRiser.bool;
 const integrationRiserData = dataFile.integrationRiser.value;
@@ -405,7 +405,7 @@ function Page() {
                   {/*  Select, Integration Tower One  */}
                   {integrationPlateSelectionState.bool && allowIntegrationTowerOne  && !(integrationRiserSelectionState.bool) && (
                     <SelectFormatted
-                      displayName={"Tower 1"}
+                      displayName={"Tower"}
                       options={integrationTowerOneData}
                       defaultValue={0}
                       currentState={integrationTowerOneSelectionState}
@@ -416,7 +416,6 @@ function Page() {
                   {/*  Select, Integration Tower One Position  */}
                   {integrationPlateSelectionState.bool && allowIntegrationTowerOne  && !(integrationRiserSelectionState.bool) && integrationTowerOneSelectionState.bool && (
                     <SelectFormatted
-                      displayName={"Tower 1 Position"}
                       options={integrationTowerOnePositionData}
                       defaultValue={0}
                       currentState={integrationTowerOnePositionState}
