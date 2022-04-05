@@ -1296,21 +1296,21 @@
         {
           "id": 2,
           "position": 1,
-          "bool": false,
-          "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 5
+          "bool": true
         },
         {
           "id": 3,
           "position": 2,
           "bool": false,
           "_comment": "attachmentItem should be an integer, matching the index of the item",
-          "attachmentItem": 3
+          "attachmentItem": 5
         },
         {
           "id": 4,
           "position": 3,
-          "bool": true
+          "bool": false,
+          "_comment": "attachmentItem should be an integer, matching the index of the item",
+          "attachmentItem": 3
         },
         {
           "id": 5,
@@ -1396,7 +1396,7 @@
 
   "bananaPosition": {
     "name": "bananaPosition",
-    "xyz": [100, 0, 305],
-    "rpy": [0, 0.97, 0]
+    "xyz": [0, 0, 305],
+    "rpy": [0, 0, 0]
   }
 }

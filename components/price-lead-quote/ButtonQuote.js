@@ -71,6 +71,12 @@ function ButtonQuote(props) {
     for (let i = 1; i < PageCount + 1; i++) {
       doc.addImage(image, "JPEG", 135, 16, 1479 / 25, 375 / 25);
 
+      // header - watermark
+      doc.setFontSize(14);
+      doc.setTextColor(200, 0, 0); // make text red
+      doc.text(20, 16, "DRAFT");
+      doc.setTextColor(0); // make text black
+
       // header - quote number
       doc.setFontSize(12);
       doc.text(135, 48, quote_name);

@@ -403,10 +403,10 @@ function Page() {
                     />
                   )}
 
-                  {/*  Select, Integration Tower One  */}
+                  {/*  Select, Integration Tower  */}
                   {integrationPlateSelectionState.bool && allowIntegrationTowerOne  && !(integrationRiserSelectionState.bool) && (
                     <SelectFormatted
-                      displayName={"Tower 1"}
+                      displayName={"Tower"}
                       options={integrationTowerOneData}
                       defaultValue={0}
                       currentState={integrationTowerOneSelectionState}
@@ -414,10 +414,9 @@ function Page() {
                     />
                   )}
 
-                  {/*  Select, Integration Tower One Position  */}
+                  {/*  Select, Integration Tower Position  */}
                   {integrationPlateSelectionState.bool && allowIntegrationTowerOne  && !(integrationRiserSelectionState.bool) && integrationTowerOneSelectionState.bool && (
                     <SelectFormatted
-                      displayName={"Tower 1 Position"}
                       options={integrationTowerOnePositionData}
                       defaultValue={0}
                       currentState={integrationTowerOnePositionState}
