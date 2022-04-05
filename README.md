@@ -142,6 +142,58 @@ Next.js still maintains the React approach, of making reuasable Components that 
   ```
 </details>
 
+
+## page's state machine for rendering
+
+<details>
+  <summary>Dependancy chart, click to expand</summary>
+  
+  ```
+  husky
+  ├─── panel colour
+  ├─── battery chemistry
+  ├─── computer type ( mini-ITX, Industrial, Single-board-computer )
+  │    ├─── processor
+  │    ├─── RAM
+  │    ├─── storage
+  │    └─── graphics card
+  │
+  └─── integration plate
+       ├─── attachments, 1, 4, 6
+       │
+       ├─── weatherproofing
+       ├─── navigation kits
+       │    └─── attachments 2, 3, 5
+       │
+       └─── integration riser or tower
+            ├─── tower location
+            └─── attachments 7, 8, 9
+  ```
+</details>
+
+Some Select fields are only rendered based on the State of another Select element.
+This dependancy is seen in a Page's source as something like:
+
+```javascript
+{integrationPlateSelectionState.bool && <SelectFormatted displayName={"Kits"}> }
+```
+
+In this case, the Select filed for Kits os only rendered if the User has already added an Integration Plate to their configured robot.
+A similar dependancy boolean is required for the rendered components in the 3D model.
+Items with cascading dependency require multiple boolean operators.
+
+Robot Attachments are the most dependent components in this program.
+Attachments require checks for:
+
+- is the integration plate installed?
+- is this attachment location dependedent on the existance of a integration tower?
+- is this attachment location already being used by a navigation kit?
+
+These dependancy checks are performed in the Components `SelectAttachmentsRendererHelper` and `ModelAttachmentsRendererHelper`. 
+These Components are revieing State information of the integration plate, integration tower, and navigation kits. 
+The maintainer can update this dependancy graph by altering the Page's JSON file.
+
+
 ## JSON structure, computers
 Notice a few things that are important in the computers JSON file, for the website's state-machine to function:
 
