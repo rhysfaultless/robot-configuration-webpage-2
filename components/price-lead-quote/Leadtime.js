@@ -1,9 +1,13 @@
 export function Leadtime(inputArray) {
-  let leadTimeValue = 16;
-  let leadTimeArray = [];
+  let leadTimeValue = 0;
+  let leadTimeArrayMaxValues = [];
   for (let i = 0; i < inputArray.length; i++) {
-    leadTimeArray.push(inputArray[i].leadTime);
+    if (inputArray[i].leadTimeSumOrMax == "max" ) {
+      leadTimeArrayMaxValues.push(inputArray[i].leadTime);
+    } else if (inputArray[i].leadTimeSumOrMax == "sum" ) {
+      leadTimeValue += inputArray[i].leadTime;
+    } 
   }
-  leadTimeValue = Math.max(...leadTimeArray);
+  leadTimeValue += Math.max(...leadTimeArrayMaxValues);
   return leadTimeValue;
 }

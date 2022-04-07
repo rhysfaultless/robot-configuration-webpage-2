@@ -6,7 +6,8 @@
   "robotPlatform": {
     "label": "Dingo Omnidirectional",
     "price": 9000,
-    "leadTime": 3,
+    "leadTime": 65,
+    "leadTimeSumOrMax": "max",
     "itemNumber": "022609",
     "labelPdf": "Dingo-O",
     "_comment": ["                                                         end of line|"],
@@ -30,6 +31,7 @@
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(255, 167, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -49,7 +51,8 @@
       "value": "B",
       "itemNumber": "042000",
       "price": 300,
-      "leadTime": 7,
+      "leadTime": 35,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(55, 55, 55)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -69,7 +72,8 @@
       "value": "C",
       "itemNumber": "042000",
       "price": 300,
-      "leadTime": 7,
+      "leadTime": 35,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(214, 214, 214)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -89,7 +93,8 @@
       "value": "D",
       "itemNumber": "042000",
       "price": 300,
-      "leadTime": 7,
+      "leadTime": 35,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(185, 0, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -109,7 +114,8 @@
       "value": "E",
       "itemNumber": "042000",
       "price": 300,
-      "leadTime": 7,
+      "leadTime": 35,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(255, 103, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -129,7 +135,8 @@
       "value": "F",
       "itemNumber": "042000",
       "price": 300,
-      "leadTime": 7,
+      "leadTime": 35,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(83, 104, 130)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -149,7 +156,8 @@
       "value": "G",
       "itemNumber": "042000",
       "price": 300,
-      "leadTime": 7,
+      "leadTime": 35,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(104, 120, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -173,6 +181,7 @@
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Battery - Sealed Lead Acid", 
@@ -191,7 +200,8 @@
       "value": "B",
       "itemNumber": "042000",
       "price": 1000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Battery - Lithium", "Specifications: Includes:", 
@@ -215,6 +225,7 @@
         "itemNumber": " ",
         "price": 0,
         "leadTime": 0,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "attachmentPosition": [
           {
@@ -303,6 +314,7 @@
         "itemNumber": " ",
         "price": 0,
         "leadTime": 0,
+        "leadTimeSumOrMax": "sum",
         "bool": false,
         "attachmentPosition": [
           {
@@ -391,6 +403,7 @@
         "itemNumber": " ",
         "price": 0,
         "leadTime": 0,
+        "leadTimeSumOrMax": "sum",
         "bool": false,
         "xyz": [0, 0, 0],
         "attachmentPosition": [
@@ -473,7 +486,8 @@
         "value": "height_one",
         "itemNumber": "027032",
         "price": 600,
-        "leadTime": 0,
+        "leadTime": 1,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "xyz": [0, 100, 0],
         "attachmentPosition": [
@@ -556,7 +570,8 @@
         "value": "height_two",
         "itemNumber": "027033",
         "price": 600,
-        "leadTime": 0,
+        "leadTime": 1,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "xyz": [0, 200, 0],
         "attachmentPosition": [
@@ -639,7 +654,8 @@
         "value": "height_three",
         "itemNumber": "027034",
         "price": 600,
-        "leadTime": 0,
+        "leadTime": 1,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "xyz": [0, 300, 0],
         "attachmentPosition": [
@@ -884,6 +900,7 @@
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "bool": false,
       "attachmentPosition": [
         {
@@ -1044,6 +1061,7 @@
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes", 
@@ -1063,7 +1081,8 @@
       "category": "lidar",
       "itemNumber": "026859",
       "price": 5000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1083,7 +1102,8 @@
       "category": "lidar",
       "itemNumber": "026965",
       "price": 5000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1103,7 +1123,8 @@
       "category": "lidar",
       "itemNumber": "026611",
       "price": 3000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1123,7 +1144,8 @@
       "category": "lidar",
       "itemNumber": "026966",
       "price": 3000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1143,7 +1165,8 @@
       "category": "ahrs",
       "itemNumber": "042000",
       "price": 3000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1163,7 +1186,8 @@
       "category": "camera",
       "itemNumber": "026869",
       "price": 600,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1183,7 +1207,8 @@
       "category": "camera",
       "itemNumber": "026872",
       "price": 900,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1206,6 +1231,7 @@
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "priceHardware": 0,
       "priceSoftware": 0,
       "bool": false,
@@ -1280,7 +1306,8 @@
       "value": "indoor_nav",
       "itemNumber": "042000",
       "price": 8500,
-      "leadTime": 5,
+      "leadTime": 8,
+      "leadTimeSumOrMax": "sum",
       "priceHardware": 8500,
       "priceSoftware": 0,
       "bool": true,

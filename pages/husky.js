@@ -137,50 +137,12 @@ function Page() {
       integrationTowerOneSelectionState,
     ];
     // add attachments to priceLeadStatesArray
-    {
-      if (kitSelectionState.attachmentPosition[0].bool && integrationRiserSelectionState.attachmentPosition[0].bool) {
-        priceLeadStatesArray.push(attachmentOneSelectionState);
+    for(let i = 0; i < attachmentSelectionStates.length; i++) {
+      if (integrationPlateSelectionState.attachmentPosition[i].bool && weatherproofingSelectionState.attachmentPosition[i].bool && integrationRiserSelectionState.attachmentPosition[i].bool && integrationTowerOneSelectionState.attachmentPosition[i].bool && kitSelectionState.attachmentPosition[i].bool) {
+        priceLeadStatesArray.push(attachmentSelectionStates[i][1]);
       }
-      if (kitSelectionState.attachmentPosition[1].bool && integrationRiserSelectionState.attachmentPosition[1].bool) {
-        priceLeadStatesArray.push(attachmentTwoSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[2].bool && integrationRiserSelectionState.attachmentPosition[2].bool) {
-        priceLeadStatesArray.push(attachmentThreeSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[3].bool && integrationRiserSelectionState.attachmentPosition[3].bool) {
-        priceLeadStatesArray.push(attachmentFourSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[4].bool && integrationRiserSelectionState.attachmentPosition[4].bool) {
-        priceLeadStatesArray.push(attachmentFiveSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[5].bool && integrationRiserSelectionState.attachmentPosition[5].bool) {
-        priceLeadStatesArray.push(attachmentSixSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[6].bool && integrationRiserSelectionState.attachmentPosition[6].bool) {
-        priceLeadStatesArray.push(attachmentSevenSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[7].bool && integrationRiserSelectionState.attachmentPosition[7].bool) {
-        priceLeadStatesArray.push(attachmentEightSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[8].bool && integrationRiserSelectionState.attachmentPosition[8].bool) {
-        priceLeadStatesArray.push(attachmentNineSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[9].bool && integrationRiserSelectionState.attachmentPosition[9].bool) {
-        priceLeadStatesArray.push(attachmentTenSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[10].bool && integrationRiserSelectionState.attachmentPosition[10].bool) {
-        priceLeadStatesArray.push(attachmentElevenSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[11].bool && integrationRiserSelectionState.attachmentPosition[11].bool) {
-        priceLeadStatesArray.push(attachmentTwelveSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[12].bool && integrationRiserSelectionState.attachmentPosition[12].bool) {
-        priceLeadStatesArray.push(attachmentThirteenSelectionState);
-      }
-      if (kitSelectionState.attachmentPosition[13].bool && integrationRiserSelectionState.attachmentPosition[13].bool) {
-        priceLeadStatesArray.push(attachmentFourteenSelectionState);
-      }
-    }
+    };
+
     //add computer and components to priceLeadStatesArray
     for (let i = 0; i < computerComponentStates.length; i++) {
       if (computerSelectionState.configurableComputerBool) {

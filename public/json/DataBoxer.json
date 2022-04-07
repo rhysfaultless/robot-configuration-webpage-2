@@ -6,7 +6,8 @@
   "robotPlatform": {
     "label": "Boxer",
     "price": 35500,
-    "leadTime": 3,
+    "leadTime": 155,
+    "leadTimeSumOrMax": "max",
     "itemNumber": "042000",
     "labelPdf": "Boxer",
     "_comment": ["                                                         end of line|"],
@@ -30,6 +31,7 @@
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(255, 167, 0)",
       "_comment": ["                                                         end of line|"],
       "description": [
@@ -49,112 +51,13 @@
       "value": "B",
       "itemNumber": "042000",
       "price": 800,
-      "leadTime": 7,
+      "leadTime": 15,
+      "leadTimeSumOrMax": "max",
       "rgb": "rgb(55, 55, 55)",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Colour, stripe - Black",
         "Specifications: The Boxer's painted stripe will be black.",
-        "Note: The default colour is yellow. Optional colours are available",
-        "at an increased price and lead-time.",
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
-      ]
-    },
-    {
-      "label": "White",
-      "value": "C",
-      "itemNumber": "042000",
-      "price": 800,
-      "leadTime": 7,
-      "rgb": "rgb(214, 214, 214)",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Colour, stripe - White",
-        "Specifications: The Boxer's painted stripe will be white.",
-        "Note: The default colour is yellow. Optional colours are available",
-        "at an increased price and lead-time.",
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
-      ]
-    },
-    {
-      "label": "Red",
-      "value": "D",
-      "itemNumber": "042000",
-      "price": 800,
-      "leadTime": 7,
-      "rgb": "rgb(185, 0, 0)",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Colour, stripe - Red",
-        "Specifications: The Boxer's painted stripe will be red.",
-        "Note: The default colour is yellow. Optional colours are available",
-        "at an increased price and lead-time.",
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
-      ]
-    },
-    {
-      "label": "Orange",
-      "value": "E",
-      "itemNumber": "042000",
-      "price": 800,
-      "leadTime": 7,
-      "rgb": "rgb(255, 103, 0)",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Colour, stripe - Orange",
-        "Specifications: The Boxer's painted stripe will be orange.",
-        "Note: The default colour is yellow. Optional colours are available",
-        "at an increased price and lead-time.",
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
-      ]
-    },
-    {
-      "label": "Blue",
-      "value": "F",
-      "itemNumber": "042000",
-      "price": 800,
-      "leadTime": 7,
-      "rgb": "rgb(83, 104, 130)",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Colour, stripe - Navy Blue",
-        "Specifications: The Boxer's painted stripe will be navy blue.",
-        "Note: The default colour is yellow. Optional colours are available",
-        "at an increased price and lead-time.",
-        " ",
-        " ",
-        " ",
-        " ",
-        " "
-      ]
-    },
-    {
-      "label": "Green",
-      "value": "G",
-      "itemNumber": "042000",
-      "price": 800,
-      "leadTime": 7,
-      "rgb": "rgb(104, 120, 0)",
-      "_comment": ["                                                         end of line|"],
-      "description": [
-        "Colour, stripe - Olive Drab",
-        "Specifications: The Boxer's painted stripe will be olive drab green.",
         "Note: The default colour is yellow. Optional colours are available",
         "at an increased price and lead-time.",
         " ",
@@ -173,6 +76,7 @@
       "itemNumber": "042000",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "Battery - 24 V 35 Ah lithium iron phosphate", 
@@ -197,6 +101,7 @@
         "itemNumber": " ",
         "price": 0,
         "leadTime": 0,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "attachmentPosition": [
           {
@@ -285,6 +190,7 @@
         "itemNumber": " ",
         "price": 0,
         "leadTime": 0,
+        "leadTimeSumOrMax": "sum",
         "bool": false,
         "attachmentPosition": [
           {
@@ -373,6 +279,7 @@
         "itemNumber": " ",
         "price": 0,
         "leadTime": 0,
+        "leadTimeSumOrMax": "sum",
         "bool": false,
         "xyz": [0, 0, 0],
         "attachmentPosition": [
@@ -455,7 +362,8 @@
         "value": "height_one",
         "itemNumber": "042000",
         "price": 900,
-        "leadTime": 0,
+        "leadTime": 1,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "xyz": [0, 100, 0],
         "attachmentPosition": [
@@ -538,7 +446,8 @@
         "value": "height_two",
         "itemNumber": "042000",
         "price": 900,
-        "leadTime": 0,
+        "leadTime": 1,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "xyz": [0, 200, 0],
         "attachmentPosition": [
@@ -621,7 +530,8 @@
         "value": "height_three",
         "itemNumber": "042000",
         "price": 900,
-        "leadTime": 0,
+        "leadTime": 1,
+        "leadTimeSumOrMax": "sum",
         "bool": true,
         "xyz": [0, 300, 0],
         "attachmentPosition": [
@@ -859,6 +769,7 @@
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "bool": false,
       "attachmentPosition": [
         {
@@ -1017,6 +928,7 @@
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes", 
@@ -1036,7 +948,8 @@
       "category": "lidar",
       "itemNumber": "026859",
       "price": 5000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1056,7 +969,8 @@
       "category": "lidar",
       "itemNumber": "026965",
       "price": 5000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1076,7 +990,8 @@
       "category": "lidar",
       "itemNumber": "026611",
       "price": 3000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1096,7 +1011,8 @@
       "category": "lidar",
       "itemNumber": "026966",
       "price": 3000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1116,7 +1032,8 @@
       "category": "ahrs",
       "itemNumber": "042000",
       "price": 3000,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1136,7 +1053,8 @@
       "category": "camera",
       "itemNumber": "026869",
       "price": 600,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1156,7 +1074,8 @@
       "category": "camera",
       "itemNumber": "026872",
       "price": 900,
-      "leadTime": 3,
+      "leadTime": 1,
+      "leadTimeSumOrMax": "sum",
       "_comment": ["                                                         end of line|"],
       "description": [
         "COMMENT - skip this line for structuring purposes",  
@@ -1179,6 +1098,7 @@
       "itemNumber": " ",
       "price": 0,
       "leadTime": 0,
+      "leadTimeSumOrMax": "sum",
       "priceHardware": 0,
       "priceSoftware": 0,
       "bool": false,
